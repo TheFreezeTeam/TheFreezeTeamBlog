@@ -2,7 +2,8 @@
 
 // Customize your settings and add new ones here
 Settings[Keys.Host] = "host.com";
-Settings[BlogKeys.Title] = "My Blog";
+Settings[Keys.LinksUseHttps] = true;
+Settings[BlogKeys.Title] = "TheFreezeTeam";
 Settings[BlogKeys.Description] = "Welcome!";
 
 // Add any pipeline customizations here
