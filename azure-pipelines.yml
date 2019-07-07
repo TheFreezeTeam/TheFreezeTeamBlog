@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+queue:
+  name: TimeWarpEnterprises
 
 steps:
 - script: echo Hello, world!
