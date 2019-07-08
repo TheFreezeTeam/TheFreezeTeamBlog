@@ -10,8 +10,15 @@ queue:
   name: TimeWarpEnterprises
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: wyam
+  displayName: 'Run wyam to generate the output'
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifact to Output
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/output'
+    ArtifactName: Output
+    publishLocation: Container
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
