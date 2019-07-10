@@ -7,6 +7,8 @@ Url: TheFreezeTeam.com/liquid/
 GUID: 127073f6-5ea8-4282-b1e3-97fe8a9b720e
 ---
 # Introduction to LIQUID Software Engineering Principles
+
+![][LiquidImage]
 So you've probably heard of the [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) acronym for programming. But perhaps you haven't heard of a little known, but frequently practiced coding style which we affectionately call LIQUID. Let's take a moment to review the principles of LIQUID programming, for those less familiar with it (though we're sure it will ring a bell as we describe it).
 
 <table>
@@ -56,3 +58,4 @@ Don’t bother with DRY programming. It’s a waste of time since someone else w
 
 As we here at TheFreezeTeam always strive to stay on top of the latest trends in modern software development, please leave a comment, or [send us](mailto://feedback@thefreezeteam.com) some examples of your LIQUID projects.
 
+[LiquidImage]: /../images/LIQUID.png "Liquid Smoke"
