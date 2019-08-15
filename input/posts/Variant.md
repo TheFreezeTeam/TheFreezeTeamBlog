@@ -1,17 +1,16 @@
 Title: Generic Variance in Superheros.
-Published: 1/1/9999
+Published: 08/15/2019
 Tags: CSharp
 Author: Steven T. Cramer
-Excerpt: 
-`Co` ends with `o` use `out`
-`Con` ends with `n` which sounds like `in`
+Excerpt: Co ends with o use out.  Con ends with n which sounds like in
 Url: TheFreezeTeam.com/variant-generic-interfaces
 GUID: 5372816a-38d8-4a30-99f0-38bf5b11fb1b
 
 ---
-A good superhero needs to learn from their ancestors (Contravariant), and keep in mind future generations (Covariant).  Here is some guidance on how to remember and use our generic variance to over come our LIQUID foes.
 
 ![][VariantGenericInterfacesImage]
+
+A good superhero needs to learn from their ancestors (Contravariant), and keep in mind future generations (Covariant).  Here is some guidance on how to remember and use our generic variance to over come our LIQUID foes.
 
 ## Generic Variance in C#
 
