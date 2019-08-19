@@ -1,4 +1,4 @@
-Title: Generic Variance in Superheros.
+Title: Generic Variance in Superheros
 Published: 08/15/2019
 Tags: CSharp
 Author: Steven T. Cramer
@@ -22,7 +22,7 @@ A good superhero needs to learn from their ancestors (Contravariant), and keep i
 
 > **Memory Mnemonic 2**:  
 > Your ancestors are the inputs that made you. `in`  
-> Your Children are you outputs. `out`
+> Your descendants are you outputs. `out`
 
 - Invariant - only the class specified
 - Covariant - the class specified or any descendant class
