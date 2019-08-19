@@ -10,7 +10,7 @@ GUID: 5372816a-38d8-4a30-99f0-38bf5b11fb1b
 
 ![][VariantGenericInterfacesImage]
 
-A good superhero needs to learn from their ancestors (Contravariant), and keep in mind future generations (Covariant).  Here is some guidance on how to remember and use our generic variance to over come our LIQUID foes.
+A good superhero needs to learn from their ancestors (Contravariant), and keep in mind future generations (Covariant).  Here is some guidance on how to remember and use our generic variance to overcome our LIQUID foes.
 
 ## Generic Variance in C#
 
@@ -19,6 +19,10 @@ A good superhero needs to learn from their ancestors (Contravariant), and keep i
 > **Memory Mnemonic**:  
 > `Co` ends with `o` use `out`  
 > `Con` ends with `n` which sounds like `in`
+
+> **Memory Mnemonic 2**:  
+> Your ancestors are the inputs that made you. `in`  
+> Your Children are you outputs. `out`
 
 - Invariant - only the class specified
 - Covariant - the class specified or any descendant class
@@ -52,6 +56,16 @@ interface ICovariant<out R>
 
 }
 ```
+## Common **Covariant** and **Contravariant** interfaces you use in dotnet.
+
+[IEnumerable<>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1)
+[IComparer](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.icomparer-1)
+
+```csharp
+public interface IEnumerable<out T> : System.Collections.IEnumerable;
+public interface IComparer<in T>;
+```
+
 See the [documentation](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces#declaring-variant-generic-interfaces) for more details.
 
 >**Don't forget a good superhero keeps his code clean and tested.**

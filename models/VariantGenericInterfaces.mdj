@@ -1294,7 +1294,7 @@
 							"top": 424,
 							"width": 353,
 							"height": 147,
-							"text": "// * only outputs can use R\n \ninterface ICovariant<out R>\n{\n    R GetSomething();\n    // The following statement generates a compiler error.\n    // void SetSomething(R sampleArg);\n\n}"
+							"text": "// * only outputs can use D\n \ninterface ICovariant<out D>\n{\n    D GetSomething();\n    // The following statement generates a compiler error.\n    // void SetSomething(D sampleArg);\n\n}"
 						},
 						{
 							"_type": "UMLTextView",
