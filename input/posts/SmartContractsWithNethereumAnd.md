@@ -57,7 +57,7 @@ truffle migrate
 
 
 
->**Don't forget a good superhero keeps his code clean and tested.**
+>**Don't forget a good superhero keeps their code clean and tested.**
 
 <!---
 ## Mentorship

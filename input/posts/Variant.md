@@ -68,7 +68,7 @@ public interface IComparer<in T>;
 
 See the [documentation](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces#declaring-variant-generic-interfaces) for more details.
 
->**Don't forget a good superhero keeps his code clean and tested.**
+>**Don't forget a good superhero keeps their code clean and tested.**
 
 <!---
 ## Mentorship
