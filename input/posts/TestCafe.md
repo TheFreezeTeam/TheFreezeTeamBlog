@@ -7,7 +7,7 @@ Url: TheFreezeTeam.com/testcafe
 GUID: 034b3ec1-48bf-4c20-b632-7791f0fbfd4f
 
 ---
-Selenium is causing my CI/CD to break this weekend because the process won't properly shutdown and over all the tool is old and doesn't appear to ever going to significantly improve.
+Selenium is causing my CI/CD to break this weekend because the process won't properly shutdown, and over all the tool is old and doesn't appear to ever be going to significantly improve.
 So once again I set out to see if I can find a replacement.
 There are two other choices that I looked at back in my "Pizza Pizza" days.
 Cypress and TestCafe, which I will revisit.
@@ -154,3 +154,5 @@ testcafe edge tests/
 [Cli Docs](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html)
 
 Oh and TestCafe supports multiple browsers.
+
+>**Don't forget a good superhero keeps their code clean and tested.**
