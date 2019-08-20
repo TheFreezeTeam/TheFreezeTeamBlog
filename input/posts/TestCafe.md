@@ -14,14 +14,14 @@ Cypress and TestCafe, which I will revisit.
 
 ## Cypress
 I started with cypress.
-All looks cool has nice features that show step by step.
+All looks cool. It has nice features that show step by step whats happening in the test.
 One can record a test with a browser plugin.
 I was thinking this is gonna be the winner.
 
-And then I look at the test code. 
-For some reason they think closures are a good idea as the way to use variables.
+And then I looked at the test code.
+For some reason they think closures are a good way to capture variables.
 I **STRONGLY** disagree.
-The example they show of the wrong way to do it is exactly how I attempted.
+The example they show of "the wrong way to do it" is exactly how I attempted.
 Others must have attempted also as they felt the need to show the wrong way before the "right" way.
 
 ```
@@ -37,7 +37,7 @@ const form = cy.get('form')
 button.click()
 ```
 
-for some insane reason they think this is better.
+For some reason they think the following is better.
 
 ```
 cy.get('button').then(($btn) => {
@@ -55,7 +55,8 @@ cy.get('button').then(($btn) => {
   })
 })
 ```
-straight from their docs they say:
+
+Straight from their docs it says:
 "If you’re familiar with native Promises the Cypress .then() works the same way. You can continue to nest more Cypress commands inside of the .then()."
 
 > **They are not real Promises** so if you are thinking in Typescript you can write async await to clean it up... you would be wrong.
@@ -80,7 +81,7 @@ We already have a this functionality.  Its called top to bottom....
 
 After finding the closure paradigm in Cypress, I decided to give TestCafe a shot.
 
-And lets just say the coding paradigm is much better.
+And let's just say the coding paradigm is much better.
 
 ```
 import { Selector } from 'testcafe';
@@ -112,10 +113,10 @@ test('Counter Should Count', async t => {
 });
 ```
 
-Notice how you can actually store a selector for later use without a closure and they use async await syntax.
+Notice how you can actually store a selector for later use without a closure and that they use async await syntax.
 
 TestCafe is also free if you want to write code by hand.
-They have a paid version that will automate some of that with a recorder that is quite nice and it will generate the js files for you and really help with the selectors and test values.
+They have a paid version that will automate some of that with a recorder that is quite nice and it will generate the js files for you and really help with the selectors and test values, all in a nice GUI.
 
 ### How about Typescript?
 
@@ -154,5 +155,7 @@ testcafe edge tests/
 [Cli Docs](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html)
 
 Oh and TestCafe supports multiple browsers.
+
+So TestCafe wins for me as it gives me more superpowers for the effort.
 
 >**Don't forget a good superhero keeps their code clean and tested.**
