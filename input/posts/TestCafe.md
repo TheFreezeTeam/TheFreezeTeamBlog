@@ -1,18 +1,28 @@
-Title: Generic Variance in Superheros
-Published: 08/15/2019
+Title: TestCafe vs Cypress
+Published: 08/20/2019
 Tags: CSharp
 Author: Steven T. Cramer
-Excerpt: Co ends with o use out.  Con ends with n which sounds like in
+Excerpt: If you like closures use Cypress otherwise us TestCafe
 Url: TheFreezeTeam.com/testcafe
 GUID: 034b3ec1-48bf-4c20-b632-7791f0fbfd4f
 
 ---
-Selenium is causing my CI/CD to break this weekend because the process won't properly shutdown and over all the tool is old and doesn't appear to ever going to significantly improve.  So once again I set out to see if I can find a replacement.  There are two other choices that I looked at back in my "Pizza Pizza" days.  Cypress and TestCafe, which I will revisit.
+Selenium is causing my CI/CD to break this weekend because the process won't properly shutdown and over all the tool is old and doesn't appear to ever going to significantly improve.
+So once again I set out to see if I can find a replacement.
+There are two other choices that I looked at back in my "Pizza Pizza" days.
+Cypress and TestCafe, which I will revisit.
 
 ## Cypress
-I started with cypress.  All looks cool has nice features that show step by step. One can record a test with a browser plugin.  I'm thinking this is gonna be the winner.
+I started with cypress.
+All looks cool has nice features that show step by step.
+One can record a test with a browser plugin.
+I was thinking this is gonna be the winner.
 
-And then I look at the test code.  For some reason they think closures are good idea as the way to use variables.  I STRONGLY disagree.  The example they show of the wrong way to do it is exactly how I attempted.  Others must have attempted also as they felt the need to show the wrong way before the "right" way.
+And then I look at the test code. 
+For some reason they think closures are a good idea as the way to use variables.
+I **STRONGLY** disagree.
+The example they show of the wrong way to do it is exactly how I attempted.
+Others must have attempted also as they felt the need to show the wrong way before the "right" way.
 
 ```
 // ...this won't work...
@@ -45,19 +55,30 @@ cy.get('button').then(($btn) => {
   })
 })
 ```
-straight from their docs they say:  "If you’re familiar with native Promises the Cypress .then() works the same way. You can continue to nest more Cypress commands inside of the .then()."  
+straight from their docs they say:
+"If you’re familiar with native Promises the Cypress .then() works the same way. You can continue to nest more Cypress commands inside of the .then()."
 
-**They are not real Promises** so if you are thinking in Typescript you can write async await to clean it up... you would be wrong.
+> **They are not real Promises** so if you are thinking in Typescript you can write async await to clean it up... you would be wrong.
 
-My response **"NO THANK YOU!"**
+My response, **"NO THANK YOU!"**
 
-For the life of me I can't understand why this has become popular.  ```then().then().then().then().
+For the life of me I can't understand why this has become popular.
 
-We already have a this functionality.  Its called top to bottom.... Line 1 then Line2 then line 3.  All done without any "then" nor heavily nested code.
+```
+then().then().then().then()...
+```
+
+We already have a this functionality.  Its called top to bottom....
+```
+ Line1
+ Line2
+ Line3
+ ```
+ All done without any `then` or heavily nested code.
 
 ## TestCafe
 
-So after that I decided to give TestCafe a shot.
+After finding the closure paradigm in Cypress, I decided to give TestCafe a shot.
 
 And lets just say the coding paradigm is much better.
 
@@ -93,7 +114,8 @@ test('Counter Should Count', async t => {
 
 Notice how you can actually store a selector for later use without a closure and they use async await syntax.
 
-TestCafe is also free if you want to write code by hand.  But they have a paid version that will automate some of that with a recorder that is quite nice and it will generate the js files for you and really help with the selectors and test values.
+TestCafe is also free if you want to write code by hand.
+They have a paid version that will automate some of that with a recorder that is quite nice and it will generate the js files for you and really help with the selectors and test values.
 
 ### How about Typescript?
 
@@ -105,7 +127,7 @@ TestCafe is also free if you want to write code by hand.  But they have a paid v
 
 ### TestCafe from CLI as part of my CI/CD
 
-here is my whole package.json
+Here is my whole package.json
 
 ```
 {
@@ -131,4 +153,4 @@ testcafe edge tests/
 ```
 [Cli Docs](https://devexpress.github.io/testcafe/documentation/using-testcafe/command-line-interface.html)
 
-
+Oh and TestCafe supports multiple browsers.
