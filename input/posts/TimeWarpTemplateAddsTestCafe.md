@@ -1,88 +1,24 @@
-Title: TestCafe vs Cypress
-Published: 08/20/2019
-Tags: CSharp
+Title: TimeWarp-Blazor Template adds TestCafe
+Published: 08/27/2019
+Tags: CSharp Blazor
 Author: Steven T. Cramer
-Excerpt: If you like closures use Cypress otherwise us TestCafe
-Url: TheFreezeTeam.com/testcafe
-GUID: 034b3ec1-48bf-4c20-b632-7791f0fbfd4f
+Excerpt: We have added an End to End testing project using TestCafe as an option to existing Selenium test project.
+Url: TheFreezeTeam.com/timewarp-blazor-end-to-end-tests
+GUID: 86b2653c-aceb-438d-8055-b57847e4575f
 
 ---
-Selenium is causing my CI/CD to break this weekend because the process won't properly shutdown,
-and over all the tool is old and doesn't appear to ever be going to significantly improve.
+
+Today we shipped a new updated timewarp-blazor template that now includes a TestCafe End-To-End test project.
+
+Selenium is causing my CI/CD to break this weekend because the process won't properly shutdown, and over all the tool is old and doesn't appear to ever be going to significantly improve.
 So once again I set out to see if I can find a replacement.
-There are two other choices that I looked at back in my "Pizza Pizza" days.
-Cypress and TestCafe, which I will revisit.
-
-## Cypress
-I started with cypress.
-All looks cool. It has nice features that show step by step whats happening in the test.
-One can record a test with a browser plugin.
-I was thinking this is gonna be the winner.
-
-And then I looked at the test code.
-For some reason they think closures are a good way to capture variables.
-I **STRONGLY** disagree.
-The example they show of "the wrong way to do it" is exactly how I attempted.
-Others must have attempted also as they felt the need to show the wrong way before the "right" way.
-
-```
-// ...this won't work...
-
-// nope
-const button = cy.get('button')
-
-// nope
-const form = cy.get('form')
-
-// nope
-button.click()
-```
-
-For some reason they think the following is better.
-
-```
-cy.get('button').then(($btn) => {
-
-  // store the button's text
-  const txt = $btn.text()
-
-  // submit a form
-  cy.get('form').submit()
-
-  // compare the two buttons' text
-  // and make sure they are different
-  cy.get('button').should(($btn2) => {
-    expect($btn2.text()).not.to.eq(txt)
-  })
-})
-```
-
-Straight from their docs it says:
-"If you’re familiar with native Promises the Cypress .then() works the same way. You can continue to nest more Cypress commands inside of the .then()."
-
-> **They are not real Promises** so if you are thinking in Typescript you can write async await to clean it up... you would be wrong.
-
-My response, **"NO THANK YOU!"**
-
-For the life of me I can't understand why this has become popular.
-
-```
-then().then().then().then()...
-```
-
-We already have a this functionality.  Its called top to bottom....
-```
- Line1
- Line2
- Line3
- ```
- All done without any `then` or heavily nested code.
 
 ## TestCafe
 
-After finding the closure paradigm in Cypress, I decided to give TestCafe a shot.
+I decided to give TestCafe a shot.
 
-And let's just say the coding paradigm is much better.
+The code is written in TypeScript and is supported without any extra effort.
+Here 
 
 ```
 import { Selector } from 'testcafe';

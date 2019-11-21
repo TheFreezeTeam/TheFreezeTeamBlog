@@ -26,7 +26,10 @@ We are going to use Nethereum with Ganache in this walk through.
 # Install Ganache (Local Private ETH Blockchain for testing)
 
 Start Ganache UI and create a new workspace.
+
+![TruffleStartScreen](input\images\SmartContracts\TruffleStartScreen.png)
 Add the smart contracts truffle-config.js to the project in the settings.
+![TruffleProjectSettings](input\images\SmartContracts\TruffleProjectSettings.png)
 
 # The Smart Contract code (Solidity)
 
