@@ -24,7 +24,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-# Visual Studio 2015/2017 cache/options directory
+# Visual Studio cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
@@ -52,7 +52,7 @@ BenchmarkDotNet.Artifacts/
 project.lock.json
 project.fragment.lock.json
 artifacts/
-**/Properties/launchSettings.json
+# **/Properties/launchSettings.json
 
 # StyleCop
 StyleCopReport.xml
@@ -328,5 +328,13 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-/Statiq/MyFirstStaticQ/output/
+
 /TheFreezeTeamBlog/output/
+
+\.DS_Store
+
+# Tailwind CSS Output File
+**/output.css
+.npmrc
+*.deb
+
