@@ -1,0 +1,89 @@
+@model IDocument
+@{
+    string backgroundImage = null;
+    string title = null;
+    bool isHomePageHeader = false;
+    if (Document.ContainsKey(WebKeys.Image))
+    {
+        backgroundImage = $"background-image: url(\"/images{Context.GetLink(Document.GetString(WebKeys.Image))}\"); height: 95vh;";
+        title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
+    }
+    if (!Document.ContainsKey(WebKeys.Image))
+    {
+        isHomePageHeader = true;
+        backgroundImage = $"background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), url(https://thefreezeteam.com/content/images/2020/05/xSOLID-Team.png.pagespeed.ic.0swNaT3Xf7.webp); height: 160vh; max-height:500px;";
+        title = "Turn your LIQUID code to SOLID.";
+    }
+    string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
+    bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
+}
+@*<header class="masthead" style="@backgroundImage">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="@(isPost ? "post-heading" : "site-heading")">
+              <h1>
+                @title
+                @if (Document.GetInt(Keys.Index) > 1)
+                {
+                  <small>(Page @Document.GetString(Keys.Index))</small>
+                }
+              </h1>
+              @if (!string.IsNullOrEmpty(description))
+              {
+                <h2 class="subheading">@description</h2>
+              }
+              @if (isPost)
+              {
+                  // This is a blog post so show extra data
+                  <div class="meta">Published on @Document.GetDateTime(WebKeys.Published).ToLongDateString()</div>
+                  @if (Document.ContainsKey("Tags"))
+                  {
+                    <div class="mt-3">
+                      @foreach (IDocument tag in Document.GetList<string>("Tags")
+                        .Select(x => Outputs["tags.html"].First().GetChildren().FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
+                        .Where(x => x != null))
+                      {
+                          <a href="@Context.GetLink(tag)" class="badge badge-light"> @tag.GetTitle()</a>
+                      }
+                    </div>
+                  }
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>*@
+@if (isHomePageHeader)
+{
+    <div class="bg-black m-0 p-0 bg-cover bg-bottom" style="@backgroundImage">
+            <div class="container mx-auto p-64 text-center">         
+                <!--Title-->
+                <p class="font-light text-white uppercase lg:text-lg text-sm">@title</p>
+            </div>
+     </div>
+}
+else
+{
+    @Html.Partial("_postNav")
+    <div class="text-center pt-16 md:pt-32">
+        <p class="text-sm md:text-base text-green-500 font-bold">
+            @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
+                @if (Document.ContainsKey("Tags"))
+                {
+                    @foreach (IDocument tag in Document.GetList<string>("Tags")
+                    .Select(x => Outputs["tags.html"].First().GetChildren().FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
+                    .Where(x => x != null))
+                    {
+                        <a href="@Context.GetLink(tag)"> @tag.GetTitle()</a>
+                    }
+                }
+            </p>
+        <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
+    </div>
+    <!--image-->
+    <div class="container w-full max-w-7xl mx-auto bg-white bg-cover mt-8 lg:rounded lg:h-4 h-2 object-cover" style="@backgroundImage"></div>
+}
+
+
