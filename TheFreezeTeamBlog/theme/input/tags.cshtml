@@ -1,0 +1,45 @@
+ArchiveSources: => GetString("PostSources")
+ArchiveFilter: => GetBool("IsPost")
+ArchiveKey: Tags
+ArchiveKeyComparer: => StringComparer.OrdinalIgnoreCase.ToConvertingEqualityComparer()
+ArchiveDestination: >
+  => GetInt("Index") <= 1 ? $"tags/{NormalizedPath.OptimizeFileName(GetString("GroupKey"))}/index.html" : $"tags/{NormalizedPath.OptimizeFileName(GetString("GroupKey"))}/{GetInt("Index")}.html"
+ArchivePageSize: 10
+ArchiveOrderKey: Published
+ArchiveOrderDescending: true
+Title: Tags
+ArchiveTitle: => GetString("GroupKey")
+---
+
+<div class="container  lg:max-w-6xl mx-auto-mt-32">
+    <div class="mx-0 sm:mx-6">
+        <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg" style="font-family:Georgia,serif;">
+            @if (Document.ContainsKey(Keys.GroupKey))
+            {
+                <div class="container-sm-height">
+                    <div class="row row-sm-height">
+                        <div class="col-md-6 right-border col-sm-height">
+                            @Html.Partial("/_posts.cshtml", Document)
+                        </div>
+                        <div class="col-md-4 mt-4 mt-md-0 col-sm-height">
+                            @foreach (IDocument tag in OutputPages.Get("tags.html").GetChildren().OrderByDescending(x => x.GetChildren().Count()))
+                            {
+                                string badgeStyle = Document.GetString(Keys.GroupKey).Equals(tag.GetTitle(), StringComparison.OrdinalIgnoreCase) ? "badge-dark" : "badge-light";
+                                string postCount = tag.GetChildren().Count().ToString();
+                                <a href="@Context.GetLink(tag)" class="badge @badgeStyle"> @tag.GetTitle() (@postCount)</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                @foreach (IDocument tag in Document.GetChildren().OrderByDescending(x => x.GetChildren().Count()))
+                {
+                    string postCount = tag.GetChildren().Count().ToString();
+                    <a role="button" href="@Context.GetLink(tag)" class="bg-gray-100 rounded p-2 w-max text-black hover:bg-gray-300 transition duration-500 ease-in-out mr-2"> @tag.GetTitle() (@postCount)</a>
+                }
+            }
+        </div>
+    </div>
+</div>

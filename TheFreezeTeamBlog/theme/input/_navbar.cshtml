@@ -1,0 +1,15 @@
+<ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+    <li class="mr-2">
+        <a class="text-xs inline-block text-white no-underline hover:text-gray-300 py-2 px-2 uppercase front-thin transition duration-500 ease-in-out" href="http://localhost:5080/">Home</a>
+    </li>
+    @foreach (IDocument doc in OutputPages.GetChildrenOf("index.html").Where(x => x.GetBool("ShowInNavbar", true)).OrderBy(x => x.GetInt(Keys.Order)))
+    {
+        // Don't add the home page to the nav bar
+        if (doc.Destination != "index.html")
+        {
+            <li class="mr-2">
+                @Html.DocumentLink(doc, new Dictionary<object, object> { { "class", "text-xs inline-block text-white no-underline hover:text-gray-300 py-2 px-2 uppercase front-thin transition duration-500 ease-in-out" } })
+            </li>
+        }
+    }
+</ul>
