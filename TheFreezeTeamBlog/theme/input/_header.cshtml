@@ -17,6 +17,34 @@
     string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
     bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
 }
+@if (!isHomePageHeader)
+{
+    <style>
+        h1 {
+            font-size: 35px;
+            padding-top: 30px;
+        }
+        h2 {
+            font-size: 30px;
+            padding-top: 30px;
+        }
+        h3 {
+            font-size: 25px;
+            padding-top: 30px;
+        }
+        h4 {
+            font-size: 20px;
+            padding-top: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            padding-left: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+    </style>
+}
 @*<header class="masthead" style="@backgroundImage">
       <div class="overlay"></div>
       <div class="container">
@@ -58,28 +86,29 @@
 @if (isHomePageHeader)
 {
     <div class="bg-black m-0 p-0 bg-cover bg-bottom" style="@backgroundImage">
-            <div class="container mx-auto p-64 text-center">         
-                <!--Title-->
-                <p class="font-light text-white uppercase lg:text-lg text-sm">@title</p>
-            </div>
-     </div>
+        <div class="container mx-auto p-64 text-center">
+            <!--Title-->
+            <p class="font-light text-white uppercase lg:text-lg text-sm">@title</p>
+        </div>
+    </div>
 }
 else
 {
+
     @Html.Partial("_postNav")
     <div class="text-center pt-16 md:pt-32">
         <p class="text-sm md:text-base text-green-500 font-bold">
             @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
-                @if (Document.ContainsKey("Tags"))
+            @if (Document.ContainsKey("Tags"))
+            {
+                @foreach (IDocument tag in Document.GetList<string>("Tags")
+               .Select(x => Outputs["tags.html"].First().GetChildren().FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
+               .Where(x => x != null))
                 {
-                    @foreach (IDocument tag in Document.GetList<string>("Tags")
-                    .Select(x => Outputs["tags.html"].First().GetChildren().FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
-                    .Where(x => x != null))
-                    {
-                        <a href="@Context.GetLink(tag)"> @tag.GetTitle()</a>
-                    }
+                    <a href="@Context.GetLink(tag)"> @tag.GetTitle()</a>
                 }
-            </p>
+            }
+        </p>
         <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
     </div>
     <!--image-->

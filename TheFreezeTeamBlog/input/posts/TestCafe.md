@@ -1,12 +1,11 @@
 Title: TestCafe vs Cypress
 Published: 08/20/2019
+Image: noimage.jpg
 Tags: CSharp
 Author: Steven T. Cramer
 Excerpt: If you like closures use Cypress otherwise us TestCafe
-Url: TheFreezeTeam.com/testcafe
-GUID: 034b3ec1-48bf-4c20-b632-7791f0fbfd4f
-
 ---
+
 Selenium is causing my CI/CD to break this weekend because the process won't properly shutdown,
 and over all the tool is old and doesn't appear to ever be going to significantly improve.
 So once again I set out to see if I can find a replacement.

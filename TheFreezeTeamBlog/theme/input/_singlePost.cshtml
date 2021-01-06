@@ -8,6 +8,7 @@
         ? string.Empty
         : excerpt.Substring(0, Math.Min(180, excerpt.Length));
     var finalDescription = description.Remove(0, 3);
+    var context = finalDescription.Replace("<code>", "").Replace("</code>", "").Replace("<p>", "").Replace("</p>", "");
 }
 
 @*<div class="post-preview">
@@ -47,7 +48,7 @@
                 @Model.GetDateTime(WebKeys.Published).ToLongDateString()
                 </p>
                 <div class="w-full font-bold text-xl text-gray-900 px-6">@Model.GetString(WebKeys.Title)</div>
-                <p class="pt-2 text-gray-800 font-serif text-base px-6 mb-5">@finalDescription ...</p>
+                <p class="pt-2 text-gray-800 font-serif text-base px-6 mb-5">@context ...</p>
             </div>
 
             <div class="flex-1 mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">

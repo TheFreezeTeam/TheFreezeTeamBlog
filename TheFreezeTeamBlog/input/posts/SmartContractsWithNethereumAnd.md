@@ -3,9 +3,7 @@ Published: 01/01/2099
 Tags: Solidity Truffle TruffleSuite Nethereum Ethereum SmartContract
 Author: Steven T. Cramer
 Excerpt: 
-Url: TheFreezeTeam.com/superhero-smart-contracts
-GUID: 5372816a-38d8-4a30-99f0-38bf5b11fb1b
-
+Image: noimage.jpg
 ---
 
 ![][SuperheroSmartContractsImage]

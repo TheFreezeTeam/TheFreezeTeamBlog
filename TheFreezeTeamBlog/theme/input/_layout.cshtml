@@ -42,18 +42,19 @@
     <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
     <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+    <link href="~/resource/js/highlight.js/styles/atom-one-dark.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
     @Html.Partial("_head")
     @RenderSection("Head", false)
 </head>
 
 @{
-    string mt10 = null;
     string bodybg = "bg-gray-200";
     bool isPostType = Document.GetBool("IsPost");
     if (Document.GetBool("IsPost"))
     {
-        mt10 = "mt-60";
         bodybg = "bg-white";
     }
 }
@@ -71,9 +72,9 @@
             <!-- Main Content -->
             @if (isPostType)
             {
-                <div class="container  lg:max-w-6xl mx-auto-mt-32">
+                <div class="container lg:max-w-6xl mx-auto-mt-32">
                     <div class="mx-0 sm:mx-6">
-                        <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal " style="font-family:Georgia,serif;">
+                        <div class="bg-white w-full p-10 text-gray-800" style="font-family:Georgia,serif;">
                             @RenderBody()
                         </div>
                     </div>
@@ -86,14 +87,14 @@
             <!-- Footer -->
             @Html.Partial("_subscription")
         </div>
-        </div>
-             @Html.Partial("_footer")
+    </div>
+    @Html.Partial("_footer")
 
-        @Html.Partial("_scripts")
+    @Html.Partial("_scripts")
 
-        @RenderSection("Scripts", false)
+    @RenderSection("Scripts", false)
 
-        <!-- Custom scripts for this template -->
-        <script src="@Context.GetLink("/js/clean-blog.js")"></script>
+    <!-- Custom scripts for this template -->
+    <script src="@Context.GetLink("/js/clean-blog.js")"></script>
 </body>
 </html>
