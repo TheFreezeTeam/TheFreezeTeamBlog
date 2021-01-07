@@ -1,10 +1,11 @@
 Title: Custom Model Binging
 Published: 08/27/2099
-Tags: CSharp Blazor
+Tags: C
+  - Sharp 
+  - Blazor
 Author: Steven T. Cramer
 Excerpt: With Custom model binding eliminate controllers.
-Url: TheFreezeTeam.com/timewarp-blazor-end-to-end-tests
-GUID: fe8dcae4-b34a-4328-91ac-018c63605b8d
+Image: noimage.jpg
 
 ---
 

@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <Folder Include="input\author\" />
+    <Folder Include="input\OldPost\" />
   </ItemGroup>
 
 </Project>

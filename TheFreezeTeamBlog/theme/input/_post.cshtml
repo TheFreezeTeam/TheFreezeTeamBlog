@@ -9,6 +9,7 @@
         : excerpt.Substring(0, Math.Min(130, excerpt.Length));
     var removeFirstThree = description.Remove(0, 3);
     var removeLastTheree = removeFirstThree.Remove(removeFirstThree.Length - 4, 4);
+    var context = removeLastTheree.Replace("<code>", "").Replace("</code>", "").Replace("<p>", "").Replace("</p>","");
 }
 
 @*<div class="post-preview">
@@ -53,7 +54,7 @@
                 }
             </p>
             <div class="w-full font-bold text-xl text-gray-900 px-6">@Html.DocumentLink(Model)</div>
-            <p class="text-gray-800 font-serif text-base px-6 mb-5">@removeLastTheree ...</p>
+            <p class="text-gray-800 font-serif text-base px-6 mb-5">@context ...</p>
         </div>
         <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
             <div class="flex items-center justify-between">
