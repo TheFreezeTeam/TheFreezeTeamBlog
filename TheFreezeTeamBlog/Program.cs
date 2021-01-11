@@ -7,11 +7,11 @@ namespace MyFirstStaticQ
 {
     class Program
     {
-        public static async Task<int> Main(string [] args) => 
+        public static async Task<int> Main(string [] args) =>
             await Bootstrapper
                 .Factory
                 .CreateWeb(args)
                 .RunAsync();
-    
+
     }
 }
