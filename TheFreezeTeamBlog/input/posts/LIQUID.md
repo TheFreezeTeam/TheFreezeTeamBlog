@@ -6,8 +6,7 @@ Tags:
   - Software Development Principles
 Author: Kevin Dietz
 Excerpt: Perhaps you haven't heard of a little known, but frequently practiced coding style which we affectionately call LIQUID.
-Url: TheFreezeTeam.com/liquid/
-GUID: 127073f6-5ea8-4282-b1e3-97fe8a9b720e
+Image: noimage.jpg
 ---
 # Introduction to LIQUID Software Engineering Principles
 

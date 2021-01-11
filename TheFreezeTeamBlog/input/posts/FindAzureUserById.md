@@ -1,13 +1,12 @@
 Title: Find Azure DevOps User by ID
 Image: michael-dziedzic-1bjsASjhfkE-unsplash.jpg
-Tags: AzureDevOps AzureArtifacts
+Tags: 
+  - AzureDevOps 
+  - AzureArtifacts
 Author: Steven T. Cramer
 Published: 08/27/2020
 ---
 
-Excerpt: "User '0ec552a3-706e-462e-b46c-a488fe2dcba2' lacks permission to complete this action." Which user is that?
-Url: TheFreezeTeam.com/find-azure-user-by-id
-GUID: dfab9cef-da26-4d78-96e8-2721b4ec7f77
 
 ## The scenario
 
