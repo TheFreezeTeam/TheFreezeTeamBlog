@@ -18,14 +18,14 @@
 }
 @if (older != null || newer != null)
 {
-    <div>
-        <div class="float-sm-left">
+    <div class="flex w-full">
+        <div>
             @if (newer != null)
             {
                 <a class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline" href="@Context.GetLink(newer)" role="button"><i class="fas fa-angle-double-left"></i> Newer</a>
             }
         </div>
-        <div class="float-sm-right">
+        <div>
             @if (older != null)
             {
                 <a class="border border-gray-700 bg-gray-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 focus:outline-none focus:shadow-outline" href="@Context.GetLink(older)" role="button">Older <i class="fas fa-angle-double-right"></i></a>

@@ -1,5 +1,4 @@
-Title: Blazor-State 2.0 Released
-Published: 10/28/2099
+Title:
 Tags: 
   - CSharp 
   - Blazor 

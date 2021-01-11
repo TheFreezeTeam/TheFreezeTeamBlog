@@ -3,57 +3,35 @@
 @{
     string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
     string imageUrl = "/images/" + Model.GetString(WebKeys.Image);
-    int readTime = excerpt.Length / 160;
+    int readTime = excerpt.Length / 100;
     var description = excerpt == null
         ? string.Empty
-        : excerpt.Substring(0, Math.Min(130, excerpt.Length));
+        : excerpt.Substring(0, Math.Min(200, excerpt.Length));
     var removeFirstThree = description.Remove(0, 3);
     var removeLastTheree = removeFirstThree.Remove(removeFirstThree.Length - 4, 4);
     var context = removeLastTheree.Replace("<code>", "").Replace("</code>", "").Replace("<p>", "").Replace("</p>","");
 }
 
-@*<div class="post-preview">
-        <p>@Model.GetString(WebKeys.Image)</p>
-        <h2 class="post-title">@Html.DocumentLink(Model)</h2>
-        @if(Model.ContainsKey("Lead"))
-        {
-            <div class="post-subtitle">@Model.GetString("Lead")</div>
-        }
-        <p class="post-meta">Published on @Model.GetDateTime(WebKeys.Published).ToLongDateString()</p>
-        @if (!string.IsNullOrEmpty(excerpt))
-        {
-            @Html.Raw(excerpt)
-            <p class="small"><a href="@Context.GetLink(Model)">Read more...</a></p>
-        }
-    </div>*@
-
-
-@*<div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="@imageUrl" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">@Html.DocumentLink(Model)</h5>
-            <p class="card-text"></p>
-            <a href="@Context.GetLink(Model)" class="btn btn-primary">Read More</a>
-        </div>
-    </div>*@
 <a href="@Context.GetLink(Model)" class="flex flex-wrap no-underline hover:no-underline">
     <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
         <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
-
-            <img src="@imageUrl" class="h-64 w-full rounded-t pb-6 object-cover">
+            @if (imageUrl != "/images/")
+            {
+                <img src="@imageUrl" class="h-64 w-full rounded-t object-cover">
+            }
             <p class="w-full text-gray-600 text-xs md:text-sm px-6">
                 @*@Model.GetDateTime(WebKeys.Published).ToLongDateString()*@
                 @if (Document.ContainsKey("Tags"))
                 {
                     @foreach (IDocument tag in Document.GetList<string>("Tags")
-                   .Select(x => Outputs["tags.html"].First().GetChildren().FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
-                   .Where(x => x != null))
+                  .Select(x => Outputs["tags.html"].First().GetChildren().FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
+                  .Where(x => x != null))
                     {
                         <a href="@Context.GetLink(tag)"> @tag.GetTitle()</a>
                     }
                 }
             </p>
-            <div class="w-full font-bold text-xl text-gray-900 px-6">@Html.DocumentLink(Model)</div>
+            <div class="w-full font-bold text-xl text-gray-900 px-6 pt-8">@Html.DocumentLink(Model)</div>
             <p class="text-gray-800 font-serif text-base px-6 mb-5">@context ...</p>
         </div>
         <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">

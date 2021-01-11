@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.17" />
+    <Compile Remove="input\author\**" />
+    <Compile Remove="input\OldPost\**" />
+    <EmbeddedResource Remove="input\author\**" />
+    <EmbeddedResource Remove="input\OldPost\**" />
+    <None Remove="input\author\**" />
+    <None Remove="input\OldPost\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="input\author\" />
-    <Folder Include="input\OldPost\" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.17" />
   </ItemGroup>
 
 </Project>
