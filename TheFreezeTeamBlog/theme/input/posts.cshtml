@@ -28,34 +28,3 @@ ArchiveOrderDescending: true
         </div>
     </div>
 </div>
-
-
-
-
-
-@*<div class="container  lg:max-w-6xl mx-auto-mt-32">
-    <div class="mx-0 sm:mx-6">
-        <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg" style="font-family:Georgia,serif;">
-            @foreach (IGrouping<int, IDocument> group in Document
-          .GetChildren()
-          .GroupBy(x => x.GetDateTime(WebKeys.Published).Year)
-          .OrderByDescending(x => x.Key))
-            {
-
-                <h1 class="bg-dark text-light p-2">@group.Key</h1>
-                foreach (IDocument post in group)
-                {
-                    <div class="post-preview">
-
-                        <h3 class="post-title">@Html.DocumentLink(post)</h3>
-                        @if (post.ContainsKey("Lead"))
-                        {
-                            <div class="post-subtitle">@post.GetString("Lead")</div>
-                        }
-                        <p class="post-meta">Published on @post.GetDateTime(WebKeys.Published).ToLongDateString()</p>
-                    </div>
-                }
-            }
-        </div>
-    </div>
-</div>*@
