@@ -10,19 +10,13 @@ queue:
   name: TimeWarpEnterprises
 
 steps:
-- task: DotNetCoreCLI@2
-  displayName: Publish The Server project which will be deployed to azure
-  inputs:
-    command: run
-    publishWebProjects: false
-    projects: 'TheFreezeTeamBlog/TheFreezeTeamBlog.csproj'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-  enabled: true
+- script: wyam
+  displayName: 'Run wyam to generate the output'
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifact to Output
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/output'
     ArtifactName: Output
     publishLocation: Container
 
