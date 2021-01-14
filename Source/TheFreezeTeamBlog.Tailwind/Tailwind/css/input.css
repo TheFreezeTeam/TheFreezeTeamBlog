@@ -2,8 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+
+@layer base {
     ul {
-        list-style: display;
+        @apply list-disc;
+        @apply pl-6;
+        @apply mb-10;
+        @apply text-xl;
     }
 }
+
+@layer utilities {
+    ulNav {
+        @apply list-none;
+    }
+
+    blockquote {
+        @apply bg-blue-50;
+        @apply pl-8;
+        @apply rounded;
+        @apply mb-4;
+    }
+}
+
