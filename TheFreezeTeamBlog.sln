@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheFreezeTeamBlog", "Source\TheFreezeTeamBlog\TheFreezeTeamBlog.csproj", "{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheFreezeTeamBlog.Tailwind", "Source\TheFreezeTeamBlog.Tailwind\TheFreezeTeamBlog.Tailwind.csproj", "{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B5AA21F-40EE-4ADB-836A-35B11B8A4D89}
+	EndGlobalSection
+EndGlobal
