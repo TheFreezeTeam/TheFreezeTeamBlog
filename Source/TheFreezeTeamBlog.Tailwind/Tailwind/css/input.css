@@ -4,24 +4,64 @@
 
 
 @layer base {
-    ul {
+    #postType ul {
         @apply list-disc;
         @apply pl-6;
         @apply mb-10;
+        @apply text-base;
+    }
+
+    #postType h1 {
+        @apply font-bold;
+        @apply text-3xl;
+        @apply mb-2;
+    }
+
+    #postType h2 {
+        @apply font-bold;
+        @apply text-2xl;
+        @apply mb-2;
+    }
+
+    #postType h3 {
+        @apply font-bold;
         @apply text-xl;
+        @apply mb-2;
+    }
+
+    #postType h4 {
+        @apply font-bold;
+        @apply text-base;
+        @apply mb-2;
+    }
+
+    #postType p {
+        @apply text-base;
+        @apply mb-6;
+    }
+
+    #postType blockquote {
+        @apply border-l-4;
+        @apply border-blue-600;
+        @apply bg-gray-50;
+        @apply mb-6;
+        @apply p-6;
+        @apply pb-2;
+    }
+
+    #postType .hljs {
+        display: block;
+        overflow-x: auto;
+        @apply p-4;
+        @apply pl-6;
+        color: #abb2bf;
+        background: #282c34;
+        @apply text-sm;
+        @apply mb-6;
     }
 }
 
 @layer utilities {
-    ulNav {
-        @apply list-none;
-    }
-
-    blockquote {
-        @apply bg-blue-50;
-        @apply pl-8;
-        @apply rounded;
-        @apply mb-4;
-    }
 }
+    
 
