@@ -41,7 +41,7 @@
     <meta property="og:url" content="@Document.GetLink(true)" />
     <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
     <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+    <link href="~/css/Site.css" rel="stylesheet" type="text/css">
     <link href="~/resource/js/highlight.js/styles/atom-one-dark.css" rel="stylesheet" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
@@ -72,38 +72,10 @@
             <!-- Main Content -->
             @if (isPostType)
             {
-                <style>
-                    h1 {
-                        font-size: 35px;
-                        padding-top: 30px;
-                    }
-
-                    h2 {
-                        font-size: 30px;
-                        padding-top: 30px;
-                    }
-
-                    h3 {
-                        font-size: 25px;
-                        padding-top: 30px;
-                    }
-
-                    h4 {
-                        font-size: 20px;
-                        padding-top: 30px;
-                    }
-
-                    p {
-                        font-size: 20px;
-                        padding-left: 10px;
-                        padding-top: 25px;
-                        padding-bottom: 25px;
-                    }
-                </style>
                 @RenderSectionOrPartial("Navigation", "_navigation")
                 <div class="container lg:max-w-6xl mx-auto-mt-32">
                     <div class="mx-0 sm:mx-6">
-                        <div class="bg-white w-full p-10 text-gray-800" style="font-family:Georgia,serif;">
+                        <div id="postType" class="bg-white w-full p-10 text-gray-800" style="font-family:Georgia,serif;">
                             @RenderBody()
                         </div>
                     </div>
