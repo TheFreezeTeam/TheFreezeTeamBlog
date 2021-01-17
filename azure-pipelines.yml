@@ -6,7 +6,7 @@
 trigger:
 - master
 
-queue:
+pool:
   name: TimeWarpEnterprises
 
 steps:
@@ -17,11 +17,10 @@ steps:
     publishWebProjects: false
     projects: 'Source/TheFreezeTeamBlog/TheFreezeTeamBlog.csproj'
     arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-  enabled: true
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifact to Output
   inputs:
-    PathtoPublish: 'TheFreezeTeamBlog/Source/TheFreezeTeamBlog/output'
+    PathtoPublish: 'Source/TheFreezeTeamBlog/output'
     ArtifactName: Output
     publishLocation: Container
