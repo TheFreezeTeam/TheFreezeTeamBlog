@@ -3,17 +3,15 @@
   "version": "1.0.0",
   "description": "Using tailwind in statiq generator.",
   "main": "postcss.config.js",
-  "dependencies": {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildcss": "postcss css/input.css -o ../TheFreezeTeamBlog/theme/input/css/Site.css"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "autoprefixer": "^10.2.1",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "buildcss": "postcss Tailwind/css/input.css -o ../TheFreezeTeamBlog/theme/input/css/Site.css"
-  },
-  "author": "Mike",
-  "license": "ISC"
+  }
 }
