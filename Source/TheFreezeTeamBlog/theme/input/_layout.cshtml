@@ -1,98 +1,98 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    @if (Document.ContainsKey(WebKeys.Description))
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  @if (Document.ContainsKey(WebKeys.Description))
+  {
+    <meta name="description" content="@Document.GetString(WebKeys.Description)">
+  }
+  @if (Document.ContainsKey(WebKeys.Author))
+  {
+    <meta name="author" content="@Document.GetString(WebKeys.Author)">
+  }
+
+  <title>@Document.GetString("PageTitle")</title>
+
+  <link rel="canonical" href="@Document.GetLink(true)">
+
+  @{
+    @foreach (IDocument rssFeed in Outputs["**/*.rss"])
     {
-        <meta name="description" content="@Document.GetString(WebKeys.Description)">
+      <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
     }
-    @if (Document.ContainsKey(WebKeys.Author))
+    @foreach (IDocument atomFeed in Outputs["**/*.atom"])
     {
-        <meta name="author" content="@Document.GetString(WebKeys.Author)">
+      <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
     }
+  }
 
-    <title>@Document.GetString("PageTitle")</title>
+  <meta name="application-name" content="@Document.GetString("SiteTitle")" />
+  <meta name="msapplication-tooltip" content="@Document.GetString("SiteTitle")" />
+  <meta name="msapplication-starturl" content="@Context.GetLink("/")" />
 
-    <link rel="canonical" href="@Document.GetLink(true)">
+  @* TODO: More social graph meta tags *@
+  <meta property="og:title" content="@Document.GetString("PageTitle")" />
+  @if (Document.ContainsKey(WebKeys.Image))
+  {
+    <meta property="og:image" content="@Context.GetLink(Document.GetString(WebKeys.Image))" />
+  }
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="@Document.GetLink(true)" />
+  <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
+  <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
+  <link href="~/css/Site.css" rel="stylesheet" type="text/css">
+  <link href="~/resource/js/highlight.js/styles/atom-one-dark.css" rel="stylesheet" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
-    @{
-        @foreach (IDocument rssFeed in Outputs["**/*.rss"])
-        {
-            <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
-        }
-        @foreach (IDocument atomFeed in Outputs["**/*.atom"])
-        {
-            <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
-        }
-    }
-
-    <meta name="application-name" content="@Document.GetString("SiteTitle")" />
-    <meta name="msapplication-tooltip" content="@Document.GetString("SiteTitle")" />
-    <meta name="msapplication-starturl" content="@Context.GetLink("/")" />
-
-    @* TODO: More social graph meta tags *@
-    <meta property="og:title" content="@Document.GetString("PageTitle")" />
-    @if (Document.ContainsKey(WebKeys.Image))
-    {
-        <meta property="og:image" content="@Context.GetLink(Document.GetString(WebKeys.Image))" />
-    }
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="@Document.GetLink(true)" />
-    <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
-    <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
-    <link href="~/css/Site.css" rel="stylesheet" type="text/css">
-    <link href="~/resource/js/highlight.js/styles/atom-one-dark.css" rel="stylesheet" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    @Html.Partial("_head")
-    @RenderSection("Head", false)
+  @Html.Partial("_head")
+  @RenderSection("Head", false)
 </head>
 
 @{
-    string bodybg = "bg-gray-200";
-    bool isPostType = Document.GetBool("IsPost");
-    if (Document.GetBool("IsPost"))
-    {
-        bodybg = "bg-white";
-    }
+  string bodybg = "bg-gray-200";
+  bool isPostType = Document.GetBool("IsPost");
+  if (Document.GetBool("IsPost"))
+  {
+      bodybg = "bg-white";
+  }
 }
 <body class="@bodybg font-sans leading-normal tracking-normal">
-    <!-- Page Header -->
-    @RenderSectionOrPartial("Header", "_header")
-    <!-- Navigation -->
-    <div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
-        <div class="mx-0 sm:mx-6">
-            @if (!isPostType)
-            {
-                @RenderSectionOrPartial("Navigation", "_navigation")
-                @RenderBody()
-            }
-            <!-- Main Content -->
-            @if (isPostType)
-            {
-                @RenderSectionOrPartial("Navigation", "_navigation")
-                <div class="container lg:max-w-6xl mx-auto-mt-32">
-                    <div class="mx-0 sm:mx-6">
-                        <div id="postType" class="bg-white w-full p-10 text-gray-800" style="font-family:Georgia,serif;">
-                            @RenderBody()
-                        </div>
-                    </div>
-                </div>
-                @Html.Partial("_post-footer")
-            }
-            <!-- Footer -->
-            @Html.Partial("_subscription")
+  <!-- Page Header -->
+  @RenderSectionOrPartial("Header", "_header")
+  <!-- Navigation -->
+  <div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
+    <div class="mx-0 sm:mx-6">
+      @if (!isPostType)
+      {
+        @RenderSectionOrPartial("Navigation", "_navigation")
+        @RenderBody()
+      }
+      <!-- Main Content -->
+      @if (isPostType)
+      {
+        @RenderSectionOrPartial("Navigation", "_navigation")
+        <div class="container lg:max-w-6xl mx-auto-mt-32">
+          <div class="mx-0 sm:mx-6">
+            <div id="postType" class="bg-white w-full p-10 text-gray-800" style="font-family:Georgia,serif;">
+              @RenderBody()
+            </div>
+          </div>
         </div>
+        @Html.Partial("_post-footer")
+      }
+      <!-- Footer -->
+      @Html.Partial("_subscription")
     </div>
-    @Html.Partial("_footer")
+  </div>
+  @Html.Partial("_footer")
 
-    @Html.Partial("_scripts")
+  @Html.Partial("_scripts")
 
-    @RenderSection("Scripts", false)
+  @RenderSection("Scripts", false)
 
-    <!-- Custom scripts for this template -->
-    <script src="@Context.GetLink("/js/clean-blog.js")"></script>
+  <!-- Custom scripts for this template -->
+  <script src="@Context.GetLink("/js/clean-blog.js")"></script>
 </body>
 </html>
