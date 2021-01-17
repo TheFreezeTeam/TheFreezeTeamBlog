@@ -37,16 +37,16 @@ Under controllers create new class named HelloWorldController
 ```csharp
 namespace HelloWorld.Controllers
 {
-	using System.Web.Mvc;
+  using System.Web.Mvc;
 
-	public class HelloWorldController : Controller
-	{
-		// GET: HelloWorld
-		public ActionResult Index()
-		{
-			return View();
-		}
-	}
+  public class HelloWorldController : Controller
+  {
+    // GET: HelloWorld
+    public ActionResult Index()
+    {
+      return View();
+    }
+  }
 }
 ```
 
@@ -73,7 +73,7 @@ Modify View as follows:
 </head>
 <body>
     <div id="content"> 
-			Content here!
+      Content here!
     </div>
 </body>
 </html>
@@ -116,21 +116,21 @@ Update the HTML to include the React scripts and our Tutorial.jsx as follows:
 
 ```html
 @{
-	Layout = null;
+  Layout = null;
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-	<meta name="viewport" content="width=device-width" />
-	<title>Index</title>
+  <meta name="viewport" content="width=device-width" />
+  <title>Index</title>
 </head>
 <body>
-	<div id="content"></div>
-	<script src="https://fb.me/react-0.14.0.min.js"></script>
-	<script src="https://fb.me/react-dom-0.14.0.min.js"></script>
-	<script src="@Url.Content("~/Scripts/Tutorial.jsx")"></script>
+  <div id="content"></div>
+  <script src="https://fb.me/react-0.14.0.min.js"></script>
+  <script src="https://fb.me/react-dom-0.14.0.min.js"></script>
+  <script src="@Url.Content("~/Scripts/Tutorial.jsx")"></script>
 </body>
 </html>
 ```
