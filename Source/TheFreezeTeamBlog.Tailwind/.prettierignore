@@ -1,0 +1,6 @@
+﻿# Ignore artifacts:
+build
+coverage
+node_modules
+obj
+package-lock.json
