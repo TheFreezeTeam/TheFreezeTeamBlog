@@ -16,7 +16,6 @@ steps:
     command: run
     publishWebProjects: false
     projects: 'Source/TheFreezeTeamBlog/TheFreezeTeamBlog.csproj'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifact to Output
