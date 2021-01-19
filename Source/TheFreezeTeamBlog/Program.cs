@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
 using Statiq.App;
 using Statiq.Common;
 using Statiq.Web;
@@ -11,7 +13,8 @@ namespace MyFirstStaticQ
         public static async Task<int> Main(string [] args) =>
             await Bootstrapper
                 .Factory
-                .CreateWeb(args).AddShortcode<GitShortCode>()
+                .CreateWeb(args)
+                .AddShortcode<GitShortCode>()
                 .RunAsync();
 
     }
