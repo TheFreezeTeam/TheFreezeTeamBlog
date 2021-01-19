@@ -2,6 +2,7 @@
 using Statiq.App;
 using Statiq.Common;
 using Statiq.Web;
+using TheFreezeTeamBlog.ShortCodes;
 
 namespace MyFirstStaticQ
 {
@@ -10,7 +11,7 @@ namespace MyFirstStaticQ
         public static async Task<int> Main(string [] args) =>
             await Bootstrapper
                 .Factory
-                .CreateWeb(args)
+                .CreateWeb(args).AddShortcode<GitShortCode>()
                 .RunAsync();
 
     }
