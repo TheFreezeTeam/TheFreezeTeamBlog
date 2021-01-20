@@ -1,21 +1,20 @@
 ﻿using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using Statiq.App;
-using Statiq.Common;
-using Statiq.Web;
 using TheFreezeTeamBlog.ShortCodes;
 
 namespace MyFirstStaticQ
 {
+using Statiq.App;
     class Program
     {
-        public static async Task<int> Main(string [] args) =>
-            await Bootstrapper
-                .Factory
-                .CreateWeb(args)
-                .AddShortcode<GitShortCode>()
-                .RunAsync();
+    public static async Task<int> Main(string[] aArgumentArray) =>
+      await Bootstrapper
+      .Factory
+      .CreateWeb(aArgumentArray)
+	  .AddShortcode<GitShortCode>()
+      .RunAsync();
 
     }
+using Statiq.Web;
+using System.Threading.Tasks;
 }

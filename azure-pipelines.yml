@@ -6,21 +6,20 @@
 trigger:
 - master
 
-queue:
+pool:
   name: TimeWarpEnterprises
 
 steps:
-- script: wyam
-  displayName: 'Run wyam to generate the output'
+- task: DotNetCoreCLI@2
+  displayName: Publish The Server project which will be deployed to azure
+  inputs:
+    command: run
+    publishWebProjects: false
+    projects: 'Source/TheFreezeTeamBlog/TheFreezeTeamBlog.csproj'
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifact to Output
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/output'
+    PathtoPublish: 'Source/TheFreezeTeamBlog/output'
     ArtifactName: Output
     publishLocation: Container
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'

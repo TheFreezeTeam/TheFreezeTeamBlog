@@ -1,33 +1,33 @@
 <footer class="bg-gray-900">
-    <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+  <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
 
-        <div class="w-full mx-auto flex flex-wrap items-center">
-            <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white">
-                <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="#">
-                    <span class="text-base text-white">Copyright © @DateTime.Now.Year</span>
-                </a>
-            </div>
-            <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
-                <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
-                    @{
-                IDocument rssFeed = Outputs["**/*.rss"].FirstOrDefault();
-                IDocument atomFeed = Outputs["**/*.atom"].FirstOrDefault();
-                    }
-                    @if (rssFeed != null)
-                    {
-                    <li>
-                        <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3" href="@Context.GetLink(rssFeed)">RSS Feed</a>
-                    </li>
-                    }
-                    @if (atomFeed != null)
-                    {
-                    <li>
-                        <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3" href="@Context.GetLink(atomFeed)">Atom Feed</a>
-                    </li>
-                     }
-                </ul>
-            </div>
-        </div>
+    <div class="w-full mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white">
+        <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="#">
+          <span class="text-base text-white">Copyright © @DateTime.Now.Year</span>
+        </a>
+      </div>
+      <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+        <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+          @{
+            IDocument rssFeed = Outputs["**/*.rss"].FirstOrDefault();
+            IDocument atomFeed = Outputs["**/*.atom"].FirstOrDefault();
+          }
+          @if (rssFeed != null)
+          {
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3" href="@Context.GetLink(rssFeed)">RSS Feed</a>
+            </li>
+          }
+          @if (atomFeed != null)
+          {
+            <li>
+              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3" href="@Context.GetLink(atomFeed)">Atom Feed</a>
+            </li>
+          }
+        </ul>
+      </div>
     </div>
+  </div>
 </footer>
 

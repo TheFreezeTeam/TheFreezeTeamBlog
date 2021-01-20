@@ -101,31 +101,31 @@ I would like to say you are done and that is all there is to it,  but that isn't
 ```
 function Load-Dependencies
 {
-	Write-Host "Configuring Load Dependency Method"
-	# Load your target version of the assembly
-	#$automapper = [System.Reflection.Assembly]::LoadFrom("C:\Plastic\ReactFlashCard\Source\FlashCards\bin\AutoMapper.dll")
-	#Write-Host $automapper
-	
-	$onAssemblyResolveEventHandler = [System.ResolveEventHandler]	{
-	  param($sender, $e)
-		
-		Write-Host $e.Name
-  	# You can make this condition more or less version specific as suits your requirements
-  	if ($e.Name.StartsWith("AutoMapper")) 
-		{
-			return $automapper
-  	}
-  	foreach($assembly in [System.AppDomain]::CurrentDomain.GetAssemblies()) 
-		{
-			if ($assembly.FullName -eq $e.Name) 
-			{
-	  		return $assembly
-			}
-		}
-		return $null
-	}
+  Write-Host "Configuring Load Dependency Method"
+  # Load your target version of the assembly
+  #$automapper = [System.Reflection.Assembly]::LoadFrom("C:\Plastic\ReactFlashCard\Source\FlashCards\bin\AutoMapper.dll")
+  #Write-Host $automapper
+  
+  $onAssemblyResolveEventHandler = [System.ResolveEventHandler]	{
+    param($sender, $e)
+    
+    Write-Host $e.Name
+    # You can make this condition more or less version specific as suits your requirements
+    if ($e.Name.StartsWith("AutoMapper")) 
+    {
+      return $automapper
+    }
+    foreach($assembly in [System.AppDomain]::CurrentDomain.GetAssemblies()) 
+    {
+      if ($assembly.FullName -eq $e.Name) 
+      {
+        return $assembly
+      }
+    }
+    return $null
+  }
 
-	[System.AppDomain]::CurrentDomain.add_AssemblyResolve($onAssemblyResolveEventHandler)
+  [System.AppDomain]::CurrentDomain.add_AssemblyResolve($onAssemblyResolveEventHandler)
 }
 ```
 
