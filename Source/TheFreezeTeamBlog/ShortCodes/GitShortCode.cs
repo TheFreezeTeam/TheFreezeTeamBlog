@@ -35,8 +35,7 @@
         if (response.IsSuccessStatusCode)
         {
           string body = await response.Content.ReadAsStringAsync();
-          var gitModel = new GitContentModel();
-          gitModel = JsonConvert.DeserializeObject<GitContentModel>(body);
+          GitContentModel? gitModel = JsonConvert.DeserializeObject<GitContentModel>(body);
           //Read Text from url
           HttpResponseMessage downloadStringResponse = await HttpClient.GetAsync(gitModel.Download_url);
           string responseString = await downloadStringResponse.Content.ReadAsStringAsync();
@@ -67,6 +66,11 @@
     {
       public string Name { get; set; }
       public string Download_url { get; set; }
+      public GitContentModel(string aName, string aDownload_url)
+      {
+        Name = aName;
+        Download_url = aDownload_url;
+      }
     }
 
     public string RemoveOpenAndCloseFrontMatter(string content)

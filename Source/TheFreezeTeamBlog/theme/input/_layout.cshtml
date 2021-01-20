@@ -58,7 +58,7 @@
       bodybg = "bg-white";
   }
 }
-<body class="@bodybg leading-normal tracking-normal">
+<body class="@bodybg font-sans leading-normal tracking-normal">
   <!-- Page Header -->
   @RenderSectionOrPartial("Header", "_header")
   <!-- Navigation -->
@@ -75,7 +75,7 @@
         @RenderSectionOrPartial("Navigation", "_navigation")
         <div class="container lg:max-w-6xl mx-auto-mt-32">
           <div class="mx-0 sm:mx-6">
-            <div id="postType" class="bg-white w-full p-10 text-gray-800" style="font-family:Georgia,serif;">
+            <div id="postType" class="bg-white w-full p-10 text-gray-800">
               @RenderBody()
             </div>
           </div>
