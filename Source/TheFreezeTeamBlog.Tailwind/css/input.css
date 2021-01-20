@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   #postType ul {
     @apply list-disc;
@@ -12,19 +13,19 @@
 
   #postType h1 {
     @apply font-bold;
-    @apply text-3xl;
+    @apply text-2xl;
     @apply mb-2;
   }
 
   #postType h2 {
     @apply font-bold;
-    @apply text-2xl;
+    @apply text-xl;
     @apply mb-2;
   }
 
   #postType h3 {
     @apply font-bold;
-    @apply text-xl;
+    @apply text-base;
     @apply mb-2;
   }
 
@@ -46,6 +47,7 @@
     @apply mb-6;
     @apply p-6;
     @apply pb-2;
+    @apply italic;
   }
 
   #postType .hljs {
@@ -58,6 +60,22 @@
     @apply text-sm;
     @apply mb-6;
   }
+
+  #postType code {
+    @apply bg-gray-100;
+    @apply py-1;
+    @apply px-2;
+    @apply rounded;
+    @apply text-sm;
+  }
+
+  #postType a {
+    @apply text-blue-600;
+  }
+
+    #postType a:hover {
+      @apply text-blue-400;
+    }
 }
 
 @layer utilities {
