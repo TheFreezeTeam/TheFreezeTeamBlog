@@ -1,5 +1,6 @@
 MinimumStatiqWebVersion-CleanBlog: "1.0.0-beta.3"
 SiteTitle: The Freeze Team
+Host: "freezeteam.azurewebsites.net"
 PageTitle: |
   =>
   {
