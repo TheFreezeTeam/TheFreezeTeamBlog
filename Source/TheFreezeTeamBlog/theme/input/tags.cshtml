@@ -14,7 +14,7 @@ ShowInNavbar: true
 
 <div class="container  lg:max-w-6xl mx-auto-mt-32">
   <div class="mx-0 sm:mx-6">
-    <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg" style="font-family:Georgia,serif;">
+    <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg flex flex-wrap">
       @if (Document.ContainsKey(Keys.GroupKey))
       {
         <div class="container-sm-height">
@@ -28,8 +28,8 @@ ShowInNavbar: true
                 string badgeStyle = Document.GetString(Keys.GroupKey)
                   .Equals(tag.GetTitle(), StringComparison.OrdinalIgnoreCase) ? "badge-dark" : "badge-light";
 
-                string postCount = tag.GetChildren().Count().ToString();
-                <a href="@Context.GetLink(tag)" class="badge @badgeStyle"> @tag.GetTitle() (@postCount)</a>
+                @*string postCount = tag.GetChildren().Count().ToString();
+                <a href="@Context.GetLink(tag)" class="badge @badgeStyle"> @tag.GetTitle() (@postCount)</a>*@
               }
             </div>
           </div>

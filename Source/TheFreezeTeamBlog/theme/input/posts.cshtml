@@ -8,7 +8,7 @@ ShowInNavbar: true
 
 <div class="container  lg:max-w-6xl mx-auto-mt-32">
   <div class="mx-0 sm:mx-6">
-    <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg" style="font-family:Georgia,serif;">
+    <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg">
       @foreach (IGrouping<int, IDocument> group in Document
       .GetChildren()
       .GroupBy(x => x.GetDateTime(WebKeys.Published).Year)

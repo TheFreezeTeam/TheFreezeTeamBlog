@@ -6,7 +6,7 @@
   int readTime = excerpt.Length / 160;
 }
 
-<div class="flex h-80 bg-white rounded overflow-hidden shadow-lg">
+<div class="transition duration-1000 ease-in-out flex h-full bg-white rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-105">
   <a href="@Context.GetLink(Model)" class="flex flex-wrap no-underline hover:no-underline">
     @if (imageUrl != "/images/")
     {
