@@ -7,7 +7,7 @@
 }
 
 <a href="@Context.GetLink(Model)" class="flex flex-wrap no-underline hover:no-underline">
-  <div class="w-full md:w-1/3 transform transition duration-1000 ease-in-out hover:-translate-y-1 hover:scale-105 p-6 flex flex-col flex-grow flex-shrink">
+  <div class="w-full md:w-1/3 transform transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-105 p-6 flex flex-col flex-grow flex-shrink">
     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
       @if (imageUrl != "/images/")
       {
@@ -33,7 +33,8 @@
     </div>
     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
       <div class="flex items-center justify-between">
-        <p>@Context.GetString(WebKeys.Author)</p>
+
+        <img src="@Model.GetString("AuthorImage")" class="h-8 w-8 rounded-full object-cover object-cover">
         <p class=" text-xs lg:text-xs font-bold text-gray-300">@readTime MIN READ</p>
       </div>
     </div>

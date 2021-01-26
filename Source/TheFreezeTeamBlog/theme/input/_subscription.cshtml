@@ -33,12 +33,13 @@
   <!--Author-->
   <div class="flex w-full items-center font-sans p-8 md:p-24">
     <div class="flex-1">
-      <p class="text-base leading-none">
-        Author @Document.GetString(WebKeys.Author)
-      </p>
+      <div class="flex">
+        <img src="@Document.GetString("AuthorImage")" class="h-16 w-16 rounded-full object-cover object-cover">
+        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-5 ml-5 font-bold">@Document.GetString(WebKeys.Author)</p></a>
+      </div>
     </div>
     <div class="justify-end">
-      <button class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full transition duration-500 ease-in-out">Read More</button>
+      <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())" class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full transition duration-500 ease-in-out">Read More</a>
     </div>
   </div>
   <!--/Author-->

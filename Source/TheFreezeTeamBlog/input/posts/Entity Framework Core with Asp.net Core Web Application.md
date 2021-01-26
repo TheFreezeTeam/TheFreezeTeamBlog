@@ -4,7 +4,7 @@ Tags:
   - CSharp
   - Entity Framerwork
   - ASP.NET Core
-
+AuthorImage: 55555.jpg
 Image: ef-core-featured.png
 Description: Step by step to use entity framework in ASP.NET Core
 Excerpt: Step by step to use entity framework in ASP.NET Core
