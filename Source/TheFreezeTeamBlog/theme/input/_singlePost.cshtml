@@ -6,7 +6,7 @@
   int readTime = excerpt.Length / 160;
 }
 
-<div class="transition duration-1000 ease-in-out flex h-full bg-white rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-105">
+<div class="transition duration-500 ease-in-out flex h-full bg-white rounded overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-100">
   <a href="@Context.GetLink(Model)" class="flex flex-wrap no-underline hover:no-underline">
     @if (imageUrl != "/images/")
     {
@@ -22,9 +22,9 @@
           <p class="pt-2 text-gray-800 font-serif text-base px-6 mb-5">@excerpt</p>
         </div>
 
-        <div class="flex-1 mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+        <div class="mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
           <div class="flex items-center justify-between">
-            <p>@Document.GetString(WebKeys.Author)</p>
+            <img src="@Model.GetString("AuthorImage")" class="h-8 w-8 rounded-full object-cover object-cover">
             <p class=" text-xs lg:text-xs font-bold text-gray-300">@readTime MIN READ</p>
           </div>
         </div>

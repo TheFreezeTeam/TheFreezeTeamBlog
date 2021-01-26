@@ -6,6 +6,7 @@ Tags:
 Image: Exxxx.jpg
 Description: I'm recording my progress working through the csharp track of Ecercism.io
 Excerpt: I'm recording my progress working through the csharp track of Ecercism.io
+Author: Steven T. Cramer
 ---
 
 #  Problem One "Hello, World!"
