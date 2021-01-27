@@ -1,8 +1,8 @@
 @model IDocument
 
-<div class="w-full bg-gray-100 p-5 rounded">
+<div class="w-full bg-gray-100 p-5 rounded shadow-lg">
   <div class="flex justify-center">
-    <img src="@Model.GetString("AuthorImage")" class="transform hover:scale-105 transition duration-500 ease-in-out h-20 w-20 lg:w-32 lg:h-32 rounded-full object-cover object-cover">
+    <img src="@Model.GetString("AuthorImage")" class="border-4 border-gray-300 hover:border-gray-600 transition duration-500 ease-in-out transform hover:scale-105 transition duration-500 ease-in-out h-20 w-20 lg:w-32 lg:h-32 rounded-full object-fill">
   </div>
   <p class="text-center text-sm font-bold mt-2">@Model.GetString("Author")</p>
   <div class="flex justify-center mt-2">

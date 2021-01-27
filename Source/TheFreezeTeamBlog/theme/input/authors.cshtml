@@ -12,9 +12,9 @@ ArchiveTitle: => GetString("GroupKey")
 ShowInNavbar: true
 ---
 
-<div class="container  lg:max-w-6xl mx-auto-mt-32">
+<div class="container lg:max-w-6xl mx-auto-mt-32">
   <div class="mx-0 sm:mx-6">
-    <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg">
+    <div class="w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg">
       @if (Document.ContainsKey(Keys.GroupKey))
       {
         <div class="container-sm-height">
@@ -26,12 +26,13 @@ ShowInNavbar: true
         </div>
       }
       else
-      {
+      {<div class="w-full bg-white h-60 p-10">
         @foreach (IDocument author in Document.GetChildren().OrderByDescending(x => x.GetChildren().Count()))
         {
           string postCount = author.GetChildren().Count().ToString();
           <a role="button" href="@Context.GetLink(author)" class="bg-gray-100 rounded p-2 w-max text-black hover:bg-gray-300 transition duration-500 ease-in-out mr-2 mb-4"> @author.GetTitle() (@postCount)</a>
         }
+      </div>
       }
     </div>
   </div>

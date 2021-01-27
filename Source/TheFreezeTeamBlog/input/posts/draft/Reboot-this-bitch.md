@@ -4,7 +4,7 @@ Tags:
   - Blazor 
   - dotnetcore 
   - Blazor-State
-Author: Steven T. Cramer
+Author: Jason DeVries
 Excerpt: Reboot this bitch.
 Published: 03/12/2099
 ---

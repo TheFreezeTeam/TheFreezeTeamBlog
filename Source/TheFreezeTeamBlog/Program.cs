@@ -27,5 +27,6 @@
         .ModifyPipeline(nameof(Inputs), aX => aX.ProcessModules.Add(new SetMetadata("AuthorLinkedIn", Config.FromDocument((doc, ctx) => authorManager.AddAuthorLinkedIn(doc)))))
         .RunAsync();
     }
+
   }
 }
