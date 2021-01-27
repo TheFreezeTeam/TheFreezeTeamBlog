@@ -34,8 +34,10 @@
   <div class="flex w-full items-center font-sans p-8 md:p-24">
     <div class="flex-1">
       <div class="flex">
-        <img src="@Document.GetString("AuthorImage")" class="h-16 w-16 rounded-full object-cover object-cover">
-        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-5 ml-5 font-bold">@Document.GetString(WebKeys.Author)</p></a>
+        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())">
+          <img src="@Document.GetString("AuthorImage")" class="border-4 border-gray-300 hover:border-gray-600 transition duration-500 ease-in-out h-20 w-20 rounded-full object-cover object-cover">
+        </a>
+        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-6 ml-5 font-bold text-xl">@Document.GetString(WebKeys.Author)</p></a>
       </div>
     </div>
     <div class="justify-end">

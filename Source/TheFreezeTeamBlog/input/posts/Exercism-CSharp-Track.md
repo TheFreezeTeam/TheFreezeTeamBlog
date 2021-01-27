@@ -6,7 +6,7 @@ Tags:
 Image: Exxxx.jpg
 Description: I'm recording my progress working through the csharp track of Ecercism.io
 Excerpt: I'm recording my progress working through the csharp track of Ecercism.io
-Author: Steven T. Cramer
+Author: Stefan Bemelmans
 ---
 
 #  Problem One "Hello, World!"
@@ -78,6 +78,7 @@ which you should pretend doesn't exist for the purposes of implementing this exe
 
 ## My Thoughts
 This brought me way back to learning to code the first time, back in '94 or so. Pretty straightforward, I'm confident my solution can be refined a bit, but good enough for me at the moment. 
+
 ## My Solution
 ```csharp
 using System;

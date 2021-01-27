@@ -4,7 +4,6 @@ Tags:
   - CSharp
   - Entity Framerwork
   - ASP.NET Core
-AuthorImage: 55555.jpg
 Image: ef-core-featured.png
 Description: Step by step to use entity framework in ASP.NET Core
 Excerpt: Step by step to use entity framework in ASP.NET Core
@@ -21,7 +20,7 @@ Inside the class we will have constructor which take `DbContextOptions` with the
 # Use it inside APS.NET CORE
 
 Class should look like this 
-```
+```csharp
 public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options){}
@@ -29,7 +28,7 @@ public class ApplicationDbContext : DbContext
 ```
 
 After that we have to add Dbcontext to our services. Open a Startup.cs and replace with below code.
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(aDbContextOptionsBuilder => aDbContextOptionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -48,7 +47,7 @@ public void ConfigureServices(IServiceCollection services)
  Now thing is ready to go, open terminal or package manager and using `Add-Migration anyname` to intialize your first Entity Framwork.
  Entity Framwork will generate below script.
 
- ```
+ ```csharp
  migrationBuilder.CreateTable(
                 name: "MovieEntity",
                 columns: table => new

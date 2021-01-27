@@ -7,8 +7,8 @@
   using Statiq.Core;
   using Statiq.Web.Pipelines;
   using Statiq.Common;
-  using System.Collections.Generic;
   using TheFreezeTeamBlog.Authors;
+  using TheFreezeTeamBlog.ModuleDelegate;
 
   class Program
   {
@@ -25,6 +25,8 @@
         .ModifyPipeline(nameof(Inputs), aX => aX.ProcessModules.Add(new SetMetadata("AuthorTwitter", Config.FromDocument((doc, ctx) => authorManager.AddAuthorTwitter(doc)))))
         .ModifyPipeline(nameof(Inputs), aX => aX.ProcessModules.Add(new SetMetadata("AuthorBio", Config.FromDocument((doc, ctx) => authorManager.AddAuthorBio(doc)))))
         .ModifyPipeline(nameof(Inputs), aX => aX.ProcessModules.Add(new SetMetadata("AuthorLinkedIn", Config.FromDocument((doc, ctx) => authorManager.AddAuthorLinkedIn(doc)))))
+        .ModifyPipeline(nameof(Inputs), aX => aX.ProcessModules.Add(new SetMetadata("AuthorDiscord", Config.FromDocument((doc, ctx) => authorManager.AddAuthorDiscord(doc)))))
+        .ModifyPipeline(nameof(Inputs), aX => aX.ProcessModules.Add(new SetMetadata("ReadTime", Config.FromDocument((doc, ctx) => ReadTimeCalculator.CalculateReadingTime(doc)))))
         .RunAsync();
     }
   }

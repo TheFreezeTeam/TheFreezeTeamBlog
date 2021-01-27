@@ -2,7 +2,7 @@ Title: Curing Writer's Block for Developers
 Published: 10/02/2016
 Tags: 
   - C# 
-Author: Steven T. Cramer
+Author: Kevin Dietz
 Description: I'm a motivated, self-starting person, but I have to admit, sometimes I have a hard time getting the wheels going on a project or task. This happens most often when I'm distracted, bored, or unsure about the next steps to take on a task.
 Excerpt: I'm a motivated, self-starting person, but I have to admit, sometimes I have a hard time getting the wheels going on a project or task. This happens most often when I'm distracted, bored, or unsure about the next steps to take on a task.
 ---

@@ -10,6 +10,7 @@
     public string AvatarPath { get; set; } = "";
     public string Bio { get; set; } = "";
     public string LinkedIn { get; set; } = "";
+    public string Discord { get; set; } = "";
 
   }
 }
