@@ -21,6 +21,10 @@
     {
        <a target="_blank" href="https://www.codingame.com/profile/@Model.GetString("AuthorCodingGame")"><img class="w-7 h-7 rounded mr-2 hover:opacity-80 transition duration-500 ease-in-out" src="~/images/Icon/codingame.svg" /></a>
     }
+     @if (!string.IsNullOrEmpty(Model.GetString("AuthorDiscord")))
+    {
+       <a target="_blank" href="https://discordapp.com/users/@Model.GetString("AuthorDiscord")"><img class="w-7 h-7 rounded mr-2 hover:opacity-80 transition duration-500 ease-in-out" src="~/images/Icon/discordProfile.svg" /></a>
+    }
   </div>
   @if (!string.IsNullOrEmpty(Model.GetString("AuthorBio")))
     {

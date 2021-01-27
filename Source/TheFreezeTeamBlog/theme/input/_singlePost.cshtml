@@ -45,14 +45,7 @@
               <p class='tooltip'>
                 <a href="/author @Context.GetLink(Model.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><img src="@Model.GetString("AuthorImage")" class="h-8 w-8 rounded-full object-cover object-cover"></a> <span class='tooltip-text bg-black text-gray-100 text-sm p-3 -mt-16 -ml-4 rounded'>@Model.GetString("Author")</span>
               </p>
-              <p class=" text-xs lg:text-xs font-bold text-gray-300">
-              @if(readTime == 0)
-              {
-              <p class=" text-xs lg:text-xs font-bold text-gray-300">QUICK READ</p>
-              }else
-              {
-                <p class=" text-xs lg:text-xs font-bold text-gray-300">@readTime MIN READ</p>
-              }
+              <p class=" text-xs lg:text-xs font-bold text-gray-300">@Model.GetString("ReadTime")</p>
             </div>
           </div>
       </div>
