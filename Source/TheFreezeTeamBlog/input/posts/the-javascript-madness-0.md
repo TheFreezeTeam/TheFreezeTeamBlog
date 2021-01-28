@@ -4,7 +4,7 @@ Tags:
   - React 
   - Javascript 
 Author: Steven T. Cramer
-Image: Madness.png
+Image: Madness.webp
 Excerpt: Create a simple (ha!) Create React App  and try to understand the magic.
 Description: Create a simple (ha!) Create React App  and try to understand the magic.
 ---

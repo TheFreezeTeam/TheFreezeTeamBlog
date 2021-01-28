@@ -4,7 +4,7 @@ Tags:
   - React-Native
   - Javascript
 Author: Stefan Bemelmans
-Image: flatlist.jpg
+Image: flatlist.webp
 Description: I needed to render a list from a variable-length array of objects. Each object contained a text name and a corresponding number value
 Excerpt: I needed to render a list from a variable-length array of objects. Each object contained a text name and a corresponding number value
 ---
