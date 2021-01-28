@@ -3,7 +3,7 @@ Published: 04/12/2019
 Tags: 
   - Java
 Author: Stefan Bemelmans
-Image: backToBeginning.png
+Image: backToBeginning.webp
 Description: the environment in which the coding happens isn't the same ...as... React and React Native.  I decided it would be fun to detail the setup process.
 Excerpt: the environment in which the coding happens isn't the same ...as... React and React Native.  I decided it would be fun to detail the setup process.
 ---

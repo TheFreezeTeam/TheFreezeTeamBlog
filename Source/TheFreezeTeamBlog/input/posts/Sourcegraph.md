@@ -1,6 +1,6 @@
 Title: Code Search that will give you superpowers
 Published: 07/10/2019
-Image: noimage.jpg
+Image: noimage.webp
 Tags:
   - DeveloperTools
   - CodeSearch

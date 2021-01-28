@@ -2,7 +2,7 @@ Title: Introduction to LIQUID Software Engineering Principles
 Tags: 
   - SOLID
 Author: Kevin Dietz
-Image: LIQUID.png
+Image: LIQUID.webp
 Published: 03/07/2016
 Description: Perhaps you haven't heard of a little known, but frequently practiced coding style which we affectionately call LIQUID.
 Excerpt: Perhaps you haven't heard of a little known, but frequently practiced coding style which we affectionately call LIQUID.

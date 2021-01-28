@@ -4,7 +4,7 @@ Tags:
   - Cypto 
   - Twitch 
 Author: Steven T. Cramer
-Image: Freeze-Team-on-Twitch.jpg
+Image: Freeze-Team-on-Twitch.webp
 Excerpt: Come join us as we wield the powers of SOLID to vanquish our LIQUID foes.
 Description: Come join us as we wield the powers of SOLID to vanquish our LIQUID foes.
 ---

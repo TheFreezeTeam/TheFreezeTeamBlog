@@ -5,7 +5,7 @@ Tags:
   - NetCore 
   - C# 
 Author: Steven T. Cramer
-Image: NodaTime.png
+Image: NodaTime.webp
 Description: NodaTime is a good replacement library for the .net DateTime. add the nuget pacakge NodaTime.Serialization.JsonNet
 Excerpt: NodaTime is a good replacement library for the .net DateTime. add the nuget pacakge NodaTime.Serialization.JsonNet
 

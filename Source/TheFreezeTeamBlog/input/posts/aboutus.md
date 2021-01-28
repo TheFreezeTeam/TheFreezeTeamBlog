@@ -1,7 +1,7 @@
 Title: Turn your LIQUID code SOLID!
 Published: 07/10/2019
 Author: Steven T. Cramer
-Image: SolidIceCubes.png
+Image: SolidIceCubes.webp
 Description: The Freeze Team is disseminating the Code Search Superpower. Come see how you too can wield it!
 Excerpt: The Freeze Team is disseminating the Code Search Superpower. Come see how you too can wield it!
 ---

@@ -5,7 +5,7 @@ Tags:
   - Javascript 
   - NodeJS 
 Author: Stefan Bemelmans
-Image: 010.jpg
+Image: 010.webp
 Description: There's a certain threshold of size and complexity that if you keep on the right side of you can assuredly never be bothered with how your files are arranged. 
 Excerpt: There's a certain threshold of size and complexity that if you keep on the right side of you can assuredly never be bothered with how your files are arranged. 
 
