@@ -14,3 +14,9 @@ Published: 02/26/2018
 
 <?! Git "mikeyoshino" "MpStream" "Source/MpStream/Services/TvShowService.cs" "TvShow Service" /?>
 
+
+
+
+# Image Content
+<?! Git "mikeyoshino" "Design-Pattern" "Strategy-Pattern.md" /?>
+
