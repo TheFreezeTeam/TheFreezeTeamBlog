@@ -4,8 +4,8 @@ Tags:
   - Design 
   - UI 
   - Adobe XD 
-Author: Steven T. Cramer
-Image: BetterUi.jpg
+Author: Stefan Bemelmans
+Image: BetterUi.webp
 Description: Design has always been a weak point of mine so in my constant effort to attain human perfection I'm going to attempt to develop my skills!
 Excerpt: Design has always been a weak point of mine so in my constant effort to attain human perfection I'm going to attempt to develop my skills!
 ---

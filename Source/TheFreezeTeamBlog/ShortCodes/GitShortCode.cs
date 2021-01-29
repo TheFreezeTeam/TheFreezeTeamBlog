@@ -12,17 +12,18 @@
     private const string Owner = nameof(Owner);
     private const string Repo = nameof(Repo);
     private const string PathFileName = nameof(PathFileName);
+    private const string RegionName = nameof(RegionName);
     private readonly HttpClient HttpClient = new HttpClient();
 
     public override ShortcodeResult Execute(KeyValuePair<string, string>[] args, string content, IDocument document, IExecutionContext context)
     {
-      IMetadataDictionary arguments = args.ToDictionary(Owner, Repo, PathFileName);
+      IMetadataDictionary arguments = args.ToDictionary(Owner, Repo, PathFileName, RegionName);
       arguments.RequireKeys(Owner, Repo, PathFileName);
-      content = GetContent(arguments.GetString(Owner), arguments.GetString(Repo), arguments.GetString(PathFileName)).Result;
+      content = GetContent(arguments.GetString(Owner), arguments.GetString(Repo), arguments.GetString(PathFileName), arguments.GetString(RegionName)).Result;
       return content;
 
     }
-    public async Task<string> GetContent(string owner, string repo, string pathFileName)
+    public async Task<string> GetContent(string owner, string repo, string pathFileName, string regionName)
     {
       var request = new HttpRequestMessage
       {
@@ -49,6 +50,10 @@
           } else if (responseString.Contains("---")) 
           {
             string result = RemoveOnlyCloseFrontMatter(responseString);
+            return result;
+          } else if (!string.IsNullOrEmpty(regionName))
+          {
+            string result = GetContentInRegion(responseString, regionName);
             return result;
           }
           else
@@ -78,8 +83,8 @@
       string firstThreeWords = content.Substring(0, 3);
       int startIndex = content.IndexOf(firstThreeWords) + "---".Length;
       int endIndex = content.LastIndexOf("---");
-      string processedResult = content.Remove(startIndex, endIndex - startIndex);
-      return processedResult;
+      string result = content.Remove(startIndex, endIndex - startIndex);
+      return result;
     }
 
     public string RemoveOnlyCloseFrontMatter(string content)
@@ -88,8 +93,26 @@
       int startIndex = content.IndexOf(firstWord);
       int endIndex = content.LastIndexOf("---");
       string removeWords = content.Remove(startIndex, endIndex - startIndex);
-      string prosseedResult = removeWords.Replace("---", " ");
-      return prosseedResult;
+      string result = removeWords.Replace("---", " ");
+      return result;
+    }
+
+    public string GetContentInRegion(string content, string regionName)
+    {
+      string regionWithName = "#region " + regionName;
+      string endregion = "#endregion";
+
+      //get the index of given region name.
+      //remove all words before the region name, this use to find index of endregion tag.
+      string firstWord = content.Substring(0, 1);
+      int startIndex = content.IndexOf(firstWord);
+      int endIndex = content.IndexOf(regionWithName);
+      string removeWords = content.Remove(startIndex, endIndex - startIndex);
+
+      //select words between region name to endregion.
+      int pFrom = removeWords.IndexOf(regionWithName) + regionWithName.Length;
+      int pTo = removeWords.IndexOf(endregion);
+      return removeWords.Substring(pFrom, pTo - pFrom);
     }
   }
 }

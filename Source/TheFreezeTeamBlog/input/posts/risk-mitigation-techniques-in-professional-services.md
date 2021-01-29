@@ -3,7 +3,7 @@ Published: 03/03/2019
 Tags: 
   - C#
 Author: Steven T. Cramer
-Image: RiskMitigation.png
+Image: RiskMitigation.webp
 Description: Improve the working relationships between the people that write software and the people that want the software.
 Excerpt: Improve the working relationships between the people that write software and the people that want the software.
 ---

@@ -4,7 +4,7 @@ Tags:
   - Blazor
   - C#
 Author: Steven T. Cramer
-Image: BlazorHostingLocation.png
+Image: BlazorHostingLocation.webp
 Description: Here is a handy class that you can use in Blazor to determine if you are executing client-side or server-side. Its included in Blazor-State
 Excerpt: Here is a handy class that you can use in Blazor to determine if you are executing client-side or server-side. Its included in Blazor-State
 ---
