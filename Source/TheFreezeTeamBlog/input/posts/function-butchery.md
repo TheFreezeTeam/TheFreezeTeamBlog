@@ -2,11 +2,12 @@ Title: Break It Down
 Published: 03/14/2019
 Tags: 
   - C#
-Author: Steven T. Cramer
+Author: Stefan Bemelmans
 Description: Refactoring a large function using the Single Responsibility Principle.
 Excerpt: Refactoring a large function using the Single Responsibility Principle.
 ---
-I was recently refactoring a project that relied on a single function to handle a myriad of API calls and database gets and sets. It was, and still is an impressive piece of work and functions perfectly well. As a member of the Freeze Team I have been learning about the "Single Responsibility Principle" and when I came across this function I found it a great opportunity to practice what I've learned.
+I was recently refactoring a project that relied on a single function to handle a myriad of API calls and database gets and sets. 
+It was, and still is an impressive piece of work and functions perfectly well. As a member of the Freeze Team I have been learning about the `Single Responsibility Principle` and when I came across this function I found it a great opportunity to practice what I've learned.
 
 ```
 export function startTheProcess(data) {  // The Beginning, the first step is to
@@ -34,9 +35,14 @@ export function startTheProcess(data) {  // The Beginning, the first step is to
     }
 ```
 
-Now this example is a little more vague and a lot shorter than the original. But as can be observed, there are several areas that could be optimized using the "single responsibility principle".
-My basic plan of attack was to refactor every "then" into it's own function, add a dash of semantic labeling and take it from there. My idea was to create a waterfall of functions, with each one creating the data necessary for, and calling the next.  While this is not adhering strictly to the "single responsibility principle" I feel it is a step in the right direction.
+Now this example is a little more vague and a lot shorter than the original. But as can be observed, there are several areas that could be optimized 
+using the "single responsibility principle".
+
+My basic plan of attack was to refactor every "then" into it's own function, add a dash of semantic labeling and take it from there. 
+My idea was to create a waterfall of functions, with each one creating the data necessary for, and calling the next.  
+While this is not adhering strictly to the "single responsibility principle" I feel it is a step in the right direction.
 I ended up with something like this:
+
 
 ```
 // This is the start of the process. It takes the inital 'A' data and sends that to // the first function. 

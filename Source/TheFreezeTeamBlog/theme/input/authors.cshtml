@@ -4,42 +4,35 @@ ArchiveKey: Author
 ArchiveKeyComparer: => StringComparer.OrdinalIgnoreCase.ToConvertingEqualityComparer()
 ArchiveDestination: >
   => GetInt("Index") <= 1 ? $"author/{NormalizedPath.OptimizeFileName(GetString("GroupKey"))}/index.html" : $"author/{NormalizedPath.OptimizeFileName(GetString("GroupKey"))}/{GetInt("Index")}.html"
-ArchivePageSize: 10
+ArchivePageSize: 50
 ArchiveOrderKey: Published
 ArchiveOrderDescending: true
-Title: Author
+Title: Authors
 ArchiveTitle: => GetString("GroupKey")
-ShowInNavbar: false
+ShowInNavbar: true
 ---
 
-<div class="container  lg:max-w-6xl mx-auto-mt-32">
+<div class="container lg:max-w-6xl mx-auto-mt-32">
   <div class="mx-0 sm:mx-6">
-    <div class="bg-white w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg" style="font-family:Georgia,serif;">
+    <div class="w-full p-10 text-lg text-gray-800 leading-normal lg:rounded-lg">
       @if (Document.ContainsKey(Keys.GroupKey))
       {
         <div class="container-sm-height">
           <div class="row row-sm-height">
             <div class="col-md-6 right-border col-sm-height">
-              @Html.Partial("/_posts.cshtml", Document)
-            </div>
-            <div class="col-md-4 mt-4 mt-md-0 col-sm-height">
-              @foreach (IDocument author in OutputPages.Get("author.html").GetChildren().OrderByDescending(x => x.GetChildren().Count()))
-              {
-                string badgeStyle = Document.GetString(Keys.GroupKey).Equals(author.GetTitle(), StringComparison.OrdinalIgnoreCase) ? "badge-dark" : "badge-light";
-                string postCount = author.GetChildren().Count().ToString();
-                <a href="@Context.GetLink(author)" class="badge @badgeStyle"> @author.GetTitle() (@postCount)</a>
-              }
+              @Html.Partial("/_authorPosts.cshtml", Document)
             </div>
           </div>
         </div>
       }
       else
-      {
+      {<div class="w-full bg-white h-60 p-10">
         @foreach (IDocument author in Document.GetChildren().OrderByDescending(x => x.GetChildren().Count()))
         {
           string postCount = author.GetChildren().Count().ToString();
           <a role="button" href="@Context.GetLink(author)" class="bg-gray-100 rounded p-2 w-max text-black hover:bg-gray-300 transition duration-500 ease-in-out mr-2 mb-4"> @author.GetTitle() (@postCount)</a>
         }
+      </div>
       }
     </div>
   </div>

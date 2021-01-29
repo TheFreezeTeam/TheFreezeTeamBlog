@@ -3,7 +3,8 @@ Published: 03/21/2019
 Tags: 
   - React
 Author: Steven T. Cramer
-Image: ContactUsForm.gif
+AuthorImage: 555.jpg
+Image: ContactUsForm.webp
 Description: It turns out that HTML5 isn't bad at single property validation.
 Excerpt: It turns out that HTML5 isn't bad at single property validation.
 ---

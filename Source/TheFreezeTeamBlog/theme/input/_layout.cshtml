@@ -6,16 +6,27 @@
   @if (Document.ContainsKey(WebKeys.Description))
   {
     <meta name="description" content="@Document.GetString(WebKeys.Description)">
+    <meta property="og:description" content="@Document.GetString(WebKeys.Description)"/>
+    <meta name="twitter:description" content="@Document.GetString(WebKeys.Description)"/>
   }
   @if (Document.ContainsKey(WebKeys.Author))
   {
     <meta name="author" content="@Document.GetString(WebKeys.Author)">
+    <meta name="twitter:label1" content="Written by"/>
+    <meta name="twitter:data1" content="@Document.GetString(WebKeys.Author)"/>
   }
 
   <title>@Document.GetString("PageTitle")</title>
 
   <link rel="canonical" href="@Document.GetLink(true)">
-
+  @{
+      string siteUrl = @Document.GetLink(true);
+      if (siteUrl == "http://freezeteam.azurewebsites.net/")
+      {
+        <meta property="og:image" content="https://freezeteam.azurewebsites.net/images/SOLIDLOGO.webp" />
+        <meta name="twitter:image" content="https://freezeteam.azurewebsites.net/images/SOLIDLOGO.webp"/>
+      }
+  }
   @{
     @foreach (IDocument rssFeed in Outputs["**/*.rss"])
     {
@@ -26,23 +37,32 @@
       <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
     }
   }
-
+  <meta property="og:site_name" content="@Document.GetString("SiteTitle")"/>
   <meta name="application-name" content="@Document.GetString("SiteTitle")" />
   <meta name="msapplication-tooltip" content="@Document.GetString("SiteTitle")" />
   <meta name="msapplication-starturl" content="@Context.GetLink("/")" />
 
   @* TODO: More social graph meta tags *@
-  <meta property="og:title" content="@Document.GetString("PageTitle")" />
+    <meta property="og:title" content="@Document.GetString("PageTitle")" />
+    <meta name="twitter:title" content="@Document.GetString("PageTitle")"/>
   @if (Document.ContainsKey(WebKeys.Image))
   {
-    <meta property="og:image" content="@Context.GetLink(Document.GetString(WebKeys.Image))" />
+    string imageName = @Context.GetLink(Document.GetString(WebKeys.Image));
+    string imageUrl = "https://freezeteam.azurewebsites.net/images" + imageName;
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:image" content="@imageUrl" />
+    <meta property="og:image:url"  content="@imageUrl"  />
+    <meta property="twitter:image" content="@imageUrl"/>
+    <meta property="og:image:width" content="1024"/>
+    <meta property="og:image:height" content="512"/>
   }
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="@Document.GetLink(true)" />
+  <meta name="twitter:url" content="@Document.GetLink(true)"/>
   <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
   <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
   <link href="~/css/Site.css" rel="stylesheet" type="text/css">
-  <link href="~/resource/js/highlight.js/styles/atom-one-dark.css" rel="stylesheet" />
+  <link href="~/resource/js/highlight.js/styles/vs.css" rel="stylesheet" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
@@ -93,6 +113,5 @@
   @RenderSection("Scripts", false)
 
   <!-- Custom scripts for this template -->
-  <script src="@Context.GetLink("/js/clean-blog.js")"></script>
 </body>
 </html>

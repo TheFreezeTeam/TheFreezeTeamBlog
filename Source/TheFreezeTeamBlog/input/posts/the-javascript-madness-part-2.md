@@ -4,7 +4,7 @@ Tags:
   - nodeJs 
   - Javascript 
 Author: Steven T. Cramer
-Image: Madness.png
+Image: Madness.webp
 Excerpt: Execute js file from command line using node.
 Description: Execute js file from command line using node.
 ---

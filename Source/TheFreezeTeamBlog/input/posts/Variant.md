@@ -1,6 +1,6 @@
 Title: Generic Variance in Superheros
 Published: 08/15/2019
-Image: VariantGenericInterfaces.png
+Image: VariantGenericInterfaces.webp
 Tags: CSharp
 Author: Steven T. Cramer
 Excerpt: Co ends with o use out.  Con ends with n which sounds like in

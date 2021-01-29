@@ -4,7 +4,7 @@ Tags:
   - FluentValidation 
   - C#
 Author: Steven T. Cramer
-Image: better-error.jpg
+Image: better-error.webp
 Description: Create better error messages in dotnet core with FluentValidation.
 Excerpt: Create better error messages in dotnet core with FluentValidation.
 ---

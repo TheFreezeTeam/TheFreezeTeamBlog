@@ -6,7 +6,7 @@ Tags:
   - dotnetcore 
   - C#
 Author: Steven T. Cramer
-Image: TestingConvention.png
+Image: TestingConvention.webp
 Excerpt: A dotnet core Testing Convention for Fixie that supports Dependency Injection
 Description: A dotnet core Testing Convention for Fixie that supports Dependency Injection
 ---

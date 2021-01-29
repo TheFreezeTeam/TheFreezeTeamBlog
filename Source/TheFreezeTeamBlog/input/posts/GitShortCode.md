@@ -1,21 +1,16 @@
 ---
-Title: Youtube Short Code
+Title: Git Short Code
 Tags: 
   - DeveloperTools 
   - CodeSearch 
 Author: Steven T. Cramer
-Published: 02/26/2099
-Image: Sourcegraph.png
-Description: The Freeze Team is disseminating the Code Search Superpower. Come see how you too can wield it!
-Excerpt: The Freeze Team is disseminating the Code Search Superpower. Come see how you too can wield it!
+Published: 02/26/2018
 ---
 
-
+# Git Content 
 <?! Git "TheFreezeTeam" "TheFreezeTeamBlog" "Readme.md" /?>
 
-<?! Git "mikeyoshino" "TestMarkdown" "README.md" /?>
+# Git Code 
 
-# dddddddd
-
-<?! Git "mikeyoshino" "TestMarkdown" "README.md" /?>
+<?! Git "mikeyoshino" "MpStream" "Source/MpStream/Services/TvShowService.cs" "TvShow Service" /?>
 
