@@ -148,7 +148,7 @@ The Html5 `Form` element has a function `checkValidity` that checks if all child
   };
 ```
 
-![ContactUsForm-1](/content/images/2019/03/ContactUsForm-1.gif)
+![ContactUsForm-1](/images/ContactUsForm.gif)
 
 There we have it a decent form: 
 

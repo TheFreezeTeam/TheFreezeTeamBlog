@@ -40,25 +40,28 @@
           //Read Text from url
           HttpResponseMessage downloadStringResponse = await HttpClient.GetAsync(gitModel.Download_url);
           string responseString = await downloadStringResponse.Content.ReadAsStringAsync();
+          string relativeUrl = "(" + gitModel.Html_url.RemoveEnd(pathFileName).Replace("blob", "raw");
+          string adjustRelativePath = responseString.Replace("(.", relativeUrl);
+          string textContent = adjustRelativePath;
 
           //Check if it has open and close front matter by check from first three words.
-          if (responseString.Substring(0, 3) == "---")
+          if (textContent.Substring(0, 3) == "---")
           {
-            string result = RemoveOpenAndCloseFrontMatter(responseString);
+            string result = RemoveOpenAndCloseFrontMatter(textContent);
             return result;
             //Check if it has only end close front matter.
-          } else if (responseString.Contains("---")) 
+          } else if (textContent.Contains("---")) 
           {
-            string result = RemoveOnlyCloseFrontMatter(responseString);
+            string result = RemoveOnlyCloseFrontMatter(textContent);
             return result;
           } else if (!string.IsNullOrEmpty(regionName))
           {
-            string result = GetContentInRegion(responseString, regionName);
+            string result = GetContentInRegion(textContent, regionName);
             return result;
           }
           else
           {
-            return responseString;
+            return textContent;
           }
 
         } else {
@@ -71,10 +74,12 @@
     {
       public string Name { get; set; }
       public string Download_url { get; set; }
-      public GitContentModel(string aName, string aDownload_url)
+      public string Html_url { get; set; }
+      public GitContentModel(string aName, string aDownload_url, string aHtml_url)
       {
         Name = aName;
         Download_url = aDownload_url;
+        Html_url = aHtml_url;
       }
     }
 
