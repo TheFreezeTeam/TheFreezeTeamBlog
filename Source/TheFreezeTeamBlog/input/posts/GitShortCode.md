@@ -3,7 +3,7 @@ Title: Git Short Code
 Tags: 
   - DeveloperTools 
   - CodeSearch 
-Author: Steven T. Cramer
+Author: Mike
 Published: 02/26/2018
 ---
 

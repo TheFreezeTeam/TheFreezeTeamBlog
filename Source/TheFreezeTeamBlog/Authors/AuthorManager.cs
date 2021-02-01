@@ -6,6 +6,7 @@
 
   public class AuthorManager
   {
+    public const string NoAvatar = "/authorAvatars/noavatar.jpg";
     public Dictionary<string, Author> authors { get; set; }
     public AuthorManager()
     {
@@ -19,19 +20,18 @@
     public string AddImagePath(IDocument doc)
     {
       string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors[authorKey].Name.Contains(authorKey))
+      if (authorKey != null && authors.ContainsKey(authorKey))
       {
         return authors[authorKey].AvatarPath;
-      }
-      else
+      }else
       {
-        return string.Empty;
+        return NoAvatar;
       }
     }
     public string AddAuthorFacebook(IDocument doc)
     {
       string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && !string.IsNullOrEmpty(authors[authorKey].Facebook))
+      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].Facebook))
       {
         return authors[authorKey].Facebook;
       }
@@ -43,7 +43,7 @@
     public string AddAuthorCodingGame(IDocument doc)
     {
       string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && !string.IsNullOrEmpty(authors[authorKey].CodingGame))
+      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].CodingGame))
       {
         return authors[authorKey].CodingGame;
       }
@@ -56,7 +56,7 @@
     public string AddAuthorTwitter(IDocument doc)
     {
       string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && !string.IsNullOrEmpty(authors[authorKey].Twitter))
+      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].Twitter))
       {
         return authors[authorKey].Twitter;
       }
@@ -69,7 +69,7 @@
     public string AddAuthorBio(IDocument doc)
     {
       string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && !string.IsNullOrEmpty(authors[authorKey].Bio))
+      if (authorKey != null && authors.ContainsKey(authorKey) &&!string.IsNullOrEmpty(authors[authorKey].Bio))
       {
         return authors[authorKey].Bio;
       }
@@ -81,7 +81,7 @@
     public string AddAuthorLinkedIn(IDocument doc)
     {
       string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && !string.IsNullOrEmpty(authors[authorKey].LinkedIn))
+      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].LinkedIn))
       {
         return authors[authorKey].LinkedIn;
       }
@@ -94,7 +94,7 @@
     public string AddAuthorDiscord(IDocument doc)
     {
       string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && !string.IsNullOrEmpty(authors[authorKey].Discord))
+      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].Discord))
       {
         return authors[authorKey].Discord;
       }

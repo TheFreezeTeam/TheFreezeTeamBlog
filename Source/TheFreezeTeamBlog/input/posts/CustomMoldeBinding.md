@@ -3,7 +3,7 @@ Published: 08/27/2099
 Tags: C
   - Sharp 
   - Blazor
-Author: Steven T. Cramer
+Author: ss T. Cramer
 Excerpt: With Custom model binding eliminate controllers.
 Description: With Custom model binding eliminate controllers.
 ---
