@@ -8,7 +8,7 @@ Description: Improve the working relationships between the people that write sof
 Excerpt: Improve the working relationships between the people that write software and the people that want the software.
 ---
 
-I am trying to improve the working relationships between the people that write software and the people that want the software to be written. The goal is to better meet the desired outcomes of both.  The marketplace is about fulfilling people's wants, both the buyer and the seller. Voluntary transactions in the marketplace only occur when the trust between the parties is sufficient to believe both parties’ desires will be met.
+I am trying to improve the working relationships between the people that write software and the people that want the software to be written. The goal is to better meet the desired outcomes of both.  The marketplace is about fulfilling people's wants, both the buyer and the seller. Voluntary transactions in the marketplace only occur when the trust between the parties is sufficient to believe both parties desires will be met.
 
 ## Services are different
 
@@ -22,10 +22,10 @@ For the software development world, we provide information on past performance v
 
 ### Risk Mitigation:
 
-The ideal result of a promise is that both parties fulfill their obligation.  Risk mitigation is concerned with when a party doesn’t fulfill the wants of the other.  We attempt to mitigate these risks in the following ways.
+The ideal result of a promise is that both parties fulfill their obligation.  Risk mitigation is concerned with when a party doesn't fulfill the wants of the other.  We attempt to mitigate these risks in the following ways.
 
 #### Hourly billing:
-  Mitigates risk by having the ability to terminate the relationship.  If either party wants to end the relationship, they give notice and the time/money being invested stops.  Even though hourly billing pits the parties’ goals directly against each other, as the service provider wants to maximize hours billed and the buyer wants to minimize hours billed, this option is the most commonly used.  Most of the risk of hourly billing services are assumed by the buyer.  The total cost of a project can be estimated but is not guaranteed and thus cost overruns can and often do occur.  Ironically in this scenario most of the risk is assumed by the non-professional in the field.  Often, critical engagement is avoided in efforts to save time and money, thus jeopardizing a successful result.
+  Mitigates risk by having the ability to terminate the relationship.  If either party wants to end the relationship, they give notice and the time/money being invested stops.  Even though hourly billing pits the parties goals directly against each other, as the service provider wants to maximize hours billed and the buyer wants to minimize hours billed, this option is the most commonly used.  Most of the risk of hourly billing services are assumed by the buyer.  The total cost of a project can be estimated but is not guaranteed and thus cost overruns can and often do occur.  Ironically in this scenario most of the risk is assumed by the non-professional in the field.  Often, critical engagement is avoided in efforts to save time and money, thus jeopardizing a successful result.
 
 #### Fixed Fee:
  Mitigates the risk of the client for cash outlay. In the Fixed Fee scenario more of the risk is assumed by the professional in the field.  If they underestimate the cost to deliver, they lose an amount directly proportional to the miscalculation.  Although the client is not without risk in this scenario, as there is less flexibility to adjust the product during the process.
@@ -41,6 +41,6 @@ The ideal result of a promise is that both parties fulfill their obligation.  Ri
 
 ## Silver Bullet Solution
 
-And the SILVER BULLET solution is… nonexistent.  Mutual awareness is the best option.  All the options above have had successes and failures. Being honest and upfront about the concerns of each party and aware of the benefits and pitfalls are key. Like most relationships, take it in phases.  Start with coffee, before dinner and a movie, and don't rush into marriage plans.  
+And the SILVER BULLET solution is nonexistent.  Mutual awareness is the best option.  All the options above have had successes and failures. Being honest and upfront about the concerns of each party and aware of the benefits and pitfalls are key. Like most relationships, take it in phases.  Start with coffee, before dinner and a movie, and don't rush into marriage plans.  
 
 I would love to hear about creative mixes of the above or even entirely different mitigation techniques.

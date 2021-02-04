@@ -65,35 +65,27 @@
   <link href="~/resource/js/highlight.js/styles/vs.css" rel="stylesheet" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
-  @Html.Partial("_head")
-  @RenderSection("Head", false)
 </head>
 
-@{
-    string topMargin = "";
-    if (Document.ContainsKey(WebKeys.Image))
-    {
-      topMargin = "-mt-32";
-    }
-  }
 <body class="bg-white font-sans leading-normal tracking-normal">
   <!-- Page Header -->
-  @RenderSectionOrPartial("Header", "_header")
+  @RenderSectionOrPartial("Header", "_headerAboutUs")
   <!-- Navigation -->
-  <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto @topMargin">
+  <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto -mt-32">
     <div class="mx-0 sm:mx-6">
       <!-- Main Content -->
-        <div class="container lg:max-w-6xl mx-auto">
+      <div class="hidden">
+        @RenderSectionOrPartial("Navigation", "_navigation")
+      </div>
+        <div class="container lg:max-w-6xl mx-auto-mt-32">
           <div class="mx-0 sm:mx-6">
-            <div id="postType" class="bg-white w-full lg:p-10 p-4 text-gray-800">
+            <div id="aboutusType" class="bg-white w-full lg:p-16 p-4 text-gray-800">
               @RenderBody()
             </div>
           </div>
         </div>
         @Html.Partial("_post-footer")
-      <!-- Footer -->
-      @Html.Partial("_subscription")
+
     </div>
   </div>
   @Html.Partial("_footer")

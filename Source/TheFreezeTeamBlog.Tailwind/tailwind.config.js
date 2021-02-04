@@ -4,6 +4,10 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    maxHeight: {
+      '350Max': '350px',
+      '500Max': '500px'
+    },
     colors: {
       brandBlue: "#2b59c0",
       transparent: "transparent",

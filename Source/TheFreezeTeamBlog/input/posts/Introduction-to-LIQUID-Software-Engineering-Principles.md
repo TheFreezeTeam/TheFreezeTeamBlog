@@ -10,32 +10,20 @@ Excerpt: Perhaps you haven't heard of a little known, but frequently practiced c
 
 So you've probably heard of the [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) acronym for programming. But perhaps you haven't heard of a little known, but frequently practiced coding style which we affectionately call LIQUID. Let's take a moment to review the principles of LIQUID programming, for those less familiar with it (though we're sure it will ring a bell as we describe it). 
 
-<table>
- <tr>
-  <td>**L**</td>
-  <td>Large: Write large files that contain long classes and methods</td>
- </tr>
- <tr>
-  <td>**I**</td>
-  <td>Interdependencies: Create obscure, fragile dependencies between modules</td>
- </tr>
- <tr>
-  <td>**Q**</td>
-  <td>Quagmire: Place unrelated items together into one file or class</td>
- </tr>
- <tr>
-  <td>**U**</td>
-  <td>Undocumented: Never document requirements, architecture, design, classes, or methods</td>
- </tr>
- <tr>
-  <td>**I**</td>
-  <td>Illegible: Keep code as illegible as possible by not following consistent coding standards</td>
- </tr>
- <tr>
-  <td>**D**</td>
-  <td>Duplicate code: Copy and paste similar functionality as-needed, and don't worry about DRY coding</td>
- </tr>
-<table>
+<?# Table Class=table ?>
+<?*
+**L** "Large: Write large files that contain long classes and methods"
+**I** "Interdependencies: Create obscure, fragile dependencies between modules"
+**Q** "Quagmire: Place unrelated items together into one file or class"
+**U** "Undocumented: Never document requirements, architecture, design, classes, or methods"             
+**I** "Illegible: Keep code as illegible as possible by not following consistent coding standards"
+**D** "Duplicate code: Copy and paste similar functionality as-needed, and don't worry about DRY coding"
+?>
+<?#/ Table ?>
+
+
+
+
 
 ***Large***<br />
 Show off your intelligence by writing long, hard-to-follow classes and methods. You must be smart, because only a genius could possibly understand what it does. A side-benefit is that it will make you look good by slowing down any of your co-workers who may try to look at the code later. Be sure to group your long classes and methods into an even larger file, which will all but guarantee that merge conflicts arise the next time someone tries to merge your code into the development branch.
