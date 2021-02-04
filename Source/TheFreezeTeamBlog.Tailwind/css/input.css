@@ -40,6 +40,39 @@
     @apply mb-6;
   }
 
+  #postType table {
+    @apply w-full;
+    @apply table-auto;
+    @apply border;
+    @apply border-solid;
+    @apply border-gray-300;
+    @apply mb-6;
+  }
+
+  #postType table tr {
+    @apply border-b;
+    @apply border-solid;
+    @apply border-gray-300;
+    @apply h-14;
+  }
+
+  #postType table tr td {
+    @apply border-r;
+    @apply border;
+    @apply border-gray-300;
+    @apply p-3;
+  }
+
+  #aboutusType p {
+    @apply text-2xl;
+    @apply text-gray-700;
+    @apply mb-6;
+  }
+
+  #aboutusType a {
+    @apply text-blue-600;
+  }
+
   #postType blockquote {
     @apply border-l-4;
     @apply border-blue-600;

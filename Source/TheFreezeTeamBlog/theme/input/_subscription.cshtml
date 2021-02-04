@@ -35,13 +35,13 @@
     <div class="flex-1">
       <div class="flex">
         <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())">
-          <img src="@Document.GetString("AuthorImage")" class="border-4 border-gray-300 hover:border-gray-600 transition duration-500 ease-in-out h-20 w-20 rounded-full object-cover object-cover">
+          <img src="@Document.GetString("AuthorImage")" class="border-2 lg:border-4 border-gray-300 hover:border-gray-600 transition duration-500 ease-in-out lg:h-20 lg:w-20 rounded-full  h-12 w-12 object-cover">
         </a>
-        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-6 ml-5 font-bold text-xl">@Document.GetString(WebKeys.Author)</p></a>
+        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-3 ml-4 lg:pt-6 lg:ml-5 lg:font-bold font-medium lg:text-xl text-sm">@Document.GetString(WebKeys.Author)</p></a>
       </div>
     </div>
     <div class="justify-end">
-      <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())" class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full transition duration-500 ease-in-out">Read More</a>
+      <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())" class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 lg:font-bold font-medium py-1 px-3 lg:py-2 lg:px-4 rounded-full transition duration-500 ease-in-out">Read More</a>
     </div>
   </div>
   <!--/Author-->

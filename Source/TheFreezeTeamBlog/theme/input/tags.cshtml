@@ -10,6 +10,7 @@ ArchiveOrderDescending: true
 Title: Tags
 ArchiveTitle: => GetString("GroupKey")
 ShowInNavbar: true
+Layout: _mainLayout
 ---
 
 <div class="container  lg:max-w-6xl mx-auto-mt-32">
@@ -20,7 +21,7 @@ ShowInNavbar: true
         <div class="container-sm-height">
           <div class="row row-sm-height">
             <div class="col-md-6 right-border col-sm-height">
-                @Html.Partial("/_posts.cshtml", Document)
+              @Html.Partial("/_posts.cshtml", Document)
             </div>
             <div class="col-md-4 mt-4 mt-md-0 col-sm-height">
               @foreach (IDocument tag in OutputPages.Get("tags.html").GetChildren().OrderByDescending(x => x.GetChildren().Count()))
@@ -29,7 +30,7 @@ ShowInNavbar: true
                   .Equals(tag.GetTitle(), StringComparison.OrdinalIgnoreCase) ? "badge-dark" : "badge-light";
 
                 @*string postCount = tag.GetChildren().Count().ToString();
-                <a href="@Context.GetLink(tag)" class="badge @badgeStyle"> @tag.GetTitle() (@postCount)</a>*@
+                  <a href="@Context.GetLink(tag)" class="badge @badgeStyle"> @tag.GetTitle() (@postCount)</a>*@
               }
             </div>
           </div>
