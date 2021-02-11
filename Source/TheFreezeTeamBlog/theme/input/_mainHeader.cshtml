@@ -11,7 +11,7 @@
   if (!Document.ContainsKey(WebKeys.Image))
   {
     isHomePageHeader = true;
-    backgroundImage = $"background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), url(/images/headerBg.webp); height: 160vh;";
+    backgroundImage = $"background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), url(/images/headerBg.png); height: 160vh;";
     title = "Turn your LIQUID code to SOLID.";
   }
   string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);

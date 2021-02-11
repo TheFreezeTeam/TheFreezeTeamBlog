@@ -13,7 +13,7 @@ Excerpt: I just want to break on the next request that comes to the server at th
 
 When debugging asp.net core [middleware](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.0) there are times I just want to walk through the whole process.
 
-![MiddlewareBreakPoint](/content/images/2019/02/MiddlewareBreakPoint.png)
+![MiddlewareBreakPoint](/images/MiddlewareBreakPoint.png)
 
 But where can I set a break point? 
 
@@ -32,19 +32,19 @@ Debugging:
   * Uncheck `Enable Just My Code`
   * Check `Enable Source Link Support` 
 
-![SourceLinkDebuggerOptions](/content/images/2019/02/SourceLinkDebuggerOptions.png)
+![SourceLinkDebuggerOptions](/images/SourceLinkDebuggerOptions.png)
 
   Symbols section:
   * Check Microsoft Symbol Servers
 
-![SourceLinkDebuggerSymbols](/content/images/2019/02/SourceLinkDebuggerSymbols.png)
+![SourceLinkDebuggerSymbols](/images/SourceLinkDebuggerSymbols.png)
 
 Now put a break point in any of your controllers and view the call stack.
 
 In this example I am using the default API template and have a breakpoint in the Values controller.  In the callstack,you can see all of the AspNetCore calls as well.
 
 
-![Callstack](/content/images/2019/02/Callstack.png)
+![Callstack](/images/2019/02/Callstack.png)
   
 
 Now that you have SourceLink enabled you can double click any of the items in the call stack and it will load the source and you can set a breakpoint on them.
