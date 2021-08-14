@@ -46,7 +46,7 @@ Blazor-State can be used in Blazor WebAssembly Apps in need of state management,
 
 To learn the basics of Blazor-State, follow this [tutorial](https://timewarpengineering.github.io/blazor-state/Tutorial.html), or follow along with the video below.
 
-[![Blazor-State Tutorial](/img/blazor-state-tutorial.png)](https://www.youtube.com/watch?v=TkgYj8BnMQM "Blazor-State Tutorial")
+[![Blazor-State Tutorial](/images/blazor-state-tutorial.png)](https://www.youtube.com/watch?v=TkgYj8BnMQM "Blazor-State Tutorial")
 
 ### Useful Links
 
