@@ -75,3 +75,5 @@ To learn more, explore the following resources:
 - [Command Pattern Overview](https://ilyana.dev/blog/2020-08-20-command-pattern/)
 - [Chain of Responsibility Patter Overview](https://ilyana.dev/blog/2020-08-27-chain-of-responsibility-pattern/)
 - [Unidirectional Data Flow Overview](https://flaviocopes.com/react-unidirectional-data-flow/) (this article is specific to React, but does a good job of explaining the concept in a general sense)
+
+*Also published at [ilyana.dev](https://ilyana.dev/blog).*
