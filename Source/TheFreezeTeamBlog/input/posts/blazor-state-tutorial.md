@@ -1,14 +1,11 @@
----
-templateKey: blog-post
-title: Blazor-State
-date: 2021-08-14T18:05:10.000Z
-featuredpost: true
-featuredimage: /img/blazor-state.png
-description: Blazor-State is an architecture designed to manage state in Blazor applications utilizing MediatR.
-tags:
-  - software development
-  - coding
-  - blazor
+Title: Blazor-State
+Published: 08/14/2021
+Image: blazor-state.png
+Tags: 
+  - Blazor
+Author: Ilyana Smith
+Description: Blazor-State is an architecture designed to manage state in Blazor applications utilizing MediatR.
+Excerpt: Blazor-State is an architecture designed to manage state in Blazor applications utilizing MediatR.
 ---
 
 ## Background
