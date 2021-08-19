@@ -35,10 +35,10 @@ stages:
             deploy:
               steps:
               - script: |
-                echo Pipeline.Workspace:$(Pipeline.Workspace)
-                ls $(Pipeline.Workspace)
-                echo -----------
-                ls $(Pipeline.Workspace)/$(WebApplicationName)
+                  echo Pipeline.Workspace:$(Pipeline.Workspace)
+                  ls $(Pipeline.Workspace)
+                  echo -----------
+                  ls $(Pipeline.Workspace)/$(WebApplicationName)
 
               - task: AzureWebApp@1
                 displayName: 'Azure Web App Deploy: FreezeTeam'
