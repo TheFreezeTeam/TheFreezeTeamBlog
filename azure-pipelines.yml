@@ -34,16 +34,16 @@ stages:
           runOnce:
             deploy:
               steps:
-                - script: |
-                  echo Pipeline.Workspace:$(Pipeline.Workspace)
-                  ls $(Pipeline.Workspace)
-                  echo -----------
-                  ls $(Pipeline.Workspace)/$(WebApplicationName)
+              - script: |
+                echo Pipeline.Workspace:$(Pipeline.Workspace)
+                ls $(Pipeline.Workspace)
+                echo -----------
+                ls $(Pipeline.Workspace)/$(WebApplicationName)
 
-                - task: AzureWebApp@1
-                  displayName: 'Azure Web App Deploy: FreezeTeam'
-                  inputs:
-                    azureSubscription: 'TimeWarp Enterprises MSDN (00383693-c163-4094-aefb-f9b845833c21)'
-                    appType: webApp
-                    appName: FreezeTeam
-                    package: $(Pipeline.Workspace)/Output
+              - task: AzureWebApp@1
+                displayName: 'Azure Web App Deploy: FreezeTeam'
+                inputs:
+                  azureSubscription: 'TimeWarp Enterprises MSDN (00383693-c163-4094-aefb-f9b845833c21)'
+                  appType: webApp
+                  appName: FreezeTeam
+                  package: $(Pipeline.Workspace)/Output
