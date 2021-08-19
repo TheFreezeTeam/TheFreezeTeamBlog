@@ -28,7 +28,7 @@ stages:
     jobs:
       - deployment:
         pool: TimeWarpEnterprises
-        environment: Canary
+        environment: Production
 
         strategy:
           runOnce:
