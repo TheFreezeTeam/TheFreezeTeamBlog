@@ -40,8 +40,6 @@ stages:
                   script: |
                     echo Pipeline.Workspace:$(Pipeline.Workspace)
                     Get-ChildItem $(Pipeline.Workspace)
-                    echo -----------
-                    Get-ChildItem $(Pipeline.Workspace)/$(WebApplicationName)
 
               - task: AzureWebApp@1
                 displayName: 'Azure Web App Deploy: FreezeTeam'
