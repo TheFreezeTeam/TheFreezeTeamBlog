@@ -34,9 +34,17 @@ stages:
           runOnce:
             deploy:
               steps:
-                - task: AzureWebApp@1
-                  displayName: 'Azure Web App Deploy: FreezeTeam'
-                  inputs:
-                    azureSubscription: 'TimeWarp Enterprises MSDN (00383693-c163-4094-aefb-f9b845833c21)'
-                    appType: webApp
-                    appName: FreezeTeam
+              - task: PowerShell@2
+                inputs:
+                  targetType: 'inline'
+                  script: |
+                    echo Pipeline.Workspace:$(Pipeline.Workspace)
+                    Get-ChildItem $(Pipeline.Workspace)
+
+              - task: AzureWebApp@1
+                displayName: 'Azure Web App Deploy: FreezeTeam'
+                inputs:
+                  azureSubscription: 'TimeWarp Enterprises MSDN (00383693-c163-4094-aefb-f9b845833c21)'
+                  appType: webApp
+                  appName: FreezeTeam
+                  package: $(Pipeline.Workspace)/Output
