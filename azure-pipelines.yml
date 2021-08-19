@@ -28,11 +28,15 @@ stages:
     jobs:
       - deployment:
         pool: TimeWarpEnterprises
+        environment: Canary
 
-    steps:
-      - task: AzureWebApp@1
-        displayName: 'Azure Web App Deploy: FreezeTeam'
-        inputs:
-          azureSubscription: 'TimeWarp Enterprises MSDN (00383693-c163-4094-aefb-f9b845833c21)'
-          appType: webApp
-          appName: FreezeTeam
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebApp@1
+                  displayName: 'Azure Web App Deploy: FreezeTeam'
+                  inputs:
+                    azureSubscription: 'TimeWarp Enterprises MSDN (00383693-c163-4094-aefb-f9b845833c21)'
+                    appType: webApp
+                    appName: FreezeTeam
