@@ -35,7 +35,7 @@ This one hurt a little. When it comes to design, my imagination far outweighs my
 
 [Splash Page Preview](https://xd.adobe.com/view/316cb4c9-aa0d-4f4a-7264-7dfca2fd114a-475d/)
 
-This one contains animations so you'll have to click the link and watch the preview to get the full idea. But this is how it starts: ![nhBackgroundSmall](/images/nhBackgroundSmall.png)
+This one contains animations so you'll have to click the link and watch the preview to get the full idea. But this is how it starts: ![nhBackgroundSmall](../images/nhBackgroundSmall.png)
 
 Coming up next is a calculator!
 

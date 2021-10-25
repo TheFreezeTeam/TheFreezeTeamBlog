@@ -1,0 +1,56 @@
+@model IDocument
+@{
+  string backgroundImage = null;
+  string title = null;
+  bool isHomePageHeader = false;
+  if (Document.ContainsKey(WebKeys.Image))
+  {
+    backgroundImage = $"background-image: url(\"/images{Context.GetLink(Document.GetString(WebKeys.Image))}\"); height: 80vh;";
+    title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
+  }
+  if (!Document.ContainsKey(WebKeys.Image))
+  {
+    isHomePageHeader = true;
+    backgroundImage = $"background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), url(/images/headerBg.png); height: 160vh;";
+    title = "Turn your LIQUID code to SOLID.";
+  }
+  string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
+  bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
+}
+
+@if (isHomePageHeader)
+{
+  <div class="bg-black m-0 p-0 lg:bg-cover lg:bg-bottom bg-contain bg-center bg-no-repeat sm:h-10 max-h-350Max lg:max-h-500Max" style="@backgroundImage">
+    <div class="container mx-auto lg:pt-56 pt-10 text-center">
+      <!--Title-->
+      <img class="w-8 w-8 lg:w-14 lg:h-14 mx-auto" src="~/images/Logo.png" />
+      <p class="font-light text-white uppercase lg:text-lg text-sm">@title</p>
+    </div>
+  </div>
+}
+else
+{
+  @Html.Partial("_postNav")
+  <div class="text-center pt-16 md:pt-32">
+    <p class="text-sm md:text-base text-green-500 font-bold">
+      @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
+      @if (Document.ContainsKey("Tags"))
+      {
+        @foreach (IDocument tag in Document.GetList<string>("Tags")
+        .Select(x => Outputs["tags.html"]
+        .First()
+        .GetChildren()
+        .FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
+        .Where(x => x != null))
+        {
+          <a href="@Context.GetLink(tag)"> @tag.GetTitle()</a>
+        }
+      }
+    </p>
+    <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
+  </div>
+  <!--image-->
+  <div class="container w-full max-w-7xl mx-auto bg-white lg:bg-cover mt-8 lg:rounded lg:h-4 h-2 bg-cover bg-center bg-no-repeat" style="@backgroundImage"></div>
+}
+
+

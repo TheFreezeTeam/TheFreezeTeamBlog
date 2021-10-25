@@ -1,25 +1,50 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
-pool:
-  name: TimeWarpEnterprises
+stages:
+  - stage: Build
+    jobs:
+    - job: Build
 
-steps:
-- task: DotNetCoreCLI@2
-  displayName: Publish The Server project which will be deployed to azure
-  inputs:
-    command: run
-    publishWebProjects: false
-    projects: 'Source/TheFreezeTeamBlog/TheFreezeTeamBlog.csproj'
+      pool:
+        name: TimeWarpEnterprises
 
-- task: PublishBuildArtifacts@1
-  displayName: Publish Artifact to Output
-  inputs:
-    PathtoPublish: 'Source/TheFreezeTeamBlog/output'
-    ArtifactName: Output
-    publishLocation: Container
+      steps:
+      - task: DotNetCoreCLI@2
+        displayName: Publish The Server project which will be deployed to azure
+        inputs:
+          command: run
+          publishWebProjects: false
+          projects: 'Source/TheFreezeTeamBlog/TheFreezeTeamBlog.csproj'
+
+      - task: PublishBuildArtifacts@1
+        displayName: Publish Artifact to Output
+        inputs:
+          PathtoPublish: 'Source/TheFreezeTeamBlog/output'
+          ArtifactName: Output
+          publishLocation: Container
+
+  - stage: Production
+    jobs:
+      - deployment:
+        pool: TimeWarpEnterprises
+        environment: Production
+
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: PowerShell@2
+                inputs:
+                  targetType: 'inline'
+                  script: |
+                    echo Pipeline.Workspace:$(Pipeline.Workspace)
+                    Get-ChildItem $(Pipeline.Workspace)
+
+              - task: AzureWebApp@1
+                displayName: 'Azure Web App Deploy: FreezeTeam'
+                inputs:
+                  azureSubscription: 'TimeWarp Enterprises MSDN (00383693-c163-4094-aefb-f9b845833c21)'
+                  appType: webApp
+                  appName: FreezeTeam
+                  package: $(Pipeline.Workspace)/Output

@@ -2,8 +2,8 @@ Title: Back to the Beginning
 Published: 04/12/2019
 Tags: 
   - Java
-Author: Stefan Bemelmans
 Image: backToBeginning.webp
+Author: Steven T. Cramer
 Description: the environment in which the coding happens isn't the same ...as... React and React Native.  I decided it would be fun to detail the setup process.
 Excerpt: the environment in which the coding happens isn't the same ...as... React and React Native.  I decided it would be fun to detail the setup process.
 ---
