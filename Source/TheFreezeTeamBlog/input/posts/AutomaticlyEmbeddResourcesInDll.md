@@ -1,5 +1,5 @@
 Title: Automatically Embed resources in dotnet
-Published: 08/30/2021
+Published: 26/11/2021
 Image: 2021-11-26-07-21-51.png
 Tags: 
   - C# 
@@ -34,6 +34,8 @@ Inside your `Directory.Build.props` file add the following:
 
 To validate your resources are included you can use [Telerik's JustDecomplie](http://www.telerik.com/products/decompiling.aspx)
 
+
+![](../images/2021-11-26-07-21-51.png)
 
 # References
 
