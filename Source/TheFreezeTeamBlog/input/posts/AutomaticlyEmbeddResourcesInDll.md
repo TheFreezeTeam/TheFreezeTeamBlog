@@ -2,7 +2,7 @@ Title: Automatically Embed resources in dotnet
 Published: 26/11/2021
 Image: 2021-11-26-07-21-51.png
 Tags: 
-  - C# 
+  - dotnet
   - DirectoryBuildProps
   - EmbeddedResource
 Author: Steven T. Cramer
