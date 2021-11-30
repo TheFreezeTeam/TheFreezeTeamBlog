@@ -10,7 +10,7 @@ Description: How to automatically embeded resources in your dotnet dlls?
 Excerpt: Inside your `Directory.Build.props` file add the following
 ---
 
-# Automatically Embed Resoures in dotnet
+# Automatically Embed Resources in dotnet
 
 ## Scenario
 
