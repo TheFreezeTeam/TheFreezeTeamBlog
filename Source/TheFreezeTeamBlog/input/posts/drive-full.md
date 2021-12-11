@@ -5,7 +5,7 @@ Tags:
   - dev-tools
 Author: Steven T. Cramer
 Description: How to see what is using up your hard drive.
-Excerpt: To determine what was using up all the drive space I needed better visibility. 
+Excerpt: To determine what was using up all the drive space, I needed better visibility. 
 ---
 
 # X-Ray Vision to diagnose "Hard drive full"
@@ -16,7 +16,7 @@ I have a 2 TB drive, but early this week my "free space" was running low. I new 
 
 To determine what was using up all the drive space I needed better visibility. Luckily I found [WizTree](https://www.diskanalyzer.com/)
 
- ![2021-11-26-07-21-51.png](https://antibodysoftware-17031.kxcdn.com/images/wiztree_treeviewwithmap2.webp)031.kxcdn.com/images/wiztree_treeviewwithmap2.webp)
+ ![wiztree_treeviewwithmap2.webp](/images/wiztree_treeviewwithmap2.webp)
 
 A picture is worth a 1000 words. Very quickly WizTree showed me I had 250GB in my AMD log folder.
 
