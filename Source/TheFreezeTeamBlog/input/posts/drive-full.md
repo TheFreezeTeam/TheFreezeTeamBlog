@@ -1,6 +1,6 @@
 Title: Clean up your hard drive with WizTree
 Published: 12/11/2021
-Image: https://antibodysoftware-17031.kxcdn.com/images/wiztree_treeviewwithmap2.webp
+Image: wiztree_treeviewwithmap2.webp
 Tags: 
   - dev-tools
 Author: Steven T. Cramer
