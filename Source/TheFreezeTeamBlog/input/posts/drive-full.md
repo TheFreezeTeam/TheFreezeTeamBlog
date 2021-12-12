@@ -1,6 +1,6 @@
 Title: Clean up your hard drive with WizTree
 Published: 12/11/2021
-Image: wiztree_treeviewwithmap2.webp
+Image: wiztree_treeviewwithmap.webp
 Tags: 
   - dev-tools
 Author: Steven T. Cramer
@@ -16,7 +16,7 @@ I have a 2 TB drive, but early this week my "free space" was running low. I new 
 
 To determine what was using up all the drive space I needed better visibility. Luckily I found [WizTree](https://www.diskanalyzer.com/)
 
- ![wiztree_treeviewwithmap2.webp](/images/wiztree_treeviewwithmap2.webp)
+ ![wiztree_treeviewwithmap2.webp](/images/wiztree_treeviewwithmap.webp)
 
 A picture is worth a 1000 words. Very quickly WizTree showed me I had 250GB in my AMD log folder.
 
