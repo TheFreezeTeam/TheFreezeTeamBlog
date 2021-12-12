@@ -10,7 +10,7 @@ Excerpt: To determine what was using up all the drive space, I needed better vis
 
 # X-Ray Vision to diagnose "Hard drive full"
 
-I have a 2 TB drive, but early this week my "free space" was running low. I new I had created a couple of local Hyper-V VMs but thought, "I should have more free space than that!".
+I have a 2 TB drive, but early this week my "free space" was running low. I knew I had created a couple of local Hyper-V VMs but thought, "I should have more free space than that!".
 
 ## Analysis (X-Ray Vision)
 
