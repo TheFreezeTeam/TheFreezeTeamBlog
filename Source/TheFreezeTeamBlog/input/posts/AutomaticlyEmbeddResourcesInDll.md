@@ -37,7 +37,7 @@ To validate your resources are included you can use [Telerik's JustDecomplie](ht
 
 ![](../images/2021-11-26-07-21-51.png)
 
-# References
+## References
 
 https://dominikjeske.github.io/source-generators/
 https://stackoverflow.com/questions/51607558/msbuild-create-embeddedresource-before-build
