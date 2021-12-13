@@ -14,11 +14,11 @@ I have a 2 TB drive, but early this week my "free space" was running low. I knew
 
 ## Analysis (X-Ray Vision)
 
-To determine what was using up all the drive space I needed better visibility. Luckily I found [WizTree](https://www.diskanalyzer.com/)
+To determine what was using up all the drive space I needed better visibility. Luckily, I found [WizTree](https://www.diskanalyzer.com/)
 
  ![wiztreetreeviewwithmap.png](/images/wiztreetreeviewwithmap.png)
 
-A picture is worth a 1000 words. Very quickly WizTree showed me I had 250GB in my AMD log folder.
+A picture is worth a 1000 words. Very quickly, WizTree showed me I had 250GB in my AMD log folder.
 
 ## Root Cause
 
