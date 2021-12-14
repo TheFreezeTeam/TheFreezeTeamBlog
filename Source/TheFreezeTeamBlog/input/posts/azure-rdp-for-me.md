@@ -99,5 +99,5 @@ So now if my ip changes I can:
 4. RDP into my VM!
 
 ## References
-https://markheath.net/post/azure-cli-access-restrictions
-https://www.prajwaldesai.com/get-public-ip-address-using-powershell/
+https://markheath.net/post/azure-cli-access-restrictions  
+https://www.prajwaldesai.com/get-public-ip-address-using-powershell/  
