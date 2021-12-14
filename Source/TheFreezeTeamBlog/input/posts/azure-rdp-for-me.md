@@ -79,7 +79,6 @@ Then I added specific functions for specific VMs
 
 ```powershell
 function Set-Rdp-For-Me-FoobarVM {
-  # will need to be logged in as StevenTCramer@gmail.com
   $Sub = "MySub"
   $ResGroup = "MyResourceGroup"
   $NsgName = "MyNetworkSecurityGroup"
