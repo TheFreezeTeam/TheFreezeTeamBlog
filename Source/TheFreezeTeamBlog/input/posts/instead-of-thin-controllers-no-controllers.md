@@ -1,3 +1,4 @@
+DocumentName: instead-of-thin-controllers-no-controllers
 Title: dotnet core - Micro Controllers
 Published: 02/26/2019
 Tags: 

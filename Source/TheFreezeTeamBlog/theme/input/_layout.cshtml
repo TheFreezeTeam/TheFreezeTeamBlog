@@ -62,9 +62,8 @@
   <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
   <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
   <link href="~/css/Site.css" rel="stylesheet" type="text/css">
-  <link href="~/resource/js/highlight.js/styles/vs.css" rel="stylesheet" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+
+  <link href="~/resource/js/prismjs/prism.css" rel="stylesheet" />
 
   @Html.Partial("_head")
   @RenderSection("Head", false)
@@ -78,20 +77,37 @@
     }
   }
 <body class="bg-white font-sans leading-normal tracking-normal">
+  <script src="~/resource/js/prismjs/prism.js"></script>
   <!-- Page Header -->
   @RenderSectionOrPartial("Header", "_header")
   <!-- Navigation -->
   <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto @topMargin">
     <div class="mx-0 sm:mx-6">
       <!-- Main Content -->
-        <div class="container lg:max-w-6xl mx-auto">
-          <div class="mx-0 sm:mx-6">
-            <div id="postType" class="bg-white w-full lg:p-10 p-4 text-gray-800">
-              @RenderBody()
+      <div class="container lg:max-w-6xl mx-auto">
+        <div class="mx-0 sm:mx-6">
+          <div id="postType" class="bg-white w-full lg:p-10 p-4 text-gray-800 font-light">
+            <div class="flex justify-end -mt-4 mb-6 text-sm font-normal">
+              <div>
+                @if (!string.IsNullOrEmpty(Document.GetString("SubFolderName")))
+                {
+          <a class="flex" href="https://github.com/TheFreezeTeam/TheFreezeTeamBlog/edit/master/Source/TheFreezeTeamBlog/input/posts/@Document.GetString("SubFolderName")/@(Document.GetString("DocumentName")).md" target="_blank">
+            Edit This Page
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+          </a> }
+                else
+                {
+          <a class="flex" href="https://github.com/TheFreezeTeam/TheFreezeTeamBlog/edit/master/Source/TheFreezeTeamBlog/input/posts/@(Document.GetString("DocumentName")).md" target="_blank">
+            Edit This Page
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+          </a>}
+              </div>
             </div>
+            @RenderBody()
           </div>
         </div>
-        @Html.Partial("_post-footer")
+      </div>
+      @Html.Partial("_post-footer")
       <!-- Footer -->
       @Html.Partial("_subscription")
     </div>

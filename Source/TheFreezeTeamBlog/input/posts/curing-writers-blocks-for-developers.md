@@ -1,3 +1,4 @@
+DocumentName: curing-writers-blocks-for-developers
 Title: Curing Writer's Block for Developers
 Published: 10/02/2016
 Tags: 

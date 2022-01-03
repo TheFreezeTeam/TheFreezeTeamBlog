@@ -1,3 +1,4 @@
+DocumentName: CustomMoldeBinding
 Title: Custom Model Binging
 Published: 08/27/2099
 Tags: C

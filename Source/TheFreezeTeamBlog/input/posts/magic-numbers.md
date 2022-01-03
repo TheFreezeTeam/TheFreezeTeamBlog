@@ -1,3 +1,4 @@
+DocumentName: magic-numbers
 Title: Change your Windows 10 Azure VM RDP port
 Published: 01/20/2017
 Tags: 

@@ -1,3 +1,4 @@
+DocumentName: drive-full
 Title: Clean up your hard drive with WizTree
 Published: 12/11/2021
 Image: wiztreetreeviewwithmap.png

@@ -1,3 +1,4 @@
+DocumentName: Variant
 Title: Generic Variance in Superheros
 Published: 08/15/2019
 Image: VariantGenericInterfaces.webp

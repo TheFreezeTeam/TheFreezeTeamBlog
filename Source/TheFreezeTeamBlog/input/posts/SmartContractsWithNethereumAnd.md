@@ -1,3 +1,4 @@
+DocumentName: SmartContractsWithNethereumAnd
 Title: Superhero smart contracts.
 Published: 01/01/2099
 Tags: Solidity Truffle TruffleSuite Nethereum Ethereum SmartContract

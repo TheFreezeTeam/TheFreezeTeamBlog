@@ -1,3 +1,4 @@
+DocumentName: the-javascript-madness-0
 Title: The JavaScript Madness Part 0
 Published: 01/15/2017
 Tags: 

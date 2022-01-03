@@ -1,4 +1,5 @@
-﻿Title: The JavaScript Madness Part 2 - Execute js file from command line
+﻿DocumentName: the-javascript-madness-part-2
+Title: The JavaScript Madness Part 2 - Execute js file from command line
 Published: 02/18/2018
 Tags: 
   - nodeJs 

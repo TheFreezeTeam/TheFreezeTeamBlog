@@ -1,3 +1,4 @@
+DocumentName: blazor
 Title: Blazor Hosting Location
 Published: 03/31/2019
 Tags: 

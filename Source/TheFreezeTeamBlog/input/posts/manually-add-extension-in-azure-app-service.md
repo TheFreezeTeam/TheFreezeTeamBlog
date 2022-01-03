@@ -1,3 +1,4 @@
+DocumentName: manually-add-extension-in-azure-app-service
 Title: Manually add Extension in Azure App Service
 Published: 03/30/2019
 Tags: 

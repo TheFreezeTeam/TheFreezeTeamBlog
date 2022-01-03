@@ -1,4 +1,5 @@
-﻿Title: Expand the OS Drive on your Azure Resource Manager VM
+﻿DocumentName: azure-resize-os-drive
+Title: Expand the OS Drive on your Azure Resource Manager VM
 Published: 01/15/2017
 Tags: 
   - CSharp 

@@ -1,3 +1,4 @@
+DocumentName: dotnet-core-break-on-every-request
 Title: Dotnet core break on EVERY request, via Source Link
 Published: 02/11/2019
 Tags: 
