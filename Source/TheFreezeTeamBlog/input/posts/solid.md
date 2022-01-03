@@ -1,4 +1,5 @@
-﻿Title: Turn your LIQUID code SOLID!
+﻿DocumentName: solid
+Title: Turn your LIQUID code SOLID!
 Layout: _aboutUsLayout
 Image: SolidIceCubes.webp
 Author: Steven T. Cramer

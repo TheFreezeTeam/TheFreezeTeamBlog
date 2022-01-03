@@ -1,3 +1,4 @@
+DocumentName: blazor-state-tutorial
 Title: Blazor-State
 Published: 08/14/2021
 Image: blazor-state.png

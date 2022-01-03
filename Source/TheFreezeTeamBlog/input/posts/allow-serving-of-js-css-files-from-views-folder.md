@@ -1,3 +1,4 @@
+DocumentName: allow-serving-of-js-css-files-from-views-folder
 Title: Allow serving of js, ts, css and map files from Views folder.
 Published: 04/28/2016
 Tags: 

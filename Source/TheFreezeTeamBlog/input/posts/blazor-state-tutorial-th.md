@@ -1,4 +1,5 @@
-﻿Title: มาใช้ Blazor State บน Blazor App ช่วยให้เราจัดการ State ได้ง่ายขึ้นเยอะเลย
+﻿DocumentName: blazor-state-tutorial-th
+Title: มาใช้ Blazor State บน Blazor App ช่วยให้เราจัดการ State ได้ง่ายขึ้นเยอะเลย
 Published: 10/25/2021
 Tags: 
   - Blazor
@@ -46,7 +47,7 @@ Blazor State ใช้คลาส Store ซึ่งเป็นที่เก
 
 ในไฟล์ ```Program.cs``` เพิ่ม method ```ConfigureServices``` ดังนี้
 
-```
+```csharp
 public static async Task Main(string[] args)
     {
       var builder = WebAssemblyHostBuilder.CreateDefault(args);

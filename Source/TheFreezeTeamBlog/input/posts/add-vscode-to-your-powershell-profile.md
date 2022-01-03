@@ -1,3 +1,4 @@
+DocumentName: add-vscode-to-your-powershell-profile
 Title: Turn your LIQUID code SOLID!
 Published: 06/30/2016
 Tags: 

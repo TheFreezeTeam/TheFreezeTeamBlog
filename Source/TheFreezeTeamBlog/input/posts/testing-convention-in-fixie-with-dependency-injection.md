@@ -1,3 +1,4 @@
+DocumentName: testing-convention-in-fixie-with-dependency-injection
 Title: A Testing Convention for Fixie with Dependency Injection support
 Published: 01/29/2019
 Tags: 

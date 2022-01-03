@@ -1,3 +1,4 @@
+DocumentName: three-ways-to-create-react-stateless-component
 Title: Three ways to create React Stateless Components in TypeScript
 Published: 01/19/2017
 Tags: 

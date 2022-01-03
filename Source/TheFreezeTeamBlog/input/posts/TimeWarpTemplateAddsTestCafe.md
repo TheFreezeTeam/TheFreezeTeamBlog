@@ -1,3 +1,4 @@
+DocumentName: TimeWarpTemplateAddsTestCafe
 Title: TimeWarp-Blazor Template adds TestCafe
 Published: 08/27/2019
 Tags: CSharp Blazor

@@ -1,3 +1,4 @@
+DocumentName: powershell-script-to-configure-git-repo-branches
 Title: Web Development Branching Strategy
 Published: 01/09/2017
 Tags: 

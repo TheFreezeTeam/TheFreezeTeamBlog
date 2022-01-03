@@ -1,3 +1,4 @@
+DocumentName: AutomaticlyEmbeddResourcesInDll
 Title: Automatically Embed resources in dotnet
 Published: 11/26/2021
 Image: 2021-11-26-07-21-51.png

@@ -1,3 +1,4 @@
+DocumentName: vsts-minimal-scrum
 Title: Visual Studio Team Services (VSTS) Minimal Scrum Template
 Published: 02/28/2018
 Tags: 

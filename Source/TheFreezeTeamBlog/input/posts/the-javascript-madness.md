@@ -1,4 +1,5 @@
-﻿Title: The JavaScript Madness Part 1 - Environment
+﻿DocumentName: the-javascript-madness
+Title: The JavaScript Madness Part 1 - Environment
 Published: 01/15/2017
 Tags: 
   - CSharp 

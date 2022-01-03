@@ -1,3 +1,4 @@
+DocumentName: nodatime-netcore2-configuration
 Title: NodaTime .NET Core 2  json serialization configuration
 Published: 12/03/2017
 Tags: 

@@ -1,3 +1,5 @@
+DocumentName: launch-edge-with-profile
+SubFolderName: 2022
 Title: Start Edge with a Specific Profile from Powershell 
 Published: 01/03/2022
 Image: Powershell_256.png
@@ -24,6 +26,7 @@ Inside my powershell script I run the following:
 
 ```PowerShell
 Start-Process -FilePath "C:\Program Files (x86)\Microsoft\Edge Dev\Application\msedge.exe" -ArgumentList "--profile-directory=`"Profile 8`" https://portal.azure.com/"
+
 ```
 
 To get the `FilePath` go [edge://version/](edge://version/) and look for `Executable path`.

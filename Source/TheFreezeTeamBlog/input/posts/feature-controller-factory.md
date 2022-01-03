@@ -1,3 +1,4 @@
+DocumentName: feature-controller-factory
 Title: Controller Controller where art thou Controller?  (Feature Controller Factory)
 Published: 08/24/2016
 Tags: 
