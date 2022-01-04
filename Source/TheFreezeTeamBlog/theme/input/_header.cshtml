@@ -20,7 +20,7 @@
 
 
   @Html.Partial("_postNav")
-  <div class="text-center mx-auto pt-16 md:pt-32 w-7/12">
+  <div class="text-center mx-auto pt-16 md:pt-10 w-7/12">
     <p class="text-sm text-blue-500 font-medium uppercase">
       @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
       @if (Document.ContainsKey("Tags"))
