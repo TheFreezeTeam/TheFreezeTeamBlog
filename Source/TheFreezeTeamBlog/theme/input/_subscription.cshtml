@@ -12,9 +12,9 @@
     <div class="flex-1">
       <div class="flex">
         <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())">
-          <img src="@Document.GetString("AuthorImage")" class="border-2 lg:border-4 border-gray-300 hover:border-gray-600 transition duration-500 ease-in-out lg:h-20 lg:w-20 rounded-full  h-12 w-12 object-cover">
+          <img src="@Document.GetString("AuthorImage")" class="hover:shadow-lg transition duration-500 ease-in-out lg:h-14 lg:w-14 rounded-full  h-12 w-12 object-cover">
         </a>
-        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-3 ml-4 lg:pt-6 lg:ml-5 lg:font-bold font-medium lg:text-xl text-sm">@Document.GetString(WebKeys.Author)</p></a>
+        <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-3 ml-4 lg:pt-3 lg:ml-5 font-medium text-base">@Document.GetString(WebKeys.Author)</p></a>
       </div>
     </div>
     <div class="justify-end">
