@@ -5,6 +5,7 @@ Tags:
   - CodeSearch 
 Author: Mike
 Published: 02/26/2018
+Excerpt: Example of using GitHub Shortcode.
 ---
 
 # Git Content 

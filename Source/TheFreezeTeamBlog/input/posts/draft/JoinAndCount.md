@@ -1,3 +1,6 @@
+Title: hmmm... IsOTA & the Tangle
+Published: 03/12/2099
+---
 # By the Power of LinqPad 
 
 ## Join and Count in Linq
