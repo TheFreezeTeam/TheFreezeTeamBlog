@@ -50,7 +50,7 @@
             string result = RemoveOpenAndCloseFrontMatter(textContent);
             return result;
             //Check if it has only end close front matter.
-          } else if (textContent.Contains("---")) 
+          } else if (textContent.Contains("---"))
           {
             string result = RemoveOnlyCloseFrontMatter(textContent);
             return result;
@@ -65,7 +65,7 @@
           }
 
         } else {
-          return "#Ops, parameter is invalid.";
+          return "#Oops, a parameter is invalid.";
         }
       }
     }
