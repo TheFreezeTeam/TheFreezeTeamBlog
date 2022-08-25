@@ -7,7 +7,7 @@
   - test
   Image: main_image.webp
   Description: Launch your dotnet web app from your integration tests
-  Excerpt: Excerpt for Twitter
+  Excerpt: How to launch your fully functional dotnet web application from your integration test.
   Author: Steven T. Cramer
   ---
 
@@ -94,7 +94,7 @@ When running from a test the running assembly is your test assembly (`Web.Server
 
 "So what?" you say.  Why would that matter, I didn't think it would obviously. But it does!
 
-When dotnet builds my `Web.Server` application it creates a json file named `$"Web.Server.staticwebassets.runtime.json"`
+When dotnet builds my `Web.Server` application it creates a json file named `Web.Server.staticwebassets.runtime.json`
 
 This file contains information as to where the csproj file is located and where your web application content should be found. Dotnet tries to resolve the manifest `ResolveManifest`, relative to an assembly named `environment.ApplicationName`.
 
