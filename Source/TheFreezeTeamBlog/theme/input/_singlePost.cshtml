@@ -3,7 +3,7 @@
 @{
     string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
     string imageUrl = "/images/" + Model.GetString(WebKeys.Image);
-    int readTime = excerpt.Length / 50;
+    int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
     string authorName = Model.GetString("Author");
 }
 
