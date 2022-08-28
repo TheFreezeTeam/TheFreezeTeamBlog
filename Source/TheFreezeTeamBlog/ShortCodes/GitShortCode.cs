@@ -19,10 +19,19 @@
     {
       IMetadataDictionary arguments = args.ToDictionary(Owner, Repo, PathFileName, RegionName);
       arguments.RequireKeys(Owner, Repo, PathFileName);
-      content = GetContent(arguments.GetString(Owner), arguments.GetString(Repo), arguments.GetString(PathFileName), arguments.GetString(RegionName)).Result;
-      return content;
 
+      content =
+        GetContent
+        (
+          arguments.GetString(Owner),
+          arguments.GetString(Repo),
+          arguments.GetString(PathFileName),
+          arguments.GetString(RegionName)
+        ).Result;
+
+      return content;
     }
+
     public async Task<string> GetContent(string owner, string repo, string pathFileName, string regionName)
     {
       var request = new HttpRequestMessage
