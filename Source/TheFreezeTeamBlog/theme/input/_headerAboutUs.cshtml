@@ -1,22 +1,19 @@
 @model IDocument
 @{
   string backgroundImage = null;
-  string title = null;
-  bool isHomePageHeader = false;
+  string title = Document.GetString("Title");
+  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+  string backgroungImageUrl = Context.GetLink(postImageUrl);
+  
   if (Document.ContainsKey(WebKeys.Image))
   {
-    backgroundImage = $"background-image: url(\"/images{Context.GetLink(Document.GetString(WebKeys.Image))}\"); height: 95vh; background-size: cover; background-position: center center;";
-    title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
+    backgroundImage = $"background-image: url(\"{backgroungImageUrl}\"); height: 95vh; background-size: cover; background-position: center center;";
   }
 }
 
-
-  @Html.Partial("_postNav")
-  <div class="text-center pt-16 md:pt-32">
-    <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
-  </div>
-  <!--image-->
-  <div class="container w-full max-w-7xl mx-auto bg-white bg-cover mt-8 lg:rounded lg:h-4 h-2" style="@backgroundImage"></div>
-
-
-
+@Html.Partial("_postNav")
+<div class="text-center pt-16 md:pt-32">
+  <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
+</div>
+<!--image-->
+<div class="container w-full max-w-7xl mx-auto bg-white bg-cover mt-8 lg:rounded lg:h-4 h-2" style="@backgroundImage"></div>
