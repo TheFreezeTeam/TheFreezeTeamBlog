@@ -1,18 +1,19 @@
 @model IDocument
 @{
-  string backgroundImage = null;
-  string title = null;
+  string? backgroundImage;
+  string? title = Document.GetString(WebKeys.Title);
   bool isHomePageHeader = false;
+  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+  string backgroungImageUrl = Context.GetLink(postImageUrl);
+
   if (Document.ContainsKey(WebKeys.Image))
   {
-    backgroundImage = $"background-image: url(\"/images{Context.GetLink(Document.GetString(WebKeys.Image))}\"); height: 80vh;";
-    title = "YOYO hear me from _mainHeader.cshtml";// Document.GetString("Title") ?? Document.GetString("SiteTitle");
+    backgroundImage = $"background-image: url(\"{backgroungImageUrl}\"); height: 80vh;";
   }
-  if (!Document.ContainsKey(WebKeys.Image))
+  else
   {
     isHomePageHeader = true;
     backgroundImage = $"background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), url(/images/headerBg.png); height: 160vh;";
-    title = "Turn your LIQUID code to SOLID.";
   }
   string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
   bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
