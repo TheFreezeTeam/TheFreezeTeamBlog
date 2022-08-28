@@ -4,9 +4,12 @@
   string? title = null;
   bool isHomePageHeader = false;
   title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
+  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+  string backgroungImageUrl = Context.GetLink(postImageUrl);
+
   if (Document.ContainsKey(WebKeys.Image))
   {
-    backgroundImage = $"background-image: url(\"{Context.GetLink(Document.GetString(TftKeys.PostImageUrl))}\"); height: 80vh;";
+    backgroundImage = $"background-image: url(\"{backgroungImageUrl}\"); height: 80vh;";
   } else
   {
     isHomePageHeader = true;
