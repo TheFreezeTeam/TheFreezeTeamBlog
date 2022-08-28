@@ -6,7 +6,7 @@
   if (Document.ContainsKey(WebKeys.Image))
   {
     backgroundImage = $"background-image: url(\"/images{Context.GetLink(Document.GetString(WebKeys.Image))}\"); height: 80vh;";
-    title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
+    title = "YOYO hear me from _mainHeader.cshtml";// Document.GetString("Title") ?? Document.GetString("SiteTitle");
   }
   if (!Document.ContainsKey(WebKeys.Image))
   {

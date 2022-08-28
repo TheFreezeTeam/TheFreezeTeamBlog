@@ -1,6 +1,6 @@
-DocumentName: drive-full
-Title: Clean up your hard drive with WizTree
-Published: 12/11/2021
+---
+Title: Send Azure Monitor Alerts to Discord
+Published: 12/11/2099
 Image: wiztreetreeviewwithmap.png
 Tags: 
   - dev-tools

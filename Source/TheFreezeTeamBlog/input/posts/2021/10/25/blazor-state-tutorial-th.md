@@ -1,4 +1,5 @@
-﻿DocumentName: blazor-state-tutorial-th
+﻿---
+DocumentName: blazor-state-tutorial-th
 Title: มาใช้ Blazor State บน Blazor App ช่วยให้เราจัดการ State ได้ง่ายขึ้นเยอะเลย
 Published: 10/25/2021
 Tags: 
@@ -6,7 +7,7 @@ Tags:
   - C#
   - Thai
 Author: Mike Yoshino
-Image: Posts/BlazorStateThai/Cover.png
+Image: Cover.png
 Description: สอนการใช้งาน Blazor State กับ Blazor Application โดยละเอียด
 Excerpt: สอนการใช้งาน Blazor State กับ Blazor Application โดยละเอียด
 ---
@@ -41,7 +42,7 @@ Blazor State ใช้คลาส Store ซึ่งเป็นที่เก
 
 * เป็น Partial class และ สืบทอดจาก State<T> โดยที่ T ก็คือคลาส State ของเรา
 * ต้องมี Method ชื่อ Initialize ซึ่งทำหน้าที่เชทค่าเริ่มต้นให้กับแต่ละ Property ในคลาส State
-![BlazorStateThai01](/images/Posts/BlazorStateThai/BlazorStateThai01.png)
+![BlazorStateThai01](BlazorStateThai01.png)
 
 ต่อไปเราจะมา Config ตัว Service (Configure the services)
 
@@ -81,7 +82,7 @@ public static async Task Main(string[] args)
 
 ในโฟเดอร์ Counter สร้างโฟเดอร์ Pages ขึ้นมาและข้างในโฟเดอร์สร้าง Component ชื่อว่า Counter
 
-![BlazorStateThai02](/images/Posts/BlazorStateThai/BlazorStateThai02.png)
+![BlazorStateThai02](BlazorStateThai02.png)
 
 โดยใน Counter เรียกใช้ Package Blazor State และสืบทอดจาก BlazorStateComponent
 ```
@@ -95,7 +96,7 @@ CounterState CounterState => GetState<CounterState>();
 ```
 
 เสร็จเเล้วก็ทำการรันตัวแอพและไปที่หน้า /Counter
-![BlazorStateThai03](/images/Posts/BlazorStateThai/BlazorStateThai03.png)
+![BlazorStateThai03](BlazorStateThai03.png)
 
 จะเห็นว่า ค่า Current Count จะมีค่า 3 ซึ่งมาจากการที่เราเช็ทค่าใน Method initialize ใน CounterState ไว้ครับ
 
@@ -116,7 +117,7 @@ CounterState CounterState => GetState<CounterState>();
 # ตัวอย่าง
 
 
-![BlazorStateThai04](/images/Posts/BlazorStateThai/BlazorStateThai04.png)
+![BlazorStateThai04](BlazorStateThai04.png)
 
 และคลาส IncreaseCountNumberHandler โครงสร้างจะเหมือนกับ Action แต่แทนที่จะสืบทอดจาก IAction เปลี่ยนมาเป็น ActionHandler<T> โดยที่ T คือ คลาส Action ของเรา
  * รับค่าต่างๆจาก Action และอัพเดทไปที่ CounterState
@@ -125,13 +126,12 @@ CounterState CounterState => GetState<CounterState>();
 # ภาพตัวอย่าง
 
 
-![BlazorStateThai05](/images/Posts/BlazorStateThai/BlazorStateThai05.png)
+![BlazorStateThai05](BlazorStateThai05.png)
 
 เรียกใช้ IncreaseCountNumberAction ใน Counter.razor ผ่าน Mediator ซึ่งเราสามารถส่งค่า Amount ไปที่ Action ได้
 
-![BlazorStateThai06](/images/Posts/BlazorStateThai/BlazorStateThai06.png)
+![BlazorStateThai06](BlazorStateThai06.png)
 
-![BlazorStateThai07](/images/Posts/BlazorStateThai/BlazorStateThai07.gif)
+![BlazorStateThai07](BlazorStateThai07.gif)
 
 เสร็จเเล้ว ที่นี้เราสามารถใช้ Blazor State ใน Blazor App ได้เเล้ว
-

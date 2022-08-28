@@ -1,19 +1,18 @@
 @model IDocument
 @{
-  string backgroundImage = null;
-  string title = null;
+  string? backgroundImage = null;
+  string? title = null;
   bool isHomePageHeader = false;
+  title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
   if (Document.ContainsKey(WebKeys.Image))
   {
-    backgroundImage = $"background-image: url(\"/images{Context.GetLink(Document.GetString(WebKeys.Image))}\"); height: 80vh;";
-    title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
-  }
-  if (!Document.ContainsKey(WebKeys.Image))
+    backgroundImage = $"background-image: url(\"{Context.GetLink(Document.GetString(TftKeys.PostImageUrl))}\"); height: 80vh;";
+  } else
   {
     isHomePageHeader = true;
-    backgroundImage = $"";
-    title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
+    backgroundImage = null;
   }
+  //backgroundImage = Document.GetString("PostImageUrl");
   string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
   bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
 }

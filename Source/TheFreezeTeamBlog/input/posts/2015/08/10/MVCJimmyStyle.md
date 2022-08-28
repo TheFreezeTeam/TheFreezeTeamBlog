@@ -1,3 +1,4 @@
+---
 DocumentName: MVCJimmyStyle
 Title: Building MVC Jimmy Style
 Published: 08/10/2015
@@ -21,10 +22,10 @@ This blog is a step by step tutorial that transforms a default MVC 5 application
 
 ## Layers to Features ##
 **From:**
-![](/content/images/2016/08/Layers.png)
+![](Layers.png)
 
 **To:** 
-![](/content/images/2016/08/Features.png)
+![](Features.png)
 
 
 
@@ -56,7 +57,7 @@ Post = Write = Command
 
 The MediatR Nuget package will be used to implement CQRS light.
 
-![](/content/images/2016/08/MediatR.png)
+![](MediatR.png)
 
 This should all become clear as we implement. Let's get started.
 
@@ -65,21 +66,21 @@ This should all become clear as we implement. Let's get started.
 
  Create New Project named JimmyMvc
 
-![](/content/images/2016/08/NewProject.png)
+![](NewProject.png)
  
 Choose `MVC` and Press `Change Authentication` and select "No Authentication" 
 
-![](/content/images/2016/08/SelectTemplate.png)
+![](SelectTemplate.png)
 
 Deselect `Host in the cloud`
 
-![](/content/images/2016/08/NoAuthentication.png)
+![](NoAuthentication.png)
 
 Select Ok to create the project.
 
 Run the app to confirm it works as is.
 
-![](/content/images/2016/08/ScreenShot.png)
+![](ScreenShot.png)
  
 Select *Tools->NuGet Package Manager->Package Manager Console* and enter: 
 
@@ -99,7 +100,7 @@ These tools are not required but they sure are handy.  Take some time to configu
 
 Rename the `Views` folder to `Features`
 
-![](/content/images/2016/08/FeatureFolder.png)
+![](FeatureFolder.png)
 
 So now if you run the app you will get an error:
 
@@ -120,7 +121,7 @@ The view 'Index' or its master was not found or no view engine supports the sear
 To fix this we change the view engine to one that looks in the proper location:
  
 Create a new root folder named `Infrastructure`
-![](/content/images/2016/08/InfrastructureFolder.png)
+![](InfrastructureFolder.png)
 
 Inside the Infrastructure folder Create new class named: `FeatureRazorViewEngine`  
  
@@ -323,7 +324,7 @@ This blog only covers the implementation of "Approval List **Templates**" which 
 Sample "Approval List Template" names are ... "Minimal Approval", "Medium Approval", "The Big Dogs"
 
 ### Class Diagram ###
-![](/content/images/2016/08/Main.png)
+![](Main.png)
 
 Granted this model is pretty simple in that the behavior is just CRUD. The use of the ApprovalListTemplate will have more domain behavior and possibly could be the topic of a future blog.
 
@@ -340,17 +341,17 @@ Being able to persist users will require a database.  For this case we will use 
 
 ### Add Entity Framework 6 ###
 Create a root folder named `Entities` and select it.
-![](/content/images/2016/08/EntitiesFolder.png)
+![](EntitiesFolder.png)
 
 Press Ctrl-Shift-A To add a new item.
 
 Select Visual C#->Data-> ADO.NET Entity Data Model And Name it "Model" 
 
-![](/content/images/2016/08/AddEntity.png)
+![](AddEntity.png)
 
 Select Empty Code First model and then Finish
 
-![](/content/images/2016/08/EmptyCodeFirst.png)
+![](EmptyCodeFirst.png)
 
 This will add the Entity Framework Nuget package to your project and Create a `Model.cs` file and update your `Web.config`
 
@@ -358,7 +359,7 @@ Make sure the Entity Framework Nuget is up to date using Nuget Package Manager.
 
 ### DelegateDecompiler.EntityFramework ###
 Install [Nuget DelegateDecompiler.EntityFramework](https://www.nuget.org/packages/DelegateDecompiler.EntityFramework/0.16.0 "Nuget") See the [github](https://github.com/hazzik/DelegateDecompiler "Delegate Decompile") page.
-![](/content/images/2016/08/DelegateDecompilerNuget.png)
+![](DelegateDecompilerNuget.png)
 
 
 This will give you the `Computed` attribute and improved linq operations with it.
@@ -542,9 +543,9 @@ namespace JimmyMvc
 ```
 
 Execute the application now.  And the database should be created and populated with data.
-![](/content/images/2016/08/DatabaseCreated.png)
+![](DatabaseCreated.png)
 
-![](/content/images/2016/08/UserData.png)
+![](UserData.png)
 
 
 Let's get started implementing our first Feature and building the infrastructure needed to support it.   
@@ -555,7 +556,7 @@ The URL for the Feature will be `/User/Index`
 
 We will store all of the Features in the Features folder organized by the Entity/Aggregate root of which they are associated. So add a `User` folder under the Features folder.
 
-![](/content/images/2016/08/UserFolder.png)
+![](UserFolder.png)
 
 Add a class named `Index` to the `User` folder.  This will contain the Features logic.
 
@@ -837,24 +838,24 @@ namespace JimmyMvc.Entities
 ```
 #### FluentValidation.MVC5 ####
 [FluentValidation.MVC5](http://github.com/JeremySkinner/FluentValidation)
-![](/content/images/2016/08/FluentValidation-MVC5Nuget.png)
+![](FluentValidation-MVC5Nuget.png)
 
 #### lodash ####
 [lodash](https://lodash.com/)
-![](/content/images/2016/08/lodashNuget.png)
+![](lodashNuget.png)
 
 this will add the loadash.js file to the `Scripts` directory.
 
 
 #### Modernizr ####
 [Modernizr](http://modernizr.com/)
-![](/content/images/2016/08/ModernizrNuget.png)
+![](ModernizrNuget.png)
 
 
 #### Microsoft ASP.NET MVC Futures ####
 
 [Microsoft ASP.NET MVC Futures 5.1.0-rc1](https://www.nuget.org/packages/Microsoft.AspNet.Mvc.Futures/)
-![](/content/images/2016/08/MicrosoftAspNetMvcFuturesNuget.png)
+![](MicrosoftAspNetMvcFuturesNuget.png)
 
 Check for updates on all NuGet packages.  Do not include pre-release versions unless stated.  Build Run and confirm the site works.
 
@@ -862,11 +863,11 @@ Check for updates on all NuGet packages.  Do not include pre-release versions un
 StructureMap is used as the Ioc container in this template.  It could be replaced with Unity or Ninject (samples to come later... maybe)
 
 [StructureMap.MVC5](https://www.nuget.org/packages/StructureMap.MVC5/3.1.1.134)
-![](/content/images/2016/08/StructureMap-MVC5Nuget.png)
+![](StructureMap-MVC5Nuget.png)
 
 This adds 4 dependent packages and also adds the files displayed below.
 
-![](/content/images/2016/08/StructureMap-MVC5Files-1.png)
+![](StructureMap-MVC5Files-1.png)
 
 Now run `Update-Package` to update to the latest version of the dependent packages.
 
@@ -962,13 +963,13 @@ This will automatically look for Registries that we will create as we proceed.  
 
 ### PagedList.MVC ###
 [PagedList.MVC](https://www.nuget.org/packages/PagedList.Mvc/4.5.0)
-![](/content/images/2016/08/PagedListMvcNuget.png)
+![](PagedListMvcNuget.png)
 
 This will also add a PagedList.css file to your project.
 
 ### Automapper.EF6 ###
 [Automapper.EF6](https://www.nuget.org/packages/AutoMapper.EF6/)
-![](/content/images/2016/08/AutoMapper-EF6Nuget.png)
+![](AutoMapper-EF6Nuget.png)
 
 Again run `Update-Package`
 
@@ -979,7 +980,7 @@ The [ProjectToPagedList](https://lostechies.com/jimmybogard/2015/05/05/cqrs-with
 
 Create the `Mapping` folder under the Infrastructure folder
 
-![](/content/images/2016/08/MappingFolder.png)
+![](MappingFolder.png)
 
 Create `MapperExtensions.cs` in the `Mapping` folder as follows:
 
@@ -1127,11 +1128,11 @@ add
 
 ### MediatR ###
 [MediatR](https://www.nuget.org/packages/MediatR) This blog we use the 2.0.2 version
-![](/content/images/2016/08/MediatRNuget.png)
+![](MediatRNuget.png)
 
 ### HtmlTags Nuget ###
 [HtmlTags](https://www.nuget.org/packages/HtmlTags/)
-![](/content/images/2016/08/HtmlTagsNuget.png)
+![](HtmlTagsNuget.png)
 
 
 If you would like to learn and understand the benefits of HtmlTags read this excellent [series of articles on LosTechies.com](http://lostechies.com/jimmybogard/2013/07/18/conventional-html-in-asp-net-mvc-a-primer/)
@@ -1140,7 +1141,7 @@ Configure HtmlTags
 
 Add the Tags folder under Infrastructure.
 
-![](/content/images/2016/08/TagsFolder.png)
+![](TagsFolder.png)
 
 
 #### HtmlTagExtensions ####
@@ -1683,7 +1684,7 @@ We will be using some html helper extensions here also that will be shown follow
 
 Create `HtmlHelperExtensions` class under the Infrastructure folder
 
-![](/content/images/2016/08/HtmlHelperExtention.png)
+![](HtmlHelperExtention.png)
 
 ```csharp
 

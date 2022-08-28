@@ -1,3 +1,15 @@
+---
+  Title: Empowering Title
+  Published: 08/26/2099
+  Tags:
+    - CSharp
+    - Blazor
+  Image: main_image.webp
+  Description: Description of article
+  Excerpt: Excerpt for Twitter
+  Author: Steven T. Cramer
+---
+
 # Why can't I log in to a Windows Hyper-V VM with my Microsoft Account
 
 So I want to test Azure VPN service.  I use Hyper-V Quick Create to create VM

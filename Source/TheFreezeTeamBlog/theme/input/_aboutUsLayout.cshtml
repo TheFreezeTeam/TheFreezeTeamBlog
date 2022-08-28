@@ -20,14 +20,6 @@
 
   <link rel="canonical" href="@Document.GetLink(true)">
   @{
-      string siteUrl = @Document.GetLink(true);
-      if (siteUrl == "http://freezeteam.azurewebsites.net/")
-      {
-        <meta property="og:image" content="https://freezeteam.azurewebsites.net/images/SOLIDLOGO.webp" />
-        <meta name="twitter:image" content="https://freezeteam.azurewebsites.net/images/SOLIDLOGO.webp"/>
-      }
-  }
-  @{
     @foreach (IDocument rssFeed in Outputs["**/*.rss"])
     {
       <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
