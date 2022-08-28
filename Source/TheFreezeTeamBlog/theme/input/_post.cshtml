@@ -5,16 +5,8 @@
   string image = Model.GetString(WebKeys.Image);
   string postImageUrl = Model.GetString(TftKeys.PostImageUrl);
   int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
-  string authorName = Model.GetString("Author");
+  string authorName = Model.GetString(WebKeys.Author);
 }
-@*<div>
-  TODO: STC remove this block
-  image: @image <br />
-  imageurl: @imageUrl <br />
-  postImageUrl: @postImageUrl <br />
-  document.destination.fullpath: @document.destination.changefilename(image) <br />
-  model.destination.fullpath: @model.destination.changefilename(image) <br />
-</div>*@
 
 <div class="w-full md:w-1/3 transform transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-105 p-6 flex flex-col flex-grow flex-shrink">
   <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
