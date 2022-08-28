@@ -10,6 +10,7 @@
   string siteTitle = Document.GetString(TftKeys.SiteTitle);
   string pageTitle = Document.GetString(TftKeys.PageTitle);
   string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+
   var rssFeeds = Outputs["**/*.rss"];
   var atomFeeds = Outputs["**/*.atom"];
   string link = Document.GetLink(true);
@@ -103,7 +104,7 @@
         Source: @Document.Source <br>
         Destination: @Document.Destination <br>
         gitHubEditUri: @gitHubEditUri<br>
-        PostImageUrl: @postImageUrl <br>
+        postImageUrl: @postImageUrl <br>
       </p>
     </div>
   </div>
