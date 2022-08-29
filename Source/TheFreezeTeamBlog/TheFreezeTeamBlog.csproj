@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="input\images\Posts\BlazorStateThai\" />
-    <Folder Include="input\posts\StevenTCramer\2017\01\09\" />
     <Folder Include="input\posts\StevenTCramer\2020\" />
   </ItemGroup>
 
