@@ -24,12 +24,10 @@
 
   <ItemGroup>
     <Folder Include="input\images\Posts\BlazorStateThai\" />
-    <Folder Include="input\posts\2016\" />
-    <Folder Include="input\posts\2017\" />
-    <Folder Include="input\posts\2018\" />
-    <Folder Include="input\posts\2019\" />
-    <Folder Include="input\posts\2020\" />
-    <Folder Include="input\posts\StevenTCramer\" />
+    <Folder Include="input\posts\StevenTCramer\2016\" />
+    <Folder Include="input\posts\StevenTCramer\2017\" />
+    <Folder Include="input\posts\StevenTCramer\2020\" />
+    <Folder Include="input\posts\StevenTCramer\drafts\" />
   </ItemGroup>
 
 </Project>

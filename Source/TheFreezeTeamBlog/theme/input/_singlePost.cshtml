@@ -1,54 +1,42 @@
-// This template is used to render the a post card across all columns on the home page.
 @model IDocument
 @{
   string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
-  int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
   string image = Model.GetString(WebKeys.Image);
-  string? imageUrl = null; 
-  string authorName = Model.GetString("Author");
-
-  if (image != null)
-  {
-    NormalizedPath x = new NormalizedPath(image);
-    if(x.IsRelative)
-    {
-      imageUrl = @Model.Destination.ChangeFileName(image).ToString();
-    } else
-    {
-      imageUrl = image;
-    }
-  }
+  string title = Model.GetString(WebKeys.Title);
+  string postImageUrl = Model.GetString(TftKeys.PostImageUrl);
+  string postLink = Context.GetLink(Model);
+  int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
+  string displayDate = Model.GetDateTime(WebKeys.Published).ToLongDateString();
+  string authorName = Model.GetString(WebKeys.Author);
+  string authorLink = Context.GetLink(authorName.Replace(" ", "-").ToLower());
+  authorLink = $"/author/{authorLink}";
+  string authorImage = Model.GetString(TftKeys.AuthorImage);
 }
-<div class="m-8">
-  <p>TODO: STC Remove this div from _singlePost.cshtml</p>
-  <p>
-    Source: @Document.Source <br />
-    Destination: @Document.Destination.<br />
-  </p>
-</div>
+
 
 <div class="transition duration-500 ease-in-out md:flex h-full bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-100">
-  @if (!string.IsNullOrEmpty(imageUrl))
+  @if (!string.IsNullOrEmpty(postImageUrl))
   {
-    <div class="w-full md:w-2/3 rounded">
-      <img src="@imageUrl" class="h-full w-full shadow object-cover">
-    </div>
+    <a href="@postLink" class="w-full md:w-2/3 rounded">
+      <img src=@postImageUrl class="h-full w-full shadow object-cover">
+    </a>
     <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-      <a href="@Context.GetLink(Document)" class="flex flex-wrap no-underline hover:no-underline">
-        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden">
-          <p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">
-            @Model.GetDateTime(WebKeys.Published).ToLongDateString()
-          </p>
-          <div class="w-full font-bold text-xl text-gray-900 px-6">@Model.GetString(WebKeys.Title)</div>
-          <p class="pt-2 text-gray-800 font-serif text-base px-6 mb-5">@excerpt</p>
-        </div>
+      <a href="@postLink" class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden">
+        <p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">
+          @displayDate
+        </p>
+        <div class="w-full font-bold tefxt-xl text-gray-900 px-6">@title</div>
+        <p class="pt-2 text-gray-800 font-serif text-base px-6 mb-5">@excerpt</p>
       </a>
       <div class="mt-auto bg-white rounded-b rounded-t-none overflow-hidden p-6">
         <div class="flex items-center justify-between">
           @if (!string.IsNullOrEmpty(authorName))
           {
             <p class='tooltip'>
-              <a href="/author/@Context.GetLink(authorName.Replace(" ","-").ToLower())"><img src="@Model.GetString("AuthorImage")" class="h-8 w-8 rounded-full object-cover object-cover"></a> <span class='tooltip-text bg-black text-gray-100 text-sm p-3 -mt-16 -ml-4 rounded'>@Model.GetString("Author")</span>
+              <a href=@authorLink>
+                <img src=@authorImage class="h-8 w-8 rounded-full object-cover object-cover">
+              </a>
+              <span class='tooltip-text bg-black text-gray-100 text-sm p-3 -mt-16 -ml-4 rounded'>@authorName</span>
             </p>
           }
           else
@@ -63,23 +51,20 @@
   else
   {
     <div class="w-full">
-      <a href="@Context.GetLink(Document)">
-        <p class="text-gray-600 text-xs md:text-sm pt-6 px-6 pb-4">@Document.GetDateTime(WebKeys.Published).ToLongDateString()</p>
-        <div class="font-bold text-xl text-gray-900 px-6">@Document.GetString(WebKeys.Title)</div>
-        <p class="pt-2 text-gray-800 text-base px-6 mb-5 pl-8">@excerpt</p>
-      </a>
+      <p class="text-gray-600 text-xs md:text-sm pt-6 px-6 pb-4">@displayDate</p>
+      <div class="font-bold text-xl text-gray-900 px-6">@title</div>
+      <p class="pt-2 text-gray-800 text-base px-6 mb-5 pl-8">@excerpt</p>
       <div class="mt-auto bg-white rounded-b rounded-t-none overflow-hidden p-6">
         <div class="flex items-center justify-between">
           <p class='tooltip'>
-            <a href="/author @Context.GetLink(Document.GetString(WebKeys.Author)?.Replace(" ","-").ToLower())">
-              <img src="@Document.GetString("AuthorImage")" class="h-8 w-8 rounded-full object-cover object-cover">
+            <a href=@authorLink>
+              <img src=@authorImage class="h-8 w-8 rounded-full object-cover object-cover">
             </a>
-            <span class='tooltip-text bg-black text-gray-100 text-sm p-3 -mt-16 -ml-4 rounded'>@Document.GetString("Author")</span>
+            <span class='tooltip-text bg-black text-gray-100 text-sm p-3 -mt-16 -ml-4 rounded'>@authorName</span>
           </p>
-          <p class=" text-xs lg:text-xs font-bold text-gray-300">@Document.GetString("ReadTime")</p>
+          <p class=" text-xs lg:text-xs font-bold text-gray-300">@readTime</p>
         </div>
       </div>
     </div>
   }
-
 </div>

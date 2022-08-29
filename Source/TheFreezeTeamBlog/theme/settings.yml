@@ -14,7 +14,7 @@ PostImageUrl: |
     string result;
     if(x.IsRelative)
     {
-      result = Document.Destination.ChangeFileName(image).ToString();
+      result = Context.GetLink(Document.Destination.ChangeFileName(image));
     } else
     {
       result = image;
