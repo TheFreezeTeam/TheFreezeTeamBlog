@@ -2,7 +2,7 @@
 DocumentName: solid
 Title: Turn your LIQUID code SOLID!
 Layout: _aboutUsLayout
-Image: /images/SolidIceCubes.webp
+Image: SolidIceCubes.webp
 Author: Steven T. Cramer
 Published: 12/17/2017
 Description: Discover and develop techniques that turn code from LIQUID to SOLID
