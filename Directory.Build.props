@@ -10,6 +10,7 @@
   <PropertyGroup>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
