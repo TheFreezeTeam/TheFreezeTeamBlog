@@ -15,7 +15,7 @@ This can be done via the portal by simply Stop and Deallocate the system and the
 
 To script this via PowerShell you can do the following:
 
-A bit more information on following the instructions from Microsoft found 
+A bit more information on following the instructions from Microsoft found
 [here](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-expand-os-disk).
 
 * Sign-in to your Microsoft Azure account in resource management mode and select your subscription as follows:
@@ -23,8 +23,9 @@ A bit more information on following the instructions from Microsoft found
 ```Powershell
 Login-AzureRmAccount
 ```
+
 This will pop up the Azure Login window show below
-![](/content/images/2017/01/2017-01-15_1119.png)
+![](2017-01-15_1119.png)
 
 After successfully entering my account information I see:
 
@@ -41,7 +42,7 @@ CurrentStorageAccount :
 
 You can see the SubscriptionName above:  But to get a list of subscriptions you can use `Get-AzureRmSubscription`
 
- * To Change the subscription:
+* To Change the subscription:
 
 ```Powershell
 Select-AzureRmSubscription –SubscriptionName 'my-subscription-name'
@@ -67,8 +68,10 @@ $vm = Get-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 ```Powershell
  Stop-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 ```
+
 Output
-```
+
+```PowerShell
 λ  Stop-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
 Virtual machine stopping operation
@@ -85,30 +88,26 @@ Error       :
 
 * And here comes the moment we’ve been waiting for! Set the size of the OS disk to the desired value and update the VM as follows:
 
-
-```
+```PowerShell
 $vm.StorageProfile.OSDisk.DiskSizeGB = 1023
 Update-AzureRmVM -ResourceGroupName $rgName -VM $vm
-
 ```
 
 Output
 
-```
+```PowerShell
 λ  $vm.StorageProfile.OSDisk.DiskSizeGB = 1023
 λ  Update-AzureRmVM -ResourceGroupName $rgName -VM $vm
 
 RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 --------- ------------------- ---------- ------------
                          True         OK OK
-
 ```
 
 * Updating the VM may take a few seconds. Once the command finishes executing, restart the VM as follows:
 
-```
+```PowerShell
 Start-AzureRmVM -ResourceGroupName $rgName -Name $vmName
-
 ```
 
 Open the VM and start DiskManagment application then right click on the drive and then choose `extend`.

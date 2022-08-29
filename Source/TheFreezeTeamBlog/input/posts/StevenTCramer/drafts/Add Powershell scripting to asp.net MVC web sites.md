@@ -23,7 +23,7 @@ I think there are two use cases for most apps.  First, there is the normal user 
 
 An example app that does a great job of building great UX and exposing all the features to the CLI is my favorite DVCS [Plasticscm ](https://www.plasticscm.com/). 
 
-![](/content/images/2016/11/2016-11-01_1910.png)
+![](2016-11-01_1910.png)
 
 Yet everything you can do from the GUI can be done from the CLI.
 

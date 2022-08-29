@@ -33,7 +33,7 @@ example:
 * FeatureName = `Feature`
 * Result: `WebApplication1.Features.Route.Feature+FeatureController`
 
-![](/content/images/2016/11/2016-11-03_0521.png)
+![](2016-11-03_0521.png)
 
 We need MVC to be able to find the new feature controller location as well as the default location.  This facilitates a migration from one to the other.
 

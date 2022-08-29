@@ -1,7 +1,8 @@
+---
 DocumentName: TheFreezeTeam-reacts-to-typeScript
 Title: TheFreezeTeam Reacts to TypeScript
 Published: 04/10/2016
-Tags: 
+Tags:
   - React 
   - Typescript 
   - MVC5 
@@ -178,7 +179,7 @@ This repo contains a ton of stuff that you do not need for this blog. Extract th
 Right click on the `Scripts/typings/react` folder and select `Add Existing Item` Browse to the extracted `react` folder 
 select the following as shown in the image then Add.
 
-![](/content/images/2016/04/2016-04-09_1541.png)
+![](2016-04-09_1541.png)
 
 I am not sure why the 0.13.3 files are in the master but if you do not remove these you will get duplicate type errors.
 Readme.md can be included if you desire.
@@ -187,7 +188,7 @@ Update index.cshtml by changing `Tutorial.jsx` to `Tutorial.js`
 
 Build and Execute.
 
-![](/content/images/2016/04/2016-04-09_1548.png)
+![](2016-04-09_1548.png)
 
 Now you have a TypeScript file with a react component.
 
@@ -209,7 +210,7 @@ ReactDOM.render(
     document.getElementById('content')
 );
 ```
-![](/content/images/2016/04/2016-04-09_1616.png)
+![](2016-04-09_1616.png)
 #### Now add properties
 
 ```jsx
@@ -227,11 +228,10 @@ ReactDOM.render(
     document.getElementById('content')
 );
 ```
-![](/content/images/2016/04/2016-04-09_1611.png)
+![](2016-04-09_1611.png)
 
 Thanks for the help from:
 
 http://reactjs.net/getting-started/tutorial.html
 http://staxmanade.com/2015/08/playing-with-typescript-and-jsx/
 http://blog.wolksoftware.com/working-with-react-and-typescript
-
