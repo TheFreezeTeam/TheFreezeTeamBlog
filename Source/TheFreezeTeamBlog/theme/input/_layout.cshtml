@@ -1,68 +1,88 @@
-﻿<!DOCTYPE html>
+﻿@{
+  string markdownPath = Document.Destination.ChangeExtension("md").ToString();
+  string gitHubRepoUrl = "https://github.com/TheFreezeTeam/TheFreezeTeamBlog";
+  string gitHubEditBaseUrl = $"{gitHubRepoUrl}/edit/master/Source/TheFreezeTeamBlog/input/{markdownPath}";
+  string gitHubEditUrl = $"{gitHubEditBaseUrl}{markdownPath}";
+  Uri gitHubEditUri = new Uri(gitHubEditUrl);
+
+  string description = Document.GetString(WebKeys.Description);
+  string author = Document.GetString(WebKeys.Author);
+  string siteTitle = Document.GetString(TftKeys.SiteTitle);
+  string pageTitle = Document.GetString(TftKeys.PageTitle);
+  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+
+  var rssFeeds = Outputs["**/*.rss"];
+  var atomFeeds = Outputs["**/*.atom"];
+  string link = Document.GetLink(true);
+  string faviconLink = @Context.GetLink("/favicon.ico");
+
+  string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
+
+  var image = Document.GetString(WebKeys.Image);
+
+  int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
+  string authorName = Model.GetString(WebKeys.Author);
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  @if (Document.ContainsKey(WebKeys.Description))
+  @if (description != null)
   {
-    <meta name="description" content="@Document.GetString(WebKeys.Description)">
-    <meta property="og:description" content="@Document.GetString(WebKeys.Description)"/>
-    <meta name="twitter:description" content="@Document.GetString(WebKeys.Description)"/>
+    <meta name="description" content=@description>
+    <meta property="og:description" content=@description />
+    <meta name="twitter:description" content=@description />
   }
-  @if (Document.ContainsKey(WebKeys.Author))
+  @if (author != null)
   {
-    <meta name="author" content="@Document.GetString(WebKeys.Author)">
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="@Document.GetString(WebKeys.Author)"/>
+    <meta name="author" content=@author>
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content=@author />
   }
 
-  <title>@Document.GetString("PageTitle")</title>
+  <title>@pageTitle</title>
 
-  <link rel="canonical" href="@Document.GetLink(true)">
+  <link rel="canonical" href="@link">
   @{
-      string siteUrl = @Document.GetLink(true);
-      if (siteUrl == "http://freezeteam.azurewebsites.net/")
-      {
-        <meta property="og:image" content="https://freezeteam.azurewebsites.net/images/SOLIDLOGO.webp" />
-        <meta name="twitter:image" content="https://freezeteam.azurewebsites.net/images/SOLIDLOGO.webp"/>
-      }
-  }
-  @{
-    @foreach (IDocument rssFeed in Outputs["**/*.rss"])
+    @foreach (IDocument rssFeed in rssFeeds)
     {
-      <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
+      var rssTitle = rssFeed.GetString(WebKeys.Title);
+      var rssLink = rssFeed.GetLink();
+
+      <link type="application/rss+xml" rel="alternate" title=@rssTitle href=@rssLink />
     }
-    @foreach (IDocument atomFeed in Outputs["**/*.atom"])
+    @foreach (IDocument atomFeed in atomFeeds)
     {
-      <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
+      var atomTitle = atomFeed.GetString(WebKeys.Title);
+      var atomLink = atomFeed.GetLink();
+
+      <link type="application/atom+xml" rel="alternate" title=@atomTitle href=@atomLink />
     }
   }
-  <meta property="og:site_name" content="@Document.GetString("SiteTitle")"/>
-  <meta name="application-name" content="@Document.GetString("SiteTitle")" />
-  <meta name="msapplication-tooltip" content="@Document.GetString("SiteTitle")" />
+  <meta property="og:site_name" content="@siteTitle />
+  <meta name="application-name" content="@siteTitle />
+  <meta name="msapplication-tooltip" content="@siteTitle  />
   <meta name="msapplication-starturl" content="@Context.GetLink("/")" />
 
   @* TODO: More social graph meta tags *@
-    <meta property="og:title" content="@Document.GetString("PageTitle")" />
-    <meta name="twitter:title" content="@Document.GetString("PageTitle")"/>
-  @if (Document.ContainsKey(WebKeys.Image))
+  <meta property="og:title" content="@pageTitle  />
+  <meta name="twitter:title" content="@pageTitle  />
+  @if (postImageUrl != null)
   {
-    string imageName = @Context.GetLink(Document.GetString(WebKeys.Image));
-    string imageUrl = "https://freezeteam.azurewebsites.net/images" + imageName;
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta property="og:image" content="@imageUrl" />
-    <meta property="og:image:url"  content="@imageUrl"  />
-    <meta property="twitter:image" content="@imageUrl"/>
-    <meta property="og:image:width" content="1024"/>
-    <meta property="og:image:height" content="512"/>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="@postImageUrl" />
+  <meta property="og:image:url" content="@postImageUrl" />
+  <meta property="twitter:image" content="@postImageUrl" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="512" />
   }
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="@Document.GetLink(true)" />
-  <meta name="twitter:url" content="@Document.GetLink(true)"/>
-  <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
-  <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
+  <meta property="og:url" content="@link" />
+  <meta name="twitter:url" content="@link" />
+  <link rel="shortcut icon" href=@faviconLink type="image/x-icon">
+  <link rel="icon" href=@faviconLink type="image/x-icon">
   <link href="~/css/Site.css" rel="stylesheet" type="text/css">
-
   <link href="~/resource/js/prismjs/prism.css" rel="stylesheet" />
 
   @Html.Partial("_head")
@@ -70,16 +90,18 @@
 </head>
 
 @{
-    string topMargin = "";
-    if (Document.ContainsKey(WebKeys.Image))
-    {
-      topMargin = "-mt-32";
-    }
+  string topMargin = "";
+  if (image != null)
+  {
+    topMargin = "-mt-32";
   }
+}
 <body class="bg-white font-sans leading-normal tracking-normal">
   <script src="~/resource/js/prismjs/prism.js"></script>
   <!-- Page Header -->
+  
   @RenderSectionOrPartial("Header", "_header")
+
   <!-- Navigation -->
   <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto @topMargin">
     <div class="mx-0 sm:mx-6">
@@ -91,16 +113,18 @@
               <div>
                 @if (!string.IsNullOrEmpty(Document.GetString("SubFolderName")))
                 {
-          <a class="flex" href="https://github.com/TheFreezeTeam/TheFreezeTeamBlog/edit/master/Source/TheFreezeTeamBlog/input/posts/@Document.GetString("SubFolderName")/@(Document.GetString("DocumentName")).md" target="_blank">
-            Edit This Page
-            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-          </a> }
+                  <a class="flex" href="@gitHubEditUri" target="_blank">
+                    Edit This Page
+                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                  </a>
+                }
                 else
                 {
-          <a class="flex" href="https://github.com/TheFreezeTeam/TheFreezeTeamBlog/edit/master/Source/TheFreezeTeamBlog/input/posts/@(Document.GetString("DocumentName")).md" target="_blank">
-            Edit This Page
-            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-          </a>}
+                  <a class="flex" href="https://github.com/TheFreezeTeam/TheFreezeTeamBlog/edit/master/Source/TheFreezeTeamBlog/input/posts/@(Document.GetString("DocumentName")).md" target="_blank">
+                    Edit This Page
+                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                  </a>
+                }
               </div>
             </div>
             @RenderBody()

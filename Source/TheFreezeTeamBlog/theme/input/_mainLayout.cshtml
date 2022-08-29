@@ -45,6 +45,7 @@
   @* TODO: More social graph meta tags *@
     <meta property="og:title" content="@Document.GetString("PageTitle")" />
     <meta name="twitter:title" content="@Document.GetString("PageTitle")"/>
+
   @if (Document.ContainsKey(WebKeys.Image))
   {
     string imageName = @Context.GetLink(Document.GetString(WebKeys.Image));

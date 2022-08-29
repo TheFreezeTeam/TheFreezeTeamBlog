@@ -12,6 +12,7 @@
 indent_size = 2
 indent_style = space
 tab_width = 2
+guidelines = 120 1px dashed red
 
 # New line preferences
 end_of_line = lf
@@ -233,7 +234,7 @@ dotnet_naming_symbols.local_variables.applicable_kinds = local
 dotnet_naming_style.local_variables_style.capitalization = camel_case 
 
 # Parameters should be prefixed with an 'a'
-dotnet_naming_rule.parameters_should_be_prefixed.severity         = suggestion
+dotnet_naming_rule.parameters_should_be_prefixed.severity         = none
 dotnet_naming_rule.parameters_should_be_prefixed.symbols          = parameters
 dotnet_naming_rule.parameters_should_be_prefixed.style            = parameter_style
 
