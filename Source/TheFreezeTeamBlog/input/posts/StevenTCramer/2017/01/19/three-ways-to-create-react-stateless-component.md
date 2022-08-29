@@ -1,9 +1,9 @@
+---
 DocumentName: three-ways-to-create-react-stateless-component
 Title: Three ways to create React Stateless Components in TypeScript
 Published: 01/19/2017
 Tags: 
   - Typescript 
-
 Author: Steven T. Cramer
 Excerpt: The Airbnb guidelines show three ways to implement a stateless React component using ES6 JavaScript. 
 Description: The Airbnb guidelines show three ways to implement a stateless React component using ES6 JavaScript. 
@@ -112,4 +112,3 @@ export const ButtonConstComponent: React.StatelessComponent<ButtonProps> = props
     </div>
 );
 ```
-

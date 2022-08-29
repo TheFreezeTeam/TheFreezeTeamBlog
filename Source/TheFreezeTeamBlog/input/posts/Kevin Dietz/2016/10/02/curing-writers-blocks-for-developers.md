@@ -1,3 +1,4 @@
+---
 DocumentName: curing-writers-blocks-for-developers
 Title: Curing Writer's Block for Developers
 Published: 10/02/2016
@@ -38,4 +39,3 @@ By this point my mind has risen to a higher level of concentration, and I'm star
 
 **Reflection**
 If I'm still having trouble, I go back through the journal entries I just got done writing and reflect on them. For me, there's something magical about the feedback loop that is created by having my thoughts written down, and then visually reflected back to me. It's a soothing experience that once again helps to elevate my mind to a higher level of concentration prepared for productive output.
-

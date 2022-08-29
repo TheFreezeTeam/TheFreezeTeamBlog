@@ -1,3 +1,4 @@
+---
 DocumentName: feature-controller-factory
 Title: Controller Controller where art thou Controller?  (Feature Controller Factory)
 Published: 08/24/2016
@@ -8,18 +9,20 @@ Description: All Controllers are located in a Controllers folder and must end wi
 Excerpt: All Controllers are located in a Controllers folder and must end with the name Controller.
 ---
 
-#Goal:
+# Goal:
 Move an existing MVC site from layers to features without breaking everything along the way.
 
-###Default MVC Controller location
+### Default MVC Controller location
 The default locations for ASP.net MVC5 items are as follows:
 
-![](/content/images/2016/08/2016-08-13_1255-2.png)
+![](2016-08-13_1255-2.png)
 
 All Controllers are located in a `Controllers` folder and must end with the name `Controller`.
 
-###Feature Controller location
-When we move to the [features method](http://www.thefreezeteam.com/2015/08/10/building-mvc-jimmy-style/) we would prefer our controller to be an embedded class in the Feature and always named `FeatureController`.  Thus the full name of the controller type would be: 
+### Feature Controller location
+When we move to the [features method](http://www.thefreezeteam.com/2015/08/10/building-mvc-jimmy-style/) 
+we would prefer our controller to be an embedded class in the Feature and always named `FeatureController`.
+Thus the full name of the controller type would be: 
 
 `<App>.Features.<Route>.<FeatureName>+FeatureController`
 
@@ -34,7 +37,7 @@ example:
 
 We need MVC to be able to find the new feature controller location as well as the default location.  This facilitates a migration from one to the other.
 
-###Create test feature
+### Create test feature
 This post is not about creating features.  See [Building MVC Jimmy Style ](http://www.thefreezeteam.com/2015/08/10/building-mvc-jimmy-style/) for more details  until the updated blog series is released.  The below test feature will suffice for the purpose at hand.
 
 In order to test our Features Controller, let's create a simple Feature.
@@ -75,7 +78,7 @@ We want to support the original convention as well as our feature based conventi
 
 Create an `Infrastructure folder` and inside it create a new class called ControllerFactory.
 
-![](/content/images/2016/08/2016-08-21_1203.png)
+![](2016-08-21_1203.png)
 
 Override the `GetControllerType` method:
 
@@ -127,7 +130,7 @@ Update the ControllerFactory as follows:
     }
 ```
 
-###FeatureActionInvoker
+### FeatureActionInvoker
 This will build up the proper name for the controller and use assembly reflection to get the Type. Yet it will not find the feature actions.  To fix this we need to replace the default ActionInvoker with our `FeatureActionInvoker`
 
 ```csharp
@@ -236,6 +239,4 @@ namespace WebApplication1.Infrastructure
 Full sample solution can be found on GitHub @:
 
 https://github.com/StevenTCramer/FeatureController
-
-
 

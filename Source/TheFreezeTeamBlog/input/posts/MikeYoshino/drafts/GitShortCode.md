@@ -3,8 +3,8 @@ Title: Git Short Code
 Tags: 
   - DeveloperTools 
   - CodeSearch 
-Author: Mike
-Published: 02/26/2018
+Author: Mike Yoshino
+Published: 02/26/2099
 Excerpt: Example of using GitHub Shortcode.
 ---
 
