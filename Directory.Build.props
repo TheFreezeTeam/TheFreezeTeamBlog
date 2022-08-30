@@ -1,6 +1,7 @@
 <Project>
   <!-- Set common properties regarding assembly information and nuget packages -->
   <PropertyGroup>
+    <Authors>Steven T. Cramer</Authors>
     <Product>TheFreezeTeam.com</Product>
     <NoWarn>$(NoWarn)</NoWarn>
   </PropertyGroup>
@@ -8,7 +9,8 @@
   <!-- Common compile parameters -->
   <PropertyGroup>
     <Nullable>enable</Nullable>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>preview</LangVersion>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>

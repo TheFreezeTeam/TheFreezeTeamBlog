@@ -53,17 +53,17 @@
   <meta name="twitter:url" content="@Document.GetLink(true)"/>
   <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
   <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
-  <link href="~/css/Site.css" rel="stylesheet" type="text/css">
-  <link href="~/resource/js/highlight.js/styles/vs.css" rel="stylesheet" />
+  <link href="/css/Site.css" rel="stylesheet" type="text/css">
+  <link href="/resource/js/highlight.js/styles/vs.css" rel="stylesheet" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-<body class="bg-white font-sans leading-normal tracking-normal">
+<body class="font-sans leading-normal tracking-normal bg-white">
   <!-- Page Header -->
   @RenderSectionOrPartial("Header", "_headerAboutUs")
   <!-- Navigation -->
-  <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto -mt-32">
+  <div class="mx-auto -mt-32 lg:container lg:px-4 lg:px-0 lg:max-w-6xl">
     <div class="mx-0 sm:mx-6">
       <!-- Main Content -->
       <div class="hidden">
@@ -71,7 +71,7 @@
       </div>
         <div class="container lg:max-w-6xl mx-auto-mt-32">
           <div class="mx-0 sm:mx-6">
-            <div id="aboutusType" class="bg-white w-full lg:p-16 p-4 text-gray-800">
+            <div id="aboutusType" class="w-full p-4 text-gray-800 bg-white lg:p-16">
               @RenderBody()
             </div>
           </div>

@@ -21,9 +21,9 @@ there are times I just want to walk through the whole process.
 
 ![MiddlewareBreakPoint](MiddlewareBreakPoint.png)
 
-But where can I set a break point?
+But where can I set a breakpoint?
 
-Well you could go through all your controllers and set a break point in the constructor.
+Well you could go through all your controllers and set a breakpoint in the constructor.
 But all middleware will have run each "pre action" prior to your breakpoint.
 
 So how do you do it for every request with only one breakpoint? 
@@ -47,7 +47,7 @@ Debugging:
 
 ![SourceLinkDebuggerSymbols](SourceLinkDebuggerSymbols.png)
 
-Now put a break point in any of your controllers and view the call stack.
+Now put a breakpoint in any of your controllers and view the call stack.
 
 In this example I am using the default API template and have a breakpoint in the Values controller.  In the callstack,you can see all of the AspNetCore calls as well.
 
