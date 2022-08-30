@@ -45,12 +45,12 @@ Excerpt: Create Azure Windows 10 VM with VS2017RC Size Standard DS2 v2 This shou
 * Extract into `Program Files\cmder` 
 * Execute cmder.  
 * In Cmder settings Configure PowerShell as default console. 
-![](/content/images/2017/01/2017-01-15_1720.png)
+![](2017-01-15_1720.png)
 
 * Under Startup->Tasks [Remove the -No Profile from the PowerShell configuration](https://superuser.com/questions/956182/cmder-powershell-ignores-profiles).
-![](/content/images/2018/03/2018-03-15_2152.png)
+![](2018-03-15_2152.png)
 * Select Keys & Macro and search for split. Set the following:
-![](/content/images/2018/03/2018-03-15_2150.png)
+![](2018-03-15_2150.png)
 * Open Cmder in Powershell and `Install-Module posh-git`
 * Pin Cmder to task bar or Start Menu.
  
