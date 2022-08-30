@@ -14,36 +14,36 @@
 }
 
 
-<div class="transition duration-500 ease-in-out md:flex h-full bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-100">
+<div class="h-full overflow-hidden transition duration-500 ease-in-out transform bg-white rounded-lg shadow-lg md:flex hover:-translate-y-1 hover:scale-100">
   @if (!string.IsNullOrEmpty(postImageUrl))
   {
-    <a href="@postLink" class="w-full md:w-2/3 rounded">
-      <img src=@postImageUrl class="h-full w-full shadow object-cover">
+    <a href="@postLink" class="w-full rounded md:w-2/3">
+      <img src="@postImageUrl" class="object-cover w-full h-full shadow">
     </a>
-    <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-      <a href="@postLink" class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden">
-        <p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">
+    <div class="flex flex-col flex-grow flex-shrink w-full md:w-1/3">
+      <a href="@postLink" class="flex-1 overflow-hidden bg-white rounded-t rounded-b-none">
+        <p class="w-full px-6 pt-6 text-xs text-gray-600 md:text-sm">
           @displayDate
         </p>
-        <div class="w-full font-bold tefxt-xl text-gray-900 px-6">@title</div>
-        <p class="pt-2 text-gray-800 font-serif text-base px-6 mb-5">@excerpt</p>
+        <div class="w-full px-6 font-bold text-gray-900 tefxt-xl">@title</div>
+        <p class="px-6 pt-2 mb-5 font-serif text-base text-gray-800">@excerpt</p>
       </a>
-      <div class="mt-auto bg-white rounded-b rounded-t-none overflow-hidden p-6">
+      <div class="p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b">
         <div class="flex items-center justify-between">
           @if (!string.IsNullOrEmpty(authorName))
           {
             <p class='tooltip'>
-              <a href=@authorLink>
-                <img src=@authorImage class="h-8 w-8 rounded-full object-cover object-cover">
+              <a href="@authorLink">
+                <img src="@authorImage" class="object-cover w-8 h-8 rounded-full">
               </a>
-              <span class='tooltip-text bg-black text-gray-100 text-sm p-3 -mt-16 -ml-4 rounded'>@authorName</span>
+              <span class='p-3 -mt-16 -ml-4 text-sm text-gray-100 bg-black rounded tooltip-text'>@authorName</span>
             </p>
           }
           else
           {
             <p></p>
           }
-          <p class=" text-xs lg:text-xs font-bold text-gray-300">@readTime MIN READ</p>
+          <p class="text-xs font-bold text-gray-300 lg:text-xs">@readTime MIN READ</p>
         </div>
       </div>
     </div>
@@ -51,18 +51,18 @@
   else
   {
     <div class="w-full">
-      <p class="text-gray-600 text-xs md:text-sm pt-6 px-6 pb-4">@displayDate</p>
-      <div class="font-bold text-xl text-gray-900 px-6">@title</div>
-      <p class="pt-2 text-gray-800 text-base px-6 mb-5 pl-8">@excerpt</p>
-      <div class="mt-auto bg-white rounded-b rounded-t-none overflow-hidden p-6">
+      <p class="px-6 pt-6 pb-4 text-xs text-gray-600 md:text-sm">@displayDate</p>
+      <div class="px-6 text-xl font-bold text-gray-900">@title</div>
+      <p class="px-6 pt-2 pl-8 mb-5 text-base text-gray-800">@excerpt</p>
+      <div class="p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b">
         <div class="flex items-center justify-between">
           <p class='tooltip'>
-            <a href=@authorLink>
-              <img src=@authorImage class="h-8 w-8 rounded-full object-cover object-cover">
+            <a href="@authorLink">
+              <img src="@authorImage" class="object-cover w-8 h-8 rounded-full">
             </a>
-            <span class='tooltip-text bg-black text-gray-100 text-sm p-3 -mt-16 -ml-4 rounded'>@authorName</span>
+            <span class='p-3 -mt-16 -ml-4 text-sm text-gray-100 bg-black rounded tooltip-text'>@authorName</span>
           </p>
-          <p class=" text-xs lg:text-xs font-bold text-gray-300">@readTime</p>
+          <p class="text-xs font-bold text-gray-300 lg:text-xs">@readTime</p>
         </div>
       </div>
     </div>

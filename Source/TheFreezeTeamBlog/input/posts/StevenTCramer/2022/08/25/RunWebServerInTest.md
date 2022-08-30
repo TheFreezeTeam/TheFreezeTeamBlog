@@ -163,6 +163,6 @@ WebApplication.CreateBuilder
 Don't feel bad if you didn't see this solution, you are not alone. See the references for others that struggled with us.  But now we know. With this blog and search engines hopefully we can find the solution again next time we need it.
 
 ## References
-
+Video overview of this post: https://youtu.be/4jMzGw45Kw8
 https://stackoverflow.com/questions/72928110/why-wont-unit-tests-connect-to-a-websocket
 https://github.com/dotnet/aspnetcore/issues/42657
