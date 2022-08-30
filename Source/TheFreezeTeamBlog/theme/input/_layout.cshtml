@@ -30,15 +30,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   @if (description != null)
   {
-    <meta name="description" content=@description>
-    <meta property="og:description" content=@description />
-    <meta name="twitter:description" content=@description />
+    <meta name="description" content="@description">
+    <meta property="og:description" content="@description" />
+    <meta name="twitter:description" content="@description" />
   }
   @if (author != null)
   {
-    <meta name="author" content=@author>
+    <meta name="author" content="@author">
     <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content=@author />
+    <meta name="twitter:data1" content="@author" />
   }
 
   <title>@pageTitle</title>
@@ -50,14 +50,14 @@
       var rssTitle = rssFeed.GetString(WebKeys.Title);
       var rssLink = rssFeed.GetLink();
 
-      <link type="application/rss+xml" rel="alternate" title=@rssTitle href=@rssLink />
+      <link type="application/rss+xml" rel="alternate" title="@rssTitle" href="@rssLink" />
     }
     @foreach (IDocument atomFeed in atomFeeds)
     {
       var atomTitle = atomFeed.GetString(WebKeys.Title);
       var atomLink = atomFeed.GetLink();
 
-      <link type="application/atom+xml" rel="alternate" title=@atomTitle href=@atomLink />
+      <link type="application/atom+xml" rel="alternate" title="@atomTitle" href="@atomLink" />
     }
   }
   <meta property="og:site_name" content="@siteTitle />
@@ -80,8 +80,8 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="@link" />
   <meta name="twitter:url" content="@link" />
-  <link rel="shortcut icon" href=@faviconLink type="image/x-icon">
-  <link rel="icon" href=@faviconLink type="image/x-icon">
+  <link rel="shortcut icon" href="@faviconLink" type="image/x-icon">
+  <link rel="icon" href="@faviconLink" type="image/x-icon">
   <link href="/css/Site.css" rel="stylesheet" type="text/css">
   <link href="/resource/js/prismjs/prism.css" rel="stylesheet" />
 
