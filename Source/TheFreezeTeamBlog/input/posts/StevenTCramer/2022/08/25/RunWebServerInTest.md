@@ -63,7 +63,7 @@ I deduced that the problem was caused from the context in which I was running.  
 
 ### One Of These Things Is Not Like The Other
 
-I set a break point after creating the builder, in both the application and the test case.  And went about using the inspector to see if I could tell the difference between them. And yes there was something different.
+I set a breakpoint after creating the builder, in both the application and the test case.  And went about using the inspector to see if I could tell the difference between them. And yes there was something different.
 
 Inside `builder.WebHost._environment.WebRootFileProvider` I noticed the working one was a `CompositeFileProvider` that contained 2 `FileProviders`
 
