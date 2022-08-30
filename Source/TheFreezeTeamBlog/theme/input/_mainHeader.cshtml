@@ -14,21 +14,21 @@
 @if (useHomePageHeader)
 {
   <div
-    class="bg-black m-0 p-0 lg:bg-cover lg:bg-bottom bg-contain bg-center bg-no-repeat sm:h-10 max-h-350Max lg:max-h-500Max"
+    class="p-0 m-0 bg-black bg-center bg-no-repeat bg-contain lg:bg-cover lg:bg-bottom sm:h-10 max-h-350Max lg:max-h-500Max"
     style="background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), url(/images/headerBg.png); height: 160vh;"
   >
-    <div class="container mx-auto lg:pt-56 pt-10 text-center">
+    <div class="container pt-10 mx-auto text-center lg:pt-56">
       <!--Title-->
-      <img class="w-8 w-8 lg:w-14 lg:h-14 mx-auto" src="~/android-chrome-192x192.png" />
-      <p class="font-light text-white uppercase lg:text-lg text-sm">@title</p>
+      <img class="w-8 mx-auto lg:w-14 lg:h-14" src="/android-chrome-192x192.png" />
+      <p class="text-sm font-light text-white uppercase lg:text-lg">@title</p>
     </div>
   </div>
 }
 else
 {
   @Html.Partial("_postNav")
-  <div class="text-center pt-16 md:pt-32">
-    <p class="text-sm md:text-base text-green-500 font-bold">
+  <div class="pt-16 text-center md:pt-32">
+    <p class="text-sm font-bold text-green-500 md:text-base">
       @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
       @if (Document.ContainsKey("Tags"))
       {
@@ -43,11 +43,11 @@ else
         }
       }
     </p>
-    <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
+    <h1 class="text-3xl font-bold break-normal md:text-5xl">@title</h1>
   </div>
   <!--image-->
   <div
-    class="container w-full max-w-7xl mx-auto bg-white lg:bg-cover mt-8 lg:rounded lg:h-4 h-2 bg-cover bg-center bg-no-repeat"
+    class="container w-full h-2 mx-auto mt-8 bg-white bg-center bg-no-repeat bg-cover max-w-7xl lg:bg-cover lg:rounded lg:h-4"
     style="background-image: url(\"@postImageUrl\"); height: 80vh;"
   >
   </div>
