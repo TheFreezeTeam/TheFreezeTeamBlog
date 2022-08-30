@@ -11,11 +11,11 @@
     public AuthorManager()
     {
       authors = new Dictionary<string, Author>();
-      authors.Add("Steven T. Cramer", new Author { Name = "Steven T. Cramer", CodingGame = "729d2f5ebf2a12fc3bbefc3c13fa4f463434423", Twitter = "Twitter", LinkedIn = "steventcramer", AvatarPath = "/authorAvatars/steve.jpeg", Bio = "Get smarter every day.", Discord = "291975075752837120" });
+      authors.Add("Steven T. Cramer", new Author { Name = "Steven T. Cramer", CodingGame = "729d2f5ebf2a12fc3bbefc3c13fa4f463434423", Twitter = "Twitter", LinkedIn = "steventcramer", AvatarPath = "/authorAvatars/steve.jpeg", Bio = "Get smarter every day.", Discord = "957829331474849802" });
       authors.Add("Mike Yoshino", new Author { Name = "Mike Yoshino", CodingGame = "ede69031e8671a592c04562a69d92a250402493", Facebook = "yoshinoookami", LinkedIn = "tsubagi-yoshino-503441171", Bio = ":) Welcome to my profile!", Twitter = "Twitter", AvatarPath = "/authorAvatars/MikeYoshino.jpg", Discord = "629559177190309910" });
       authors.Add("Stefan Bemelmans", new Author { Name = "Stefan Bemelmans", Twitter = "Twitter", AvatarPath = "/authorAvatars/Stefan.jpg", Bio = "Computers and Food", Discord = "386790410460332032" });
       authors.Add("Kevin Dietz", new Author { Name = "Kevin Dietz", CodingGame = "CodingGameId", Facebook = "FacebookId", Twitter = "Twitter", AvatarPath = "/authorAvatars/noavatar.jpg", Discord= "497944319227985920" });
-      authors.Add("Ilyana Smith", new Author { Name = "Ilyana Smith", Twitter = "ilyanaDev", AvatarPath = "/authorAvatars/ilyanaSmith.jpg"});  
+      authors.Add("Ilyana Smith", new Author { Name = "Ilyana Smith", Twitter = "ilyanaDev", AvatarPath = "/authorAvatars/ilyanaSmith.jpg"});
     }
 
     public string AddImagePath(IDocument doc)
