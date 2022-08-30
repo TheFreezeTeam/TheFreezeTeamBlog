@@ -7,8 +7,8 @@
     - Kestrel
     - test
   Image: AI-Train.png
-  Description: Launch your dotnet web app from your integration tests
-  Excerpt: How to launch your fully functional dotnet web application from your integration test.
+  Description: "Launch your dotnet web app from your integration tests"
+  Excerpt: "How to launch your fully functional dotnet web application from your integration test."
   Author: Steven T. Cramer
 ---
 
