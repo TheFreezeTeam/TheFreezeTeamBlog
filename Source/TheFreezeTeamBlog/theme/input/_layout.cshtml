@@ -96,8 +96,8 @@
     topMargin = "-mt-32";
   }
 }
-<body class="bg-white font-sans leading-normal tracking-normal">
-  <script src="~/resource/js/prismjs/prism.js"></script>
+<body class="font-sans leading-normal tracking-normal bg-white">
+  <script src="/resource/js/prismjs/prism.js"></script>
   <!-- Page Header -->
 
   @RenderSectionOrPartial("Header", "_header")
@@ -106,10 +106,10 @@
   <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto @topMargin">
     <div class="mx-0 sm:mx-6">
       <!-- Main Content -->
-      <div class="container lg:max-w-6xl mx-auto">
+      <div class="container mx-auto lg:max-w-6xl">
         <div class="mx-0 sm:mx-6">
-          <div id="postType" class="bg-white w-full lg:p-10 p-4 text-gray-800 font-light">
-            <div class="flex justify-end -mt-4 mb-6 text-sm font-normal">
+          <div id="postType" class="w-full p-4 font-light text-gray-800 bg-white lg:p-10">
+            <div class="flex justify-end mb-6 -mt-4 text-sm font-normal">
               <div>
                 @if (!string.IsNullOrEmpty(Document.GetString("SubFolderName")))
                 {
