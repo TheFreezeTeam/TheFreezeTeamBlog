@@ -40,7 +40,7 @@
   @if (Document.ContainsKey(WebKeys.Image))
   {
     string imageName = @Context.GetLink(Document.GetString(WebKeys.Image));
-    string imageUrl = "https://freezeteam.azurewebsites.net/images" + imageName;
+    string imageUrl = "https://thefreezeteam.com/images" + imageName;
     <meta name="twitter:card" content="summary_large_image"/>
     <meta property="og:image" content="@imageUrl" />
     <meta property="og:image:url"  content="@imageUrl"  />
