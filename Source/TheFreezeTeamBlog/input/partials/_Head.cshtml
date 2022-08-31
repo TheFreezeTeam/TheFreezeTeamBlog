@@ -1,0 +1,11 @@
+@model BaseModel
+@inherits StatiqRazorPage<BaseModel>
+
+<title>@Model.PageTitle</title>
+@await Html.PartialAsync("_MetaTags.cshtml", new MetaTags(Document, Context))
+
+<link rel="canonical" href="@Model.Link">
+<link rel="shortcut icon" href="@Model.FavIconLink" type="image/x-icon">
+<link rel="icon" href="@Model.FavIconLink" type="image/x-icon">
+<link href="/css/Site.css" rel="stylesheet" type="text/css">
+<link href="/resource/js/prismjs/prism.css" rel="stylesheet" />
