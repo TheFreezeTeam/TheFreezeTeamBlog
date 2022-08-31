@@ -1,4 +1,5 @@
-﻿@{
+﻿@* @model BaseModel *@
+@{
   string markdownPath = Document.Destination.ChangeExtension("md").ToString();
   string gitHubRepoUrl = "https://github.com/TheFreezeTeam/TheFreezeTeamBlog";
   string gitHubEditBaseUrl = $"{gitHubRepoUrl}/edit/master/Source/TheFreezeTeamBlog/input/{markdownPath}";
@@ -9,84 +10,23 @@
   string author = Document.GetString(WebKeys.Author);
   string siteTitle = Document.GetString(TftKeys.SiteTitle);
   string pageTitle = Document.GetString(TftKeys.PageTitle);
-  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+  string postImageUrl = Document.GetLink(TftKeys.PostImageUrl);
 
   var rssFeeds = Outputs["**/*.rss"];
   var atomFeeds = Outputs["**/*.atom"];
   string link = Document.GetLink(true);
   string faviconLink = @Context.GetLink("/favicon.ico");
 
-  string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
+  string excerpt = Model.GetString(Keys.Excerpt);
 
   var image = Document.GetString(WebKeys.Image);
 
   int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
-  string authorName = Model.GetString(WebKeys.Author);
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  @if (description != null)
-  {
-    <meta name="description" content="@description">
-    <meta property="og:description" content="@description" />
-    <meta name="twitter:description" content="@description" />
-  }
-  @if (author != null)
-  {
-    <meta name="author" content="@author">
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="@author" />
-  }
-
-  <title>@pageTitle</title>
-
-  <link rel="canonical" href="@link">
-  @{
-    @foreach (IDocument rssFeed in rssFeeds)
-    {
-      var rssTitle = rssFeed.GetString(WebKeys.Title);
-      var rssLink = rssFeed.GetLink();
-
-      <link type="application/rss+xml" rel="alternate" title="@rssTitle" href="@rssLink" />
-    }
-    @foreach (IDocument atomFeed in atomFeeds)
-    {
-      var atomTitle = atomFeed.GetString(WebKeys.Title);
-      var atomLink = atomFeed.GetLink();
-
-      <link type="application/atom+xml" rel="alternate" title="@atomTitle" href="@atomLink" />
-    }
-  }
-  <meta property="og:site_name" content="@siteTitle" />
-  <meta name="application-name" content="@siteTitle" />
-  <meta name="msapplication-tooltip" content="@siteTitle"  />
-  <meta name="msapplication-starturl" content="@link" />
-
-  @* TODO: More social graph meta tags *@
-  <meta property="og:title" content="@pageTitle"  />
-  <meta name="twitter:title" content="@pageTitle"  />
-  @if (postImageUrl != null)
-  {
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:image" content="@postImageUrl" />
-  <meta property="og:image:url" content="@postImageUrl" />
-  <meta property="twitter:image" content="@postImageUrl" />
-  <meta property="og:image:width" content="1024" />
-  <meta property="og:image:height" content="512" />
-  }
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="@link" />
-  <meta name="twitter:url" content="@link" />
-  <link rel="shortcut icon" href="@faviconLink" type="image/x-icon">
-  <link rel="icon" href="@faviconLink" type="image/x-icon">
-  <link href="/css/Site.css" rel="stylesheet" type="text/css">
-  <link href="/resource/js/prismjs/prism.css" rel="stylesheet" />
-
-  @Html.Partial("_head")
-  @RenderSection("Head", false)
+  @await Html.PartialAsync("partials/_Head.cshtml", new BaseModel(Document,Context))
 </head>
 
 @{

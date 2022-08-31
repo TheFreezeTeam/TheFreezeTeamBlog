@@ -1,108 +1,162 @@
-﻿namespace TheFreezeTeamBlog.Authors
+﻿namespace TheFreezeTeamBlog.Authors;
+
+using Statiq.Common;
+using Statiq.Web;
+using System.Collections.Generic;
+
+public class AuthorManager
 {
-  using Statiq.Common;
-  using Statiq.Web;
-  using System.Collections.Generic;
-
-  public class AuthorManager
+  public const string NoAvatar = "/authorAvatars/noavatar.jpg";
+  public IReadOnlyDictionary<string, Author> Authors { get; set; }
+  public AuthorManager()
   {
-    public const string NoAvatar = "/authorAvatars/noavatar.jpg";
-    public Dictionary<string, Author> authors { get; set; }
-    public AuthorManager()
+    Authors = new Dictionary<string, Author>()
     {
-      authors = new Dictionary<string, Author>();
-      authors.Add("Steven T. Cramer", new Author { Name = "Steven T. Cramer", CodingGame = "729d2f5ebf2a12fc3bbefc3c13fa4f463434423", Twitter = "Twitter", LinkedIn = "steventcramer", AvatarPath = "/authorAvatars/steve.jpeg", Bio = "Get smarter every day.", Discord = "957829331474849802" });
-      authors.Add("Mike Yoshino", new Author { Name = "Mike Yoshino", CodingGame = "ede69031e8671a592c04562a69d92a250402493", Facebook = "yoshinoookami", LinkedIn = "tsubagi-yoshino-503441171", Bio = ":) Welcome to my profile!", Twitter = "Twitter", AvatarPath = "/authorAvatars/MikeYoshino.jpg", Discord = "629559177190309910" });
-      authors.Add("Stefan Bemelmans", new Author { Name = "Stefan Bemelmans", Twitter = "Twitter", AvatarPath = "/authorAvatars/Stefan.jpg", Bio = "Computers and Food", Discord = "386790410460332032" });
-      authors.Add("Kevin Dietz", new Author { Name = "Kevin Dietz", CodingGame = "CodingGameId", Facebook = "FacebookId", Twitter = "Twitter", AvatarPath = "/authorAvatars/noavatar.jpg", Discord= "497944319227985920" });
-      authors.Add("Ilyana Smith", new Author { Name = "Ilyana Smith", Twitter = "ilyanaDev", AvatarPath = "/authorAvatars/ilyanaSmith.jpg"});
-    }
+      {
+        "Steven T. Cramer",
+        new Author
+        (
+          Name: "Steven T. Cramer",
+          AvatarPath: "/authorAvatars/steve.jpeg",
+          Bio: "Get smarter every day.",
+          CodingGame: "729d2f5ebf2a12fc3bbefc3c13fa4f463434423",
+          Discord: "957829331474849802",
+          Facebook: null,
+          LinkedIn: "steventcramer",
+          Twitter: "steventcramer"
+        )
+      },
+      {
+        "Mike Yoshino",
+        new Author
+        (
+          Name: "Mike Yoshino",
+          Bio: ":) Welcome to my profile!",
+          CodingGame: "ede69031e8671a592c04562a69d92a250402493",
+          Facebook:"yoshinoookami",
+          LinkedIn: "tsubagi-yoshino-503441171",
+          Twitter: "YoshinoSupakorn",
+          AvatarPath: "/authorAvatars/MikeYoshino.jpg",
+          Discord: "629559177190309910"
+        )
+      },
+      {
+        "Stefan Bemelmans",
+        new Author
+        (
+          Name: "Stefan Bemelmans",
+          AvatarPath: "/authorAvatars/Stefan.jpg",
+          Bio: "Computers and Food",
+          Discord: "386790410460332032",
+          Twitter: "Twitter"
+        )
+      },
+      {
+        "Kevin Dietz",
+        new Author
+        (
+          Name: "Kevin Dietz",
+          AvatarPath: "/authorAvatars/noavatar.jpg",
+          Twitter: "kevinknowscs",
+          Discord: "497944319227985920"
+        )
+      },
+      {
+        "Ilyana Smith",
+        new Author
+        (
+          Name: "Ilyana Smith",
+          Twitter: "ilyanaDev",
+          AvatarPath: "/authorAvatars/ilyanaSmith.jpg"
+        )
+      }
+    };
+  }
 
-    public string AddImagePath(IDocument doc)
+  public string AddImagePath(IDocument document)
+  {
+    string authorKey = document.GetString(WebKeys.Author);
+    if (authorKey != null && Authors.ContainsKey(authorKey))
     {
-      string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors.ContainsKey(authorKey))
-      {
-        return authors[authorKey].AvatarPath;
-      }else
-      {
-        return NoAvatar;
-      }
-    }
-    public string AddAuthorFacebook(IDocument doc)
+      return Authors[authorKey].AvatarPath;
+    }else
     {
-      string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].Facebook))
-      {
-        return authors[authorKey].Facebook;
-      }
-      else
-      {
-        return string.Empty;
-      }
+      return NoAvatar;
     }
-    public string AddAuthorCodingGame(IDocument doc)
+  }
+  public string? AddAuthorFacebook(IDocument doc)
+  {
+    string authorKey = doc.GetString(WebKeys.Author);
+    if (authorKey != null && Authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(Authors[authorKey].Facebook))
     {
-      string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].CodingGame))
-      {
-        return authors[authorKey].CodingGame;
-      }
-      else
-      {
-        return string.Empty;
-      }
+      return Authors[authorKey].Facebook;
     }
+    else
+    {
+      return string.Empty;
+    }
+  }
+  public string? AddAuthorCodingGame(IDocument doc)
+  {
+    string authorKey = doc.GetString(WebKeys.Author);
+    if (authorKey != null && Authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(Authors[authorKey].CodingGame))
+    {
+      return Authors[authorKey].CodingGame;
+    }
+    else
+    {
+      return string.Empty;
+    }
+  }
 
-    public string AddAuthorTwitter(IDocument doc)
+  public string? AddAuthorTwitter(IDocument doc)
+  {
+    string authorKey = doc.GetString(WebKeys.Author);
+    if (authorKey != null && Authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(Authors[authorKey].Twitter))
     {
-      string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].Twitter))
-      {
-        return authors[authorKey].Twitter;
-      }
-      else
-      {
-        return string.Empty;
-      }
+      return Authors[authorKey].Twitter;
     }
+    else
+    {
+      return string.Empty;
+    }
+  }
 
-    public string AddAuthorBio(IDocument doc)
+  public string? AddAuthorBio(IDocument doc)
+  {
+    string authorKey = doc.GetString(WebKeys.Author);
+    if (authorKey != null && Authors.ContainsKey(authorKey) &&!string.IsNullOrEmpty(Authors[authorKey].Bio))
     {
-      string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors.ContainsKey(authorKey) &&!string.IsNullOrEmpty(authors[authorKey].Bio))
-      {
-        return authors[authorKey].Bio;
-      }
-      else
-      {
-        return string.Empty;
-      }
+      return Authors[authorKey].Bio;
     }
-    public string AddAuthorLinkedIn(IDocument doc)
+    else
     {
-      string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].LinkedIn))
-      {
-        return authors[authorKey].LinkedIn;
-      }
-      else
-      {
-        return string.Empty;
-      }
+      return string.Empty;
     }
+  }
+  public string? AddAuthorLinkedIn(IDocument doc)
+  {
+    string authorKey = doc.GetString(WebKeys.Author);
+    if (authorKey != null && Authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(Authors[authorKey].LinkedIn))
+    {
+      return Authors[authorKey].LinkedIn;
+    }
+    else
+    {
+      return string.Empty;
+    }
+  }
 
-    public string AddAuthorDiscord(IDocument doc)
+  public string? AddAuthorDiscord(IDocument doc)
+  {
+    string authorKey = doc.GetString(WebKeys.Author);
+    if (authorKey != null && Authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(Authors[authorKey].Discord))
     {
-      string authorKey = doc.GetString(WebKeys.Author);
-      if (authorKey != null && authors.ContainsKey(authorKey) && !string.IsNullOrEmpty(authors[authorKey].Discord))
-      {
-        return authors[authorKey].Discord;
-      }
-      else
-      {
-        return string.Empty;
-      }
+      return Authors[authorKey].Discord;
+    }
+    else
+    {
+      return string.Empty;
     }
   }
 }
