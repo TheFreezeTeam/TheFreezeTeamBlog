@@ -22,6 +22,7 @@
   var image = Document.GetString(WebKeys.Image);
 
   int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
+  var x = Document.GetString("SubFolderName");
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +51,7 @@
         <div class="mx-0 sm:mx-6">
           <div id="postType" class="w-full p-4 font-light text-gray-800 bg-white lg:p-10">
             <div class="flex justify-end mb-6 -mt-4 text-sm font-normal">
+              <div>SubfolderName: @x</div>
               <div>
                 @if (!string.IsNullOrEmpty(Document.GetString("SubFolderName")))
                 {

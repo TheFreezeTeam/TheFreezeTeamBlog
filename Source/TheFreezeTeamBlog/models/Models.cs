@@ -17,9 +17,9 @@ public record BaseModel(IDocument Document, IExecutionContext Context)
   /// <remarks>Source: Front matter of the post markdown file</remarks>
   /// <example>blazor-state-tutorial.md</example>
   public string Description => Document.GetString(WebKeys.Description);
-  public string Link => Document.GetLink(true);
+  public string FullLink => Document.GetLink(true);
   public string PageTitle => Document.GetString(TftKeys.PageTitle);
-  public string PostImageUrl => Document.GetString(TftKeys.PostImageUrl);
+  public string PostImageFullLink => Document.GetLink(TftKeys.PostImageUrl,true);
   public string AuthorTwitter => Document.GetString(TftKeys.AuthorTwitter);
   public string FavIconLink => Context.GetLink("/favicon.ico");
 
