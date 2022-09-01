@@ -1,6 +1,6 @@
 ﻿@* @model BaseModel *@
 @{
-  string markdownPath = Document.Source.GetRelativeInputPath().ChangeExtension("md").ToString();
+  BaseModel baseModel = new BaseModel(Document,Context);
 
   string description = Document.GetString(WebKeys.Description);
   string author = Document.GetString(WebKeys.Author);
@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @await Html.PartialAsync("partials/_Head.cshtml", new BaseModel(Document,Context))
+  @Html.Partial("partials/_Head.cshtml", baseModel)
 </head>
 
 @{
@@ -46,22 +46,21 @@
       <div class="container mx-auto lg:max-w-6xl">
         <div class="mx-0 sm:mx-6">
           <div id="postType" class="w-full p-4 font-light text-gray-800 bg-white lg:p-10">
-            @await Html.PartialAsync("partials/_EditInGitHubLink.cshtml", new BaseModel(Document,Context))
+            @Html.Partial("partials/_EditInGitHubLink.cshtml", baseModel)
             @RenderBody()
           </div>
         </div>
       </div>
-      @Html.Partial("_post-footer")
       <!-- Footer -->
+      @Html.Partial("partials/_post-footer")
       @Html.Partial("partials/_subscription")
     </div>
   </div>
-  @await Html.PartialAsync("_footer")
-
-  @await Html.PartialAsync("_scripts")
-
-  @RenderSection("Scripts", false)
+  @Html.Partial("partials/_footer")
 
   <!-- Custom scripts for this template -->
+  @Html.Partial("partials/_scripts")
+  @RenderSection("Scripts", false)
+
 </body>
 </html>
