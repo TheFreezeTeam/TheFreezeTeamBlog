@@ -1,24 +1,7 @@
 ﻿@* @model BaseModel *@
 @{
   BaseModel baseModel = new BaseModel(Document,Context);
-
-  string description = Document.GetString(WebKeys.Description);
-  string author = Document.GetString(WebKeys.Author);
-  string siteTitle = Document.GetString(TftKeys.SiteTitle);
-  string pageTitle = Document.GetString(TftKeys.PageTitle);
-  string postImageUrl = Document.GetLink(TftKeys.PostImageUrl);
-
-  var rssFeeds = Outputs["**/*.rss"];
-  var atomFeeds = Outputs["**/*.atom"];
-  string link = Document.GetLink(true);
-  string faviconLink = @Context.GetLink("/favicon.ico");
-
-  string excerpt = Model.GetString(Keys.Excerpt);
-
   var image = Document.GetString(WebKeys.Image);
-
-  int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
-  var x = Document.GetString("SubFolderName");
 }
 <!DOCTYPE html>
 <html lang="en">
