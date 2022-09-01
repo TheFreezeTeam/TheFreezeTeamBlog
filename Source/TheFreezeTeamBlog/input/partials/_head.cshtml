@@ -2,5 +2,5 @@
 @inherits StatiqRazorPage<BaseModel>
 
 <title>@Model.PageTitle</title>
-@await Html.PartialAsync("_MetaTags.cshtml", new MetaTags(Document, Context))
-@await Html.PartialAsync("_Links.cshtml", new BaseModel(Document, Context))
+@await Html.PartialAsync("_meta-tags.cshtml", new MetaTags(Document, Context))
+@await Html.PartialAsync("_links.cshtml", new BaseModel(Document, Context))
