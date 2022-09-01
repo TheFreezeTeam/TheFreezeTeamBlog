@@ -1,6 +1,5 @@
 ---
 DocumentName: launch-edge-with-profile
-SubFolderName: 2022
 Title: Start Edge with a Specific Profile from Powershell 
 Published: 01/03/2022
 Image: Powershell_256.png
