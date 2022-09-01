@@ -10,7 +10,7 @@ ArchiveOrderDescending: true
 Title: Authors
 ArchiveTitle: => GetString("GroupKey")
 ShowInNavbar: true
-Layout: _mainLayout
+Layout: _main-layout
 ---
 
 <div class="container lg:max-w-6xl mx-auto-mt-32">
@@ -21,18 +21,18 @@ Layout: _mainLayout
         <div class="container-sm-height">
           <div class="row row-sm-height">
             <div class="col-md-6 right-border col-sm-height">
-              @Html.Partial("/_authorPosts.cshtml", Document)
+              @Html.Partial("partials/_author-posts.cshtml", Document)
             </div>
           </div>
         </div>
       }
       else
-      {<div class="w-full bg-white p-10">
+      {<div class="w-full p-10 bg-white">
         @foreach (IDocument author in Document.GetChildren().OrderByDescending(x => x.GetChildren().Count()))
         {
           string postCount = author.GetChildren().Count().ToString();
          <div class="py-2">
-           <a href="@Context.GetLink(author)" class="rounded w-max text-gray-700"> @author.GetTitle() (@postCount)</a>
+           <a href="@Context.GetLink(author)" class="text-gray-700 rounded w-max"> @author.GetTitle() (@postCount)</a>
          </div>
         }
       </div>

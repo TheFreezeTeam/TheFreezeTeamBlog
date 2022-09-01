@@ -1,10 +1,6 @@
 ﻿@* @model BaseModel *@
 @{
-  string markdownPath = Document.Destination.ChangeExtension("md").ToString();
-  string gitHubRepoUrl = "https://github.com/TheFreezeTeam/TheFreezeTeamBlog";
-  string gitHubEditBaseUrl = $"{gitHubRepoUrl}/edit/master/Source/TheFreezeTeamBlog/input/{markdownPath}";
-  string gitHubEditUrl = $"{gitHubEditBaseUrl}{markdownPath}";
-  Uri gitHubEditUri = new Uri(gitHubEditUrl);
+  BaseModel baseModel = new BaseModel(Document,Context);
 
   string description = Document.GetString(WebKeys.Description);
   string author = Document.GetString(WebKeys.Author);
@@ -27,7 +23,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @await Html.PartialAsync("partials/_Head.cshtml", new BaseModel(Document,Context))
+  @Html.Partial("partials/_head.cshtml", baseModel)
 </head>
 
 @{
@@ -50,40 +46,21 @@
       <div class="container mx-auto lg:max-w-6xl">
         <div class="mx-0 sm:mx-6">
           <div id="postType" class="w-full p-4 font-light text-gray-800 bg-white lg:p-10">
-            <div class="flex justify-end mb-6 -mt-4 text-sm font-normal">
-              <div>SubfolderName: @x</div>
-              <div>
-                @if (!string.IsNullOrEmpty(Document.GetString("SubFolderName")))
-                {
-                  <a class="flex" href="@gitHubEditUri" target="_blank">
-                    Edit This Page
-                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                  </a>
-                }
-                else
-                {
-                  <a class="flex" href="https://github.com/TheFreezeTeam/TheFreezeTeamBlog/edit/master/Source/TheFreezeTeamBlog/input/posts/@(Document.GetString("DocumentName")).md" target="_blank">
-                    Edit This Page
-                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                  </a>
-                }
-              </div>
-            </div>
+            @Html.Partial("partials/_edit-in-github-link.cshtml", baseModel)
             @RenderBody()
           </div>
         </div>
       </div>
-      @Html.Partial("_post-footer")
       <!-- Footer -->
-      @Html.Partial("_subscription")
+      @Html.Partial("partials/_post-footer.cshtml")
+      @Html.Partial("partials/_subscription.cshtml")
     </div>
   </div>
-  @Html.Partial("_footer")
-
-  @Html.Partial("_scripts")
-
-  @RenderSection("Scripts", false)
+  @Html.Partial("partials/_footer.cshtml")
 
   <!-- Custom scripts for this template -->
+  @Html.Partial("partials/_scripts.cshtml")
+  @RenderSection("Scripts", false)
+
 </body>
 </html>

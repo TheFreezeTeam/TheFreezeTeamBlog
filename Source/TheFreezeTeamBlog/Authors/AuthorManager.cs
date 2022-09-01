@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class AuthorManager
 {
-  public const string NoAvatar = "/authorAvatars/noavatar.jpg";
+  public const string NoAvatar = "/author-avatars/noavatar.jpg";
   public IReadOnlyDictionary<string, Author> Authors { get; set; }
   public AuthorManager()
   {
@@ -17,7 +17,7 @@ public class AuthorManager
         new Author
         (
           Name: "Steven T. Cramer",
-          AvatarPath: "/authorAvatars/steve.jpeg",
+          AvatarPath: "/author-avatars/steven-t-cramer.jpeg",
           Bio: "Get smarter every day.",
           CodingGame: "729d2f5ebf2a12fc3bbefc3c13fa4f463434423",
           Discord: "957829331474849802",
@@ -36,7 +36,7 @@ public class AuthorManager
           Facebook:"yoshinoookami",
           LinkedIn: "tsubagi-yoshino-503441171",
           Twitter: "YoshinoSupakorn",
-          AvatarPath: "/authorAvatars/MikeYoshino.jpg",
+          AvatarPath: "/author-avatars/mike-yoshino.jpg",
           Discord: "629559177190309910"
         )
       },
@@ -45,7 +45,7 @@ public class AuthorManager
         new Author
         (
           Name: "Stefan Bemelmans",
-          AvatarPath: "/authorAvatars/Stefan.jpg",
+          AvatarPath: "/author-avatars/stefan-bemelmans.jpg",
           Bio: "Computers and Food",
           Discord: "386790410460332032",
           Twitter: "Twitter"
@@ -56,7 +56,7 @@ public class AuthorManager
         new Author
         (
           Name: "Kevin Dietz",
-          AvatarPath: "/authorAvatars/noavatar.jpg",
+          AvatarPath: "/author-avatars/no-avatar.jpg",
           Twitter: "kevinknowscs",
           Discord: "497944319227985920"
         )
@@ -67,7 +67,7 @@ public class AuthorManager
         (
           Name: "Ilyana Smith",
           Twitter: "ilyanaDev",
-          AvatarPath: "/authorAvatars/ilyanaSmith.jpg"
+          AvatarPath: "/author-avatars/ilyana-smith.jpg"
         )
       }
     };
