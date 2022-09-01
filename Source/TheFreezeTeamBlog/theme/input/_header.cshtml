@@ -14,9 +14,9 @@
   bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
 }
 
-@Html.Partial("_postNav")
-<div class="text-center mx-auto pt-16 md:pt-10 w-7/12">
-  <p class="text-sm text-blue-500 font-medium uppercase">
+@Html.Partial("partials/_post-nav.cshtml")
+<div class="w-7/12 pt-16 mx-auto text-center md:pt-10">
+  <p class="text-sm font-medium text-blue-500 uppercase">
     @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
     @if (Document.ContainsKey("Tags"))
     {
@@ -31,11 +31,11 @@
       }
     }
   </p>
-  <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
+  <h1 class="text-3xl font-bold break-normal md:text-5xl">@title</h1>
 </div>
 <!--image-->
 <div
-  class="container w-full max-w-7xl mx-auto bg-white lg:bg-cover mt-8 lg:rounded lg:h-4 h-2 bg-cover bg-center bg-no-repeat"
+  class="container w-full h-2 mx-auto mt-8 bg-white bg-center bg-no-repeat bg-cover max-w-7xl lg:bg-cover lg:rounded lg:h-4"
   style="@style"
 >
 </div>

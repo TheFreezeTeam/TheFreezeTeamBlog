@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @Html.Partial("partials/_Head.cshtml", baseModel)
+  @Html.Partial("partials/_head.cshtml", baseModel)
 </head>
 
 @{
@@ -46,20 +46,20 @@
       <div class="container mx-auto lg:max-w-6xl">
         <div class="mx-0 sm:mx-6">
           <div id="postType" class="w-full p-4 font-light text-gray-800 bg-white lg:p-10">
-            @Html.Partial("partials/_EditInGitHubLink.cshtml", baseModel)
+            @Html.Partial("partials/_edit-in-github-link.cshtml", baseModel)
             @RenderBody()
           </div>
         </div>
       </div>
       <!-- Footer -->
-      @Html.Partial("partials/_post-footer")
-      @Html.Partial("partials/_subscription")
+      @Html.Partial("partials/_post-footer.cshtml")
+      @Html.Partial("partials/_subscription.cshtml")
     </div>
   </div>
-  @Html.Partial("partials/_footer")
+  @Html.Partial("partials/_footer.cshtml")
 
   <!-- Custom scripts for this template -->
-  @Html.Partial("partials/_scripts")
+  @Html.Partial("partials/_scripts.cshtml")
   @RenderSection("Scripts", false)
 
 </body>
