@@ -4,6 +4,7 @@ using Statiq.Common;
 
 public record BaseModel(IDocument Document, IExecutionContext Context)
 {
+  const string GitHubRepoUrl = "https://github.com/TheFreezeTeam/TheFreezeTeamBlog";
   /// <summary>
   /// Author of the post.
   /// </summary>
@@ -20,13 +21,15 @@ public record BaseModel(IDocument Document, IExecutionContext Context)
   public string FullLink => Document.GetLink(true);
   public string PageTitle => Document.GetString(TftKeys.PageTitle);
   public string PostImageUrl => Document.GetString(TftKeys.PostImageUrl);
-  public string PostImageFullLink => Document.GetLink(PostImageUrl,true);
   public string AuthorTwitter => Document.GetString(TftKeys.AuthorTwitter);
-  public string FavIconLink => Context.GetLink("/favicon.ico");
 
-  const string gitHubRepoUrl = "https://github.com/TheFreezeTeam/TheFreezeTeamBlog";
   private string markdownPath => Document.Source.GetRelativeInputPath().ChangeExtension("md").ToString();
-  public string GitHubEditUrl => $"{gitHubRepoUrl}/edit/master/Source/TheFreezeTeamBlog/input/{markdownPath}";
+  public string GitHubEditUrl => $"{GitHubRepoUrl}/edit/master/Source/TheFreezeTeamBlog/input/{markdownPath}";
+
+  #region Context Based
+  public string FavIconLink => Context.GetLink("/favicon.ico");
+  public string PostImageFullLink => Context.GetLink(PostImageUrl,true);
+  #endregion
 };
 
 public record MetaTags(IDocument Document, IExecutionContext Context) :
