@@ -1,17 +1,19 @@
-@model IDocument
+@model BaseModel
+@inherits StatiqRazorPage<BaseModel>
+
 @{
-  string? title = Document.GetString(WebKeys.Title);
-  bool useHomePageHeader = !Document.ContainsKey(WebKeys.Image);
-  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+  //string? title = Document.GetString(WebKeys.Title);
+  //bool useHomePageHeader = !Document.ContainsKey(WebKeys.Image);
+  //string coverImageUrl = Document.GetString(TftKeys.CoverImageUrl);
 
-  string description =
-    Document.WithoutSettings().GetString("Lead") ??
-    Document.WithoutSettings().GetString(WebKeys.Description);
+  //string description =
+  //  Document.WithoutSettings().GetString("Lead") ??
+  //  Document.WithoutSettings().GetString(WebKeys.Description);
 
-  bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
+  //bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
 }
 
-@if (useHomePageHeader)
+@if (Model.HasCoverImage)
 {
   <div
     class="p-0 m-0 bg-black bg-center bg-no-repeat bg-contain lg:bg-cover lg:bg-bottom sm:h-10 max-h-350Max lg:max-h-500Max"
@@ -20,13 +22,13 @@
     <div class="container pt-10 mx-auto text-center lg:pt-56">
       <!--Title-->
       <img class="w-8 mx-auto lg:w-14 lg:h-14" src="/android-chrome-192x192.png" />
-      <p class="text-sm font-light text-white uppercase lg:text-lg">@title</p>
+      <p class="text-sm font-light text-white uppercase lg:text-lg">@Model.PageTitle</p>
     </div>
   </div>
 }
 else
 {
-  @Html.Partial("partials/_post-nav.cshtml")
+  @Html.Partial("_post-nav.cshtml", baseModel)
   <div class="pt-16 text-center md:pt-32">
     <p class="text-sm font-bold text-green-500 md:text-base">
       @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
@@ -48,7 +50,7 @@ else
   <!--image-->
   <div
     class="container w-full h-2 mx-auto mt-8 bg-white bg-center bg-no-repeat bg-cover max-w-7xl lg:bg-cover lg:rounded lg:h-4"
-    style="background-image: url(\"@postImageUrl\"); height: 80vh;"
+    style="background-image: url(\"@Model.Cover\"); height: 80vh;"
   >
   </div>
 }
