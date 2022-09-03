@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,10 +7,13 @@
   <ItemGroup>
     <Compile Remove="input\author\**" />
     <Compile Remove="input\OldPost\**" />
+    <Compile Remove="input\posts\StevenTCramer\**" />
     <EmbeddedResource Remove="input\author\**" />
     <EmbeddedResource Remove="input\OldPost\**" />
+    <EmbeddedResource Remove="input\posts\StevenTCramer\**" />
     <None Remove="input\author\**" />
     <None Remove="input\OldPost\**" />
+    <None Remove="input\posts\StevenTCramer\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,10 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheFreezeTeamBlog.Tailwind\TheFreezeTeamBlog.Tailwind.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="input\posts\StevenTCramer\2020\" />
+    <ProjectReference Include="..\TimeWarp.Statiq\TimeWarp.Statiq.csproj" />
   </ItemGroup>
 
 </Project>

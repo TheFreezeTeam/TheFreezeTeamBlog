@@ -9,9 +9,11 @@
     public const string AuthorImage = nameof(AuthorImage);
     public const string AuthorLinkedIn = nameof(AuthorLinkedIn);
     public const string AuthorTwitter = nameof(AuthorTwitter);
+    public const string IsPost = nameof(IsPost);
     public const string PageTitle = nameof(PageTitle);
-    public const string PostImageUrl = nameof(PostImageUrl);
+    public const string CoverImageUrl = nameof(CoverImageUrl);
     public const string ReadTime = nameof(ReadTime);
     public const string SiteTitle = nameof(SiteTitle);
+    public const string Tags = nameof(Tags);
   }
 }

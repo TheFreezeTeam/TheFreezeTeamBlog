@@ -1,73 +1,22 @@
-﻿<!DOCTYPE html>
+﻿@{
+  BaseModel baseModel = new BaseModel(Document, Context);
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  @if (Document.ContainsKey(WebKeys.Description))
-  {
-    <meta name="description" content="@Document.GetString(WebKeys.Description)">
-    <meta property="og:description" content="@Document.GetString(WebKeys.Description)"/>
-    <meta name="twitter:description" content="@Document.GetString(WebKeys.Description)"/>
-  }
-  @if (Document.ContainsKey(WebKeys.Author))
-  {
-    <meta name="author" content="@Document.GetString(WebKeys.Author)">
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="@Document.GetString(WebKeys.Author)"/>
-  }
-
-  <title>@Document.GetString("PageTitle")</title>
-
-  <link rel="canonical" href="@Document.GetLink(true)">
-  @{
-    @foreach (IDocument rssFeed in Outputs["**/*.rss"])
-    {
-      <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
-    }
-    @foreach (IDocument atomFeed in Outputs["**/*.atom"])
-    {
-      <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
-    }
-  }
-  <meta property="og:site_name" content="@Document.GetString("SiteTitle")"/>
-  <meta name="application-name" content="@Document.GetString("SiteTitle")" />
-  <meta name="msapplication-tooltip" content="@Document.GetString("SiteTitle")" />
-  <meta name="msapplication-starturl" content="@Context.GetLink("/")" />
-
-  @* TODO: More social graph meta tags *@
-    <meta property="og:title" content="@Document.GetString("PageTitle")" />
-    <meta name="twitter:title" content="@Document.GetString("PageTitle")"/>
-  @if (Document.ContainsKey(WebKeys.Image))
-  {
-    string imageName = @Context.GetLink(Document.GetString(WebKeys.Image));
-    string imageUrl = "https://thefreezeteam.com/images" + imageName;
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta property="og:image" content="@imageUrl" />
-    <meta property="og:image:url"  content="@imageUrl"  />
-    <meta property="twitter:image" content="@imageUrl"/>
-    <meta property="og:image:width" content="1024"/>
-    <meta property="og:image:height" content="512"/>
-  }
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="@Document.GetLink(true)" />
-  <meta name="twitter:url" content="@Document.GetLink(true)"/>
-  <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
-  <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
-  <link href="/css/Site.css" rel="stylesheet" type="text/css">
-  <link href="/resource/js/highlight.js/styles/vs.css" rel="stylesheet" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  @Html.Partial("partials/_head.cshtml", baseModel)
 </head>
 
 <body class="font-sans leading-normal tracking-normal bg-white">
   <!-- Page Header -->
-  @RenderSectionOrPartial("Header", "_headerAboutUs")
+  @Html.Partial("partials/_header-about-us.cshtml", baseModel);
   <!-- Navigation -->
   <div class="mx-auto -mt-32 lg:container lg:px-4 lg:px-0 lg:max-w-6xl">
     <div class="mx-0 sm:mx-6">
       <!-- Main Content -->
       <div class="hidden">
-        @RenderSectionOrPartial("Navigation", "_navigation")
+        @Html.Partial("partials/_navigation", baseModel)
       </div>
         <div class="container lg:max-w-6xl mx-auto-mt-32">
           <div class="mx-0 sm:mx-6">
@@ -76,16 +25,16 @@
             </div>
           </div>
         </div>
-        @Html.Partial("partials/_post-footer.cshtml")
+        @Html.Partial("partials/_post-footer.cshtml", baseModel)
 
     </div>
   </div>
-  @Html.Partial("partials/_footer.cshtml")
+  @Html.Partial("partials/_footer.cshtml", baseModel)
 
-  @Html.Partial("partials/_scripts.cshtml")
+  <!-- Custom scripts for this template -->
+  @Html.Partial("partials/_scripts.cshtml", new BaseModel(Document, Context ))
 
   @RenderSection("Scripts", false)
 
-  <!-- Custom scripts for this template -->
 </body>
 </html>

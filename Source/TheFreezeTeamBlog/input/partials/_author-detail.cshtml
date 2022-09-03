@@ -1,64 +1,65 @@
-@model IDocument
+@model BaseModel
+@inherits StatiqRazorPage<BaseModel>
 
 @{
-  string author = Model.GetString(WebKeys.Author);
-  string authorImage = Model.GetString(TftKeys.AuthorImage);
-  string authorFacebook = Model.GetString(TftKeys.AuthorFacebook);
-  string authorTwitter = Model.GetString(TftKeys.AuthorTwitter);
-  string authorLinkedIn = Model.GetString(TftKeys.AuthorLinkedIn);
-  string authorCodingGame = Model.GetString(TftKeys.AuthorCodingGame);
-  string authorDiscord = Model.GetString(TftKeys.AuthorDiscord);
-  string authorBio = Model.GetString(TftKeys.AuthorBio);
+  //string author = Model.GetString(WebKeys.Author);
+  //string authorImage = Model.GetString(TftKeys.AuthorImage);
+  //string authorFacebook = Model.GetString(TftKeys.AuthorFacebook);
+  //string authorTwitter = Model.GetString(TftKeys.AuthorTwitter);
+  //string authorLinkedIn = Model.GetString(TftKeys.AuthorLinkedIn);
+  //string authorCodingGame = Model.GetString(TftKeys.AuthorCodingGame);
+  //string authorDiscord = Model.GetString(TftKeys.AuthorDiscord);
+  //string authorBio = Model.GetString(TftKeys.AuthorBio);
 }
 
 <div class="w-full p-5 bg-gray-100 rounded shadow-lg">
   <div class="flex justify-center">
     <img
-      src="@authorImage"
+      src="@Model.AuthorImage"
       class="object-fill w-20 h-20 transition duration-500 ease-in-out transform border-4 border-gray-300 rounded-full hover:border-gray-600 hover:scale-105 lg:w-32 lg:h-32"
     >
   </div>
-  <p class="mt-2 text-sm font-bold text-center">@author</p>
+  <p class="mt-2 text-sm font-bold text-center">@Model.Author</p>
   <div class="flex justify-center mt-2">
-    @if (!string.IsNullOrEmpty(authorFacebook))
+    @if (!string.IsNullOrEmpty(Model.AuthorFacebook))
     {
-      <a target="_blank" href="https://www.facebook.com/@authorFacebook">
+      <a target="_blank" href="https://www.facebook.com/@Model.AuthorFacebook">
         <img
           class="mr-2 transition duration-500 ease-in-out w-7 h-7 hover:opacity-80"
           src="/images/Icon/facebook.svg"
         />
       </a>
     }
-    @if (!string.IsNullOrEmpty(Model.GetString("AuthorTwitter")))
+    @if (!string.IsNullOrEmpty(Model.AuthorTwitter))
     {
-       <a target="_blank" href="https://www.twitter.com/@authorTwitter">
+       <a target="_blank" href="https://www.twitter.com/@Model.AuthorTwitter">
         <img
           class="mr-2 transition duration-500 ease-in-out w-7 h-7 hover:opacity-80 "
           src="/images/Icon/twitter.svg"
         />
        </a>
     }
-    @if (!string.IsNullOrEmpty(Model.GetString("AuthorLinkedIn")))
+    @if (!string.IsNullOrEmpty(Model.AuthorLinkedIn))
     {
-      <a target="_blank" href="https://www.linkedin.com/in/@authorLinkedIn">
+      <a target="_blank" href="https://www.linkedin.com/in/@Model.AuthorLinkedIn">
         <img
           class="mr-2 transition duration-500 ease-in-out w-7 h-7 hover:opacity-80 "
           src="/images/Icon/linkedin.svg"
         />
       </a>
     }
-    @if (!string.IsNullOrEmpty(Model.GetString("AuthorCodingGame")))
+    @if (!string.IsNullOrEmpty(Model.AuthorCodingGame))
     {
-       <a target="_blank" href="https://www.codingame.com/profile/@authorCodingGame">
+       <a target="_blank" href="https://www.codingame.com/profile/@Model.AuthorCodingGame">
         <img
           class="mr-2 transition duration-500 ease-in-out rounded w-7 h-7 hover:opacity-80"
           src="/images/Icon/codingame.svg"
         />
       </a>
     }
-    @if (!string.IsNullOrEmpty(Model.GetString("AuthorDiscord")))
+    @if (!string.IsNullOrEmpty(Model.AuthorDiscord))
     {
-      <a target="_blank" href="https://discordapp.com/users/@authorDiscord">
+      <a target="_blank" href="https://discordapp.com/users/@Model.AuthorDiscord">
         <img
           class="mr-2 transition duration-500 ease-in-out rounded w-7 h-7 hover:opacity-80"
           src="/images/Icon/discordProfile.svg"
@@ -66,8 +67,8 @@
       </a>
     }
   </div>
-  @if (!string.IsNullOrEmpty(authorBio))
+  @if (!string.IsNullOrEmpty(Model.AuthorBio))
   {
-    <p class="text-sm italic text-center">@authorBio</p>
+    <p class="text-sm italic text-center">@Model.AuthorBio</p>
   }
 </div>

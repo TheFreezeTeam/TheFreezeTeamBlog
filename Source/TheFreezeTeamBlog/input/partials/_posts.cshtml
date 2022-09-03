@@ -1,4 +1,5 @@
-@model IDocument
+@model BaseModel
+@inherits StatiqRazorPage<BaseModel>
 
 @if (Model.GetChildren().Any())
 {

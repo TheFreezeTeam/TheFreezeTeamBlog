@@ -1,3 +1,6 @@
+@model BaseModel
+@inherits StatiqRazorPage<BaseModel>
+
 <footer class="bg-black">
   <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
 
@@ -7,25 +10,31 @@
           <span class="text-sm">The Freeze Team</span>
         </a>
         <a class="text-gray-400 no-underline hover:text-white duration-500 transition ease-in-out hover:no-underline" href="#">
-          <span class="text-sm">© @DateTime.Now.Year</span>
+          <span class="text-sm">&copy; @DateTime.Now.Year</span>
         </a>
       </div>
       <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
         <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
-          @{
-            IDocument rssFeed = Outputs["**/*.rss"].FirstOrDefault();
-            IDocument atomFeed = Outputs["**/*.atom"].FirstOrDefault();
-          }
-          @if (rssFeed != null)
+          @if (Model.RssFeeds != null)
           {
             <li>
-              <a class="text-sm inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3" href="@Context.GetLink(rssFeed)">RSS Feed</a>
+              <a
+                class="text-sm inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3"
+                href="@Context.GetLink(Model.RssFeeds.FirstOrDefault())"
+              >
+                RSS Feed
+              </a>
             </li>
           }
-          @if (atomFeed != null)
+          @if (Model.AtomFeeds != null)
           {
             <li>
-              <a class="text-sm inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3" href="@Context.GetLink(atomFeed)">Atom Feed</a>
+              <a
+                class="text-sm inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-gray-300 transition duration-500 ease-in-out py-2 px-3"
+                href="@Context.GetLink(Model.AtomFeeds.FirstOrDefault())"
+              >
+                Atom Feed
+              </a>
             </li>
           }
         </ul>

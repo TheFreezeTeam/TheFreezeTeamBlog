@@ -2,6 +2,7 @@
 @{
   BaseModel baseModel = new BaseModel(Document,Context);
   var image = Document.GetString(WebKeys.Image);
+  string topMargin = baseModel.HasCoverImage ? "-mt-32" : "";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -9,18 +10,12 @@
   @Html.Partial("partials/_head.cshtml", baseModel)
 </head>
 
-@{
-  string topMargin = "";
-  if (image != null)
-  {
-    topMargin = "-mt-32";
-  }
-}
+
 <body class="font-sans leading-normal tracking-normal bg-white">
   <script src="/resource/js/prismjs/prism.js"></script>
   <!-- Page Header -->
 
-  @RenderSectionOrPartial("Header", "_header")
+  @Html.Partial("partials/_header.cshtml", baseModel)
 
   <!-- Navigation -->
   <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto @topMargin">
@@ -35,14 +30,14 @@
         </div>
       </div>
       <!-- Footer -->
-      @Html.Partial("partials/_post-footer.cshtml")
-      @Html.Partial("partials/_subscription.cshtml")
+      @Html.Partial("partials/_post-footer.cshtml", baseModel)
+      @Html.Partial("partials/_subscription.cshtml", baseModel)
     </div>
   </div>
-  @Html.Partial("partials/_footer.cshtml")
+  @Html.Partial("partials/_footer.cshtml", baseModel)
 
   <!-- Custom scripts for this template -->
-  @Html.Partial("partials/_scripts.cshtml")
+  @Html.Partial("partials/_scripts.cshtml", baseModel)
   @RenderSection("Scripts", false)
 
 </body>

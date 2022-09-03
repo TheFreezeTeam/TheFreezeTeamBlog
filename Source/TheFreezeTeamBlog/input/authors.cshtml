@@ -21,7 +21,7 @@ Layout: _main-layout
         <div class="container-sm-height">
           <div class="row row-sm-height">
             <div class="col-md-6 right-border col-sm-height">
-              @Html.Partial("partials/_author-posts.cshtml", Document)
+                @Html.Partial("partials/_author-posts.cshtml", new BaseModel(Document, Context ))
             </div>
           </div>
         </div>
