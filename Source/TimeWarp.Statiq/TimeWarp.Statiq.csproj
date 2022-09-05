@@ -1,13 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <Description>TimeWarp Statiq Resources</Description>
+    <RootNamespace>Statiq.TimeWarp</RootNamespace>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Statiq.Web"/>
+    <None Include="Extension\BootstrapperExtensions.cs" />
+    <None Include="Extension\BootstrapperFactoryExtensions.cs" />
+    <None Include="Extension\IDocumentExtensions.cs" />
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Models\" />
-    <Folder Include="Modules\" />
-    <Folder Include="Pipelines\" />
+    <PackageReference Include="Statiq.Web" />
   </ItemGroup>
+
 </Project>

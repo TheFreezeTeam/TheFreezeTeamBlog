@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 		LICENSE = LICENSE
 		Readme.md = Readme.md
+		Run.ps1 = Run.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeWarp.Statiq", "Source\TimeWarp.Statiq\TimeWarp.Statiq.csproj", "{75E8D2C5-6920-407B-9C5E-C9B6F5B9C52D}"
@@ -26,6 +27,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeWarp.Statiq.Tests", "Source\TimeWarp.Statiq.Tests\TimeWarp.Statiq.Tests.csproj", "{05B09504-ABF3-4763-B9C1-C9D511A74000}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheFreezeTeam.com", "Source\TheFreezeTeam.com\TheFreezeTeam.com.csproj", "{E71BF436-357E-4DA2-A9CD-945A0A524AC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Old", "Old", "{79B7EA9C-2EC5-45AD-A2A3-3B838BFCC5C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +61,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B} = {79B7EA9C-2EC5-45AD-A2A3-3B838BFCC5C5}
+		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2} = {79B7EA9C-2EC5-45AD-A2A3-3B838BFCC5C5}
 		{05B09504-ABF3-4763-B9C1-C9D511A74000} = {1AD9B731-594E-425D-885A-8842D32C7A83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

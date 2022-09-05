@@ -6,7 +6,7 @@ namespace TimeWarp.Statiq
   using System.Text;
   using System.Threading.Tasks;
 
-  public class TimeWarpKeys
+  public class MetaDataKeys
   {
 
   }

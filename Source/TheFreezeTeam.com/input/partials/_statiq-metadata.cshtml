@@ -1,0 +1,31 @@
+﻿@using System.Text.Json
+@{
+  //string json = "something";
+  //JsonSerializer
+  //    .Serialize
+  //    (
+  //      Model,
+  //      new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true}
+  //    );
+}
+<div>
+  <h1>Document</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@nameof(Model.Id)</td>
+        <td>@Model.Id</td>
+      </tr>
+      <tr>
+        <td>@nameof(Model.Count)</td>
+        <td>@Model.Count</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
