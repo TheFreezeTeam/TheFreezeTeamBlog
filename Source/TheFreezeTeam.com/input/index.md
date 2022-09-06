@@ -1,4 +1,5 @@
 ﻿Title: My First Statiq page
+MySampleFrontMatter: Yo Yo Hear me!
 ---
 # Hello World!
 

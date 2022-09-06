@@ -1,0 +1,190 @@
+﻿@using System.Text.Json
+@using Statiq.TimeWarp.Extension
+@using Statiq.Common
+
+@{
+  var timestamp = DateTimeOffset.FromUnixTimeMilliseconds(Model.Timestamp).UtcDateTime.ToLongDateString();
+}
+<div>
+  <h1>Document Core Properties</h1>
+  <p>
+    See <a href="https://www.statiq.dev/guide/documents-and-metadata/">Documents and Metadata</a>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@nameof(Model.Id)</td>
+        <td>@Model.Id</td>
+      </tr>
+      <tr>
+        <td>@nameof(Model.ContentProvider)</td>
+        <td>@Model.ContentProvider</td>
+      </tr>
+      <tr>
+        <td>@nameof(Model.Destination)</td>
+        <td>@Model.Destination</td>
+      </tr>
+      <tr>
+        <td>@nameof(Model.Source)</td>
+        <td>@Model.Source</td>
+      </tr>
+      <tr>
+        <td>@nameof(Model.Timestamp)</td>
+        <td>@Model.Timestamp</td>
+      </tr>
+      <tr>
+        <td>@nameof(Model.Timestamp)</td>
+        <td>@timestamp</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h1>Inputs</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Source</th>
+        <th>Destination</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(var input in Inputs)
+      {
+        <tr>
+          <td>@input.Id</td>
+          <td>@input.Source.GetRelativeInputPath()</td>
+          <td>@input.Destination</td>
+        </tr>
+      }
+      <tr>
+    </tbody>
+  </table>
+
+  <h1>Pipeline Outputs</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Source</th>
+        <th>Destination</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var output in Outputs)
+      {
+        <tr>
+          <td>@output.Id</td>
+          <td>@output.Source.GetRelativeInputPath()</td>
+          <td>@output.Destination</td>
+        </tr>
+      }
+      <tr>
+    </tbody>
+  </table>
+
+  <h1>Output Pages</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Source</th>
+        <th>Destination</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var output in OutputPages)
+      {
+        <tr>
+          <td>@output.Id</td>
+          <td>@output.Source.GetRelativeInputPath()</td>
+          <td>@output.Destination</td>
+        </tr>
+      }
+      <tr>
+    </tbody>
+  </table>
+  <h1>Context</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ClassCatalog.Count</td>
+        <td>@Context.ClassCatalog.Count</td>
+      </tr>
+      <tr>
+        <td>@nameof(Context.Phase)</td>
+        <td>@Context.Phase</td>
+      </tr>
+      <tr>
+        <td>@nameof(Context.Module)</td>
+        <td>@Context.Module</td>
+      </tr>
+      <tr>
+        <td>ApplicationState.Arguments</td>
+        <td>@string.Join(',',Context.ApplicationState.Arguments)</td>
+      </tr>
+      <tr>
+        <td>ApplicationState.CommandName</td>
+        <td>@Context.ApplicationState.CommandName</td>
+      </tr>
+      <tr>
+        <td>ApplicationState.Input</td>
+        <td>@Context.ApplicationState.Input</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Pipelines</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Key</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var pipeline in Context.ExecutingPipelines)
+      {
+        <tr>
+          <td>@pipeline.Key</td>
+
+          @{
+            string pipelineHtml = ((IPipeline)(pipeline.Value)).Dump().Replace("\n", "<br //>").Replace("    ","--");
+          }
+          <td>@Html.Raw(pipelineHtml)</td>
+        </tr>
+      }
+      <tr>
+    </tbody>
+  </table>
+  <h2>ShortCodes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Key</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var shortcode in Context.Shortcodes)
+      {
+        <tr>
+          <td>@shortcode</td>
+        </tr>
+      }
+      <tr>
+    </tbody>
+  </table>
+</div>
