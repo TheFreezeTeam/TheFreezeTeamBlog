@@ -5,7 +5,7 @@
 <!-- _layout.cshtml -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 @Html.Partial("partials/_head.cshtml")
-<body class="flex flex-col min-h-screen bg-zinc-50 dark:bg-slate-800">
+<body class="flex flex-col min-h-screen bg-zinc-50 dark:bg-slate-800 text-zinc-800 dark:text-zinc-100">
   <div className="fixed inset-0 flex justify-center sm:px-8">
     <div className="flex w-full max-w-7xl lg:px-8">
       <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
@@ -19,11 +19,10 @@
     }
     @Html.Partial("partials/_header.cshtml")
     <!-- Main  -->
-    <main class="flex-grow mx-auto bg-red-600">
-      <div>
-        @Html.Partial("partials/_navigation.cshtml")
-        @RenderBody()
-      </div>
+    <main class="flex flex-col flex-grow w-full mx-auto mt-2 bg-red-600">
+      @Html.Partial("partials/_navigation.cshtml")
+      @RenderBody()
+
       <!-- Footer of Main Section -->
       @Html.Partial("partials/_main-footer.cshtml")
       @Html.Partial("partials/_subscription.cshtml")
