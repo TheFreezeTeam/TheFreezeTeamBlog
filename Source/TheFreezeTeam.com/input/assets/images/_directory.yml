@@ -1,0 +1,11 @@
+﻿DestinationPath: |
+  =>
+  {
+    var destination = new NormalizedPath(Document.Destination.ToString());
+    NormalizedPath destinationFileName = destination.FileName;
+    
+    NormalizedPath newDestination =
+      new NormalizedPath("images").Combine(destinationFileName);
+
+    return newDestination;
+  }

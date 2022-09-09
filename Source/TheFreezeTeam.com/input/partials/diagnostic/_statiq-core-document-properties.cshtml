@@ -4,8 +4,49 @@
 
 @{
   var timestamp = DateTimeOffset.FromUnixTimeMilliseconds(Model.Timestamp).UtcDateTime.ToLongDateString();
+  var Destination_Parent_FullPath = new NormalizedPath($"{Document.Destination}").Parent.FullPath;
+  var Destination_Parent_Parent_FullPath = new NormalizedPath($"{Document.Destination}").Parent.Parent.FullPath;
+
+  var destination = new NormalizedPath(Document.Destination.ToString());
+  NormalizedPath destinationFileName = destination.FileName;
+  NormalizedPath newDestination = destination.Parent.Parent.ChangeFileName(destinationFileName);
+  NormalizedPath imageDestination = new NormalizedPath("images").Combine(destinationFileName);
 }
 <div>
+  <h1>Calculated values</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>imageDestination</td>
+        <td>@imageDestination</td>
+      </tr>
+      <tr>
+        <td>newDestination</td>
+        <td>@newDestination</td>
+      </tr>
+      <tr>
+        <td>destinationFileName</td>
+        <td>@destinationFileName</td>
+      </tr>
+      <tr>
+        <td>Destination Parent FullPath</td>
+        <td>@Destination_Parent_FullPath</td>
+      </tr>
+      <tr>
+        <td>Destination Parent Parent FullPath</td>
+        <td>@Destination_Parent_Parent_FullPath</td>
+      </tr>
+    </tbody>
+  </table>
+
   <h1>Document Core Properties</h1>
   <p>
     See <a href="https://www.statiq.dev/guide/documents-and-metadata/">Documents and Metadata</a>
@@ -19,27 +60,31 @@
     </thead>
     <tbody>
       <tr>
-        <td>@nameof(Model.Id)</td>
-        <td>@Model.Id</td>
+        <td>@nameof(Document.Id)</td>
+        <td>@Document.Id</td>
       </tr>
       <tr>
-        <td>@nameof(Model.ContentProvider)</td>
-        <td>@Model.ContentProvider</td>
+        <td>@nameof(Document.ContentProvider)</td>
+        <td>@Document.ContentProvider</td>
       </tr>
       <tr>
         <td>@nameof(Model.Destination)</td>
-        <td>@Model.Destination</td>
+        <td>@Document.Destination</td>
       </tr>
       <tr>
-        <td>@nameof(Model.Source)</td>
-        <td>@Model.Source</td>
+        <td>DestinationPath</td>
+        <td>@Document.GetString("DestinationPath")</td>
       </tr>
       <tr>
-        <td>@nameof(Model.Timestamp)</td>
-        <td>@Model.Timestamp</td>
+        <td>@nameof(Document.Source)</td>
+        <td>@Document.Source</td>
       </tr>
       <tr>
-        <td>@nameof(Model.Timestamp)</td>
+        <td>@nameof(Document.Timestamp)</td>
+        <td>@Document.Timestamp</td>
+      </tr>
+      <tr>
+        <td>@nameof(Document.Timestamp)</td>
         <td>@timestamp</td>
       </tr>
     </tbody>
@@ -56,7 +101,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach(var input in Inputs)
+      @foreach (var input in Inputs)
       {
         <tr>
           <td>@input.Id</td>
@@ -113,7 +158,9 @@
       <tr>
     </tbody>
   </table>
+
   <h1>Context</h1>
+
   <table>
     <thead>
       <tr>
@@ -148,7 +195,9 @@
       </tr>
     </tbody>
   </table>
+
   <h2>Pipelines</h2>
+
   <table>
     <thead>
       <tr>
@@ -162,7 +211,7 @@
           <td>@pipeline.Key</td>
 
           @{
-            string pipelineHtml = ((IPipeline)(pipeline.Value)).Dump().Replace("\n", "<br //>").Replace("    ","--");
+            string pipelineHtml = ((IPipeline)(pipeline.Value)).Dump().Replace("\n", "<br />").Replace("    ", "--");
           }
           <td>@Html.Raw(pipelineHtml)</td>
         </tr>
@@ -170,7 +219,9 @@
       <tr>
     </tbody>
   </table>
+
   <h2>ShortCodes</h2>
+
   <table>
     <thead>
       <tr>

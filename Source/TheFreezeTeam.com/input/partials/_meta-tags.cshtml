@@ -1,14 +1,27 @@
-﻿@*<!-- Primary Meta Tags -->
-<title>@Model.PageTitle</title>
-<meta name="title" content="@Model.PageTitle">
-<meta name="description" content="@Model.Description">
+﻿<!-- _meta-tags.cshtml -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="title" content="@PageTitle">
+<meta name="description" content="@Description">
 
 <!-- Open Graph / Facebook / Twitter -->
-<meta property="og:site_name" content="The Freeze Team">
-<meta property="og:type" content="website">
-<meta property="og:url" content="@Model.FullLink">
-<meta property="og:title" content="@Model.PageTitle">
-<meta property="og:description" content="@Model.Description">
+<meta property="og:site_name" content="@SiteTitle">
+@if(IsPost)
+{
+  <meta property="og:type" content="article">
+  <!-- TODO: Cramer -->
+  <meta property="article:author" content="todo">
+  <meta property="article:published_time" content="@Published.ToLongTimeString()">
+  <meta property="article:modified_time" content="">
+  <meta property="article:expiration_time" content="">
+  <meta property="article:section" content="">
+  <meta property="article:tag" content="">
+}
+
+<meta property="og:url" content="@FullLink">
+<meta property="og:title" content="@PageTitle">
+<meta property="og:description" content="@Description">
+@*
 <meta property="og:image" content="@Model.CoverImageFullLink">*@
 
 <!-- Twitter -->

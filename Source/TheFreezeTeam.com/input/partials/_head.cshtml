@@ -1,3 +1,6 @@
-﻿<title>Title goes here</title>
-@*@await Html.PartialAsync("_meta-tags.cshtml")
-@await Html.PartialAsync("_links.cshtml")*@
+﻿<!-- _head.cshtml -->
+<head>
+  <title>@PageTitle</title>
+  @await Html.PartialAsync("_meta-tags.cshtml")
+  @await Html.PartialAsync("_links.cshtml")
+</head>

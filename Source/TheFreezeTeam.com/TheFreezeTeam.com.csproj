@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
+    <RootNamespace>TheFreezeTeam.Com</RootNamespace>
   </PropertyGroup>
   
   <ItemGroup>
@@ -9,6 +10,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\TheFreezeTeam.Com.Tailwind\TheFreezeTeam.Com.Tailwind.csproj" />
     <ProjectReference Include="..\TimeWarp.Statiq\TimeWarp.Statiq.csproj" />
   </ItemGroup>
   

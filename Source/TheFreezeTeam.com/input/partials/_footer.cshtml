@@ -1,0 +1,27 @@
+﻿<!-- _footer.cshtml -->
+
+<footer id="footer"
+  class="flex flex-row items-center m-2 text-sm tracking-tight text-center text-zinc-800 dark:text-zinc-100">
+  <div class="flex-1">
+    <a class="">
+      The Freeze Team
+    </a>
+  </div>
+  <div class="flex-1">
+    <img class="w-2/3 mx-auto" src="images/timewarp-enterprises.svg" />
+  </div>
+  <div class="flex-1">
+    <ul class="flex justify-center list-reset">
+      <li class="">
+        <a href="@RssFeeds.FirstOrDefault())">
+          Rss
+        </a>
+      </li>
+      <li class="pl-3">
+        <a href="@AtomFeeds.FirstOrDefault()">
+          Atom
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

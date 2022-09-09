@@ -10,7 +10,6 @@
     "prettier": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.7.0",
     "@typescript-eslint/parser": "5.7.0",
