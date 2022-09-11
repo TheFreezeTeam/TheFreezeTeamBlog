@@ -1,3 +1,19 @@
 ﻿Layout: /_layout.cshtml
-PostSources: posts/**
+PostSources: "posts/**/*.{md,cshtml,html}" # This requires quotes becuase of the `{}` characters
 SiteTitle: The Freeze Team
+ImageUrl: |
+  =>
+  {
+    var image = Document.GetString(WebKeys.Image);
+    if (image == null) return null;
+    NormalizedPath x = new NormalizedPath(image);
+    string result;
+    if(x.IsRelative)
+    {
+      result = Context.GetLink(Document.Destination.ChangeFileName(image));
+    } else
+    {
+      result = image;
+    }
+    return result;
+  }

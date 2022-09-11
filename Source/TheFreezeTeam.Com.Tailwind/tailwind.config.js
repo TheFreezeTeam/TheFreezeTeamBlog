@@ -12,6 +12,7 @@ module.exports = {
     "../TheFreezeTeam.Com/input/**/*.cshtml",
     "../TheFreezeTeam.Com/input/**/*.md",
     "../TheFreezeTeam.Com/input/**/*.html",
+    "../TheFreezeTeam.Com/input/**/*.svg",
   ],
   safelist: [
     {

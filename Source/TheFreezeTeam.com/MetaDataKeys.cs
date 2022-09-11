@@ -8,6 +8,7 @@ namespace TheFreezeTeam.Com
 
   public class MetaDataKeys
   {
+    public const string ImageUrl = nameof(ImageUrl);
     public const string SiteTitle = nameof(SiteTitle);
 
     /// <summary>
@@ -25,9 +26,8 @@ namespace TheFreezeTeam.Com
     //public const string AuthorLinkedIn = nameof(AuthorLinkedIn);
     //public const string AuthorTwitter = nameof(AuthorTwitter);
     //public const string PageTitle = nameof(PageTitle);
-    //public const string CoverImageUrl = nameof(CoverImageUrl);
     //public const string ReadTime = nameof(ReadTime);
     //public const string SiteTitle = nameof(SiteTitle);
-    //public const string Tags = nameof(Tags);
+    public const string Tags = nameof(Tags);
   }
 }

@@ -1,0 +1,39 @@
+<!-- _card -->
+@{
+  string articleLink = Context.GetLink(Model);
+  string excerpt = Model.GetString(Keys.Excerpt);
+  string displayDate = Model.GetDateTime(WebKeys.Published).ToLongDateString();
+  bool isFeatured = FeaturedPost == Model;
+  string featuredClass = isFeatured ? "md:flex-row": string.Empty;
+}
+
+<section class="w-full transition ease-in-out bg-orange-600 rounded-lg shadow-lg hover:-translate-y-1 ">
+  <a href="@articleLink" class="flex flex-col @featuredClass">
+    <div class="m-2 md:w-2/3">
+      @if (Model.HasImage() )
+      {
+        <img src="@Model.GetImageUrl()" class="object-cover w-full h-full rounded-t">
+      }
+    </div>
+    <div class="flex flex-col m-2 bg-purple-400">
+      <header class="m-1 bg-orange-300">
+        @Html.Partial("_tags.cshtml")
+        <div class="text-xs md:text-sm">
+          @displayDate
+        </div>
+        <div class = "">
+          @Model.GetTitle()
+        </div>
+      </header>
+      <p class="flex-grow bg-orange-400">
+          @excerpt
+      </p>
+      <footer class="flex flex-row items-center content-between w-full bg-orange-500">
+        <div class="flex-1 text-left">auth Image</div>
+        <div class="flex-1 text-right">read time</div>
+      </footer>
+    </div>
+
+  </a>
+</section>
+

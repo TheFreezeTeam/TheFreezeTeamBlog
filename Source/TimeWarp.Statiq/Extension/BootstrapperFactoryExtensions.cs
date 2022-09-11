@@ -14,8 +14,8 @@ public static class BootstrapperFactoryExtensions
   public static Bootstrapper InitStatiq(this BootstrapperFactory factory, string[] args) =>
     factory
     .CreateWeb(args)
-    .AddCommand<SampleCommand>()
-    .DisplayEngine();
+    .AddCommand<SampleCommand>();
+    // .DisplayEngine();
     //.ModifyPipelines()
     //.RemovePipelines()
     //.AddMyPipelines()

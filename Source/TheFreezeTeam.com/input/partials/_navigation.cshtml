@@ -1,2 +1,50 @@
 ﻿<!-- _navigation.cshtml -->
-<nav id="navigation" class="bg-amber-500">navigation</nav>
+<nav
+  id="navigation"
+  class="flex flex-row justify-between m-2"
+>
+  <ul id="navigationlinks" class="flex justify-center list-reset">
+    <li class="">
+      <a href="#">Home</a>
+    </li>
+    <li class="ml-2">
+      <a href="#">Authors</a>
+    </li>
+    <li class="ml-2">
+      <a href="#">Posts</a>
+    </li>
+    <li class="ml-2">
+      <a href="#">Tags</a>
+    </li>
+    <li class="ml-2">
+      <a href="#">About Us</a>
+    </li>
+  </ul>
+
+  <ul id="sociallinks" class="flex justify-center list-reset">
+    <li class="ml-2">
+      <a href="#">
+        @Html.Partial("simple-icons/_twitter.cshtml")
+      </a>
+    </li>
+     <li class="ml-2">
+      <a href="#">
+        @Html.Partial("simple-icons/_facebook.cshtml")
+      </a>
+    </li>
+    <li class="ml-2">
+      <a href="#">
+        @Html.Partial("simple-icons/_discord.cshtml")
+      </a>
+    </li>
+    <li class="mx-2">
+      <a href="#">
+        @Html.Partial("simple-icons/_github.cshtml")
+      </a>
+    </li>
+  </ul>
+
+</nav>
+<style>
+
+</style>

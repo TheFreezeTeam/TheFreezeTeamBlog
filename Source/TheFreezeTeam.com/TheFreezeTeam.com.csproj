@@ -4,6 +4,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>TheFreezeTeam.Com</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Extension_s\IDocumentExtentions.cs" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Statiq.Web" />
