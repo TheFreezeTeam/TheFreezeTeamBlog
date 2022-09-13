@@ -1,5 +1,6 @@
 ﻿namespace TheFreezeTeam.Com;
 
+using Octokit;
 using Statiq.Razor;
 
 // public static class IContextExtentions
@@ -27,4 +28,5 @@ public static class IDocumentExtentions
   public static string GetImageUrl(this IDocument document) => document.GetString(MetaDataKeys.ImageUrl);
   public static IReadOnlyList<string>? GetTags(this IDocument document) =>
     document.GetList<string>(MetaDataKeys.Tags);
+  public static string? GetAuthorKey(this IDocument document) => document.GetString(MetaDataKeys.Author);
 }

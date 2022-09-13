@@ -1,0 +1,58 @@
+﻿@{
+  string? authorKey = Document.GetAuthorKey();
+  Dictionary<string,Author> authors = GetAuthors();
+  string authorAvatar = string.Empty;
+
+  if (!string.IsNullOrWhiteSpace(authorKey))
+  {
+    if (authors.TryGetValue(authorKey, out Author? author))
+    {
+      authorAvatar = author.AvatarPath;
+    }
+  };
+
+  if (string.IsNullOrWhiteSpace(authorAvatar)) authorAvatar = "images/no-avatar.jpg";
+}
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>authorKey</td>
+    <td>@authorKey</td>
+  </tr>
+  <tr>
+    <td>authors.Count</td>
+    <td>@authorKey</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>AvatarPath</th>
+    <th>Bio</th>
+    <th>CodingGame</th>
+    <th>Discord</th>
+    <th>Facebook</th>
+    <th>LinkedIn</th>
+    <th>Twitter</th>
+  </tr>
+  @foreach (var author in GetAuthors().Values)
+  {
+    <tr>
+      <td>@author.Name</td>
+      <td>@author.AvatarPath</td>
+      <td>@author.Bio</td>
+      <td>@author.CodingGame</td>
+      <td>@author.Discord</td>
+      <td>@author.Facebook</td>
+      <td>@author.LinkedIn</td>
+      <td>@author.Twitter</td>
+    </tr>
+  }
+</table>
+
+

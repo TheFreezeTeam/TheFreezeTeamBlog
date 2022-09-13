@@ -1,0 +1,52 @@
+{
+  "Steven T. Cramer": {
+    "Name": "Steven T. Cramer",
+    "AvatarPath": "/images/author-avatars/steven-t-cramer.jpeg",
+    "Bio": "Get smarter every day.",
+    "CodingGame": "729d2f5ebf2a12fc3bbefc3c13fa4f463434423",
+    "Discord": "957829331474849802",
+    "Facebook": null,
+    "LinkedIn": "steventcramer",
+    "Twitter": "steventcramer"
+  },
+  "Mike Yoshino": {
+    "Name": "Mike Yoshino",
+    "AvatarPath": "/images/author-avatars/mike-yoshino.jpg",
+    "Bio": ":) Welcome to my profile!",
+    "CodingGame": "ede69031e8671a592c04562a69d92a250402493",
+    "Discord": "629559177190309910",
+    "Facebook": "yoshinoookami",
+    "LinkedIn": "tsubagi-yoshino-503441171",
+    "Twitter": "YoshinoSupakorn"
+  },
+  "Stefan Bemelmans": {
+    "Name": "Stefan Bemelmans",
+    "AvatarPath": "/images/author-avatars/stefan-bemelmans.jpg",
+    "Bio": "Computers and Food",
+    "CodingGame": null,
+    "Discord": "386790410460332032",
+    "Facebook": null,
+    "LinkedIn": null,
+    "Twitter": "Twitter"
+  },
+  "Kevin Dietz": {
+    "Name": "Kevin Dietz",
+    "AvatarPath": "/images/author-avatars/no-avatar.jpg",
+    "Bio": null,
+    "CodingGame": null,
+    "Discord": "497944319227985920",
+    "Facebook": null,
+    "LinkedIn": null,
+    "Twitter": "kevinknowscs"
+  },
+  "Ilyana Smith": {
+    "Name": "Ilyana Smith",
+    "AvatarPath": "/images/author-avatars/ilyana-smith.jpg",
+    "Bio": null,
+    "CodingGame": null,
+    "Discord": null,
+    "Facebook": null,
+    "LinkedIn": null,
+    "Twitter": "ilyanaDev"
+  }
+}

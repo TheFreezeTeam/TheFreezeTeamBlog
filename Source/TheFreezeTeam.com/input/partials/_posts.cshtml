@@ -1,16 +1,16 @@
 ﻿<!-- _posts.cshtml -->
 <section
   id="posts"
-  class="flex-grow bg-purple-500"
+  class="flex-grow mt-2"
 >
   <div class="flex w-full md:w-full">
     @Html.Partial("_card.cshtml", FeaturedPost)
   </div>
 
-  <div class="flex flex-wrap items-stretch w-full mt-2">
+  <div class="grid items-stretch w-full gap-6 mt-6 lg:grid-cols-3">
     @foreach (IDocument post in NonFeaturedPosts)
     {
-      <div class="flex w-full p-6 md:w-1/3">
+      <div class="flex w-full ">
         @Html.Partial("_card.cshtml", post)
       </div>
     }

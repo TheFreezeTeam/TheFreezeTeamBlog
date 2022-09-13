@@ -5,35 +5,53 @@
   string displayDate = Model.GetDateTime(WebKeys.Published).ToLongDateString();
   bool isFeatured = FeaturedPost == Model;
   string featuredClass = isFeatured ? "md:flex-row": string.Empty;
+  string featuredImageClass = isFeatured ? "md:w-2/3": string.Empty;
+  string? authorKey = Model.GetAuthorKey();
+  Dictionary<string,Author> authors = GetAuthors();
+  string authorAvatar = string.Empty;
+
+  if (!string.IsNullOrWhiteSpace(authorKey))
+  {
+    if (authors.TryGetValue(authorKey, out Author? author))
+    {
+      authorAvatar = author.AvatarPath;
+      authorAvatar = Context.GetLink(authorAvatar);
+    }
+  };
+
+  if (string.IsNullOrWhiteSpace(authorAvatar)) authorAvatar = "images/no-avatar.jpg";
 }
 
-<section class="w-full transition ease-in-out bg-orange-600 rounded-lg shadow-lg hover:-translate-y-1 ">
-  <a href="@articleLink" class="flex flex-col @featuredClass">
-    <div class="m-2 md:w-2/3">
+<section
+  class="flex flex-col w-full transition ease-in-out rounded-lg shadow-lg bg-slate-700 hover:-translate-y-1 hover:scale-105"
+>
+  <a href="@articleLink" class="flex flex-col flex-grow p-2 gap-x-4">
+    <div class="@featuredImageClass">
       @if (Model.HasImage() )
       {
         <img src="@Model.GetImageUrl()" class="object-cover w-full h-full rounded-t">
       }
     </div>
-    <div class="flex flex-col m-2 bg-purple-400">
-      <header class="m-1 bg-orange-300">
+    <div class="flex flex-col flex-grow">
+      <header class="">
         @Html.Partial("_tags.cshtml")
-        <div class="text-xs md:text-sm">
+        <div class="mt-2 text-xs md:text-sm">
           @displayDate
         </div>
-        <div class = "">
+        <div class = "mt-2 font-bold">
           @Model.GetTitle()
         </div>
       </header>
-      <p class="flex-grow bg-orange-400">
+      <p class="flex-grow ">
           @excerpt
       </p>
-      <footer class="flex flex-row items-center content-between w-full bg-orange-500">
-        <div class="flex-1 text-left">auth Image</div>
+      <footer class="flex flex-row items-center content-between w-full">
+        <div class="flex-1 text-left">
+          <img src="@authorAvatar"/>
+        </div>
         <div class="flex-1 text-right">read time</div>
       </footer>
     </div>
-
   </a>
 </section>
 

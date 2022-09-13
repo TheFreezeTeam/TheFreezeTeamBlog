@@ -3,13 +3,13 @@
   IReadOnlyList<string>? tags = Model.GetTags();
 }
 
-<section class="flex flex-wrap items-center content-between w-full">
+<section class="flex flex-wrap items-center content-between w-full gap-x-2 ">
   @if(tags != null)
   {
     @foreach (var tag in tags)
     {
       <div
-        class="flex-1 px-6 py-1 mt-2 ml-2 text-xs font-semibold text-center text-gray-800 bg-gray-100 rounded md:text-sm"
+        class="flex-1 px-6 py-1 mt-2 text-xs font-semibold text-center text-gray-800 bg-gray-100 rounded md:text-sm"
       >
         <span class="whitespace-nowrap">@tag</span>
       </div>

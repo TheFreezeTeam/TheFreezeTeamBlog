@@ -1,6 +1,8 @@
 ﻿namespace TheFreezeTeam.Com;
 
 using Statiq.Razor;
+using System.Text.Json;
+using TheFreezeTeam.Com.Models;
 
 public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
   where TModel : IDocument
@@ -25,9 +27,27 @@ public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
   public bool IsPost => Outputs.FilterSources(Context.GetString(MetaDataKeys.PostSources)).ContainsById(Document);
   public FilteredDocumentList<IDocument> AtomFeeds => Outputs["**/*.atom"];
   public FilteredDocumentList<IDocument> RssFeeds => Outputs["**/*.rss"];
+  public Dictionary<string, Author> GetAuthors()
+  {
+    const string AuthorsPath = "data/authors.json";
+    IDocument? authorsDocument =
+    Outputs
+      .FromPipeline("Data")
+      .FilterSources(AuthorsPath)
+      .FirstOrDefault();
 
+    if (authorsDocument == null) return new Dictionary<string, Author>();
+
+    var authorsStream = authorsDocument.GetContentStream();
+    var authors = JsonSerializer.Deserialize<Dictionary<string, Author>>(authorsStream);
+
+    if (authors == null) throw new ArgumentNullException($"{AuthorsPath} is a required file!");
+
+    return authors;
+  }
 
   #endregion
 
   public string PageTitle => $"{SiteTitle} - {Title}".Trim(new[] { ' ', '-' });
+
 }
