@@ -9,6 +9,9 @@
   string? authorKey = Model.GetAuthorKey();
   Dictionary<string,Author> authors = GetAuthors();
   string authorAvatar = string.Empty;
+  string authorName = string.Empty;
+  string authorLink = string.Empty;
+  string readTime = Model.GetString(TimeWarp.Statiq.MetaDataKeys.ReadTime);
 
   if (!string.IsNullOrWhiteSpace(authorKey))
   {
@@ -16,6 +19,9 @@
     {
       authorAvatar = author.AvatarPath;
       authorAvatar = Context.GetLink(authorAvatar);
+      authorName = author.Name;
+      authorLink = Context.GetLink(authorName.Replace(" ", "-").ToLower());
+      authorLink = $"/author/{authorLink}";
     }
   };
 
@@ -23,10 +29,10 @@
 }
 
 <section
-  class="flex flex-col w-full transition ease-in-out rounded-lg shadow-lg bg-slate-700 hover:-translate-y-1 hover:scale-105"
+  class="flex flex-col w-full transition ease-in-out rounded-lg shadow-lg bg-white dark:bg-slate-700 hover:-translate-y-1 hover:scale-105"
 >
-  <a href="@articleLink" class="flex flex-col flex-grow p-2 gap-x-4">
-    <div class="@featuredImageClass">
+  <a href="@articleLink" class="flex flex-col flex-grow p-2 gap-x-4 @featuredClass">
+    <div class="">
       @if (Model.HasImage() )
       {
         <img src="@Model.GetImageUrl()" class="object-cover w-full h-full rounded-t">
@@ -46,12 +52,22 @@
           @excerpt
       </p>
       <footer class="flex flex-row items-center content-between w-full">
-        <div class="flex-1 text-left">
-          <img src="@authorAvatar"/>
+        <div class="flex-1 tooltip">
+          <object>
+          <a href="/xyz">
+          <img
+            src="@authorAvatar"
+            class="w-8 h-8 rounded-full "
+          />
+          </a>
+
+          </object>
+          <span class='-mt-16 text-sm bg-black rounded tooltip-text'>
+            @authorName
+          </span>
         </div>
-        <div class="flex-1 text-right">read time</div>
+        <div class="flex-1 text-right">@readTime</div>
       </footer>
     </div>
   </a>
 </section>
-

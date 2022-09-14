@@ -1,5 +1,6 @@
 ﻿namespace Statiq.App;
 
+using global::TimeWarp.Statiq;
 using Statiq.Common;
 using Statiq.TimeWarp.Extension;
 using Statiq.Web.Pipelines;
@@ -10,7 +11,7 @@ public static class BootstrapperExtensions
 {
 
   /// <summary>
-  /// 
+  ///
   /// </summary>
   /// <param name="bootstrapper"></param>
   /// <returns></returns>
@@ -47,7 +48,7 @@ public static class BootstrapperExtensions
         }
       );
 
-     return bootstrapper;
+    return bootstrapper;
   }
 
   public static Bootstrapper ModifyPipelines(this Bootstrapper bootstrapper)
@@ -87,7 +88,7 @@ public static class BootstrapperExtensions
       (
         engine =>
         {
-          string json = JsonSerializer.Serialize(engine, new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true});
+          string json = JsonSerializer.Serialize(engine, new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true });
           Console.WriteLine(json);
           string indentation = "  ";
           var sb = new StringBuilder();
@@ -112,5 +113,20 @@ public static class BootstrapperExtensions
       );
 
     return bootstrapper;
+  }
+
+  public static Bootstrapper AddReadingTimeMeta(this Bootstrapper bootstrapper) =>
+    bootstrapper.AddSetting(MetaDataKeys.ReadTime, Config.FromDocument(doc => CalculateReadTime(doc)));
+  private static string CalculateReadTime(IDocument doc)
+  {
+    string? content = doc.GetContentStringAsync().Result;
+    int numberOfWordsInContent = content.Split(' ').Length;
+    //According to wiki, average reading time for one person is 150 words in 1 minute.
+    const int wordsPerMinute = 150;
+    int minutes = numberOfWordsInContent / wordsPerMinute;
+    string displayReadingTime = $"{minutes} MIN READ";
+    return (minutes == 0) ?
+      "QUICK READ" :
+      displayReadingTime;
   }
 }

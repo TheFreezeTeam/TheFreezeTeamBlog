@@ -1,50 +1,45 @@
 ﻿<!-- _navigation.cshtml -->
+@{
+  string anchorClass =
+    "relative block px-3 py-2 transition" +
+    "active:text-emerald-500 active:dark:text-emerald-400" +
+    "hover:text-emerald-500 hover:text-emerald-400 dark:hover:text-emerald-400";
+}
 <nav
   id="navigation"
   class="flex flex-row justify-between m-2"
 >
-  <ul id="navigationlinks" class="flex justify-center list-reset">
-    <li class="">
-      <a href="#">Home</a>
-    </li>
-    <li class="ml-2">
-      <a href="#">Authors</a>
-    </li>
-    <li class="ml-2">
-      <a href="#">Posts</a>
-    </li>
-    <li class="ml-2">
-      <a href="#">Tags</a>
-    </li>
-    <li class="ml-2">
-      <a href="#">About Us</a>
-    </li>
+  <ul
+    id="navigationlinks"
+    class="flex gap-2 px-3 text-sm font-medium rounded-full shadow-lg bg-white/90 text-zinc-800 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+  >
+    <li><a href="/" class="@anchorClass">Home</a></li>
+    <li><a href="#" class="@anchorClass">Authors</a></li>
+    <li><a href="#"class="@anchorClass">Posts</a></li>
+    <li><a href="#"class="@anchorClass">Tags</a></li>
+    <li><a href="#"class="@anchorClass">About Us</a></li>
   </ul>
 
-  <ul id="sociallinks" class="flex justify-center list-reset">
-    <li class="ml-2">
+  <ul id="sociallinks" class="flex justify-center gap-2 list-reset">
+    <li>
       <a href="#">
         @Html.Partial("simple-icons/_twitter.cshtml")
       </a>
     </li>
-     <li class="ml-2">
+     <li>
       <a href="#">
         @Html.Partial("simple-icons/_facebook.cshtml")
       </a>
     </li>
-    <li class="ml-2">
+    <li>
       <a href="#">
         @Html.Partial("simple-icons/_discord.cshtml")
       </a>
     </li>
-    <li class="mx-2">
+    <li>
       <a href="#">
         @Html.Partial("simple-icons/_github.cshtml")
       </a>
     </li>
   </ul>
-
 </nav>
-<style>
-
-</style>

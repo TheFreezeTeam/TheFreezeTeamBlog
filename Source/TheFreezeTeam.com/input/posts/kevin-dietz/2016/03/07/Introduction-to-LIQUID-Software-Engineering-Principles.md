@@ -3,7 +3,7 @@ DocumentName: Introduction-to-LIQUID-Software-Engineering-Principles
 Title: Introduction to LIQUID Software Engineering Principles
 Tags:
   - SOLID
-
+  - LIQUID
 Author: Kevin Dietz
 Image: LIQUID.webp
 Published: 03/07/2016
