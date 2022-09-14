@@ -10,4 +10,14 @@ public record Author
   string? Facebook = null,
   string? LinkedIn = null,
   string? Twitter = null
-);
+) {
+  public string RelativeUrl
+  {
+    get
+    {
+      var result = new string(Name.Where(c => !char.IsPunctuation(c)).ToArray());
+      var x = result.Replace(" ","-").ToLower();
+      return $"authors/{x}";
+    }
+  }
+};

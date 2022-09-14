@@ -1,2 +1,0 @@
-﻿<!-- MyPage.md -->
-# Markdown File

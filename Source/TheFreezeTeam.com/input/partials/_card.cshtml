@@ -20,8 +20,7 @@
       authorAvatar = author.AvatarPath;
       authorAvatar = Context.GetLink(authorAvatar);
       authorName = author.Name;
-      authorLink = Context.GetLink(authorName.Replace(" ", "-").ToLower());
-      authorLink = $"/author/{authorLink}";
+      authorLink = Context.GetLink(author.RelativeUrl);
     }
   };
 
@@ -29,7 +28,7 @@
 }
 
 <section
-  class="flex flex-col w-full transition ease-in-out rounded-lg shadow-lg bg-white dark:bg-slate-700 hover:-translate-y-1 hover:scale-105"
+  class="flex flex-col w-full transition ease-in-out bg-white rounded-lg shadow-lg dark:bg-slate-700 hover:-translate-y-1 hover:scale-105"
 >
   <a href="@articleLink" class="flex flex-col flex-grow p-2 gap-x-4 @featuredClass">
     <div class="">
@@ -54,13 +53,12 @@
       <footer class="flex flex-row items-center content-between w-full">
         <div class="flex-1 tooltip">
           <object>
-          <a href="/xyz">
-          <img
-            src="@authorAvatar"
-            class="w-8 h-8 rounded-full "
-          />
-          </a>
-
+            <a href="@authorLink">
+              <img
+                src="@authorAvatar"
+                class="w-8 h-8 rounded-full "
+              />
+            </a>
           </object>
           <span class='-mt-16 text-sm bg-black rounded tooltip-text'>
             @authorName

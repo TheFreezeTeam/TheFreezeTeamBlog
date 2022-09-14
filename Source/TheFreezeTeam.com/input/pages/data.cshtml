@@ -1,4 +1,8 @@
-﻿@{
+﻿---
+ShowInNavbar: false
+---
+<!-- data.cshtml -->
+@{
   string? authorKey = Document.GetAuthorKey();
   Dictionary<string,Author> authors = GetAuthors();
   string authorAvatar = string.Empty;

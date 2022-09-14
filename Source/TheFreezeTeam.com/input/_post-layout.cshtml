@@ -1,8 +1,5 @@
-﻿@{
-  bool isPost = false;
-}
-<!DOCTYPE html>
-<!-- _layout.cshtml -->
+﻿<!DOCTYPE html>
+<!-- _post-layout.cshtml -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 @Html.Partial("partials/_head.cshtml")
 <body class="flex flex-col min-h-screen bg-zinc-200 dark:bg-slate-800 text-zinc-800 dark:text-zinc-100">
@@ -19,7 +16,7 @@
       @RenderBody()
 
       <!-- Footer of Main Section -->
-      @Html.Partial("partials/_main-footer.cshtml")
+      @Html.Partial("partials/_post-footer.cshtml")
     </main>
     @Html.Partial("partials/_footer.cshtml")
   </div>

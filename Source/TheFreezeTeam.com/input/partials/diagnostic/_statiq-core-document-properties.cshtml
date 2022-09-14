@@ -13,6 +13,31 @@
   NormalizedPath imageDestination = new NormalizedPath("images").Combine(destinationFileName);
 }
 <div>
+  <h1>OutputPages ChildrenOf index</h1>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>GetLink</th>
+    </tr>
+    @* @foreach (IDocument doc in OutputPages.GetChildrenOf("index.html").Where(x => x.GetBool("ShowInNavbar", true)).OrderBy(x => x.GetInt(Keys.Order))) *@
+    @foreach (IDocument doc in NavBarPages)
+    {
+      <tr>
+        <td>
+          @doc.GetTitle()
+        </td>
+        <td>
+          @doc.GetLink()
+        </td>
+        <td>
+          @doc.GetInt(Keys.Order)
+        </td>
+      </tr>
+    }
+  </table>
+
+
+  <br>
   <h1>Calculated values</h1>
   <table>
     <thead>

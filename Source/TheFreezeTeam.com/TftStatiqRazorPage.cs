@@ -27,6 +27,12 @@ public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
   public bool IsPost => Outputs.FilterSources(Context.GetString(MetaDataKeys.PostSources)).ContainsById(Document);
   public FilteredDocumentList<IDocument> AtomFeeds => Outputs["**/*.atom"];
   public FilteredDocumentList<IDocument> RssFeeds => Outputs["**/*.rss"];
+
+  public IOrderedEnumerable<IDocument> NavBarPages =>
+    OutputPages.GetChildrenOf("index.html")
+    .Where(x => x.GetBool(MetaDataKeys.ShowInNavbar, true))
+    .OrderBy(x => x.GetInt(Keys.Order));
+
   public Dictionary<string, Author> GetAuthors()
   {
     const string AuthorsPath = "data/authors.json";
