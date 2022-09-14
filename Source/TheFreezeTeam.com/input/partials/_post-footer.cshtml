@@ -2,17 +2,27 @@
 @{
   var authorKey = Document.GetAuthorKey();
   if(authorKey == null) throw new ArgumentNullException($"{MetaDataKeys.Author} is not defined for Document {Document.Source}", MetaDataKeys.Author );
-  var Author = GetAuthors()[authorKey];
+  var author = GetAuthors()[authorKey];
   //https://thefreezeteam.com/author/steven-t.-cramer/
 }
-<footer class="container flex">
-  <div>
-      <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())">
-        <img src="@Document.GetString("AuthorImage")" class="object-cover w-12 h-12 transition duration-500 ease-in-out rounded-full hover:shadow-lg lg:h-14 lg:w-14">
-      </a>
-      <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())"><p class="pt-3 ml-4 text-base font-medium lg:pt-3 lg:ml-5">@Document.GetString(WebKeys.Author)</p></a>
-  </div>
-  <div class="justify-end">
-    <a href="/author/@Context.GetLink(Document.GetString(WebKeys.Author).Replace(" ","-").ToLower())" class="px-3 py-1 text-xs font-medium text-gray-500 transition duration-500 ease-in-out bg-transparent border border-gray-500 rounded-full hover:border-green-500 hover:text-green-500 lg:font-bold lg:py-2 lg:px-4">Read More</a>
+<footer class="container flex flex-row items-center justify-between mt-2">
+  <a
+    href="@author.Url"
+    class="flex flex-row"
+  >
+    <img
+      src="@author.AvatarPath"
+      class="w-12 border-2 rounded-full hover:border-emerald-500 "
+    >
+    <div class="pt-3 ml-4 text-base font-medium lg:pt-3 lg:ml-5 hover:text-emerald-500 dark:hover:text-emerald-400">
+      @author.Name
+    </div>
+  </a>
+  <div class="">
+    <a
+      href="@author.Url"
+      class="text-xs transition duration-500 ease-in-out bg-transparent border border-gray-400 rounded-full hover:border-emerald-500 hover:text-emerald-500 lg:font-bold lg:py-2 lg:px-4">
+      Read More
+    </a>
   </div>
 </footer>

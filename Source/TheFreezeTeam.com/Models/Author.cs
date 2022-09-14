@@ -11,13 +11,13 @@ public record Author
   string? LinkedIn = null,
   string? Twitter = null
 ) {
-  public string RelativeUrl
+  public string Url
   {
     get
     {
       var result = new string(Name.Where(c => !char.IsPunctuation(c)).ToArray());
       var x = result.Replace(" ","-").ToLower();
-      return $"authors/{x}";
+      return $"/authors/{x}";
     }
   }
 };

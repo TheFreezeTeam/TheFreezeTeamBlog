@@ -3,16 +3,18 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 @Html.Partial("partials/_head.cshtml")
 <body class="flex flex-col min-h-screen bg-zinc-200 dark:bg-slate-800 text-zinc-800 dark:text-zinc-100">
+  <!-- TODO: what does this do? -->
   <div className="fixed inset-0 flex justify-center sm:px-8">
     <div className="flex w-full max-w-7xl lg:px-8">
       <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
     </div>
   </div>
+  <!-- End TODO-->
   <div class="flex flex-col flex-grow mx-auto lg:max-w-6xl ">
-    @Html.Partial("partials/_header.cshtml")
+    @Html.Partial("partials/_post-header.cshtml")
     <!-- Main  -->
     <main class="flex flex-col flex-grow w-full mx-auto mt-2">
-      @Html.Partial("partials/_navigation.cshtml")
+      @Html.Partial("partials/_post-main-header.cshtml")
       @RenderBody()
 
       <!-- Footer of Main Section -->
