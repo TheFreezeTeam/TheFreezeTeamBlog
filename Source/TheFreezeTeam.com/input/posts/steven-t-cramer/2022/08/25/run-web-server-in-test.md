@@ -164,5 +164,6 @@ Don't feel bad if you didn't see this solution, you are not alone. See the refer
 
 ## References
 Video overview of this post: https://youtu.be/4jMzGw45Kw8
+![youtu.be](https://youtu.be/4jMzGw45Kw8)
 https://stackoverflow.com/questions/72928110/why-wont-unit-tests-connect-to-a-websocket
 https://github.com/dotnet/aspnetcore/issues/42657
