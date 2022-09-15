@@ -7,11 +7,11 @@
 }
 <nav
   id="navigation"
-  class="flex flex-row justify-between mt-2"
+  class="flex flex-row justify-between mt-2 text-sm font-medium rounded-full shadow-lg bg-white/90 text-zinc-800 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
 >
   <ul
     id="navigationlinks"
-    class="flex gap-2 px-3 text-sm font-medium rounded-full shadow-lg bg-white/90 text-zinc-800 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+    class="flex gap-2 px-3 "
   >
     <li><a href="/" class="@anchorClass">Home</a></li>
     @foreach (IDocument document in NavBarPages)
@@ -27,7 +27,7 @@
     }
   </ul>
 
-  <ul id="sociallinks" class="flex justify-center gap-2 list-reset">
+  <ul id="sociallinks" class="flex justify-center gap-2 pr-2 list-reset">
     <li>
       <a href="#">
         @Html.Partial("simple-icons/_twitter.cshtml")

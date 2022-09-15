@@ -22,6 +22,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              '&::before': {
+                content: '"" !important'
+              },
+              '&::after': {
+                content: '"" !important'
+              }
+            }
+          }
+        }
+      }),
       backgroundImage: {
         "the-freeze-team": "url(/images/the-freeze-team.png)",
       },

@@ -15,12 +15,19 @@
     <!-- Main  -->
     <main class="flex flex-col flex-grow w-full mx-auto mt-2">
       @Html.Partial("partials/_post-main-header.cshtml")
-      @RenderBody()
-
+      <div
+        class="w-3/4 p-2 mx-auto -mt-32 prose max-w-none lg:p-10 bg-zinc-200 dark:bg-slate-800 dark:prose-invert "
+        @* class="p-2 mx-auto -mt-32 text-xl prose dark:prose-invert bg-zinc-200 dark:bg-slate-800 lg:prose-xl xl:prose-2xl" *@
+      >
+        @* Source: @Document.Source *@
+        @* @Html.Partial("partials/_edit-in-github-link.cshtml") *@
+        @RenderBody()
+      </div>
       <!-- Footer of Main Section -->
       @Html.Partial("partials/_post-footer.cshtml")
     </main>
     @Html.Partial("partials/_footer.cshtml")
   </div>
+  @Html.Partial("partials/_post-scripts.cshtml")
 </body>
 </html>
