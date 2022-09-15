@@ -11,6 +11,7 @@ public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
   public string? Description => Document.GetDescription();
   public string? Title => Document.GetTitle();
   public DateTime Published => Document.GetPublished();
+  public string PublishedDate => Document.GetPublished().ToLongDateString();
   public string FullLink => Document.GetFullLink();
   public DocumentList<IDocument> Posts => Document.GetChildren();
   public IDocument? FeaturedPost => Posts.Count > 0 ? Posts[0]: null;
