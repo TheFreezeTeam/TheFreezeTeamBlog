@@ -14,6 +14,7 @@ public class MetaDataKeys
   //public const string IsPost = nameof(IsPost);
 
   public const string Author = nameof(Author);
+  public const string AuthorKey = nameof(AuthorKey);
   //public const string PageTitle = nameof(PageTitle);
   //public const string ReadTime = nameof(ReadTime);
   //public const string SiteTitle = nameof(SiteTitle);
