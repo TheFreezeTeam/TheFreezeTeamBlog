@@ -28,5 +28,9 @@ public static class IDocumentExtentions
   public static string GetImageUrl(this IDocument document) => document.GetString(MetaDataKeys.ImageUrl);
   public static IReadOnlyList<string>? GetTags(this IDocument document) =>
     document.GetList<string>(MetaDataKeys.Tags);
-  public static string? GetAuthorKey(this IDocument document) => document.GetString(MetaDataKeys.Author);
+  public static string GetAuthorKey(this IDocument document) =>
+    document.GetString(MetaDataKeys.Author) ??
+    throw new ArgumentNullException($"{MetaDataKeys.Author} is not defined for Document {document.Source}", MetaDataKeys.Author );
+
+
 }

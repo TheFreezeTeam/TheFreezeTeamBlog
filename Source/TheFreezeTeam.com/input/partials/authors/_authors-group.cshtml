@@ -1,0 +1,17 @@
+@{
+  //
+  @* var children = Document.GetChildren();
+  string groupKey = Document.GetString("GroupKey");
+  int index = Document.GetInt("Index");
+  string cleanAuthorName = Document.GetString(MetaDataKeys.AuthorKey);
+  string baseUrl = $"authors/{cleanAuthorName}";
+
+  string archiveDestination = (index <= 1) ?
+    $"{baseUrl}/index.html":
+    $"{baseUrl}/{index}.html"; *@
+}
+<!-- _authors-group.cshtml -->
+<div>Authors Group Page</div>
+@* <div>cleanAuthorName: @cleanAuthorName</div>
+<div>ArchiveTitle: @Document.GetString("ArchiveTitle")</div>
+<div>archiveDestination: @archiveDestination</div> *@

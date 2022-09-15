@@ -20,31 +20,18 @@ ArchiveDestination: |
 @{
  //https://www.statiq.dev/guide/web/archives
  // This is an Archive Input. This one file produces many outputs
- // One output for the index page output/authors.html
+ // One output for the index page output\authors.html
  // then one page for each `ArchiveKey`
- // example Source\TheFreezeTeam.com\output\pages\authors\Steven T. Cramer\4.html
-}
-@{
-  //
-  var children = Document.GetChildren();
-  string groupKey = Document.GetString("GroupKey");
-  int index = Document.GetInt("Index");
+ // example
+ // output\authors\steven-t-cramer\index.html
+ // output\authors\steven-t-cramer\2.html
 }
 
-<div>
-  <h1>
-    Authors Page
-  </h1>
-  <div> children.Count: @children.Count</div>
-  <div> ArchiveKey: @Document.GetString("ArchiveKey")</div>
-
-  @if(Document.ContainsKey(Keys.GroupKey))
-  {
-      @Html.Partial("../partials/authors/_authors-group.cshtml");
-  }
-  else
-  {
-      @Html.Partial("../partials/authors/_authors-index.cshtml");
-  }
-
-</div>
+@if(Document.ContainsKey(Keys.GroupKey))
+{
+  @Html.Partial("../partials/authors/_authors-group.cshtml");
+}
+else
+{
+  @Html.Partial("../partials/authors/_authors-index.cshtml");
+}

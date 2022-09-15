@@ -6,25 +6,15 @@
   bool isFeatured = FeaturedPost == Model;
   string featuredClass = isFeatured ? "md:flex-row": string.Empty;
   string featuredImageClass = isFeatured ? "md:w-2/3": string.Empty;
-  string? authorKey = Model.GetAuthorKey();
-  Dictionary<string,Author> authors = GetAuthors();
-  string authorAvatar = string.Empty;
-  string authorName = string.Empty;
+  string authorKey = Model.GetAuthorKey();
   string authorLink = string.Empty;
   string readTime = Model.GetString(TimeWarp.Statiq.MetaDataKeys.ReadTime);
+  Author author = Authors[authorKey];
+  string authorAvatarLink = Context.GetLink(author.AvatarPath);
+  authorLink = Context.GetLink(author.Url);
 
-  if (!string.IsNullOrWhiteSpace(authorKey))
-  {
-    if (authors.TryGetValue(authorKey, out Author? author))
-    {
-      authorAvatar = author.AvatarPath;
-      authorAvatar = Context.GetLink(authorAvatar);
-      authorName = author.Name;
-      authorLink = Context.GetLink(author.Url);
-    }
-  };
-
-  if (string.IsNullOrWhiteSpace(authorAvatar)) authorAvatar = "images/no-avatar.jpg";
+  if (string.IsNullOrWhiteSpace(authorAvatarLink))
+    authorAvatarLink = "images/no-avatar.jpg";
 }
 
 <section
@@ -55,13 +45,13 @@
           <object>
             <a href="@authorLink">
               <img
-                src="@authorAvatar"
+                src="@authorAvatarLink"
                 class="w-8 h-8 rounded-full "
               />
             </a>
           </object>
           <span class='-mt-16 text-sm bg-black rounded tooltip-text'>
-            @authorName
+            @author.Name
           </span>
         </div>
         <div class="flex-1 text-right">@readTime</div>

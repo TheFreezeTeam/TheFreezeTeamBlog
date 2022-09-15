@@ -7,6 +7,7 @@ using TheFreezeTeam.Com.Models;
 public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
   where TModel : IDocument
 {
+
   #region Document
   public string? Description => Document.GetDescription();
   public string? Title => Document.GetTitle();
@@ -34,7 +35,20 @@ public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
     .Where(x => x.GetBool(MetaDataKeys.ShowInNavbar, true))
     .OrderBy(x => x.GetInt(Keys.Order));
 
-  public Dictionary<string, Author> GetAuthors()
+
+  private readonly Lazy<IReadOnlyDictionary<string, Author>> _Authors;
+
+  public IReadOnlyDictionary<string, Author> Authors => _Authors.Value;
+
+  #endregion
+  protected TftStatiqRazorPage()
+  {
+    _Authors = new Lazy<IReadOnlyDictionary<string, Author>>(() => GetAuthors());
+  }
+
+  public string PageTitle => $"{SiteTitle} - {Title}".Trim(new[] { ' ', '-' });
+
+  private Dictionary<string, Author> GetAuthors()
   {
     const string AuthorsPath = "data/authors.json";
     IDocument? authorsDocument =
@@ -52,9 +66,4 @@ public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
 
     return authors;
   }
-
-  #endregion
-
-  public string PageTitle => $"{SiteTitle} - {Title}".Trim(new[] { ' ', '-' });
-
 }

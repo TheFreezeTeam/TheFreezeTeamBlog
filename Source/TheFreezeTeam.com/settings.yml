@@ -17,3 +17,14 @@ ImageUrl: |
     }
     return result;
   }
+AuthorKey: |
+  =>
+  {
+    string result = string.Empty;
+    string author = Document.GetString("GroupKey");
+    Context.Logger.LogDebug($"****author:{author}");
+    if(!string.IsNullOrEmpty(author)) result = new string(author.Where(c => !char.IsPunctuation(c)).ToArray());
+    result = result.Replace(" ","-").ToLower();
+    Context.Logger.LogDebug($"****AuthorKey:{result}");
+    return result;
+  }
