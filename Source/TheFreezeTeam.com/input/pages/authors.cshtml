@@ -1,6 +1,50 @@
 ﻿---
 Order: 0
+ArchiveSources: => GetString("PostSources")
+ArchiveKey: Author
+ArchivePageSize: 10
+ArchiveDestination: |
+  =>
+  {
+    int index = Document.GetInt("Index");
+    string authorKey = Document.GetString(MetaDataKeys.AuthorKey);
+    string baseUrl = $"authors/{authorKey}";
+    string archiveDestination =
+      (index <= 1) ?
+        $"{baseUrl}/index.html":
+        $"{baseUrl}/{index}.html";
+    return archiveDestination;
+  }
 ---
 <!-- authors.cshtml -->
+@{
+ //https://www.statiq.dev/guide/web/archives
+ // This is an Archive Input. This one file produces many outputs
+ // One output for the index page output/authors.html
+ // then one page for each `ArchiveKey`
+ // example Source\TheFreezeTeam.com\output\pages\authors\Steven T. Cramer\4.html
+}
+@{
+  //
+  var children = Document.GetChildren();
+  string groupKey = Document.GetString("GroupKey");
+  int index = Document.GetInt("Index");
+}
 
-<div>Auhtors Page</div>
+<div>
+  <h1>
+    Authors Page
+  </h1>
+  <div> children.Count: @children.Count</div>
+  <div> ArchiveKey: @Document.GetString("ArchiveKey")</div>
+
+  @if(Document.ContainsKey(Keys.GroupKey))
+  {
+      @Html.Partial("../partials/authors/_authors-group.cshtml");
+  }
+  else
+  {
+      @Html.Partial("../partials/authors/_authors-index.cshtml");
+  }
+
+</div>
