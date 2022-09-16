@@ -1,0 +1,16 @@
+<!-- _tags-index.cshtml -->
+<section class="flex flex-wrap items-center content-between gap-2 p-10 mx-auto mt-2 text-lg leading-normal bg-white dark:bg-slate-700 lg:max-w-6xl lg:rounded-lg">
+  @foreach (IDocument tag in Document.GetChildren().OrderByDescending(x => x.GetChildren().Count()))
+  {
+    int postCount = tag.GetChildren().Count;
+    <a
+      role="button"
+      href="@Context.GetLink(tag)"
+      class="flex-1 px-6 py-1 mt-2 text-xs font-semibold text-center text-gray-800 bg-gray-100 rounded dark:bg-gray-600 md:text-sm hover:text-emerald-500 hover:bg-gray-300 dark:text-emerald-300 dark:hover:text-emerald-700"
+    >
+    <span class="whitespace-nowrap">
+      @tag.GetTitle() (@postCount)
+    </span>
+    </a>
+  }
+</section>

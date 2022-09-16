@@ -5,7 +5,7 @@ Published: 10/25/2021
 Tags: 
   - Blazor
   - C#
-  - Thai
+  - ไทย
 Author: Mike Yoshino
 Image: Cover.png
 Description: สอนการใช้งาน Blazor State กับ Blazor Application โดยละเอียด

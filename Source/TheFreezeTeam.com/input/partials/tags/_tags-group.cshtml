@@ -1,0 +1,21 @@
+<!-- _tags-group.cshtml -->
+
+<section class="container-sm-height">
+  <div class="row row-sm-height">
+    <div class="col-md-6 right-border col-sm-height">
+      @Html.Partial("../_posts.cshtml")
+    </div>
+    <div class="mt-4 col-md-4 mt-md-0 col-sm-height">
+      @foreach (IDocument tag in OutputPages.Get("tags.html").GetChildren().OrderByDescending(x => x.GetChildren().Count()))
+      {
+        string badgeStyle = Document.GetString(Keys.GroupKey)
+          .Equals(tag.GetTitle(), StringComparison.OrdinalIgnoreCase) ?
+           "badge-dark" :
+           "badge-light";
+
+        @*string postCount = tag.GetChildren().Count().ToString();
+          <a href="@Context.GetLink(tag)" class="badge @badgeStyle"> @tag.GetTitle() (@postCount)</a>*@
+      }
+    </div>
+  </div>
+</section>
