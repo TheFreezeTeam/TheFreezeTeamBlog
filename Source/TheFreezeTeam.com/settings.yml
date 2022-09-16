@@ -22,7 +22,7 @@ AuthorKey: |
   {
     string result = string.Empty;
     string author = Document.GetString("GroupKey");
-    if(!string.IsNullOrEmpty(author)) result = new string(author.Where(c => !char.IsPunctuation(c)).ToArray());
-    result = result.Replace(" ","-").ToLower();
+
+    if(!string.IsNullOrEmpty(author)) result = PathUtilities.CleanPath(author);
     return result;
   }

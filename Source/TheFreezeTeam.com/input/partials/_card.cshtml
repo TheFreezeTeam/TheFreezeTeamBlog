@@ -9,10 +9,10 @@
   string featuredImageClass = isFeatured ? "md:w-2/3": string.Empty;
   string authorKey = Model.GetAuthorKey();
   string authorLink = string.Empty;
-  string readTime = Model.GetString(TimeWarp.Statiq.MetaDataKeys.ReadTime);
+  string readTime = Model.GetString(MetaDataKeys.ReadTime);
   Author author = Authors[authorKey];
   string authorAvatarLink = Context.GetLink(author.AvatarPath);
-  authorLink = Context.GetLink(author.Url);
+  authorLink = Context.GetLink(author.GetUrl());
 
   if (string.IsNullOrWhiteSpace(authorAvatarLink))
     authorAvatarLink = "images/no-avatar.jpg";
@@ -21,7 +21,7 @@
 <section
   class="flex flex-col w-full transition ease-in-out bg-white rounded-lg shadow-lg dark:bg-slate-700 hover:-translate-y-1 hover:scale-105"
 >
-  <a href="@articleLink" class="flex flex-col flex-grow p-2 gap-x-4 @featuredClass">
+  <a href="@articleLink" class="flex flex-col flex-grow p-2 gap-x-4 gap-y-2 @featuredClass">
     <div class="">
       @if (Model.HasImage() )
       {

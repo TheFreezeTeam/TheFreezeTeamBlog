@@ -1,5 +1,6 @@
 <!-- tags.cshtml -->
 @{
+  #nullable enable
   IReadOnlyList<string>? tags = Model.GetTags();
 }
 
@@ -8,7 +9,8 @@
   {
     @foreach (var tag in tags)
     {
-      string tagUrl = $"tags/{tag}";
+      string tagUrl = $"tags/{PathUtilities.CleanPath(tag)}";
+
       <object>
         <a
           role="button"

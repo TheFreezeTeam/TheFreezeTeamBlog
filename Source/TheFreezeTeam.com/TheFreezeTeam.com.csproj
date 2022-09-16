@@ -8,14 +8,13 @@
   <ItemGroup>
     <None Include="Extension_s\IDocumentExtentions.cs" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Statiq.Web" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\TheFreezeTeam.Com.Tailwind\TheFreezeTeam.Com.Tailwind.csproj" />
-    <ProjectReference Include="..\TimeWarp.Statiq\TimeWarp.Statiq.csproj" />
   </ItemGroup>
-  
+
 </Project>

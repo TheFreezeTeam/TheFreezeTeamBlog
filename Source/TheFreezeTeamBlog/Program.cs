@@ -2,8 +2,7 @@
 
 //using TheFreezeTeamBlog.ShortCodes;
 using Statiq.Web;
-using System.Threading.Tasks;
-using Statiq.App;
+
 using Statiq.Core;
 using Statiq.Web.Pipelines;
 using Statiq.Common;

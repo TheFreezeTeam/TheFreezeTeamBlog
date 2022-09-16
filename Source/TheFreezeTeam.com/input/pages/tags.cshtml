@@ -12,6 +12,7 @@ ArchiveDestination: |
   {
     int index = Document.GetInt("Index");
     string tag = GetString("GroupKey");
+    tag = PathUtilities.CleanPath(tag);
     string baseUrl = $"tags/{tag}";
     string archiveDestination =
       (index <= 1) ?

@@ -13,14 +13,11 @@ public record Author
   string? Twitter = null,
   string? Twitch = null,
   string? YouTube = null
-) {
-  public string Url
+)
+{
+  public string GetUrl()
   {
-    get
-    {
-      var result = new string(Name.Where(c => !char.IsPunctuation(c)).ToArray());
-      var x = result.Replace(" ","-").ToLower();
-      return $"/authors/{x}";
-    }
+    var cleanPath = PathUtilities.CleanPath(Name);
+    return $"/authors/{cleanPath}";
   }
 };
