@@ -1,28 +1,13 @@
 <!-- _edit-in-github-link.cshtml -->
 @{
+  const string GitHubRepoUrl = "https://github.com/TheFreezeTeam/TheFreezeTeamBlog";
   var markdownPath = Document.Source.GetRelativeInputPath();
-  string gitHubEditUrl = "gitHubEditUrl";
+  string gitHubEditUrl = $"{GitHubRepoUrl}/edit/master/Source/TheFreezeTeamBlog/input/{markdownPath}";
 }
 
-<div>
-  Source: @Document.Source <br/>
-  markdownPath: @markdownPath
-</div>
-
-<div class="flex justify-end mb-6 -mt-4 text-sm font-normal">
-  <div>
-    <a class="flex" href="@gitHubEditUrl" target="_blank">
-      Edit This Page
-      <svg
-        class="w-5 h-5 ml-1"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-        </path>
-      </svg>
-    </a>
-  </div>
-</div>
+<a class="flex flex-row justify-end gap-2 -mt-4 text-sm font-normal" href="@gitHubEditUrl" target="_blank">
+  <span>
+    Edit This Page
+  </span>
+  @await Html.PartialAsync("simple-icons/_pencil-square.cshtml")
+</a>
