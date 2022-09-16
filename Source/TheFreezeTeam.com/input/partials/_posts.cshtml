@@ -4,14 +4,28 @@
   class="flex-grow mt-2"
 >
   <div class="flex w-full md:w-full">
-    @Html.Partial("_card.cshtml", FeaturedPost)
+    @Html.Partial(
+      partialViewName: "_card.cshtml",
+      model: FeaturedPost,
+      viewData: new ViewDataDictionary(ViewData)
+      {
+        { "CardProps", new CardProps(IsFeatured: true) }
+      }
+    );
   </div>
 
   <div class="grid items-stretch w-full gap-6 mt-6 lg:grid-cols-3">
     @foreach (IDocument post in NonFeaturedPosts)
     {
       <div class="flex w-full ">
-        @Html.Partial("_card.cshtml", post)
+        @Html.Partial(
+          partialViewName: "_card.cshtml",
+          model: post,
+          viewData: new ViewDataDictionary(ViewData)
+          {
+            { "CardProps", new CardProps(IsFeatured: false) }
+          }
+        );
       </div>
     }
   </div>

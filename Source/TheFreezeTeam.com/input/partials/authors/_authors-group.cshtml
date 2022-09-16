@@ -1,6 +1,6 @@
 @{
   //
-  @* var children = Document.GetChildren();
+  var children = Document.GetChildren();
   string groupKey = Document.GetString("GroupKey");
   int index = Document.GetInt("Index");
   string cleanAuthorName = Document.GetString(MetaDataKeys.AuthorKey);
@@ -8,10 +8,32 @@
 
   string archiveDestination = (index <= 1) ?
     $"{baseUrl}/index.html":
-    $"{baseUrl}/{index}.html"; *@
+    $"{baseUrl}/{index}.html";
 }
 <!-- _authors-group.cshtml -->
-<div>Authors Group Page</div>
-@* <div>cleanAuthorName: @cleanAuthorName</div>
-<div>ArchiveTitle: @Document.GetString("ArchiveTitle")</div>
-<div>archiveDestination: @archiveDestination</div> *@
+<section
+  id="posts"
+  class="flex-grow mt-2"
+>
+  <div class="flex w-full md:w-full">
+    @await Html.PartialAsync("_author-detail.cshtml")
+  </div>
+
+  <div class="grid items-stretch w-full gap-6 mt-6 lg:grid-cols-3">
+    @foreach (IDocument post in children)
+    {
+      <div class="flex w-full ">
+        @Html.Partial(
+          partialViewName: "../_card.cshtml",
+          model: post,
+          viewData: new ViewDataDictionary(ViewData)
+          {
+            { "CardProps", new CardProps(IsFeatured: false) }
+          }
+        );
+      </div>
+    }
+  </div>
+
+</section>
+

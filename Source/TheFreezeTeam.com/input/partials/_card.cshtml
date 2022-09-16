@@ -3,7 +3,8 @@
   string articleLink = Context.GetLink(Model);
   string excerpt = Model.GetString(Keys.Excerpt);
   string displayDate = Model.GetDateTime(WebKeys.Published).ToLongDateString();
-  bool isFeatured = FeaturedPost == Model;
+  CardProps? cardProps = ViewData["CardProps"] as CardProps;
+  bool isFeatured = cardProps!.IsFeatured;
   string featuredClass = isFeatured ? "md:flex-row": string.Empty;
   string featuredImageClass = isFeatured ? "md:w-2/3": string.Empty;
   string authorKey = Model.GetAuthorKey();

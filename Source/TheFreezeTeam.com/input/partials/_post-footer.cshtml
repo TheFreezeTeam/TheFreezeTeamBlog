@@ -1,8 +1,7 @@
 ﻿<!-- _post-footer.cshtml-->
 @{
   var authorKey = Document.GetAuthorKey();
-  if(authorKey == null) throw new ArgumentNullException($"{MetaDataKeys.Author} is not defined for Document {Document.Source}", MetaDataKeys.Author );
-  var author = GetAuthors()[authorKey];
+  var author = Authors[authorKey];
   //https://thefreezeteam.com/author/steven-t.-cramer/
 }
 <footer class="container flex flex-row items-center justify-between mt-2">

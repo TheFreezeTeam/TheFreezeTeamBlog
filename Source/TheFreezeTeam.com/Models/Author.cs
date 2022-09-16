@@ -5,11 +5,14 @@ public record Author
   string Name,
   string AvatarPath,
   string? Bio = null,
-  string? CodingGame = null,
+  string? CodinGame = null,
   string? Discord = null,
+  string? GitHub = null,
   string? Facebook = null,
   string? LinkedIn = null,
-  string? Twitter = null
+  string? Twitter = null,
+  string? Twitch = null,
+  string? YouTube = null
 ) {
   public string Url
   {
