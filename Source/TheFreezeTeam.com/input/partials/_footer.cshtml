@@ -16,12 +16,12 @@
   <div class="flex-1">
     <ul class="flex justify-center list-reset">
       <li class="">
-        <a href="@RssFeeds.FirstOrDefault()">
+        <a href="@Context.GetLink(@RssFeeds.FirstOrDefault())">
           Rss
         </a>
       </li>
       <li class="pl-3">
-        <a href="@AtomFeeds.FirstOrDefault()">
+        <a href="@Context.GetLink(AtomFeeds.FirstOrDefault())">
           Atom
         </a>
       </li>
