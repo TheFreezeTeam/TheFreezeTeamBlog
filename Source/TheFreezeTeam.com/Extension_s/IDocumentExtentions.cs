@@ -31,6 +31,4 @@ public static class IDocumentExtentions
   public static string GetAuthorKey(this IDocument document) =>
     document.GetString(MetaDataKeys.Author) ??
     throw new ArgumentNullException($"{MetaDataKeys.Author} is not defined for Document {document.Source}", MetaDataKeys.Author );
-
-
 }
