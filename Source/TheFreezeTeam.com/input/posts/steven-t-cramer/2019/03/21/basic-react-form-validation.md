@@ -17,14 +17,14 @@ Excerpt: It turns out that HTML5 isn't bad at single property validation.
 
 While doing a coding [kata](https://en.wikipedia.org/wiki/Kata_(programming))/challenge with colleague to build a "Contact Us" Form in React, ...
 
-# Goal "get done fast"
+## Goal "get done fast"
 
 We were trying to simulate code challenges given to job candidates, and thus we wanted to get done fast. 
 We were trying to do the simplest thing that would work, balanced with the ability to explain it and for others to understand it.
 
 It turned out to help solidify some things in my mind.
 
-## The purpose of form validation:
+## The purpose of form validation
 
 Let the user know something is invalid so they can fix it and continue the process.
 
@@ -86,6 +86,7 @@ Well we need to "get done fast" so React State it is.
     };
   }
 ```
+
 ## How do we update the state using the html input's?
 
 We opted to use the property names used in `state` as the `id`s on the `input`s and `textarea`.
@@ -96,30 +97,34 @@ This way we can add an `onChange` attribute and the `event.target.id` will corre
     this.setState({ [event.target.id]: event.target.value });
   };
 ```
+
 The `event.target.id` will equal "name", "email" or "message" and the value will be what the user entered in the associated html control.
 
 ## Submit the form
 
 Create `submitHandler` and wire it up to the Form `onSubmit` attribute.
 HTML forms default submit behavior is to do a post back.  Given we are using React we don't want to do the default so we add `event.preventDefault()` to our handler. 
+
 ```javascript
   submitHandler = (event) => {
     event.preventDefault();
     console.log("dispatch an action");
   };
 ```
+
 The point of the kata is to build a form not the endpoint to handle it so the `console.log` is good enough.
 
 ## Validation????
 
 This was an enlightening part. First thing I thought was "we have a library for that?" 
 But we wanted to "get done fast". I did a quick search and saw a tweet from
-[Cory House]([http://www.twitter.com/housecor/](https://twitter.com/housecor/status/1057288946261131264))
+[Cory House](https://twitter.com/housecor/status/1057288946261131264)
 
 I thought, "What validation can I do with HTML5? I probably need to write special validation." So I did. Once I was done I realized I didn't do anything special:
-  * is it required, 
-  * is it an email, 
-  * min length. 
+
+* is it required
+* is it an email
+* min length
   
 So I deleted the special validation code.
 
@@ -137,7 +142,7 @@ Turns out this isn't too hard either. We update our `form` tag to include the `n
 
 In our `submitHandler` we can add the Bootstrap class `was-validated` which will then trigger the validation display.  (Green is good, red is error).
 
-# Tell the user the error.
+## Tell the user the error.
 
 For each `form-group` we add a `div` to display the constraints on the input to the user.
 We add the BootStrap class `invalid-feedback` as in:
@@ -147,9 +152,10 @@ We add the BootStrap class `invalid-feedback` as in:
   Name is required with minimum length of 3 and max of 20
 </div>
 ```
+
 And now Boostrap does the rest.
 
-# How do we know if the form is Valid?
+## How do we know if the form is Valid?
 
 The Html5 `Form` element has a function `checkValidity` that checks if all child elements are valid. Armed with this knowledge we can now prevent the form from dispatching when it is invalid.
 
@@ -254,5 +260,4 @@ export class ContactUsForm extends Component {
     );
   }
 }
-
 ```

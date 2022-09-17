@@ -5,7 +5,7 @@ Published: 02/26/2019
 Image: MicroControllers.webp
 Tags: 
   - C#
-  - dotnetCore
+  - dotnet
   - MediatR
 Author: Steven T. Cramer
 Description: When using MediatR and a single controller per endpoint the controller is beyond thin, it is micro. With a base controller that looks like

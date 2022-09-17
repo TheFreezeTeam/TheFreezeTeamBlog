@@ -9,18 +9,21 @@ Description: All Controllers are located in a Controllers folder and must end wi
 Excerpt: All Controllers are located in a Controllers folder and must end with the name Controller.
 ---
 
-# Goal:
+# Goal
+
 Move an existing MVC site from layers to features without breaking everything along the way.
 
 ### Default MVC Controller location
+
 The default locations for ASP.net MVC5 items are as follows:
 
-![](2016-08-13_1255-2.png)
+<!-- ![](2016-08-13_1255-2.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 All Controllers are located in a `Controllers` folder and must end with the name `Controller`.
 
 ### Feature Controller location
-When we move to the [features method](http://www.thefreezeteam.com/2015/08/10/building-mvc-jimmy-style/) 
+
+When we move to the [features method](http://www.thefreezeteam.com/2015/08/10/building-mvc-jimmy-style/)
 we would prefer our controller to be an embedded class in the Feature and always named `FeatureController`.
 Thus the full name of the controller type would be: 
 
@@ -33,11 +36,12 @@ example:
 * FeatureName = `Feature`
 * Result: `WebApplication1.Features.Route.Feature+FeatureController`
 
-![](2016-11-03_0521.png)
+<!-- ![](2016-11-03_0521.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 We need MVC to be able to find the new feature controller location as well as the default location.  This facilitates a migration from one to the other.
 
 ### Create test feature
+
 This post is not about creating features.  See [Building MVC Jimmy Style ](http://www.thefreezeteam.com/2015/08/10/building-mvc-jimmy-style/) for more details  until the updated blog series is released.  The below test feature will suffice for the purpose at hand.
 
 In order to test our Features Controller, let's create a simple Feature.
@@ -68,17 +72,20 @@ namespace WebApplication1.Features.Route
 }
 
 ```
+
 It should be noted that in the TheFreezeTeam MVC Feature Pattern we have a one to one relationship between a URL and a Controller.  All Actions are named according to the HTTP method (Get, Post, Put, Delete, etc...) they implement. 
 
 ### DefaultControllerFactory
+
 In MVC5 controllers are created using the `DefaultControllerFactory.CreateController` method which uses a naming convention of `<controllerName>Controller` to get the controller type via the `GetControllerType` method.  
 
 ### ControllerFactory
+
 We want to support the original convention as well as our feature based convention.  To do this we first Create a new `ControllerFactory` that inherits from `DefaultControllerFactory`.
 
 Create an `Infrastructure folder` and inside it create a new class called ControllerFactory.
 
-![](2016-08-21_1203.png)
+<!-- ![](2016-08-21_1203.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Override the `GetControllerType` method:
 
@@ -98,6 +105,7 @@ namespace WebApplication1.Infrastructure
   }
 }
 ```
+
 Given we just call the base method we expect nothing to currently change.
 
 To use this new `ControllerFactory` we need to edit the `Global.asax` file by adding 
@@ -131,6 +139,7 @@ Update the ControllerFactory as follows:
 ```
 
 ### FeatureActionInvoker
+
 This will build up the proper name for the controller and use assembly reflection to get the Type. Yet it will not find the feature actions.  To fix this we need to replace the default ActionInvoker with our `FeatureActionInvoker`
 
 ```csharp
@@ -147,6 +156,7 @@ public class FeatureActionInvoker : AsyncControllerActionInvoker
       }
     }
 ```
+
 This uses the base method to attempt to find the Action to invoke but if it is null will look for a Feature Action based on the HttpMethod naming convention.  
 
 To use this new `FeatureActionInvoker`  we need to replace the default one on the controller.
@@ -239,4 +249,3 @@ namespace WebApplication1.Infrastructure
 Full sample solution can be found on GitHub @:
 
 https://github.com/StevenTCramer/FeatureController
-

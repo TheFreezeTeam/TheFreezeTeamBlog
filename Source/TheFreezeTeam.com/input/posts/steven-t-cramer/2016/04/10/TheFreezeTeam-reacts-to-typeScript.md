@@ -15,16 +15,16 @@ So let's write a simple hello world app.
 Using Typescript 1.8 and React in Visual Studio 2015 Update 2. .Net 4.5.2 (MVC 5).
 
 Make sure you have installed TypeScript 1.8.4 in Visual studio.
-![](2016-04-09_1405.png)
+<!-- ![](2016-04-09_1405.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 #### Create Hello World Project
 Create new project and select ASP.NET Web Application.
-Choose a folder and name it HelloWorld, Of course :) 
-![](2016-04-08_9-30-11.png)
+Choose a folder and name it HelloWorld, Of course :)
+<!-- ![](2016-04-08_9-30-11.png) TODO: Cramer Missing Image from Ghost Migration  -->
 
 Then choose MVC
 
-![](2016-04-08_10-01-59.png)
+<!-- ![](2016-04-08_10-01-59.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Build and execute the application to confirm it works.
 
@@ -32,11 +32,11 @@ Build and execute the application to confirm it works.
 
 Under controllers create new class named HelloWorldController
 
-![](2016-04-09_1421.png)
+<!-- ![](2016-04-09_1421.png) TODO: Cramer Missing Image from Ghost Migration -->
 
-![](2016-04-09_1423.png)
+<!-- ![](2016-04-09_1423.png) TODO: Cramer Missing Image from Ghost Migration -->
 
-![](2016-04-09_1424.png)
+<!-- ![](2016-04-09_1424.png) TODO: Cramer Missing Image from Ghost Migration -->
 ```csharp
 namespace HelloWorld.Controllers
 {
@@ -55,9 +55,9 @@ namespace HelloWorld.Controllers
 
 In the controller code rick click on View and select Add View
 
-![](2016-04-09_1429.png)
+<!-- ![](2016-04-09_1429.png) TODO: Cramer Missing Image from Ghost Migration -->
 
-![](2016-04-09_1430.png)
+<!-- ![](2016-04-09_1430.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Modify View as follows:
 
@@ -83,11 +83,11 @@ Modify View as follows:
 ```
 Excute and verify
 
-![](2016-04-09_1433.png)
+<!-- ![](2016-04-09_1433.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 #### Install React.Web.Mvc4 Nuget
 
-![](2016-04-09_1437.png)
+<!-- ![](2016-04-09_1437.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 `install-package React.Web.Mvc4`
 
@@ -95,7 +95,7 @@ Excute and verify
 
 Right click on Scripts folder and select Add->Javascript File
 
-![](2016-04-09_1448-1.png)
+<!-- ![](2016-04-09_1448-1.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 ```jsx
 var CommentBox = React.createClass({
@@ -139,7 +139,7 @@ Update the HTML to include the React scripts and our Tutorial.jsx as follows:
 ```
 
 Build and execute the application.
-![](2016-04-09_1548.png)
+<!-- ![](2016-04-09_1548.png) TODO: Cramer Missing Image from Ghost Migration -->
 Congratulations you now have a React component.
 
 #### Convert the JavaScript to TypeScript
@@ -147,18 +147,18 @@ Congratulations you now have a React component.
 Rename Tutorial.jsx to Tutorial.tsx
 
 The dialog will appear.
-![](2016-04-08_10-15-29.png)
+<!-- ![](2016-04-08_10-15-29.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Select no. 
 
 Build the project and you should now see the following errors:
-![](2016-04-09_1510.png)
+<!-- ![](2016-04-09_1510.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 First, let's address the "Cannot use JSX unless the '--jsx' flag is provided" error:
 
 Go to the Properties on your project and select the `TypeScript Build` tab and for the `JSX compilation in TSX Files` and select `React`
 
-![](2016-04-09_1514.png)
+<!-- ![](2016-04-09_1514.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Now build and confirm that error is no longer.
 
@@ -179,7 +179,7 @@ This repo contains a ton of stuff that you do not need for this blog. Extract th
 Right click on the `Scripts/typings/react` folder and select `Add Existing Item` Browse to the extracted `react` folder 
 select the following as shown in the image then Add.
 
-![](2016-04-09_1541.png)
+<!-- ![](2016-04-09_1541.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 I am not sure why the 0.13.3 files are in the master but if you do not remove these you will get duplicate type errors.
 Readme.md can be included if you desire.
@@ -188,7 +188,7 @@ Update index.cshtml by changing `Tutorial.jsx` to `Tutorial.js`
 
 Build and Execute.
 
-![](2016-04-09_1548.png)
+<!-- ![](2016-04-09_1548.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Now you have a TypeScript file with a react component.
 
@@ -210,7 +210,9 @@ ReactDOM.render(
     document.getElementById('content')
 );
 ```
-![](2016-04-09_1616.png)
+
+<!-- ![](2016-04-09_1616.png) TODO: Cramer Missing Image from Ghost Migration -->
+
 #### Now add properties
 
 ```jsx
@@ -228,7 +230,8 @@ ReactDOM.render(
     document.getElementById('content')
 );
 ```
-![](2016-04-09_1611.png)
+
+<!-- ![](2016-04-09_1611.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Thanks for the help from:
 

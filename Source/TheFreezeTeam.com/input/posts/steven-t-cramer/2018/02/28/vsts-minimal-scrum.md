@@ -3,7 +3,7 @@ DocumentName: vsts-minimal-scrum
 Title: Visual Studio Team Services (VSTS) Minimal Scrum Template
 Published: 02/28/2018
 Tags: 
-  - CSharp
+  - C#
   - Agile
   - Scrum
   - Azure DevOps
@@ -55,27 +55,27 @@ The resulting layouts are:
 
 ### Bug
 
-![](2018-02-24_1936.png)
+<!-- ![](2018-02-24_1936.png) TODO: Cramer Missing Image from Ghost Migration  -->
 
 ### Epic
 
-![](2018-02-24_2007.png)
+<!-- ![](2018-02-24_2007.png) TODO: Cramer Missing Image from Ghost Migration  -->
 
 ### Feature
 
-![](2018-02-27_2212.png)
+<!-- ![](2018-02-27_2212.png) TODO: Cramer Missing Image from Ghost Migration  -->
 
 ### Impediment (not modified)
 
-![](2018-02-24_2010_001.png)
+<!-- ![](2018-02-24_2010_001.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 ### Product Backlog Item
 
-![](2018-02-24_2010.png)
+<!-- ![](2018-02-24_2010.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 ### Task
 
-![](2018-02-24_2011.png)
+<!-- ![](2018-02-24_2011.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 ## States
 

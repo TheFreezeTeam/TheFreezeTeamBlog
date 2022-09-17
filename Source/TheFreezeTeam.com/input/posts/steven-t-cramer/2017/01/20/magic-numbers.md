@@ -1,7 +1,8 @@
+---
 DocumentName: magic-numbers
 Title: Change your Windows 10 Azure VM RDP port
 Published: 01/20/2017
-Tags: 
+Tags:
   - Azure 
 Author: Steven T. Cramer
 Description: First of all to all the security guys out there. Increasing functionality securely is the goal.  Just turning all the computers off and disconnecting the internet is secure.
@@ -25,7 +26,7 @@ You need to do 3 things and you have to be able to RDP into the system to do 2 o
 
 1. From Azure Portal Add Inbound Security Rule;
 
-![](2017-01-20_1143.png)
+<!-- ![](2017-01-20_1143.png) TODO: Cramer Missing Image from Ghost Migration  -->
 
 2. We need to open the firewall to allow incoming connections to the new port.
 
@@ -33,11 +34,11 @@ https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-wi
 
 Open windows Firewall on the Azure VM.
 
-![](2017-01-20_1402.png)
+<!-- ![](2017-01-20_1402.png) TODO: Cramer Missing Image from Ghost Migration  -->
 
 Add New Rule that allows incoming connection on port 3390 (Or any number not being used)
 
-![](2017-01-20_1401.png)
+<!-- ![](2017-01-20_1401.png)TODO: Cramer Missing Image from Ghost Migration  -->
 
 3. Last change the port on which Windows 10 is listening for RDP.
 
@@ -45,7 +46,7 @@ Add New Rule that allows incoming connection on port 3390 (Or any number not bei
 * go to HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TerminalServer\WinStations\RDP-Tcp\PortNumber 
 * Change the decimal value to 3390
 
-![](2017-01-20_1436.png)
+<!-- ![](2017-01-20_1436.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 * Close Regedit
 * Restart your VM.  CAUTION: IF YOU DID ANYTHING WRONG YOU MAY NOT BE ABLE TO ATTACH TO THE VM.

@@ -2,7 +2,7 @@
   Title: Run your full web server inside integration tests
   Published: 08/26/2022
   Tags:
-    - CSharp
+    - C#
     - dotnet
     - Kestrel
     - test

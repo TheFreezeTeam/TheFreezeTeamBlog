@@ -5,7 +5,7 @@ Published: 10/25/2021
 Tags: 
   - Blazor
   - C#
-  - ไทย
+  - Thai
 Author: Mike Yoshino
 Image: Cover.png
 Description: สอนการใช้งาน Blazor State กับ Blazor Application โดยละเอียด
@@ -42,6 +42,7 @@ Blazor State ใช้คลาส Store ซึ่งเป็นที่เก
 
 * เป็น Partial class และ สืบทอดจาก State<T> โดยที่ T ก็คือคลาส State ของเรา
 * ต้องมี Method ชื่อ Initialize ซึ่งทำหน้าที่เชทค่าเริ่มต้นให้กับแต่ละ Property ในคลาส State
+  
 ![BlazorStateThai01](BlazorStateThai01.png)
 
 ต่อไปเราจะมา Config ตัว Service (Configure the services)
@@ -116,7 +117,6 @@ CounterState CounterState => GetState<CounterState>();
 
 # ตัวอย่าง
 
-
 ![BlazorStateThai04](BlazorStateThai04.png)
 
 และคลาส IncreaseCountNumberHandler โครงสร้างจะเหมือนกับ Action แต่แทนที่จะสืบทอดจาก IAction เปลี่ยนมาเป็น ActionHandler<T> โดยที่ T คือ คลาส Action ของเรา
@@ -124,7 +124,6 @@ CounterState CounterState => GetState<CounterState>();
  * เหมือนในตัวอย่างข้างล่างที่ Handle รับค่า Amount มาจาก Action และอัพเดทค่า Amount ไปที่ CountState
 
 # ภาพตัวอย่าง
-
 
 ![BlazorStateThai05](BlazorStateThai05.png)
 

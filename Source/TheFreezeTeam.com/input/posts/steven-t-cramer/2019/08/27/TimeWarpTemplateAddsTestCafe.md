@@ -3,7 +3,7 @@ DocumentName: TimeWarpTemplateAddsTestCafe
 Title: TimeWarp-Blazor Template adds TestCafe
 Published: 08/27/2019
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor
 Author: Steven T. Cramer
 Excerpt: We have added an End to End testing project using TestCafe as an option to existing Selenium test project.

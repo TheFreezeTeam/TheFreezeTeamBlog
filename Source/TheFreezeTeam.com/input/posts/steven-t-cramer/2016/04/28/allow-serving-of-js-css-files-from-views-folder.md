@@ -15,7 +15,7 @@ In a traditional MVC 5 application structure you can not access css or js files 
 
 If you would like to move the associated css and js files into the view folder you need to update the web.config located in the Views folder.
 
-![](ProjectStructure.png)
+<!-- ![](ProjectStructure.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 Default settings are:
 ```

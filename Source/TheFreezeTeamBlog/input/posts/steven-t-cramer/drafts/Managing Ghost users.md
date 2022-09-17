@@ -1,8 +1,8 @@
 Title: Managing Ghost users
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 
@@ -29,7 +29,7 @@ The top user level in Ghost is Administrator. Again, administrators can do every
 
 ### The Owner
 
-There is only ever one owner of a Ghost site. The owner is a special user which has all the same permissions as an Administrator, but with two exceptions: The Owner can never be deleted. And in some circumstances the owner will have access to additional special settings if applicable — for example, billing details, if using Ghost(Pro).
+There is only ever one owner of a Ghost site. The owner is a special user which has all the same permissions as an Administrator, but with two exceptions: The Owner can never be deleted. And in some circumstances the owner will have access to additional special settings if applicable ï¿½ for example, billing details, if using Ghost(Pro).
 
 ---
 

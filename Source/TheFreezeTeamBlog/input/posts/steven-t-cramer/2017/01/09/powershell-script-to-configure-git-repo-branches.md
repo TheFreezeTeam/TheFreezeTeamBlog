@@ -3,7 +3,7 @@ DocumentName: powershell-script-to-configure-git-repo-branches
 Title: Web Development Branching Strategy
 Published: 01/09/2017
 Tags: 
-  - CSharp 
+  - C# 
 
 Author: Steven T. Cramer
 Description: Go to your VSTS site and create new project or repo.  From the Code tab, you should see something like below that displays the URL to your repository.

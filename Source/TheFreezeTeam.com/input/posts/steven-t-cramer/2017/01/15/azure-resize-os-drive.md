@@ -3,7 +3,7 @@ DocumentName: azure-resize-os-drive
 Title: Expand the OS Drive on your Azure Resource Manager VM
 Published: 01/15/2017
 Tags: 
-  - CSharp 
+  - C# 
 Author: Steven T. Cramer
 Description: This can be done via the portal by simply Stop and Deallocate the system and then select the drive and choose a larger size.
 Excerpt: This can be done via the portal by simply Stop and Deallocate the system and then select the drive and choose a larger size.
@@ -11,7 +11,7 @@ Excerpt: This can be done via the portal by simply Stop and Deallocate the syste
 
 This can be done via the portal by simply Stop and Deallocate the system and then select the drive and choose a larger size.
 
-![](2017-01-20_1658.png)
+<!-- ![](2017-01-20_1658.png) TODO: Cramer Missing Image from Ghost Migration  -->
 
 To script this via PowerShell you can do the following:
 
@@ -25,7 +25,7 @@ Login-AzureRmAccount
 ```
 
 This will pop up the Azure Login window show below
-![](2017-01-15_1119.png)
+<!-- ![](2017-01-15_1119.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 After successfully entering my account information I see:
 
@@ -112,4 +112,4 @@ Start-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
 Open the VM and start DiskManagment application then right click on the drive and then choose `extend`.
 
-![](2017-01-15_1359.png)
+<!-- ![](2017-01-15_1359.png) TODO: Cramer Missing Image from Ghost Migration -->

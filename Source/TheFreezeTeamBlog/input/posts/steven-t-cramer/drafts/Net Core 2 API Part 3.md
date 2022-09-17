@@ -1,8 +1,8 @@
 ﻿Title: Building .Net Core 2 API Part 3 Implement Health Check Feature
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 

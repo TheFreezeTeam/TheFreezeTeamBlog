@@ -21,6 +21,7 @@ This blog is a step by step tutorial that transforms a default MVC 5 application
 # Background #
 
 ## Layers to Features ##
+
 **From:**
 ![](Layers.png)
 
@@ -867,7 +868,7 @@ StructureMap is used as the Ioc container in this template.  It could be replace
 
 This adds 4 dependent packages and also adds the files displayed below.
 
-![](StructureMap-MVC5Files-1.png)
+![](StructureMap-MVC5Files.png)
 
 Now run `Update-Package` to update to the latest version of the dependent packages.
 

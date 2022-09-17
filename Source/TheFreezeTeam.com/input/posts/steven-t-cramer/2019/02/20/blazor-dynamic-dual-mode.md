@@ -1,11 +1,11 @@
 ---
-DocumentName: razor-components-dynamic-dual-mode
+DocumentName: blazor-dynamic-dual-mode
 Title: Blazor Dynamic Dual Mode!
 Published: 02/20/2019
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Image: DynamicDualMode.webp
@@ -14,9 +14,9 @@ Excerpt: Wouldn't it be nice to have both fast first page load and allow for mor
 ---
 
 The new Blazor 0.8.0 came out 
-[2019-02-05](https://blogs.msdn.microsoft.com/webdev/2019/02/05/blazor-0-8-0-experimental-release-now-available/) 
+[2019-02-05](https://blogs.msdn.microsoft.com/webdev/2019/02/05/blazor-0-8-0-experimental-release-now-available/)
 and I have been busy updating the 
-[timewarp-blazor](https://timewarpengineering.github.io/timewarp-architecture/TimeWarpArchitectureTemplate/Overview.html) 
+[timewarp-blazor](https://timewarpengineering.github.io/timewarp-architecture/TimeWarpArchitectureTemplate/Overview.html)
 template to support it.
 
 ## Server side vs client side
@@ -24,7 +24,7 @@ template to support it.
 To be clear Blazor can execute on either, server side or client side.  
 The Component doesn't have to change.
 
-When a Blazor application starts, it runs 1 of 2 JavaScript files that determine where the browser is going to execute 
+When a Blazor application starts, it runs 1 of 2 JavaScript files that determine where the browser is going to execute
 the application.
 
 The server side execution sends DOM updates to the browser via SignalR.
@@ -102,7 +102,4 @@ I believe I first heard about switching between client and server side execution
 Come join us.
 
 Reference:
-[Razor Components server side](https://docs.microsoft.com/en-us/aspnet/core/razor-components/?view=aspnetcore-3.0) and 
-[Razor Components client side](https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/blazor/?view=aspnetcore-3.0)
-
-Updated: 2019-03-31 (Change names back, from Razor Components to Blazor)
+[Blazor Hosting models](https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models) and

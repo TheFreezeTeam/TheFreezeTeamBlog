@@ -3,22 +3,21 @@ DocumentName: powershell-script-to-configure-git-repo-branches
 Title: Web Development Branching Strategy
 Published: 01/09/2017
 Tags: 
-  - CSharp 
+  - C# 
 
 Author: Steven T. Cramer
 Description: Go to your VSTS site and create new project or repo.  From the Code tab, you should see something like below that displays the URL to your repository.
 Excerpt: Go to your VSTS site and create new project or repo.  From the Code tab, you should see something like below that displays the URL to your repository.
 ---
 
-# Create Repo in VSTS
+## Create Repo in VSTS
 
 Go to your VSTS site and create new project or repo.
 From the Code tab, you should see something like below that displays the URL to your repository.
 
-![](2017-01-09_1115.png)
+<!-- ![](2017-01-09_1115.png) TODO: Cramer Missing Image from Ghost Migration -->
 
-
-# Branch per Environment
+## Branch per Environment
 
 When developing code I prefer to have a branch that corresponds to each server environment that we have.
 Typically there is a `Production` environment, a `QA` environment, and a `Development` environment.
@@ -27,7 +26,7 @@ Each developer has their own branch or branches but they integrate via pull requ
 
 The branches flow as pictured
 
-![](2017-01-09_1111.png)
+<!-- ![](2017-01-09_1111.png) TODO: Cramer Missing Image from Ghost Migration -->
 
 To automate the creation of the base branches I wrote a simple PowerShell script:
 
