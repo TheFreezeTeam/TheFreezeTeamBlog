@@ -1,7 +1,9 @@
 ﻿<!-- _posts.cshtml -->
+
+
 <section
   id="posts"
-  class="flex-grow mt-2"
+  class="flex flex-col w-full gap-6 mt-2"
 >
   <div class="flex w-full md:w-full">
     @Html.Partial(
@@ -14,7 +16,7 @@
     )
   </div>
 
-  <div class="grid items-stretch w-full gap-6 mt-6 lg:grid-cols-3">
+  <div class="grid items-stretch w-full gap-6 lg:grid-cols-3">
     @foreach (IDocument post in NonFeaturedPosts)
     {
       <div class="flex w-full ">
@@ -29,5 +31,7 @@
       </div>
     }
   </div>
+
+  @await Html.PartialAsync("_paging.cshtml")
 
 </section>

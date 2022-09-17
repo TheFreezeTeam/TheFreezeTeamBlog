@@ -13,26 +13,14 @@
 <!-- _authors-group.cshtml -->
 <section
   id="posts"
-  class="flex-grow mt-2"
+  class="flex flex-col w-full gap-6 mt-2"
 >
   <div class="flex w-full md:w-full">
     @await Html.PartialAsync("_author-detail.cshtml")
   </div>
 
-  <div class="grid items-stretch w-full gap-6 mt-6 lg:grid-cols-3">
-    @foreach (IDocument post in children)
-    {
-      <div class="flex w-full ">
-        @Html.Partial(
-          partialViewName: "../_card.cshtml",
-          model: post,
-          viewData: new ViewDataDictionary(ViewData)
-          {
-            { "CardProps", new CardProps(IsFeatured: false) }
-          }
-        )
-      </div>
-    }
+  <div class="col-md-6 right-border col-sm-height">
+    @Html.Partial("../_posts.cshtml")
   </div>
 
 </section>
