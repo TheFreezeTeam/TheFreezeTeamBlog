@@ -4,7 +4,7 @@ Title: Building MVC Jimmy Style
 Published: 08/10/2015
 Tags: 
   - C# 
-  - Jbogard 
+  - Jimmy Bogard 
   - Mvc 
   - Features
   - AutoMapper

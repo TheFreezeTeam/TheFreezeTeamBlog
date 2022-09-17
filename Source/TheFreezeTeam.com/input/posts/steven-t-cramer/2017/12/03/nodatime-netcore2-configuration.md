@@ -4,7 +4,7 @@ Title: NodaTime .NET Core 2  json serialization configuration
 Published: 12/03/2017
 Tags: 
   - NodaTime 
-  - NetCore 
+  - dotnet 
   - C# 
 Author: Steven T. Cramer
 Image: NodaTime.webp

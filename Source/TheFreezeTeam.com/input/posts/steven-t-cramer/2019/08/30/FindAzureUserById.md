@@ -4,7 +4,7 @@ Title: Find Azure DevOps User by ID
 Published: 08/30/2019
 Image: michael-dziedzic-1bjsASjhfkE-unsplash.jpg
 Tags: 
-  - AzureDevOps 
+  - Azure DevOps 
   - AzureArtifacts
 Author: Steven T. Cramer
 Description: User 0ec552a3-706e-462e-b46c-a488fe2dcba2 lacks permission to complete this action. Which user is that?

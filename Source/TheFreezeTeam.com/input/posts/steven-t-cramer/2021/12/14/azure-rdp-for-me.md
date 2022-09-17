@@ -4,7 +4,7 @@ Published: 12/14/2021
 Image: RDP-for-me.png
 Tags: 
   - Azure
-  - Rdp
+  - RDP
   - PowerShell
 Author: Steven T. Cramer
 Description: PowerShell script to add RDP access to Azure VM

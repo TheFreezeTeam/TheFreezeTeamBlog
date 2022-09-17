@@ -3,7 +3,7 @@ DocumentName: change
 Title: Change Visual Studio 2015 Default Templates
 Published: 06/15/2016
 Tags: 
-  - VisualStudio5
+  - Visual Studio
   - C# 
   - Template 
 Author: Steven T. Cramer
