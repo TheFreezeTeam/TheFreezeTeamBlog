@@ -1,45 +1,41 @@
 @model IDocument
 @{
-  string backgroundImage = null;
-  string title = null;
-  bool isHomePageHeader = false;
+  string? style = null;
+  string? title = Document.GetString("Title");
+  string? pageTitle = Document.GetString(TftKeys.PageTitle);
+  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+
   if (Document.ContainsKey(WebKeys.Image))
   {
-    backgroundImage = $"background-image: url(\"/images{Context.GetLink(Document.GetString(WebKeys.Image))}\"); height: 80vh;";
-    title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
+    style = $"background-image: url('{postImageUrl}'); height: 80vh;";
   }
-  if (!Document.ContainsKey(WebKeys.Image))
-  {
-    isHomePageHeader = true;
-    backgroundImage = $"";
-    title = Document.GetString("Title") ?? Document.GetString("SiteTitle");
-  }
+
   string description = Document.WithoutSettings().GetString("Lead") ?? Document.WithoutSettings().GetString(WebKeys.Description);
   bool isPost = Document.GetBool("IsPost") && title != "Tags" && title != "Archive";
 }
 
-
-  @Html.Partial("_postNav")
-  <div class="text-center mx-auto pt-16 md:pt-10 w-7/12">
-    <p class="text-sm text-blue-500 font-medium uppercase">
-      @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
-      @if (Document.ContainsKey("Tags"))
+@Html.Partial("partials/_post-nav.cshtml")
+<div class="w-7/12 pt-16 mx-auto text-center md:pt-10">
+  <p class="text-sm font-medium text-blue-500 uppercase">
+    @Model.GetDateTime(WebKeys.Published).ToLongDateString() <span class="text-gray-900">/</span>
+    @if (Document.ContainsKey("Tags"))
+    {
+      @foreach (IDocument tag in Document.GetList<string>("Tags")
+      .Select(x => Outputs["tags.html"]
+      .First()
+      .GetChildren()
+      .FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
+      .Where(x => x != null))
       {
-        @foreach (IDocument tag in Document.GetList<string>("Tags")
-        .Select(x => Outputs["tags.html"]
-        .First()
-        .GetChildren()
-        .FirstOrDefault(y => y.GetTitle().Equals(x, StringComparison.OrdinalIgnoreCase)))
-        .Where(x => x != null))
-        {
-          <a href="@Context.GetLink(tag)"> @tag.GetTitle()</a>
-        }
+        <a href="@Context.GetLink(tag)"> @tag.GetTitle()</a>
       }
-    </p>
-    <h1 class="font-bold break-normal text-3xl md:text-5xl">@title</h1>
-  </div>
-  <!--image-->
-  <div class="container w-full max-w-7xl mx-auto bg-white lg:bg-cover mt-8 lg:rounded lg:h-4 h-2 bg-cover bg-center bg-no-repeat" style="@backgroundImage"></div>
-
-
-
+    }
+  </p>
+  <h1 class="text-3xl font-bold break-normal md:text-5xl">@title</h1>
+</div>
+<!--image-->
+<div
+  class="container w-full h-2 mx-auto mt-8 bg-white bg-center bg-no-repeat bg-cover max-w-7xl lg:bg-cover lg:rounded lg:h-4"
+  style="@style"
+>
+</div>

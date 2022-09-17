@@ -1,0 +1,151 @@
+﻿@{
+  string markdownPath = Document.Destination.ChangeExtension("md").ToString();
+  string gitHubRepoUrl = "https://github.com/TheFreezeTeam/TheFreezeTeamBlog";
+  string gitHubEditBaseUrl = $"{gitHubRepoUrl}/edit/master/Source/TheFreezeTeamBlog/input/{markdownPath}";
+  string gitHubEditUrl = $"{gitHubEditBaseUrl}{markdownPath}";
+  Uri gitHubEditUri = new Uri(gitHubEditUrl);
+
+  string description = Document.GetString(WebKeys.Description);
+  string author = Document.GetString(WebKeys.Author);
+  string siteTitle = Document.GetString(TftKeys.SiteTitle);
+  string pageTitle = Document.GetString(TftKeys.PageTitle);
+  string postImageUrl = Document.GetString(TftKeys.PostImageUrl);
+
+  var rssFeeds = Outputs["**/*.rss"];
+  var atomFeeds = Outputs["**/*.atom"];
+  string link = Document.GetLink(true);
+  string faviconLink = @Context.GetLink("/favicon.ico");
+
+  string excerpt = Model.GetString(Statiq.Html.HtmlKeys.Excerpt);
+
+  var image = Document.GetString(WebKeys.Image);
+
+  int readTime = excerpt != null ? (excerpt.Length / 50) : 0;
+  string authorName = Model.GetString(WebKeys.Author);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  @if (Document.ContainsKey(WebKeys.Description))
+  {
+    <meta name="description" content="@description">
+    <meta property="og:description" content="@description"/>
+    <meta name="twitter:description" content="@description"/>
+  }
+  @if (Document.ContainsKey(WebKeys.Author))
+  {
+    <meta name="author" content="@author">
+    <meta name="twitter:label1" content="Written by"/>
+    <meta name="twitter:data1" content="@author"/>
+  }
+
+  <title>@pageTitle</title>
+
+  <link rel="canonical" href="@link">
+  @{
+      string siteUrl = link;
+      if (siteUrl == "http://thefreezeteam.com/")
+      {
+        <meta property="og:image" content="https://thefreezeteam.com/images/SOLIDLOGO.webp" />
+        <meta name="twitter:image" content="https://thefreezeteam.com/images/SOLIDLOGO.webp"/>
+      }
+  }
+  @{
+    @foreach (IDocument rssFeed in Outputs["**/*.rss"])
+    {
+      <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
+    }
+    @foreach (IDocument atomFeed in Outputs["**/*.atom"])
+    {
+      <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
+    }
+  }
+  <meta property="og:site_name" content="@siteTitle"/>
+  <meta name="application-name" content="@siteTitle" />
+  <meta name="msapplication-tooltip" content="@siteTitle" />
+  <meta name="msapplication-starturl" content="@link />
+
+  @* TODO: More social graph meta tags *@
+    <meta property="og:title" content="@pageTitle" />
+    <meta name="twitter:title" content="@pageTitle" />
+
+  @if (Document.ContainsKey(WebKeys.Image))
+  {
+    string imageName = postImageUrl;
+    string imageUrl = "https://thefreezeteam.com/images" + imageName;
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:image" content="@imageUrl" />
+    <meta property="og:image:url"  content="@imageUrl"  />
+    <meta property="twitter:image" content="@imageUrl"/>
+    <meta property="og:image:width" content="1024"/>
+    <meta property="og:image:height" content="512"/>
+  } else {
+    string imageUrl = "https://thefreezeteam.com/images/headerBg.png";
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:image" content="@imageUrl" />
+    <meta property="og:image:url"  content="@imageUrl"  />
+    <meta property="twitter:image" content="@imageUrl"/>
+    <meta property="og:image:width" content="1024"/>
+    <meta property="og:image:height" content="512"/>
+  }
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="@link" />
+  <meta name="twitter:url" content="@link"/>
+  <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
+  <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
+  <link href="/css/Site.css" rel="stylesheet" type="text/css">
+  <link href="/resource/js/highlight.js/styles/vs.css" rel="stylesheet" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  @RenderSection("Head", false)
+</head>
+
+@{
+  string bodybg = "bg-gray-200";
+  bool isPostType = Document.GetBool("IsPost");
+  if (Document.GetBool("IsPost"))
+  {
+      bodybg = "bg-white";
+  }
+}
+<body class="@bodybg font-sans leading-normal tracking-normal">
+  <!-- Page Header -->
+  @RenderSectionOrPartial("Header", "_mainHeader")
+  <!-- Navigation -->
+  <div class="mx-auto -mt-32 lg:container lg:px-4 lg:px-0 lg:max-w-6xl">
+    <div class="p-3 mx-0 sm:mx-6 lg:p-0">
+      @if (!isPostType)
+      {
+        @RenderSectionOrPartial("Navigation", "_navigation")
+        @RenderBody()
+      }
+      <!-- Main Content -->
+      @if (isPostType)
+      {
+        @RenderSectionOrPartial("Navigation", "_navigation")
+        <div class="container lg:max-w-6xl mx-auto-mt-32">
+          <div class="mx-0 sm:mx-6">
+            <div id="postType" class="w-full p-4 text-gray-800 bg-white lg:p-10">
+              @RenderBody()
+            </div>
+          </div>
+        </div>
+        @Html.Partial("partials/_post-footer.cshtml")
+      }
+      <!-- Footer -->
+      @Html.Partial("partials/_subscription.cshtml")
+    </div>
+  </div>
+  @Html.Partial("partials/_footer.cshtml")
+
+  @Html.Partial("partials/_scripts.cshtml")
+
+  @RenderSection("Scripts", false)
+
+  <!-- Custom scripts for this template -->
+</body>
+</html>

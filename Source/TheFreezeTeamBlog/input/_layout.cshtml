@@ -1,0 +1,49 @@
+﻿@* @model BaseModel *@
+@{
+  BaseModel baseModel = new BaseModel(Document,Context);
+  var image = Document.GetString(WebKeys.Image);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  @Html.Partial("partials/_head.cshtml", baseModel)
+</head>
+
+@{
+  string topMargin = "";
+  if (image != null)
+  {
+    topMargin = "-mt-32";
+  }
+}
+<body class="font-sans leading-normal tracking-normal bg-white">
+  <script src="/resource/js/prismjs/prism.js"></script>
+  <!-- Page Header -->
+
+  @RenderSectionOrPartial("Header", "_header")
+
+  <!-- Navigation -->
+  <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto @topMargin">
+    <div class="mx-0 sm:mx-6">
+      <!-- Main Content -->
+      <div class="container mx-auto lg:max-w-6xl">
+        <div class="mx-0 sm:mx-6">
+          <div id="postType" class="w-full p-4 font-light text-gray-800 bg-white lg:p-10">
+            @Html.Partial("partials/_edit-in-github-link.cshtml", baseModel)
+            @RenderBody()
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      @Html.Partial("partials/_post-footer.cshtml")
+      @Html.Partial("partials/_subscription.cshtml")
+    </div>
+  </div>
+  @Html.Partial("partials/_footer.cshtml")
+
+  <!-- Custom scripts for this template -->
+  @Html.Partial("partials/_scripts.cshtml")
+  @RenderSection("Scripts", false)
+
+</body>
+</html>

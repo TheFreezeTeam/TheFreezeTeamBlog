@@ -19,10 +19,19 @@
     {
       IMetadataDictionary arguments = args.ToDictionary(Owner, Repo, PathFileName, RegionName);
       arguments.RequireKeys(Owner, Repo, PathFileName);
-      content = GetContent(arguments.GetString(Owner), arguments.GetString(Repo), arguments.GetString(PathFileName), arguments.GetString(RegionName)).Result;
-      return content;
 
+      content =
+        GetContent
+        (
+          arguments.GetString(Owner),
+          arguments.GetString(Repo),
+          arguments.GetString(PathFileName),
+          arguments.GetString(RegionName)
+        ).Result;
+
+      return content;
     }
+
     public async Task<string> GetContent(string owner, string repo, string pathFileName, string regionName)
     {
       var request = new HttpRequestMessage
@@ -50,7 +59,7 @@
             string result = RemoveOpenAndCloseFrontMatter(textContent);
             return result;
             //Check if it has only end close front matter.
-          } else if (textContent.Contains("---")) 
+          } else if (textContent.Contains("---"))
           {
             string result = RemoveOnlyCloseFrontMatter(textContent);
             return result;
@@ -65,7 +74,7 @@
           }
 
         } else {
-          return "#Ops, parameter is invalid.";
+          return "#Oops, a parameter is invalid.";
         }
       }
     }

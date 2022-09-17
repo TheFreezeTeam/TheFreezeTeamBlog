@@ -1,0 +1,25 @@
+@model MetaTags
+@inherits StatiqRazorPage<MetaTags>
+
+@* <meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="@Model.Author" />
+<meta name="twitter:title" content="@Model.PageTitle" />
+<meta property="twitter:image" content="@Model.PostImageUrl" />
+<meta name="twitter:url" content="@Model.FullLink" /> *@
+
+<!-- Primary Meta Tags -->
+<title>@Model.PageTitle</title>
+<meta name="title" content="@Model.PageTitle">
+<meta name="description" content="@Model.Description">
+
+<!-- Open Graph / Facebook / Twitter -->
+<meta property="og:site_name" content="The Freeze Team">
+<meta property="og:type" content="website">
+<meta property="og:url" content="@Model.FullLink">
+<meta property="og:title" content="@Model.PageTitle">
+<meta property="og:description" content="@Model.Description">
+<meta property="og:image" content="@Model.PostImageFullLink">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator:id" content="@Model.AuthorTwitter"

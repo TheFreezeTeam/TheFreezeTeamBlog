@@ -1,0 +1,15 @@
+﻿Order: 0
+ArchiveSources: => GetString("PostSources")
+ArchiveFilter: => GetBool("IsPost")
+ArchiveDestination: >
+  => GetInt("Index") <= 1 ? $"index.html" : $"page/{GetInt("Index")}.html"
+ArchivePageSize: 50
+ArchiveOrderKey: Published
+ArchiveOrderDescending: true
+ArchiveTitle: => GetString("Title")
+Description: Turn your LIQUID code to SOLID.
+Layout: _main-layout
+---
+
+@Html.Partial("partials/_posts.cshtml", Document)
+@Html.Partial("partials/_sidebar.cshtml")
