@@ -4,7 +4,7 @@ Title: The JavaScript Madness Part 1
 Published: 01/15/2017
 Tags: 
   - React 
-  - Javascript 
+  - JavaScript 
 Author: Steven T. Cramer
 Image: Madness.webp
 Excerpt: Create a simple (ha!) Create React App  and try to understand the magic.

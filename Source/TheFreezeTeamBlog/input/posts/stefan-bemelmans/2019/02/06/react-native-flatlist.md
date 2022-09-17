@@ -4,7 +4,7 @@ Title: The FlatList Cometh
 Published: 02/06/2019
 Tags:
   - React-Native
-  - Javascript
+  - JavaScript
 Author: Stefan Bemelmans
 Image: flatlist.webp
 Description: I needed to render a list from a variable-length array of objects. Each object contained a text name and a corresponding number value

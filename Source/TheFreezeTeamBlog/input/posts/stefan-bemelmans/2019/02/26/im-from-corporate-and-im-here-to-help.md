@@ -4,7 +4,7 @@ Title: I'm from Corporate and I'm here to Help!
 Published: 02/26/2019
 Tags: 
   - React-Native 
-  - Javascript 
+  - JavaScript 
   - NodeJS 
 Author: Stefan Bemelmans
 Image: 010.webp
