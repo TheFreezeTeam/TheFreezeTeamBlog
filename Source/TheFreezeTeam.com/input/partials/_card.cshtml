@@ -30,7 +30,7 @@
     </div>
     <div class="flex flex-col flex-grow">
       <header class="">
-        @Html.Partial("_tags.cshtml")
+        @await Html.PartialAsync("_tags.cshtml")
         <div class="mt-2 text-xs md:text-sm">
           @displayDate
         </div>

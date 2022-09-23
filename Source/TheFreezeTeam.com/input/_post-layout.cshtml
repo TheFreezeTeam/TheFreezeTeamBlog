@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <!-- _post-layout.cshtml -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-@Html.Partial("partials/_head.cshtml")
+@await Html.PartialAsync("partials/_head.cshtml")
 <body class="flex flex-col min-h-screen bg-zinc-200 dark:bg-slate-800 text-zinc-800 dark:text-zinc-100">
   <!-- TODO: what does this do? -->
   <div className="fixed inset-0 flex justify-center sm:px-8">
@@ -16,21 +16,21 @@
   </div>
   <!-- End TODO-->
   <div class="flex flex-col flex-grow mx-auto lg:max-w-6xl ">
-    @Html.Partial("partials/_post-header.cshtml")
+    @await Html.PartialAsync("partials/_post-header.cshtml")
     <!-- Main  -->
     <main class="flex flex-col flex-grow w-full mx-auto mt-2">
-      @Html.Partial("partials/_post-main-header.cshtml")
+      @await Html.PartialAsync("partials/_post-main-header.cshtml")
       <div
         class="w-3/4 p-2 mx-auto @coverImageMargin prose max-w-none lg:p-10 bg-zinc-200 dark:bg-slate-800 dark:prose-invert "
       >
-        @Html.Partial("partials/_edit-in-github-link.cshtml")
+        @await Html.PartialAsync("partials/_edit-in-github-link.cshtml")
         @RenderBody()
       </div>
       <!-- Footer of Main Section -->
-      @Html.Partial("partials/_post-footer.cshtml")
+      @await Html.PartialAsync("partials/_post-footer.cshtml")
     </main>
-    @Html.Partial("partials/_footer.cshtml")
+    @await Html.PartialAsync("partials/_footer.cshtml")
   </div>
-  @Html.Partial("partials/_post-scripts.cshtml")
+  @await Html.PartialAsync("partials/_post-scripts.cshtml")
 </body>
 </html>

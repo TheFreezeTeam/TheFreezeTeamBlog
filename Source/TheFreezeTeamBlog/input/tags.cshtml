@@ -21,7 +21,7 @@ Layout: _main-layout
         <div class="container-sm-height">
           <div class="row row-sm-height">
             <div class="col-md-6 right-border col-sm-height">
-              @Html.Partial("partials/_posts.cshtml", new BaseModel(Document, Context ))
+              @await Html.PartialAsync("partials/_posts.cshtml", new BaseModel(Document, Context ))
             </div>
             <div class="mt-4 col-md-4 mt-md-0 col-sm-height">
               @foreach (IDocument tag in OutputPages.Get("tags.html").GetChildren().OrderByDescending(x => x.GetChildren().Count()))

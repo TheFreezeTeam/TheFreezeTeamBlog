@@ -3,7 +3,7 @@
 <section class="container-sm-height">
   <div class="row row-sm-height">
     <div class="col-md-6 right-border col-sm-height">
-      @Html.Partial("../_posts.cshtml")
+      @await Html.PartialAsync("../_posts.cshtml")
     </div>
     <div class="mt-4 col-md-4 mt-md-0 col-sm-height">
       @foreach (IDocument tag in OutputPages.Get("tags.html").GetChildren().OrderByDescending(x => x.GetChildren().Count()))

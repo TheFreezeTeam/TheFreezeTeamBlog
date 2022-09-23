@@ -6,7 +6,7 @@
   class="flex flex-col w-full gap-6 mt-2"
 >
   <div class="flex w-full md:w-full">
-    @Html.Partial(
+    @await Html.PartialAsync(
       partialViewName: "_card.cshtml",
       model: FeaturedPost,
       viewData: new ViewDataDictionary(ViewData)
@@ -20,7 +20,7 @@
     @foreach (IDocument post in NonFeaturedPosts)
     {
       <div class="flex w-full ">
-        @Html.Partial(
+        @await Html.PartialAsync(
           partialViewName: "_card.cshtml",
           model: post,
           viewData: new ViewDataDictionary(ViewData)

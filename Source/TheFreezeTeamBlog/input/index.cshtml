@@ -13,5 +13,5 @@ Layout: _main-layout
 @{
   BaseModel baseModel = new BaseModel(Document, Context);
 }
-@Html.Partial("partials/_posts.cshtml", baseModel);
-@Html.Partial("partials/_sidebar.cshtml", baseModel);
+@await Html.PartialAsync("partials/_posts.cshtml", baseModel);
+@await Html.PartialAsync("partials/_sidebar.cshtml", baseModel);

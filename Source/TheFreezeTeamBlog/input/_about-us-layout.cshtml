@@ -5,18 +5,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @Html.Partial("partials/_head.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_head.cshtml", baseModel)
 </head>
 
 <body class="font-sans leading-normal tracking-normal bg-white">
   <!-- Page Header -->
-  @Html.Partial("partials/_header-about-us.cshtml", baseModel);
+  @await Html.PartialAsync("partials/_header-about-us.cshtml", baseModel);
   <!-- Navigation -->
   <div class="mx-auto -mt-32 lg:container lg:px-4 lg:px-0 lg:max-w-6xl">
     <div class="mx-0 sm:mx-6">
       <!-- Main Content -->
       <div class="hidden">
-        @Html.Partial("partials/_navigation", baseModel)
+        @await Html.PartialAsync("partials/_navigation", baseModel)
       </div>
         <div class="container lg:max-w-6xl mx-auto-mt-32">
           <div class="mx-0 sm:mx-6">
@@ -25,14 +25,14 @@
             </div>
           </div>
         </div>
-        @Html.Partial("partials/_post-footer.cshtml", baseModel)
+        @await Html.PartialAsync("partials/_post-footer.cshtml", baseModel)
 
     </div>
   </div>
-  @Html.Partial("partials/_footer.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_footer.cshtml", baseModel)
 
   <!-- Custom scripts for this template -->
-  @Html.Partial("partials/_scripts.cshtml", new BaseModel(Document, Context ))
+  @await Html.PartialAsync("partials/_scripts.cshtml", new BaseModel(Document, Context ))
 
   @RenderSection("Scripts", false)
 

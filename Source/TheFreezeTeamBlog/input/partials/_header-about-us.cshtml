@@ -1,7 +1,7 @@
 @model BaseModel
 @inherits StatiqRazorPage<BaseModel>
 
-@Html.Partial("_post-nav.cshtml")
+@await Html.PartialAsync("_post-nav.cshtml")
 <div class="pt-16 text-center md:pt-32">
   <h1 class="text-3xl font-bold break-normal md:text-5xl">@Model.PageTitle</h1>
 </div>

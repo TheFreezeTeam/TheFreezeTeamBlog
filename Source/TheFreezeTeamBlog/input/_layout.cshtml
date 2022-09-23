@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @Html.Partial("partials/_head.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_head.cshtml", baseModel)
 </head>
 
 
@@ -15,7 +15,7 @@
   <script src="/resource/js/prismjs/prism.js"></script>
   <!-- Page Header -->
 
-  @Html.Partial("partials/_header.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_header.cshtml", baseModel)
 
   <!-- Navigation -->
   <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto @topMargin">
@@ -24,20 +24,20 @@
       <div class="container mx-auto lg:max-w-6xl">
         <div class="mx-0 sm:mx-6">
           <div id="postType" class="w-full p-4 font-light text-gray-800 bg-white lg:p-10">
-            @Html.Partial("partials/_edit-in-github-link.cshtml", baseModel)
+            @await Html.PartialAsync("partials/_edit-in-github-link.cshtml", baseModel)
             @RenderBody()
           </div>
         </div>
       </div>
       <!-- Footer -->
-      @Html.Partial("partials/_post-footer.cshtml", baseModel)
-      @Html.Partial("partials/_subscription.cshtml", baseModel)
+      @await Html.PartialAsync("partials/_post-footer.cshtml", baseModel)
+      @await Html.PartialAsync("partials/_subscription.cshtml", baseModel)
     </div>
   </div>
-  @Html.Partial("partials/_footer.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_footer.cshtml", baseModel)
 
   <!-- Custom scripts for this template -->
-  @Html.Partial("partials/_scripts.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_scripts.cshtml", baseModel)
   @RenderSection("Scripts", false)
 
 </body>

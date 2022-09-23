@@ -16,49 +16,49 @@
       @if (!string.IsNullOrEmpty(author.GitHub))
       {
         <a target="_blank" href="https://www.github.com/@author.GitHub">
-          @Html.Partial("../simple-icons/_github.cshtml")
+          @await Html.PartialAsync("../simple-icons/_github.cshtml")
         </a>
       }
       @if (!string.IsNullOrEmpty(author.Discord))
       {
         <a target="_blank" href="https://discordapp.com/users/@author.Discord">
-          @Html.Partial("../simple-icons/_discord.cshtml")
+          @await Html.PartialAsync("../simple-icons/_discord.cshtml")
         </a>
       }
       @if (!string.IsNullOrEmpty(author.Twitter))
       {
         <a target="_blank" href="https://www.twitter.com/@author.Twitter">
-          @Html.Partial("../simple-icons/_twitter.cshtml")
+          @await Html.PartialAsync("../simple-icons/_twitter.cshtml")
         </a>
       }
       @if (!string.IsNullOrEmpty(author.LinkedIn))
       {
         <a target="_blank" href="https://www.linkedin.com/in/@author.LinkedIn">
-          @Html.Partial("../simple-icons/_linkedin.cshtml")
+          @await Html.PartialAsync("../simple-icons/_linkedin.cshtml")
         </a>
       }
       @if (!string.IsNullOrEmpty(author.YouTube))
       {
         <a target="_blank" href="https://www.youtube.com/channel/@author.YouTube">
-          @Html.Partial("../simple-icons/_youtube.cshtml")
+          @await Html.PartialAsync("../simple-icons/_youtube.cshtml")
         </a>
       }
       @if (!string.IsNullOrEmpty(author.Twitch))
       {
         <a target="_blank" href="https://www.twitch.tv/@author.Twitch">
-          @Html.Partial("../simple-icons/_twitch.cshtml")
+          @await Html.PartialAsync("../simple-icons/_twitch.cshtml")
         </a>
       }
       @if (!string.IsNullOrEmpty(author.Facebook))
       {
         <a target="_blank" href="https://www.facebook.com/@author.Facebook">
-          @Html.Partial("../simple-icons/_facebook.cshtml")
+          @await Html.PartialAsync("../simple-icons/_facebook.cshtml")
         </a>
       }
       @if (!string.IsNullOrEmpty(author.CodinGame))
       {
         <a target="_blank" href="https://www.codingame.com/profile/@author.CodinGame">
-          @Html.Partial("../simple-icons/_codingame.cshtml")
+          @await Html.PartialAsync("../simple-icons/_codingame.cshtml")
         </a>
       }
 

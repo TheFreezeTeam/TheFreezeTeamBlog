@@ -33,9 +33,9 @@ ArchiveDestination: |
 
 @if(Document.ContainsKey(Keys.GroupKey))
 {
-  @Html.Partial("../partials/authors/_authors-group.cshtml")
+  @await Html.PartialAsync("../partials/authors/_authors-group.cshtml")
 }
 else
 {
-  @Html.Partial("../partials/authors/_authors-index.cshtml")
+  @await Html.PartialAsync("../partials/authors/_authors-index.cshtml")
 }

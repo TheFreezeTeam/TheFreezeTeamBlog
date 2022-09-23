@@ -21,17 +21,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @Html.Partial("partials/_head.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_head.cshtml", baseModel)
 </head>
 
 <body class="@body_bg font-sans leading-normal tracking-normal">
   <!-- Page Header -->
-  @Html.Partial("partials/_main-header", baseModel)
+  @await Html.PartialAsync("partials/_main-header", baseModel)
   <!-- Navigation -->
   <div class="mx-auto -mt-32 lg:container lg:px-4 lg:px-0 lg:max-w-6xl">
-    <div class="p-3 mx-0 sm:mx-6 lg:p-0">      
+    <div class="p-3 mx-0 sm:mx-6 lg:p-0">
       <!-- Main Content -->
-      @Html.Partial("partials/_navigation", baseModel)
+      @await Html.PartialAsync("partials/_navigation", baseModel)
       @if (baseModel.IsPost)
       {
         <div class="container lg:max-w-6xl mx-auto-mt-32">
@@ -41,20 +41,20 @@
             </div>
           </div>
         </div>
-        @Html.Partial("partials/_post-footer.cshtml", baseModel)
+        @await Html.PartialAsync("partials/_post-footer.cshtml", baseModel)
       }
       else
       {
         @RenderBody()
       }
       <!-- Footer -->
-      @Html.Partial("partials/_subscription.cshtml", baseModel)
+      @await Html.PartialAsync("partials/_subscription.cshtml", baseModel)
     </div>
   </div>
-  @Html.Partial("partials/_footer.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_footer.cshtml", baseModel)
 
   <!-- Custom scripts for this template -->
-  @Html.Partial("partials/_scripts.cshtml", baseModel)
+  @await Html.PartialAsync("partials/_scripts.cshtml", baseModel)
 
   @RenderSection("Scripts", false)
 

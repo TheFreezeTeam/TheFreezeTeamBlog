@@ -25,9 +25,9 @@ ArchiveDestination: |
 
 @if(Document.ContainsKey(Keys.GroupKey))
 {
-  @Html.Partial("../partials/tags/_tags-group.cshtml");
+  @await Html.PartialAsync("../partials/tags/_tags-group.cshtml");
 }
 else
 {
-  @Html.Partial("../partials/tags/_tags-index.cshtml");
+  @await Html.PartialAsync("../partials/tags/_tags-index.cshtml");
 }

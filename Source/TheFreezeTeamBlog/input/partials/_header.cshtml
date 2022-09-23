@@ -6,7 +6,7 @@
   string? title = Document.GetString("Title");
 }
 
-@Html.Partial("_post-nav.cshtml")
+@await Html.PartialAsync("_post-nav.cshtml")
 <div class="w-7/12 pt-16 mx-auto text-center md:pt-10">
   <p class="text-sm font-medium text-blue-500 uppercase">
     @Model.Published <span class="text-gray-900">/</span>

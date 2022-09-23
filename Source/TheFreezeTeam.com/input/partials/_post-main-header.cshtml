@@ -14,7 +14,7 @@
   <div class="mt-4 text-sm text-center text-blue-500 uppercase">
     @PublishedDate
   </div>
-  @Html.Partial("_tags.cshtml")
+  @await Html.PartialAsync("_tags.cshtml")
   <!--image-->
   @if( coverImageUrl != null)
   {
