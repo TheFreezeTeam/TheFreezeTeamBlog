@@ -1,9 +1,9 @@
 DocumentName: On the Eighth Day, God Invented the Vertically-Sliced User Story
 Title: On the Eighth Day, God Invented the Vertically-Sliced User Story
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 

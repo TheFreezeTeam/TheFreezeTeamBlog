@@ -1,3 +1,6 @@
+@model BaseModel
+@inherits StatiqRazorPage<BaseModel>
+
 @{
   bool isPostType = Document.GetBool("IsPost");
   string authorName = Document.GetString(WebKeys.Author);

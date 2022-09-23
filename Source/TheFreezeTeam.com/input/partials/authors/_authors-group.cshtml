@@ -1,0 +1,27 @@
+@{
+  //
+  var children = Document.GetChildren();
+  string groupKey = Document.GetString("GroupKey");
+  int index = Document.GetInt("Index");
+  string cleanAuthorName = Document.GetString(MetaDataKeys.AuthorKey);
+  string baseUrl = $"authors/{cleanAuthorName}";
+
+  string archiveDestination = (index <= 1) ?
+    $"{baseUrl}/index.html":
+    $"{baseUrl}/{index}.html";
+}
+<!-- _authors-group.cshtml -->
+<section
+  id="posts"
+  class="flex flex-col w-full gap-6 mt-2"
+>
+  <div class="flex w-full md:w-full">
+    @await Html.PartialAsync("_author-detail.cshtml")
+  </div>
+
+  <div class="col-md-6 right-border col-sm-height">
+    @await Html.PartialAsync("../_posts.cshtml")
+  </div>
+
+</section>
+

@@ -1,0 +1,27 @@
+﻿@using System.Text.Json
+@{
+  
+}
+<div>
+  <h1>Pipelines Used</h1>
+  <p>
+    see <a href="https://www.statiq.dev/guide/documents-and-metadata/accessing-metadata">Accessing Metadata</a>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(string key in Model.Keys)
+      {
+        <tr>
+          <td>@key</td>
+          <td>@Model.Get(key)</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

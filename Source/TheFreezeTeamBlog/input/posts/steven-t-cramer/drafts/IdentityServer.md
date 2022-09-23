@@ -1,8 +1,8 @@
 Title: IdentityServer 4 2.0 userInfo "No 'Access-Control-Allow-Origin' header is present on the requested resource.
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 

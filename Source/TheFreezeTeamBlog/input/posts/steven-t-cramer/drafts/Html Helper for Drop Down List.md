@@ -1,8 +1,8 @@
 Title: Html Helper for Drop Down List
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 

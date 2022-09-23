@@ -2,7 +2,7 @@
   Title: Empowering Title
   Published: 08/26/2099
   Tags:
-    - CSharp
+    - C#
     - Blazor
   Image: main_image.webp
   Description: Description of article

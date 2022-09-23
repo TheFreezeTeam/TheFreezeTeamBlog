@@ -1,4 +1,4 @@
-﻿---
+---
 DocumentName: blazor-state-tutorial-th
 Title: มาใช้ Blazor State บน Blazor App ช่วยให้เราจัดการ State ได้ง่ายขึ้นเยอะเลย
 Published: 10/25/2021

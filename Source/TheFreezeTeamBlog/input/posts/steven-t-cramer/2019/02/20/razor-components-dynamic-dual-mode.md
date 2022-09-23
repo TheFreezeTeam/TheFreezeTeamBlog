@@ -3,9 +3,9 @@ DocumentName: razor-components-dynamic-dual-mode
 Title: Blazor Dynamic Dual Mode!
 Published: 02/20/2019
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Image: DynamicDualMode.webp

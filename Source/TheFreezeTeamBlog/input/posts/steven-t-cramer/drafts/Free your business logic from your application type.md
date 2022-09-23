@@ -1,7 +1,7 @@
 Title: Free your business logic from your application type
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 
@@ -36,9 +36,9 @@ public interface IIdentityService
 Although this makes testing much easier, that is NOT the primary reason for it.
 The primary reasons are the SID in SOLID.
 
-- [Dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle):  one should “Depend upon Abstractions. Do not depend upon concretions.”
+- [Dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle):  one should ï¿½Depend upon Abstractions. Do not depend upon concretions.ï¿½
 - [Single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle): a class should have only a single responsibility
-- [Interface segregation principle](https://en.wikipedia.org/wiki/Interface_segregation_principle): “many client-specific interfaces are better than one general-purpose interface”
+- [Interface segregation principle](https://en.wikipedia.org/wiki/Interface_segregation_principle): ï¿½many client-specific interfaces are better than one general-purpose interfaceï¿½
 
 ### WebIdentityService 
 

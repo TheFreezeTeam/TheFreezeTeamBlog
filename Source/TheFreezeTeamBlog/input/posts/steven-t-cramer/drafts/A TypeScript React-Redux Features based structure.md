@@ -1,8 +1,8 @@
 Title: A TypeScript React-Redux Features based structure
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 

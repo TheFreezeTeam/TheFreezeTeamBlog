@@ -1,0 +1,9 @@
+﻿DestinationPath: |
+  =>
+  {
+    var destination = new NormalizedPath(Document.Destination.ToString());
+    NormalizedPath destinationFileName = destination.FileName;
+    NormalizedPath newDestination =
+      destination.Parent.Parent.ChangeFileName(destinationFileName);
+    return newDestination;
+  }

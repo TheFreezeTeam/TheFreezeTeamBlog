@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<!-- _layout.cshtml -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+@await Html.PartialAsync("partials/_head.cshtml")
+<body class="flex flex-col min-h-screen bg-zinc-200 dark:bg-slate-800 text-zinc-800 dark:text-zinc-100">
+  <div className="fixed inset-0 flex justify-center sm:px-8">
+    <div className="flex w-full max-w-7xl lg:px-8">
+      <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
+    </div>
+  </div>
+  <div class="flex flex-col flex-grow mx-auto lg:max-w-6xl ">
+    @await Html.PartialAsync("partials/_header.cshtml")
+    <!-- Main  -->
+    <main class="flex flex-col flex-grow w-full mx-auto mt-2">
+      <!-- Main Header -->
+      <!-- Body -->
+      @RenderBody()
+      <!-- Main Footer -->
+      @await Html.PartialAsync("partials/_main-footer.cshtml")
+    </main>
+    @await Html.PartialAsync("partials/_footer.cshtml")
+  </div>
+</body>
+</html>

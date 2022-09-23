@@ -1,0 +1,26 @@
+﻿<!-- _post-main-header.cshtml -->
+@{
+   var coverImageUrl = Model.GetString(MetaDataKeys.ImageUrl);
+  @* string? style = Model.HasCoverImage ?
+    $"background-image: url('{Model.CoverImageUrl}'); height: 80vh;" :
+    null; *@
+}
+<header class="w-full px-4 mx-auto">
+  <h1
+    class="text-4xl font-bold tracking-tight text-center sm:text-5xl"
+  >
+    @Title
+  </h1>
+  <div class="mt-4 text-sm text-center text-blue-500 uppercase">
+    @PublishedDate
+  </div>
+  @await Html.PartialAsync("_tags.cshtml")
+  <!--image-->
+  @if( coverImageUrl != null)
+  {
+    <img src="@coverImageUrl"
+      class="container mt-2 rounded"
+
+    >
+  }
+</header>

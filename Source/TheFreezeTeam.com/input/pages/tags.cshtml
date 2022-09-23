@@ -1,0 +1,33 @@
+﻿---
+Order: 2
+Title: Tags
+ArchiveSources: => GetString("PostSources")
+ArchiveKey: Tags
+ArchivePageSize: 10
+ArchiveOrderKey: Published
+ArchiveOrderDescending: true
+ArchiveTitle: => GetString("GroupKey")
+ArchiveDestination: |
+  =>
+  {
+    int index = Document.GetInt("Index");
+    string tag = GetString("GroupKey");
+    tag = PathUtilities.CleanPath(tag);
+    string baseUrl = $"tags/{tag}";
+    string archiveDestination =
+      (index <= 1) ?
+        $"{baseUrl}/index.html":
+        $"{baseUrl}/{index}.html";
+    return archiveDestination;
+  }
+---
+<!-- tags.cshtml -->
+
+@if(Document.ContainsKey(Keys.GroupKey))
+{
+  @await Html.PartialAsync("../partials/tags/_tags-group.cshtml");
+}
+else
+{
+  @await Html.PartialAsync("../partials/tags/_tags-index.cshtml");
+}

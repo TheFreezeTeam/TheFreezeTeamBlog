@@ -3,7 +3,7 @@ DocumentName: azure-resize-os-drive
 Title: Expand the OS Drive on your Azure Resource Manager VM
 Published: 01/15/2017
 Tags: 
-  - CSharp 
+  - C# 
 Author: Steven T. Cramer
 Description: This can be done via the portal by simply Stop and Deallocate the system and then select the drive and choose a larger size.
 Excerpt: This can be done via the portal by simply Stop and Deallocate the system and then select the drive and choose a larger size.

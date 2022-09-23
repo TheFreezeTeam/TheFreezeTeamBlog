@@ -1,0 +1,19 @@
+@model BaseModel
+@inherits StatiqRazorPage<BaseModel>
+
+@await Html.PartialAsync("_post-nav.cshtml")
+<div class="pt-16 text-center md:pt-32">
+  <h1 class="text-3xl font-bold break-normal md:text-5xl">@Model.PageTitle</h1>
+</div>
+<!--image-->
+@if (Model.HasCoverImage)
+{
+  <div
+    class="container w-full h-2 mx-auto mt-8 bg-white bg-cover max-w-7xl lg:rounded lg:h-4"
+    style="background-image: url('@Model.CoverImageUrl'); height: 80vh; background-size: cover; background-position: center center;">
+  </div>
+} else
+{
+  <div class="mt-24">
+  </div>
+}

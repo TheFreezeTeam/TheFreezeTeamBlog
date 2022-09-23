@@ -1,8 +1,8 @@
 ﻿Title: DotNet Core 2 Web API For Crypto Accounting
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: ReduxDevTools off by default. 

@@ -10,6 +10,8 @@ ArchiveTitle: => GetString("Title")
 Description: Turn your LIQUID code to SOLID.
 Layout: _main-layout
 ---
-
-@Html.Partial("partials/_posts.cshtml", Document)
-@Html.Partial("partials/_sidebar.cshtml")
+@{
+  BaseModel baseModel = new BaseModel(Document, Context);
+}
+@await Html.PartialAsync("partials/_posts.cshtml", baseModel);
+@await Html.PartialAsync("partials/_sidebar.cshtml", baseModel);

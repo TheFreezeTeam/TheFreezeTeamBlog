@@ -1,8 +1,8 @@
 Title: Building a CRM application
 Tags: 
-  - CSharp 
+  - C# 
   - Blazor 
-  - dotnetcore 
+  - dotnet 
   - Blazor-State
 Author: Steven T. Cramer
 Excerpt: Building a CRM application

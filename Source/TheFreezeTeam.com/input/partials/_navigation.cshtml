@@ -1,0 +1,62 @@
+﻿<!-- _navigation.cshtml -->
+@{
+  string anchorClass =
+    "relative block px-3 py-2 transition " +
+    "active:text-emerald-500 active:dark:text-emerald-400 " +
+    "hover:text-emerald-500 dark:hover:text-emerald-400";
+}
+<nav
+  id="navigation"
+  class="flex flex-row justify-between mt-2 text-sm font-medium rounded-full shadow-lg bg-white/90 text-zinc-800 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+>
+  <ul
+    id="navigationlinks"
+    class="flex gap-2 px-3 "
+  >
+    <li><a href="/" class="@anchorClass">Home</a></li>
+    @foreach (IDocument document in NavBarPages)
+    {
+      <li>
+        <a
+          href="@document.GetLink()"
+          class="@anchorClass"
+        >
+          @document.GetTitle()
+        </a>
+      </li>
+    }
+  </ul>
+
+  <ul id="sociallinks" class="flex justify-center gap-2 pr-2 list-reset">
+    <li>
+      <a href="https://twitter.com/TheFreezeTeam1">
+        @await Html.PartialAsync("simple-icons/_twitter.cshtml")
+      </a>
+    </li>
+    <li>
+      <a href="https://discord.gg/jY4TNPEuCX">
+        @await Html.PartialAsync("simple-icons/_discord.cshtml")
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/TheFreezeTeam">
+        @await Html.PartialAsync("simple-icons/_github.cshtml")
+      </a>
+    </li>
+    <li>
+      <a href="https://www.twitch.tv/thefreezeteam">
+        @await Html.PartialAsync("simple-icons/_twitch.cshtml")
+      </a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/channel/UCcPAWm0hGzPHM96a4_1-QmQ">
+        @await Html.PartialAsync("simple-icons/_youtube.cshtml")
+      </a>
+    </li>
+     <li>
+      <a href="https://www.facebook.com/thefreezeteam1">
+        @await Html.PartialAsync("simple-icons/_facebook.cshtml")
+      </a>
+    </li>
+  </ul>
+</nav>

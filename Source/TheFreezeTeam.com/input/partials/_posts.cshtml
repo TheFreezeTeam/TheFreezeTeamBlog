@@ -1,0 +1,37 @@
+﻿<!-- _posts.cshtml -->
+
+
+<section
+  id="posts"
+  class="flex flex-col w-full gap-6 mt-2"
+>
+  <div class="flex w-full md:w-full">
+    @await Html.PartialAsync(
+      partialViewName: "_card.cshtml",
+      model: FeaturedPost,
+      viewData: new ViewDataDictionary(ViewData)
+      {
+        { "CardProps", new CardProps(IsFeatured: true) }
+      }
+    )
+  </div>
+
+  <div class="grid items-stretch w-full gap-6 lg:grid-cols-3">
+    @foreach (IDocument post in NonFeaturedPosts)
+    {
+      <div class="flex w-full ">
+        @await Html.PartialAsync(
+          partialViewName: "_card.cshtml",
+          model: post,
+          viewData: new ViewDataDictionary(ViewData)
+          {
+            { "CardProps", new CardProps(IsFeatured: false) }
+          }
+        )
+      </div>
+    }
+  </div>
+
+  @await Html.PartialAsync("_paging.cshtml")
+
+</section>

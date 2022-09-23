@@ -1,0 +1,18 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tooltip .tooltip-text {
+  @apply opacity-0;
+  @apply transition;
+  @apply duration-500;
+  @apply text-center;
+  @apply text-white;
+  padding: 2px 6px;
+  position: absolute;
+  z-index: 100;
+}
+
+.tooltip:hover .tooltip-text {
+  @apply opacity-100;
+}

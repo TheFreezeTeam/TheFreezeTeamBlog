@@ -2,11 +2,11 @@
   Title: Run your full web server inside integration tests
   Published: 08/26/2022
   Tags:
-    - CSharp
+    - C#
     - dotnet
     - Kestrel
     - test
-  Image: AI-Train.png
+  Image: ai-train.png
   Description: "Launch your dotnet web app from your integration tests"
   Excerpt: "How to launch your fully functional dotnet web application from your integration test."
   Author: Steven T. Cramer

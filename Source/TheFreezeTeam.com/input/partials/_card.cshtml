@@ -1,0 +1,62 @@
+<!-- _card -->
+@{
+  string articleLink = Context.GetLink(Model);
+  string excerpt = Model.GetString(Keys.Excerpt);
+  string displayDate = Model.GetDateTime(WebKeys.Published).ToLongDateString();
+  CardProps? cardProps = ViewData["CardProps"] as CardProps;
+  bool isFeatured = cardProps!.IsFeatured;
+  string featuredClass = isFeatured ? "md:flex-row": string.Empty;
+  string featuredImageClass = isFeatured ? "md:w-2/3": string.Empty;
+  string authorKey = Model.GetAuthorKey();
+  string authorLink = string.Empty;
+  string readTime = Model.GetString(MetaDataKeys.ReadTime);
+  Author author = Authors[authorKey];
+  string authorAvatarLink = Context.GetLink(author.AvatarPath);
+  authorLink = Context.GetLink(author.GetUrl());
+
+  if (string.IsNullOrWhiteSpace(authorAvatarLink))
+    authorAvatarLink = "images/no-avatar.jpg";
+}
+
+<section
+  class="flex flex-col w-full transition ease-in-out bg-white rounded-lg shadow-lg dark:bg-slate-700 hover:-translate-y-1 hover:scale-105"
+>
+  <a href="@articleLink" class="flex flex-col flex-grow p-2 gap-x-4 gap-y-2 @featuredClass">
+    <div class="">
+      @if (Model.HasImage() )
+      {
+        <img src="@Model.GetImageUrl()" class="object-cover w-full h-full rounded-t">
+      }
+    </div>
+    <div class="flex flex-col flex-grow">
+      <header class="">
+        @await Html.PartialAsync("_tags.cshtml")
+        <div class="mt-2 text-xs md:text-sm">
+          @displayDate
+        </div>
+        <div class = "mt-2 font-bold">
+          @Model.GetTitle()
+        </div>
+      </header>
+      <p class="flex-grow ">
+          @excerpt
+      </p>
+      <footer class="flex flex-row items-center content-between w-full">
+        <div class="flex-1 tooltip">
+          <object>
+            <a href="@authorLink">
+              <img
+                src="@authorAvatarLink"
+                class="w-8 h-8 rounded-full "
+              />
+            </a>
+          </object>
+          <span class='-mt-16 text-sm bg-black rounded tooltip-text'>
+            @author.Name
+          </span>
+        </div>
+        <div class="flex-1 text-right">@readTime</div>
+      </footer>
+    </div>
+  </a>
+</section>

@@ -1,7 +1,7 @@
 ---
 Title: Building MVC 5 Jimmy Style Overview
 Tags: 
-  - Jbogard
+  - Jimmy Bogard
   - Mvc
   - C#
   - Entity-framework-5

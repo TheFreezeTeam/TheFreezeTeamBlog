@@ -1,0 +1,68 @@
+<!-- _author-detail.cshtml -->
+@{
+  string groupKey = Document.GetString("GroupKey");
+  Author author = Authors[groupKey];
+  string authorAvatarLink = Context.GetLink(author.AvatarPath);
+}
+<div class="w-full p-5 bg-white rounded shadow-lg dark:bg-zinc-800">
+  <div class="flex justify-center">
+    <img
+      src="@authorAvatarLink"
+      class="object-fill w-20 h-20 transition duration-500 ease-in-out transform border-4 border-gray-300 rounded-full hover:border-gray-600 hover:scale-105 lg:w-32 lg:h-32"
+    >
+  </div>
+  <p class="mt-2 text-sm font-bold text-center">@author.Name</p>
+  <div class="flex justify-center gap-2 mt-2">
+      @if (!string.IsNullOrEmpty(author.GitHub))
+      {
+        <a target="_blank" href="https://www.github.com/@author.GitHub">
+          @await Html.PartialAsync("../simple-icons/_github.cshtml")
+        </a>
+      }
+      @if (!string.IsNullOrEmpty(author.Discord))
+      {
+        <a target="_blank" href="https://discordapp.com/users/@author.Discord">
+          @await Html.PartialAsync("../simple-icons/_discord.cshtml")
+        </a>
+      }
+      @if (!string.IsNullOrEmpty(author.Twitter))
+      {
+        <a target="_blank" href="https://www.twitter.com/@author.Twitter">
+          @await Html.PartialAsync("../simple-icons/_twitter.cshtml")
+        </a>
+      }
+      @if (!string.IsNullOrEmpty(author.LinkedIn))
+      {
+        <a target="_blank" href="https://www.linkedin.com/in/@author.LinkedIn">
+          @await Html.PartialAsync("../simple-icons/_linkedin.cshtml")
+        </a>
+      }
+      @if (!string.IsNullOrEmpty(author.YouTube))
+      {
+        <a target="_blank" href="https://www.youtube.com/channel/@author.YouTube">
+          @await Html.PartialAsync("../simple-icons/_youtube.cshtml")
+        </a>
+      }
+      @if (!string.IsNullOrEmpty(author.Twitch))
+      {
+        <a target="_blank" href="https://www.twitch.tv/@author.Twitch">
+          @await Html.PartialAsync("../simple-icons/_twitch.cshtml")
+        </a>
+      }
+      @if (!string.IsNullOrEmpty(author.Facebook))
+      {
+        <a target="_blank" href="https://www.facebook.com/@author.Facebook">
+          @await Html.PartialAsync("../simple-icons/_facebook.cshtml")
+        </a>
+      }
+      @if (!string.IsNullOrEmpty(author.CodinGame))
+      {
+        <a target="_blank" href="https://www.codingame.com/profile/@author.CodinGame">
+          @await Html.PartialAsync("../simple-icons/_codingame.cshtml")
+        </a>
+      }
+
+    </div>
+    <p class="text-sm italic text-center">@author.Bio</p>
+
+</div>

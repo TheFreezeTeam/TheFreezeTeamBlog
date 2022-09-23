@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TheFreezeTeam.Com": {
+      "commandName": "Project",
+      "commandLineArgs": "preview"
+    }
+  }
+}

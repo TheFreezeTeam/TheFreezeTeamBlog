@@ -1,0 +1,27 @@
+﻿<!-- _post-footer.cshtml-->
+@{
+  var authorKey = Document.GetAuthorKey();
+  var author = Authors[authorKey];
+  //https://thefreezeteam.com/author/steven-t.-cramer/
+}
+<footer class="container flex flex-row items-center justify-between mt-2">
+  <a
+    href="@author.GetUrl()"
+    class="flex flex-row"
+  >
+    <img
+      src="@author.AvatarPath"
+      class="w-12 border-2 rounded-full hover:border-emerald-500 "
+    >
+    <div class="pt-3 ml-4 text-base font-medium lg:pt-3 lg:ml-5 hover:text-emerald-500 dark:hover:text-emerald-400">
+      @author.Name
+    </div>
+  </a>
+  <div class="">
+    <a
+      href="@author.GetUrl()"
+      class="text-xs transition duration-500 ease-in-out bg-transparent border border-gray-400 rounded-full hover:border-emerald-500 hover:text-emerald-500 lg:font-bold lg:py-2 lg:px-4">
+      Read More
+    </a>
+  </div>
+</footer>

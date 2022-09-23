@@ -1,0 +1,29 @@
+<!-- _authors-index.cshtml -->
+@{
+  var authorPages = Document.GetChildren(); // Document 1..* Author 1..* Posts
+}
+<nav class="flex flex-col gap-2 p-2 mt-2 bg-white rounded-lg shadow-lg dark:bg-slate-700">
+  @foreach (var authorPage in authorPages)
+  {
+    int postCount = authorPage.GetChildren().Count;
+
+    string authorAvatar = string.Empty;
+    string? authorKey = authorPage.GetString("GroupKey");
+    Author? author = Authors.GetValueOrDefault(authorKey);
+    if (author != null) authorAvatar = Context.GetLink(author.AvatarPath);
+
+    <div>@authorPage.GetString("Author")</div>
+    <a
+      href="@Context.GetLink(authorPage)"
+      class="flex flex-row rounded w-max"
+    >
+      <img
+        src="@authorAvatar"
+        class="w-8 h-8 rounded-full "
+      />
+      <span class="ml-2">
+        @authorPage.GetTitle() (@postCount)
+      </span>
+    </a>
+  }
+</nav>

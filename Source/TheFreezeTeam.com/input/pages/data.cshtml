@@ -1,0 +1,38 @@
+﻿---
+ShowInNavbar: false
+---
+<!-- data.cshtml -->
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>AvatarPath</th>
+    <th>Bio</th>
+    <th>CodinGame</th>
+    <th>Discord</th>
+    <th>Facebook</th>
+    <th>GitHub</th>
+    <th>LinkedIn</th>
+    <th>Twitter</th>
+    <th>Twitch</th>
+    <th>YouTube</th>
+  </tr>
+  @foreach (var author in Authors.Values)
+  {
+    <tr>
+      <td>@author.Name</td>
+      <td>@author.AvatarPath</td>
+      <td>@author.Bio</td>
+      <td>@author.CodinGame</td>
+      <td>@author.Discord</td>
+      <td>@author.Facebook</td>
+      <td>@author.GitHub</td>
+      <td>@author.LinkedIn</td>
+      <td>@author.Twitter</td>
+      <td>@author.Twitch</td>
+      <td>@author.YouTube</td>
+    </tr>
+  }
+</table>
+
+

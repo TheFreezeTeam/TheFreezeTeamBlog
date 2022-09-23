@@ -1,0 +1,35 @@
+<!-- _paging.cshtml -->
+@{
+  var newer = Document.GetDocument(Keys.Previous);
+  var older = Document.GetDocument(Keys.Next);
+  bool hasNewer = newer != null;
+  bool hasOlder = older != null;
+}
+
+@if (hasOlder || hasNewer)
+{
+  <div class="flex w-full gap-2">
+
+    @if (hasNewer)
+    {
+      <a
+        class="inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        href="@Context.GetLink(newer)"
+        role="button"
+      >
+      Newer
+      </a>
+    }
+
+    @if (hasOlder)
+    {
+      <a
+        class="inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        href="@Context.GetLink(older)"
+        role="button"
+      >
+        Older
+      </a>
+    }
+  </div>
+}
