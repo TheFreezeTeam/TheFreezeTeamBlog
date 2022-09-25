@@ -42,7 +42,6 @@ jobs:
       - name: generate statiq site
         run: |
           dotnet run --project ./Source/TheFreezeTeam.com/TheFreezeTeam.com.csproj
-        working-directory: ./Source/Web.Spa
 
       - name: Build And Deploy
         id: builddeploy
