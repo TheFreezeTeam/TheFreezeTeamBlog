@@ -7,12 +7,12 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
-    "../TheFreezeTeam.Com/input/**/*.razor",
-    "../TheFreezeTeam.Com/input/**/*.razor.cs",
-    "../TheFreezeTeam.Com/input/**/*.cshtml",
-    "../TheFreezeTeam.Com/input/**/*.md",
-    "../TheFreezeTeam.Com/input/**/*.html",
-    "../TheFreezeTeam.Com/input/**/*.svg",
+    "../TheFreezeTeam.com/input/**/*.razor",
+    "../TheFreezeTeam.com/input/**/*.razor.cs",
+    "../TheFreezeTeam.com/input/**/*.cshtml",
+    "../TheFreezeTeam.com/input/**/*.md",
+    "../TheFreezeTeam.com/input/**/*.html",
+    "../TheFreezeTeam.com/input/**/*.svg",
   ],
   safelist: [
     {
