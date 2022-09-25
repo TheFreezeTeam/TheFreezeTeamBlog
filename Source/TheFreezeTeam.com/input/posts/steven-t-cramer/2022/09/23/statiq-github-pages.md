@@ -7,7 +7,7 @@
     - GitHub Pages
     - Static Site Generator
   Image: cover-image.png
-  Description: Description of article
+  Description: A step by step walk through on how to create a Statiq site and deploy it to GitHub Pages.
   Excerpt: A step by step walk through on how to create a Statiq site and deploy it to GitHub Pages.
   Author: Steven T. Cramer
 ---
