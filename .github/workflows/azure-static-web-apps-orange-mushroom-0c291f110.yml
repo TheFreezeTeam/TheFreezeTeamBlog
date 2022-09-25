@@ -28,11 +28,11 @@ jobs:
 
       - name: Install node dependencies
         run: npm install
-        working-directory: './source/blazor-university-tailwind'
+        working-directory: './Source/TheFreezeTeam.Com.Tailwind'
 
       - name: run Tailwind to generate Site.css
         run: npm run tailwinds
-        working-directory: './source/blazor-university-tailwind'
+        working-directory: './Source/TheFreezeTeam.Com.Tailwind'
 
       - name: Install dotnet
         uses: actions/setup-dotnet@v2
