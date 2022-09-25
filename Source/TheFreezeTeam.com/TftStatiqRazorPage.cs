@@ -18,6 +18,7 @@ public abstract class TftStatiqRazorPage<TModel> : StatiqRazorPage<TModel>
   public IDocument? FeaturedPost => Posts.Count > 0 ? Posts[0]: null;
   public IEnumerable<IDocument> NonFeaturedPosts => Posts.Skip(1);
   public int PostCount => Posts.Count;
+  public string CoverImageFullLink => Context.GetLink(Document.GetImageUrl(), true);
   #endregion
 
   #region Context

@@ -1,4 +1,5 @@
-﻿Layout: /_layout.cshtml
+﻿Host: "thefreezeteam.com"
+Layout: /_layout.cshtml
 PostSources: "posts/**/*.{md,cshtml,html}" # This requires quotes becuase of the `{}` characters
 SiteTitle: The Freeze Team
 DateTimeInputCulture: en-US
