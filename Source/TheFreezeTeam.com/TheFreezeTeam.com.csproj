@@ -13,8 +13,4 @@
     <PackageReference Include="Statiq.Web" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TheFreezeTeam.Com.Tailwind\TheFreezeTeam.Com.Tailwind.csproj" />
-  </ItemGroup>
-
 </Project>
