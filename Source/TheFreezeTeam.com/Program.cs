@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Statiq.App;
 using Statiq.Web;
+using TimeWarp.Statiq.ShortCodes;
 
 internal class Program
 {
@@ -10,5 +11,6 @@ internal class Program
       .Factory
       .CreateWeb(aArgumentArray)
       .AddReadingTimeMeta()
+      .AddShortcode<GitShortCode>()
       .RunAsync();
 }
