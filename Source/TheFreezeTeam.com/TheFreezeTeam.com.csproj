@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Statiq.Web" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.49" />
   </ItemGroup>
 
 </Project>
