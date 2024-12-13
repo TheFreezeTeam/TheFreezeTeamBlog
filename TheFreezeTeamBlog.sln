@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheFreezeTeamBlog", "Source\TheFreezeTeamBlog\TheFreezeTeamBlog.csproj", "{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheFreezeTeamBlog.Tailwind", "Source\TheFreezeTeamBlog.Tailwind\TheFreezeTeamBlog.Tailwind.csproj", "{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{349E3EEA-1190-411D-A344-B6A4773E3283}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -28,8 +24,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeWarp.Statiq.Tests", "So
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheFreezeTeam.com", "Source\TheFreezeTeam.com\TheFreezeTeam.com.csproj", "{E71BF436-357E-4DA2-A9CD-945A0A524AC2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Old", "Old", "{79B7EA9C-2EC5-45AD-A2A3-3B838BFCC5C5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheFreezeTeam.Com.Tailwind", "Source\TheFreezeTeam.Com.Tailwind\TheFreezeTeam.Com.Tailwind.csproj", "{E112A4C1-A719-447A-A938-C97BF8541BBA}"
 EndProject
 Global
@@ -38,14 +32,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75E8D2C5-6920-407B-9C5E-C9B6F5B9C52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75E8D2C5-6920-407B-9C5E-C9B6F5B9C52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75E8D2C5-6920-407B-9C5E-C9B6F5B9C52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -67,8 +53,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CBB0C883-AF08-4208-85F2-D3F37CA0B24B} = {79B7EA9C-2EC5-45AD-A2A3-3B838BFCC5C5}
-		{CDBD0751-2F28-41F0-AF44-8409F36EB4B2} = {79B7EA9C-2EC5-45AD-A2A3-3B838BFCC5C5}
 		{05B09504-ABF3-4763-B9C1-C9D511A74000} = {1AD9B731-594E-425D-885A-8842D32C7A83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
