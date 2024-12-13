@@ -74,11 +74,15 @@ public class GitShortCode : SyncShortcode
         {
           return textContent;
         }
-
       }
       else
       {
-        return "#Oops, a parameter is invalid.";
+        string errorMessage = 
+          $"#Error: GitHub API request failed with status {(int)response.StatusCode} ({response.StatusCode}). " +
+          $"Parameters provided: Owner='{owner}', Repo='{repo}', PathFileName='{pathFileName}'" +
+          (string.IsNullOrEmpty(regionName) ? "" : $", RegionName='{regionName}'");
+          
+        return errorMessage;
       }
     }
   }
