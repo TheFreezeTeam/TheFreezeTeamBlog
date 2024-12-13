@@ -34,7 +34,7 @@ by incrementing the last value used until an unused tick is found.
 Here is the implementation of the `DateTimeService` class:
 
 ```cs
-<?! Git "TimeWarpEngineering" "timewarp-architecture" "Source/TimeWarp.Architecture.Template/templates/TimeWarp.Architecture/Source/Common/Common.Infrastructure/Services/DateTimeService.cs" /?>
+<?! Git "TimeWarpEngineering" "timewarp-architecture" "TimeWarp.Architecture/Source/Common/Common.Infrastructure/Services/DateTimeService.cs" /?>
 ```
 
 
@@ -52,7 +52,7 @@ To test the `NextUtcNow` method of the `DateTimeService` class, we need to ensur
 Here is the implementation of the test:
 
 ```cs
-<?! Git "TimeWarpEngineering" "timewarp-architecture" "Source/TimeWarp.Architecture.Template/templates/TimeWarp.Architecture/Tests/Common/Common.Infrastructure.Tests/DateTimeService_Tests.cs" /?>
+<?! Git "TimeWarpEngineering" "timewarp-architecture" "TimeWarp.Architecture/Tests/Common/Common.Infrastructure.Tests/DateTimeService_Tests.cs" /?>
 ```
 
 In this test, we create an instance of the `DateTimeService` class and use `Task.Run` to create 10 tasks that call the `NextUtcNow` method 100,000 times each. We then wait for a second to ensure that all tasks are running, and then allow them to generate `DateTime` values by calling the `Set` method of a `ManualResetEvent` object.
