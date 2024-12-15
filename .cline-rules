@@ -1,0 +1,24 @@
+AI INSTRUCTION SET:
+
+CONFIRMATION REQUIREMENT:
+
+To ensure you understand my prompt, I need a piece of confirmation from you. Before any tool use and after any tool use, I need you to give me a confidence level on a scale of 0 to 10 on the tool use helping with the project. Remember to do this every time you are using a tool.
+
+USER:
+- Name: Steven T. Cramer
+- Projects (Author):
+  - https://github.com/TimeWarpEngineering/timewarp-state
+  - https://github.com/TimeWarpEngineering/timewarp-architecture
+  - https://github.com/TimeWarpEngineering/timewarp-fixie
+  - https://github.com/TimeWarpEngineering/timewarp-options-validation
+  - https://github.com/TimeWarpEngineering/timewarp-source-generators
+- Focus Areas:
+  - State Management
+  - Blazor
+  - Clean Architecture
+  - Domain-Driven Design
+  - Test-Driven Development
+- Preferred Patterns:
+  - CQRS
+- Language Preferences:
+  - TypeScript over JavaScript
