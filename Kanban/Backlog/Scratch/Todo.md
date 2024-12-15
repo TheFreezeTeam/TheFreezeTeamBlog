@@ -1,0 +1,6 @@
+- [ ] Improve usefulness of ILogger.
+- [ ] Document all public interfaces
+- [ ] Check visibility on classes props etc... private public internal etc..
+- [x] Convert js to ts.  See Blazor package for example and Logging.
+- [ ] Consider splitting Packages for DevTools as production we will not want to deploy. TimeWarp.State.ReduxDevTools
+- [ ] Review TODOs in source
