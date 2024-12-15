@@ -1,9 +1,9 @@
 # Define the list of files to concatenate
 $files = @(
     ".ai/00-confirmation.md",
-    ".ai/01-user.md"
-    # ".ai/02-development-process.md",
-    # ".ai/03-environment.md",
+    ".ai/01-user.md",
+    ".ai/02-development-process.md",
+    ".ai/03-environment.md"
     # ".ai/04-csharp-coding-standards.md",
     # ".ai/05-dotnet-conventions.md"
 )
