@@ -1,5 +1,5 @@
 ---
-Title: TimeWarp.Nuru: Illuminating Your Path to CLI Superpowers
+Title: "TimeWarp.Nuru: Illuminating Your Path to CLI Superpowers"
 Published: 28/07/2025
 Tags: 
   - CLI
