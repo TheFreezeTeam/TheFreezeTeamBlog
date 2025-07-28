@@ -58,13 +58,10 @@ public class GitShortCode : SyncShortcode
         {
           string result = RemoveOpenAndCloseFrontMatter(textContent);
           return result;
-          //Check if it has only end close front matter.
         }
-        else if (textContent.Contains("---"))
-        {
-          string result = RemoveOnlyCloseFrontMatter(textContent);
-          return result;
-        }
+        // Remove this problematic else-if that's causing issues
+        // GitHub API returns raw content without frontmatter, so --- in content
+        // should not be treated as frontmatter delimiters
         else if (!string.IsNullOrEmpty(regionName))
         {
           string result = GetContentInRegion(textContent, regionName);
