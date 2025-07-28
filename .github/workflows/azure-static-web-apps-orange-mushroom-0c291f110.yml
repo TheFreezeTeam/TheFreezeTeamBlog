@@ -37,7 +37,7 @@ jobs:
       - name: Install dotnet
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: '6.0.401'
 
       - name: generate statiq site
         run: |
