@@ -46,3 +46,7 @@ The fifth shortcode (`TheFreezeTeam/TheFreezeTeamBlog` `Readme.md`) still resolv
   external consumers of the old paths. A later improvement is a CI check in this repo that probes
   every shortcode path so a rename breaks the build instead of the live site.
 - Filed from the timewarp-nuru 3.0 release work (nuru task 482/483 context) on 2026-10-08.
+
+## Progress
+
+- 2026-10-15: Nuru 2025 post path fixed (contents API and raw both 200), merged ahead of the Nuru 3.0 post. The State 11 and DateTimeService paths are still open.

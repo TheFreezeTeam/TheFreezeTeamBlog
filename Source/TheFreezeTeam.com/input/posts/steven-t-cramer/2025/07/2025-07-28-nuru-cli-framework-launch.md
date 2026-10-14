@@ -13,4 +13,4 @@ Description: Announcing TimeWarp.Nuru 1.0 - a route-based CLI framework that ill
 Image: nuru-hero-light.jpg
 ---
 
-<?! Git "TimeWarpEngineering" "timewarp-nuru" "Documentation/Posts/Blogs/2025-07-28-nuru-cli-framework-launch.md" /?>
+<?! Git "TimeWarpEngineering" "timewarp-nuru" "documentation/posts/blogs/2025-07-28-nuru-cli-framework-launch.md" /?>
