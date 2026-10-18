@@ -285,3 +285,34 @@ dotnet_diagnostic.CA2227.severity = suggestion
 
 # CA1305
 dotnet_diagnostic.CA1305.severity = suggestion
+
+# ganda repo audit configuration
+# TheFreezeTeamBlog is a Statiq content site (posts, a Git-include shortcode, Tailwind) deployed by
+# Azure Static Web Apps. It has never been on the TimeWarp library/repo baseline, so the checks below
+# do not describe how this repo is built. Turning them off or down lets content PRs merge through
+# `ganda pr merge`; adopting the baseline here would be its own task.
+[ganda.audit]
+# No dev CLI, no NuGet packages, no TimeWarp MSBuild wiring or analyzers: not applicable to a
+# Statiq site that is built only by `dotnet run --project Source/TheFreezeTeam.com`.
+assembly-metadata.severity = off
+banned-api-analyzers.severity = off
+banned-symbols.severity = off
+bin-dev.severity = off
+dev-cli-capabilities.severity = off
+region-annotations.severity = off
+envrc.severity = off
+global-usings-analyzer.severity = off
+msbuild-repository-props.severity = off
+source-directory-build-props.severity = off
+slnx.severity = off
+nuru.severity = off
+# Legacy PascalCase layout (Source/, Kanban/, Documentation/). Renaming would change site paths
+# and the Statiq project layout, so report these as warnings instead of blocking.
+directory-structure.severity = warning
+kebab-path-names.severity = warning
+# C# style sentinels and ganda kanban-walk gitignore patterns: worth adopting later, not blocking.
+editorconfig.severity = warning
+kanban-porcelain-gitignore.severity = warning
+routine-journals-gitignore.severity = warning
+required-gitignore-entries.severity = warning
+workflow-file.severity = warning

@@ -1,5 +1,7 @@
-trigger:
-- master
+# Superseded by the GitHub Actions Azure Static Web Apps deploy
+# (.github/workflows/azure-static-web-apps-orange-mushroom-0c291f110.yml).
+trigger: none
+pr: none
 
 stages:
   - stage: Build
